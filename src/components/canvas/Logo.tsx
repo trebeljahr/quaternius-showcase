@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { useLayoutEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { Material, Mesh } from 'three'
-import Grass from './Grass'
+import { Ocean } from './Ocean'
 
 function BirchTree() {
   const result = useGLTF('/BirchTree_5.gltf')
@@ -17,7 +17,7 @@ function BirchTree() {
       <mesh geometry={(nodes.BirchTree_5.children[0] as Mesh).geometry}>
         <meshStandardMaterial color='#ff0000' />
       </mesh>
-      <Grass />
+      <Ocean />
     </>
 
     /* <mesh material={materials.BirchTree_Leaves} geometry={(nodes.BirchTree_5.children[1] as Mesh).geometry} /> */
