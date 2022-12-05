@@ -11,6 +11,7 @@ export default function Scene({ children, ...props }) {
         { name: 'right', keys: ['ArrowRight', 'd', 'D'] },
         { name: 'jump', keys: ['Space'] },
         { name: 'descend', keys: ['c', 'C', 'Shift'] },
+        { name: 'attack', keys: ['F', 'f'] },
       ]}>
       <Canvas {...props}>
         <Sky azimuth={1} inclination={0.6} distance={1000} />

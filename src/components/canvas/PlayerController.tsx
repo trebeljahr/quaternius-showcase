@@ -1,8 +1,8 @@
 import { Group, Quaternion, Vector3 } from 'three'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
 import { useKeyboardControls } from '@react-three/drei'
 import { PropsWithChildren, useRef } from 'react'
-// import { useThirdPersonCamera } from '@/hooks/useThirdPersonCamera'
+import { updateThirdPersonCamera } from '@/hooks/useThirdPersonCamera'
 
 const rotationSpeed = 20
 const speed = 2000
@@ -11,6 +11,8 @@ export function PlayerController({ children }: PropsWithChildren) {
   const [, get] = useKeyboardControls()
 
   const group = useRef<Group>()
+
+  const { camera } = useThree()
 
   useFrame((state) => {
     if (!group.current) return
@@ -54,9 +56,9 @@ export function PlayerController({ children }: PropsWithChildren) {
 
     group.current.position.add(forwardVec)
     group.current.position.add(sidewaysVec)
-  })
 
-  // useThirdPersonCamera({ target: group.current })
+    updateThirdPersonCamera(camera, group.current, elapsedTime)
+  })
 
   return <group ref={group}>{children}</group>
 }

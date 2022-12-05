@@ -1,8 +1,9 @@
 import * as THREE from 'three'
 import React, { useEffect, useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useGLTF, useAnimations, useKeyboardControls } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useFrame, useThree } from '@react-three/fiber'
+import { LoopOnce } from 'three'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -56,17 +57,44 @@ export function FollowingTrex() {
     </group>
   )
 }
+
 export function Trex(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/Trex.glb') as unknown as GLTFResult
   const { actions } = useAnimations(animations, group)
 
+  const [subscribe, get] = useKeyboardControls()
+
   useEffect(() => {
-    actions['Armature|TRex_Run'].play()
-    return () => {
-      actions['Armature|TRex_Run'].stop()
+    subscribe((state) => {
+      console.log({ state })
+      const { attack, jump } = state
+      if (attack) {
+        actions['Armature|TRex_Attack'].setLoop(LoopOnce, 1)
+        actions['Armature|TRex_Attack'].clampWhenFinished = true
+        actions['Armature|TRex_Attack'].reset().play()
+      }
+      if (jump) {
+        actions['Armature|TRex_Jump'].setLoop(LoopOnce, 1)
+        actions['Armature|TRex_Jump'].clampWhenFinished = true
+        actions['Armature|TRex_Jump'].reset().play()
+      }
+    })
+  }, [subscribe, actions])
+
+  useFrame(() => {
+    const { forward, backward, left, right } = get()
+
+    if (forward || backward || left || right) {
+      if (!actions['Armature|TRex_Run'].isRunning()) {
+        actions['Armature|TRex_Run'].play()
+      }
+    } else {
+      if (actions['Armature|TRex_Run'].isRunning()) {
+        actions['Armature|TRex_Run'].stop()
+      }
     }
-  }, [actions])
+  })
 
   return (
     <group ref={group} {...props} dispose={null}>
