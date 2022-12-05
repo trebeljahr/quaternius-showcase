@@ -1,7 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import { KeyboardControls, PointerLockControls, Preload, Sky } from '@react-three/drei'
-import { Player } from './Player'
-import { Physics } from '@react-three/rapier'
+import { KeyboardControls, Preload, Sky } from '@react-three/drei'
 
 export default function Scene({ children, ...props }) {
   return (
@@ -17,13 +15,9 @@ export default function Scene({ children, ...props }) {
       <Canvas {...props}>
         <Sky azimuth={1} inclination={0.6} distance={1000} />
         <ambientLight />
-        <Physics>
-          <Player />
-        </Physics>
         <pointLight position={[10, 10, 10]} />
         {children}
         <Preload all />
-        <PointerLockControls />
       </Canvas>
     </KeyboardControls>
   )

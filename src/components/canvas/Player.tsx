@@ -1,7 +1,7 @@
 import { Vector3 } from 'three'
 import { useFrame, useThree } from '@react-three/fiber'
 import { useKeyboardControls } from '@react-three/drei'
-import { useRef } from 'react'
+import { PropsWithChildren, useRef } from 'react'
 import { RigidBody, RigidBodyApi, useRapier } from '@react-three/rapier'
 
 const SPEED = 5
@@ -9,7 +9,7 @@ const direction = new Vector3()
 const frontVector = new Vector3()
 const sideVector = new Vector3()
 
-export function Player() {
+export function Player({ children }: PropsWithChildren) {
   const [, get] = useKeyboardControls()
   const ref = useRef<RigidBodyApi>()
   const { camera } = useThree()
@@ -45,7 +45,8 @@ export function Player() {
       mass={1}
       type='dynamic'
       position={[0, 10, 0]}
-      enabledRotations={[false, false, false]}
-    />
+      enabledRotations={[false, false, false]}>
+      {children}
+    </RigidBody>
   )
 }
