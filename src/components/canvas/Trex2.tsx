@@ -42,21 +42,33 @@ export function Trex2(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/Trex2.glb') as unknown as GLTFResult
   const { actions } = useAnimations(animations, group)
+  const { camera } = useThree()
 
   console.log(actions)
 
   useEffect(() => {
-    // actions['Armature|TRex_Attack'].play()
     actions['Armature|TRex_Run'].play()
     return () => {
       actions['Armature|TRex_Run'].stop()
     }
-  }, [actions])
-
-  const { camera } = useThree()
+  }, [actions, camera, group])
 
   useFrame((state) => {
+    // console.log('running useEffect')
+    // const offset = camera.position.clone().add(new Vector3(10, 0, 0))
+    // group.current.position.set(...offset.toArray())
+
+    const cameraPosInPlane = camera.position.clone().normalize().setY(0)
     group.current.lookAt(camera.position.clone().normalize().setY(0))
+
+    const direction = cameraPosInPlane.sub(group.current.position)
+    const distance = direction.length()
+
+    console.log(direction, distance)
+
+    if (distance > 0.5) {
+      group.current.translateX(2)
+    }
   })
 
   return (
