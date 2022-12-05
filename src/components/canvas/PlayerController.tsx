@@ -1,41 +1,13 @@
-import { Group, Object3D, Quaternion, Vector3 } from 'three'
+import { Group, Quaternion, Vector3 } from 'three'
 import { useFrame } from '@react-three/fiber'
 import { useKeyboardControls } from '@react-three/drei'
 import { PropsWithChildren, useRef } from 'react'
-import { RigidBody, RigidBodyApi } from '@react-three/rapier'
+import { RigidBodyApi } from '@react-three/rapier'
 import { useThirdPersonCamera } from '@/hooks/useThirdPersonCamera'
 
-const SPEED = 5
-const direction = new Vector3()
-const frontVector = new Vector3()
-const sideVector = new Vector3()
-
-function controlObject(controlObject: Object3D, elapsedTime: number) {
-  const velocity = ref.current.linvel()
-
-  const _R = controlObject.quaternion.clone()
-
-  controlObject.quaternion.copy(_R)
-
-  const oldPosition = new Vector3()
-  oldPosition.copy(controlObject.position)
-
-  const forwardVec = new Vector3(0, 0, 1)
-  forwardVec.applyQuaternion(controlObject.quaternion)
-  forwardVec.normalize()
-
-  const sideways = new Vector3(1, 0, 0)
-  sideways.applyQuaternion(controlObject.quaternion)
-  sideways.normalize()
-
-  sideways.multiplyScalar(velocity.x * elapsedTime)
-  forwardVec.multiplyScalar(velocity.z * elapsedTime)
-
-  controlObject.position.add(forwardVec)
-  controlObject.position.add(sideways)
-
-  group.current.position.copy(controlObject.position)
-}
+const decceleration = new Vector3(-0.0005, -0.0001, -5.0)
+const acceleration = new Vector3(1, 0.25, 50.0)
+const velocity = new Vector3(0, 0, 0)
 
 export function PlayerController({ children }: PropsWithChildren) {
   const [, get] = useKeyboardControls()
@@ -45,34 +17,67 @@ export function PlayerController({ children }: PropsWithChildren) {
 
   useThirdPersonCamera({ target: group.current })
 
-  useFrame(() => {
+  useFrame((state) => {
     if (!ref.current || !group.current) return
+    const elapsedTime = state.clock.getDelta()
 
-    const { forward, backward, left, right, jump, descend } = get()
-    group.current.position.set(...ref.current.translation().toArray())
+    const { forward, backward, left, right } = get()
+    const controlObject = group.current
+    const Q = new Quaternion()
+    const A = new Vector3()
+    const R = controlObject.quaternion.clone()
 
-    frontVector.set(0, 0, +forward - +backward)
-    sideVector.set(+right - +left, 0, 0)
+    const acc = acceleration.clone()
 
-    direction
-      .subVectors(frontVector, sideVector)
-      .normalize()
-      .multiplyScalar(SPEED)
-      // .applyEuler(group.current.rotation)
-      .setY((+jump - +descend) * SPEED)
+    const frameDecceleration = new Vector3(
+      velocity.x * decceleration.x,
+      velocity.y * decceleration.y,
+      velocity.z * decceleration.z,
+    )
+    frameDecceleration.multiplyScalar(elapsedTime)
+    frameDecceleration.z =
+      Math.sign(frameDecceleration.z) * Math.min(Math.abs(frameDecceleration.z), Math.abs(velocity.z))
 
-    ref.current.setLinvel({ x: direction.x, y: direction.y, z: direction.z })
+    velocity.add(frameDecceleration)
+
+    if (forward) {
+      velocity.z += acc.z * elapsedTime
+    }
+    if (backward) {
+      velocity.z -= acc.z * elapsedTime
+    }
+    if (left) {
+      A.set(0, 1, 0)
+      Q.setFromAxisAngle(A, 4.0 * Math.PI * elapsedTime * acceleration.y)
+      R.multiply(Q)
+    }
+    if (right) {
+      A.set(0, 1, 0)
+      Q.setFromAxisAngle(A, 4.0 * -Math.PI * elapsedTime * acceleration.y)
+      R.multiply(Q)
+    }
+
+    controlObject.quaternion.copy(R)
+
+    const oldPosition = new Vector3()
+    oldPosition.copy(controlObject.position)
+
+    const forwardVec = new Vector3(0, 0, 1)
+    forwardVec.applyQuaternion(controlObject.quaternion)
+    forwardVec.normalize()
+
+    const sideways = new Vector3(1, 0, 0)
+    sideways.applyQuaternion(controlObject.quaternion)
+    sideways.normalize()
+
+    sideways.multiplyScalar(velocity.x * elapsedTime)
+    forwardVec.multiplyScalar(velocity.z * elapsedTime)
+
+    controlObject.position.add(forwardVec)
+    controlObject.position.add(sideways)
+
+    group.current.position.copy(controlObject.position)
   })
 
-  return (
-    <RigidBody
-      ref={ref}
-      colliders={false}
-      mass={1}
-      type='dynamic'
-      position={[0, 10, 0]}
-      enabledRotations={[false, false, false]}>
-      <group ref={group}>{children}</group>
-    </RigidBody>
-  )
+  return <group ref={group}>{children}</group>
 }

@@ -36,6 +36,6 @@ export function useThirdPersonCamera({ target }: { target: Group }) {
 
   useFrame((state) => {
     if (!target) return
-    update(state.clock.getElapsedTime())
+    update(state.clock.getDelta())
   })
 }
