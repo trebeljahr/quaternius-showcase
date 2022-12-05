@@ -6,19 +6,18 @@ import { RigidBodyApi } from '@react-three/rapier'
 import { useThirdPersonCamera } from '@/hooks/useThirdPersonCamera'
 
 const decceleration = new Vector3(-0.0005, -0.0001, -5.0)
-const acceleration = new Vector3(1, 0.25, 50.0)
+const acceleration = new Vector3(10, 2.5, 500.0)
 const velocity = new Vector3(0, 0, 0)
 
 export function PlayerController({ children }: PropsWithChildren) {
   const [, get] = useKeyboardControls()
 
-  const ref = useRef<RigidBodyApi>()
   const group = useRef<Group>()
 
   useThirdPersonCamera({ target: group.current })
 
   useFrame((state) => {
-    if (!ref.current || !group.current) return
+    if (!group.current) return
     const elapsedTime = state.clock.getDelta()
 
     const { forward, backward, left, right } = get()
@@ -77,6 +76,8 @@ export function PlayerController({ children }: PropsWithChildren) {
     controlObject.position.add(sideways)
 
     group.current.position.copy(controlObject.position)
+
+    console.log(group.current.position)
   })
 
   return <group ref={group}>{children}</group>
