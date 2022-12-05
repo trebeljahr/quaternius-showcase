@@ -5,6 +5,7 @@ import { PropsWithChildren, useRef } from 'react'
 // import { useThirdPersonCamera } from '@/hooks/useThirdPersonCamera'
 
 const rotationSpeed = 20
+const speed = 2000
 
 export function PlayerController({ children }: PropsWithChildren) {
   const [, get] = useKeyboardControls()
@@ -48,8 +49,8 @@ export function PlayerController({ children }: PropsWithChildren) {
     sidewaysVec.applyQuaternion(group.current.quaternion)
     sidewaysVec.normalize()
 
-    sidewaysVec.multiplyScalar(vel.x)
-    forwardVec.multiplyScalar(vel.z)
+    sidewaysVec.multiplyScalar(vel.x * elapsedTime * speed)
+    forwardVec.multiplyScalar(vel.z * elapsedTime * speed)
 
     group.current.position.add(forwardVec)
     group.current.position.add(sidewaysVec)
