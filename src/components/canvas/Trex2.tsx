@@ -54,10 +54,6 @@ export function Trex2(props: JSX.IntrinsicElements['group']) {
   }, [actions, camera, group])
 
   useFrame((state) => {
-    // console.log('running useEffect')
-    // const offset = camera.position.clone().add(new Vector3(10, 0, 0))
-    // group.current.position.set(...offset.toArray())
-
     const cameraPosInPlane = camera.position.clone().normalize().setY(0)
     group.current.lookAt(camera.position.clone().normalize().setY(0))
 
@@ -67,7 +63,7 @@ export function Trex2(props: JSX.IntrinsicElements['group']) {
     console.log(direction, distance)
 
     if (distance > 0.5) {
-      group.current.translateX(2)
+      group.current.translateZ(2)
     }
   })
 
