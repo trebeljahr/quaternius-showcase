@@ -27,11 +27,17 @@ export function Player() {
     // @ts-ignore:next-line
     sideVector.set(left - right, 0, 0)
 
-    direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(SPEED).applyEuler(camera.rotation)
+    direction
+      .subVectors(frontVector, sideVector)
+      .normalize()
+      .multiplyScalar(SPEED)
+      .applyEuler(camera.rotation)
+      // @ts-ignore:next-line
+      .setY((jump - descend) * SPEED)
 
-    // @ts-ignore:next-line
-    ref.current.setLinvel({ x: direction.x, y: (jump - descend) * SPEED, z: direction.z })
+    ref.current.setLinvel({ x: direction.x, y: direction.y, z: direction.z })
   })
+
   return (
     <RigidBody
       ref={ref}

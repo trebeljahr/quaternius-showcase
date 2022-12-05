@@ -2,6 +2,8 @@ import * as THREE from 'three'
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
+import { useFrame, useThree } from '@react-three/fiber'
+import { Quaternion, Vector3 } from 'three'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -34,6 +36,8 @@ interface GLTFAction extends THREE.AnimationClip {
   name: ActionName
 }
 
+const rotationSpeed = 20
+
 export function Trex2(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/Trex2.glb') as unknown as GLTFResult
@@ -42,8 +46,29 @@ export function Trex2(props: JSX.IntrinsicElements['group']) {
   console.log(actions)
 
   useEffect(() => {
-    actions['Armature|TRex_Attack'].play()
+    // actions['Armature|TRex_Attack'].play()
+    actions['Armature|TRex_Run'].play()
+    return () => {
+      actions['Armature|TRex_Run'].stop()
+    }
   }, [actions])
+
+  const { camera } = useThree()
+
+  useFrame((state) => {
+    const targetQuaternion = new Quaternion().setFromUnitVectors(
+      new Vector3(0, 0, 1),
+      camera.position.clone().normalize(),
+    )
+
+    if (!group.current.quaternion.equals(targetQuaternion)) {
+      let step = rotationSpeed * state.clock.getDelta()
+      group.current.quaternion.rotateTowards(targetQuaternion, step)
+
+      // new Quaternion().setFromUnitVectors(new Vector3(0, 1, 0), nextPos.clone().normalize())
+    }
+  })
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name='Root_Scene'>
