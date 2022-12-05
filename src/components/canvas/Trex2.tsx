@@ -56,27 +56,17 @@ export function Trex2(props: JSX.IntrinsicElements['group']) {
   const { camera } = useThree()
 
   useFrame((state) => {
-    const targetQuaternion = new Quaternion().setFromUnitVectors(
-      new Vector3(0, 0, 1),
-      camera.position.clone().normalize(),
-    )
-
-    if (!group.current.quaternion.equals(targetQuaternion)) {
-      let step = rotationSpeed * state.clock.getDelta()
-      group.current.quaternion.rotateTowards(targetQuaternion, step)
-
-      // new Quaternion().setFromUnitVectors(new Vector3(0, 1, 0), nextPos.clone().normalize())
-    }
+    group.current.lookAt(camera.position.clone().normalize().setY(0))
   })
 
   return (
     <group ref={group} {...props} dispose={null}>
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='Armature' rotation={[-Math.PI / 2, 0, 0]} scale={300}>
+          <group name='Armature' rotation={[-Math.PI / 2, 0, 0.05]} scale={300}>
             <primitive object={nodes.root} />
           </group>
-          <group name='Trex' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Trex' rotation={[-Math.PI / 2, 0, 0.05]} scale={100}>
             <skinnedMesh
               name='Trex_1'
               geometry={nodes.Trex_1.geometry}
