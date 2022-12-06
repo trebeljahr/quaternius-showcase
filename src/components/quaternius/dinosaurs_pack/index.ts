@@ -1,6 +1,6 @@
-export { Model as Apatosaurus } from "./Apatosaurus"
-export { Model as Parasaurolophus } from "./Parasaurolophus"
-export { Model as Stegosaurus } from "./Stegosaurus"
-export { Model as Trex } from "./Trex"
-export { Model as Triceratops } from "./Triceratops"
-export { Model as Velociraptor } from "./Velociraptor"
+export { Model as Apatosaurus } from './Apatosaurus'
+export { Model as Parasaurolophus } from './Parasaurolophus'
+export { Model as Stegosaurus } from './Stegosaurus'
+export { Model as Trex } from './Trex'
+export { Model as Triceratops } from './Triceratops'
+export { Model as Velociraptor } from './Velociraptor'
