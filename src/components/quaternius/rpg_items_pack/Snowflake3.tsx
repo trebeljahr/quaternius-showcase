@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Snowflake3.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/Snowflake3.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh

@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/DeadTree_5.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/DeadTree_5.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh
