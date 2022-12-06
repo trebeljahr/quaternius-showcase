@@ -35,33 +35,86 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'AnimalArmature|Attack_Headbutt' | 'AnimalArmature|Attack_Kick' | 'AnimalArmature|Death' | 'AnimalArmature|Eating' | 'AnimalArmature|Gallop' | 'AnimalArmature|Gallop_Jump' | 'AnimalArmature|Idle' | 'AnimalArmature|Idle_2' | 'AnimalArmature|Idle_Headlow' | 'AnimalArmature|Idle_HitReact_Left' | 'AnimalArmature|Idle_HitReact_Right' | 'AnimalArmature|Jump_toIdle' | 'AnimalArmature|Walk'
+type ActionName =
+  | 'AnimalArmature|Attack_Headbutt'
+  | 'AnimalArmature|Attack_Kick'
+  | 'AnimalArmature|Death'
+  | 'AnimalArmature|Eating'
+  | 'AnimalArmature|Gallop'
+  | 'AnimalArmature|Gallop_Jump'
+  | 'AnimalArmature|Idle'
+  | 'AnimalArmature|Idle_2'
+  | 'AnimalArmature|Idle_Headlow'
+  | 'AnimalArmature|Idle_HitReact_Left'
+  | 'AnimalArmature|Idle_HitReact_Right'
+  | 'AnimalArmature|Jump_toIdle'
+  | 'AnimalArmature|Walk'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Horse.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Horse.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="AnimalArmature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='AnimalArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Body} />
             <primitive object={nodes.IKBackLegL} />
             <primitive object={nodes.IKFrontLegL} />
             <primitive object={nodes.IKBackLegR} />
             <primitive object={nodes.IKFrontLegR} />
           </group>
-          <group name="Horse" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Horse_1" geometry={nodes.Horse_1.geometry} material={materials.Main} skeleton={nodes.Horse_1.skeleton} />
-            <skinnedMesh name="Horse_2" geometry={nodes.Horse_2.geometry} material={materials.Hair} skeleton={nodes.Horse_2.skeleton} />
-            <skinnedMesh name="Horse_3" geometry={nodes.Horse_3.geometry} material={materials.Main_Dark} skeleton={nodes.Horse_3.skeleton} />
-            <skinnedMesh name="Horse_4" geometry={nodes.Horse_4.geometry} material={materials.Muzzle} skeleton={nodes.Horse_4.skeleton} />
-            <skinnedMesh name="Horse_5" geometry={nodes.Horse_5.geometry} material={materials.Hooves} skeleton={nodes.Horse_5.skeleton} />
-            <skinnedMesh name="Horse_6" geometry={nodes.Horse_6.geometry} material={materials.Main_Light} skeleton={nodes.Horse_6.skeleton} />
-            <skinnedMesh name="Horse_7" geometry={nodes.Horse_7.geometry} material={materials.Eye_Black} skeleton={nodes.Horse_7.skeleton} />
-            <skinnedMesh name="Horse_8" geometry={nodes.Horse_8.geometry} material={materials.Eye_White} skeleton={nodes.Horse_8.skeleton} />
+          <group name='Horse' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Horse_1'
+              geometry={nodes.Horse_1.geometry}
+              material={materials.Main}
+              skeleton={nodes.Horse_1.skeleton}
+            />
+            <skinnedMesh
+              name='Horse_2'
+              geometry={nodes.Horse_2.geometry}
+              material={materials.Hair}
+              skeleton={nodes.Horse_2.skeleton}
+            />
+            <skinnedMesh
+              name='Horse_3'
+              geometry={nodes.Horse_3.geometry}
+              material={materials.Main_Dark}
+              skeleton={nodes.Horse_3.skeleton}
+            />
+            <skinnedMesh
+              name='Horse_4'
+              geometry={nodes.Horse_4.geometry}
+              material={materials.Muzzle}
+              skeleton={nodes.Horse_4.skeleton}
+            />
+            <skinnedMesh
+              name='Horse_5'
+              geometry={nodes.Horse_5.geometry}
+              material={materials.Hooves}
+              skeleton={nodes.Horse_5.skeleton}
+            />
+            <skinnedMesh
+              name='Horse_6'
+              geometry={nodes.Horse_6.geometry}
+              material={materials.Main_Light}
+              skeleton={nodes.Horse_6.skeleton}
+            />
+            <skinnedMesh
+              name='Horse_7'
+              geometry={nodes.Horse_7.geometry}
+              material={materials.Eye_Black}
+              skeleton={nodes.Horse_7.skeleton}
+            />
+            <skinnedMesh
+              name='Horse_8'
+              geometry={nodes.Horse_8.geometry}
+              material={materials.Eye_White}
+              skeleton={nodes.Horse_8.skeleton}
+            />
           </group>
         </group>
       </group>

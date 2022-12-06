@@ -32,10 +32,15 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Sword_WallMount.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Sword_WallMount.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Sword_WallMount.geometry} material={materials.DarkWood} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <mesh
+        geometry={nodes.Sword_WallMount.geometry}
+        material={materials.DarkWood}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
       <group position={[0.01, 0.28, 0.11]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Sword_1.geometry} material={materials.DarkSteel} />
         <mesh geometry={nodes.Sword_2.geometry} material={materials['DarkWood.001']} />

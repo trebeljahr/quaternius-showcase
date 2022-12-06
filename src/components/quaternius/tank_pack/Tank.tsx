@@ -36,35 +36,87 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'TankArmature|Tank_Backwards' | 'TankArmature|Tank_Forward' | 'TankArmature|Tank_TurningLeft' | 'TankArmature|Tank_TurningRight'
+type ActionName =
+  | 'TankArmature|Tank_Backwards'
+  | 'TankArmature|Tank_Forward'
+  | 'TankArmature|Tank_TurningLeft'
+  | 'TankArmature|Tank_TurningRight'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Tank.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Tank.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="TankArmature" position={[0, 1.3, 3.93]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='TankArmature' position={[0, 1.3, 3.93]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Root} />
           </group>
-          <mesh name="Tank_Gun" geometry={nodes.Tank_Gun.geometry} material={materials.Main_Details} position={[-0.54, 3.9, -0.07]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
-          <group name="Tank_Turret" position={[1.55, 3.72, -0.04]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <mesh name="Tank_Turret_1" geometry={nodes.Tank_Turret_1.geometry} material={materials.Main} />
-            <mesh name="Tank_Turret_2" geometry={nodes.Tank_Turret_2.geometry} material={materials.Main_Light} />
-            <mesh name="Tank_Turret_3" geometry={nodes.Tank_Turret_3.geometry} material={materials.Main_Dark} />
+          <mesh
+            name='Tank_Gun'
+            geometry={nodes.Tank_Gun.geometry}
+            material={materials.Main_Details}
+            position={[-0.54, 3.9, -0.07]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={100}
+          />
+          <group name='Tank_Turret' position={[1.55, 3.72, -0.04]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <mesh name='Tank_Turret_1' geometry={nodes.Tank_Turret_1.geometry} material={materials.Main} />
+            <mesh name='Tank_Turret_2' geometry={nodes.Tank_Turret_2.geometry} material={materials.Main_Light} />
+            <mesh name='Tank_Turret_3' geometry={nodes.Tank_Turret_3.geometry} material={materials.Main_Dark} />
           </group>
-          <group name="Tank_body" position={[0, 1.3, -0.07]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Tank_body_1" geometry={nodes.Tank_body_1.geometry} material={materials.Main_Dark} skeleton={nodes.Tank_body_1.skeleton} />
-            <skinnedMesh name="Tank_body_2" geometry={nodes.Tank_body_2.geometry} material={materials.Main} skeleton={nodes.Tank_body_2.skeleton} />
-            <skinnedMesh name="Tank_body_3" geometry={nodes.Tank_body_3.geometry} material={materials.Main_Light} skeleton={nodes.Tank_body_3.skeleton} />
-            <skinnedMesh name="Tank_body_4" geometry={nodes.Tank_body_4.geometry} material={materials.Main_Details} skeleton={nodes.Tank_body_4.skeleton} />
-            <skinnedMesh name="Tank_body_5" geometry={nodes.Tank_body_5.geometry} material={materials.Wheels} skeleton={nodes.Tank_body_5.skeleton} />
+          <group name='Tank_body' position={[0, 1.3, -0.07]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Tank_body_1'
+              geometry={nodes.Tank_body_1.geometry}
+              material={materials.Main_Dark}
+              skeleton={nodes.Tank_body_1.skeleton}
+            />
+            <skinnedMesh
+              name='Tank_body_2'
+              geometry={nodes.Tank_body_2.geometry}
+              material={materials.Main}
+              skeleton={nodes.Tank_body_2.skeleton}
+            />
+            <skinnedMesh
+              name='Tank_body_3'
+              geometry={nodes.Tank_body_3.geometry}
+              material={materials.Main_Light}
+              skeleton={nodes.Tank_body_3.skeleton}
+            />
+            <skinnedMesh
+              name='Tank_body_4'
+              geometry={nodes.Tank_body_4.geometry}
+              material={materials.Main_Details}
+              skeleton={nodes.Tank_body_4.skeleton}
+            />
+            <skinnedMesh
+              name='Tank_body_5'
+              geometry={nodes.Tank_body_5.geometry}
+              material={materials.Wheels}
+              skeleton={nodes.Tank_body_5.skeleton}
+            />
           </group>
-          <skinnedMesh name="TrackMeshR" geometry={nodes.TrackMeshR.geometry} material={materials.Main_Details} skeleton={nodes.TrackMeshR.skeleton} position={[0, 1.3, -4.04]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
-          <skinnedMesh name="TrackMeshL" geometry={nodes.TrackMeshL.geometry} material={materials.Main_Details} skeleton={nodes.TrackMeshL.skeleton} position={[0, 1.3, 3.93]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+          <skinnedMesh
+            name='TrackMeshR'
+            geometry={nodes.TrackMeshR.geometry}
+            material={materials.Main_Details}
+            skeleton={nodes.TrackMeshR.skeleton}
+            position={[0, 1.3, -4.04]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={100}
+          />
+          <skinnedMesh
+            name='TrackMeshL'
+            geometry={nodes.TrackMeshL.geometry}
+            material={materials.Main_Details}
+            skeleton={nodes.TrackMeshL.skeleton}
+            position={[0, 1.3, 3.93]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={100}
+          />
         </group>
       </group>
     </group>

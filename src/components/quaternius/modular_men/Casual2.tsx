@@ -35,28 +35,70 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Casual2.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Casual2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <primitive object={nodes.Root} />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Casual2_Body_1.geometry} material={materials.LightBrown} skeleton={nodes.Casual2_Body_1.skeleton} />
-        <skinnedMesh geometry={nodes.Casual2_Body_2.geometry} material={materials.Skin} skeleton={nodes.Casual2_Body_2.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Casual2_Body_1.geometry}
+          material={materials.LightBrown}
+          skeleton={nodes.Casual2_Body_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Casual2_Body_2.geometry}
+          material={materials.Skin}
+          skeleton={nodes.Casual2_Body_2.skeleton}
+        />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Casual2_Feet_1.geometry} material={materials.White} skeleton={nodes.Casual2_Feet_1.skeleton} />
-        <skinnedMesh geometry={nodes.Casual2_Feet_2.geometry} material={materials.Red_Dark} skeleton={nodes.Casual2_Feet_2.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Casual2_Feet_1.geometry}
+          material={materials.White}
+          skeleton={nodes.Casual2_Feet_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Casual2_Feet_2.geometry}
+          material={materials.Red_Dark}
+          skeleton={nodes.Casual2_Feet_2.skeleton}
+        />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Casual2_Head_1.geometry} material={materials.Skin} skeleton={nodes.Casual2_Head_1.skeleton} />
-        <skinnedMesh geometry={nodes.Casual2_Head_2.geometry} material={materials.Skin_Darker} skeleton={nodes.Casual2_Head_2.skeleton} />
-        <skinnedMesh geometry={nodes.Casual2_Head_3.geometry} material={materials.Eyebrows} skeleton={nodes.Casual2_Head_3.skeleton} />
-        <skinnedMesh geometry={nodes.Casual2_Head_4.geometry} material={materials.Eye} skeleton={nodes.Casual2_Head_4.skeleton} />
-        <skinnedMesh geometry={nodes.Casual2_Head_5.geometry} material={materials.Hair} skeleton={nodes.Casual2_Head_5.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Casual2_Head_1.geometry}
+          material={materials.Skin}
+          skeleton={nodes.Casual2_Head_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Casual2_Head_2.geometry}
+          material={materials.Skin_Darker}
+          skeleton={nodes.Casual2_Head_2.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Casual2_Head_3.geometry}
+          material={materials.Eyebrows}
+          skeleton={nodes.Casual2_Head_3.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Casual2_Head_4.geometry}
+          material={materials.Eye}
+          skeleton={nodes.Casual2_Head_4.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Casual2_Head_5.geometry}
+          material={materials.Hair}
+          skeleton={nodes.Casual2_Head_5.skeleton}
+        />
       </group>
-      <skinnedMesh geometry={nodes.Casual2_Legs.geometry} material={materials.LightBlue} skeleton={nodes.Casual2_Legs.skeleton} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <skinnedMesh
+        geometry={nodes.Casual2_Legs.geometry}
+        material={materials.LightBlue}
+        skeleton={nodes.Casual2_Legs.skeleton}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
     </group>
   )
 }

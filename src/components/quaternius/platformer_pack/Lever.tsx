@@ -20,14 +20,19 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Lever.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Lever.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Lever_1.geometry} material={materials.LightGrey} />
         <mesh geometry={nodes.Lever_2.geometry} material={materials.Grey} />
       </group>
-      <mesh geometry={nodes.Lever_Base.geometry} material={materials.Grey} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <mesh
+        geometry={nodes.Lever_Base.geometry}
+        material={materials.Grey}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
     </group>
   )
 }

@@ -19,7 +19,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Wall_ArchRound_Broken.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Wall_ArchRound_Broken.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group scale={[100, 100, 5.97]}>

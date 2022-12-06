@@ -29,30 +29,67 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'AnimalArmature|Attack' | 'AnimalArmature|Death' | 'AnimalArmature|Eating' | 'AnimalArmature|Gallop' | 'AnimalArmature|Gallop_Jump' | 'AnimalArmature|Idle' | 'AnimalArmature|Idle_2' | 'AnimalArmature|Idle_2_HeadLow' | 'AnimalArmature|Idle_HitReact_Left' | 'AnimalArmature|Idle_HitReact_Right' | 'AnimalArmature|Jump_ToIdle' | 'AnimalArmature|Walk'
+type ActionName =
+  | 'AnimalArmature|Attack'
+  | 'AnimalArmature|Death'
+  | 'AnimalArmature|Eating'
+  | 'AnimalArmature|Gallop'
+  | 'AnimalArmature|Gallop_Jump'
+  | 'AnimalArmature|Idle'
+  | 'AnimalArmature|Idle_2'
+  | 'AnimalArmature|Idle_2_HeadLow'
+  | 'AnimalArmature|Idle_HitReact_Left'
+  | 'AnimalArmature|Idle_HitReact_Right'
+  | 'AnimalArmature|Jump_ToIdle'
+  | 'AnimalArmature|Walk'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Husky.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Husky.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="AnimalArmature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='AnimalArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Body} />
             <primitive object={nodes.IKBackLegL} />
             <primitive object={nodes.IKFrontLegL} />
             <primitive object={nodes.IKBackLegR} />
             <primitive object={nodes.IKFrontLegR} />
           </group>
-          <group name="Cube" position={[0, 0, 0.06]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Cube_1" geometry={nodes.Cube_1.geometry} material={materials.Material} skeleton={nodes.Cube_1.skeleton} />
-            <skinnedMesh name="Cube_2" geometry={nodes.Cube_2.geometry} material={materials['Material.001']} skeleton={nodes.Cube_2.skeleton} />
-            <skinnedMesh name="Cube_3" geometry={nodes.Cube_3.geometry} material={materials['Material.006']} skeleton={nodes.Cube_3.skeleton} />
-            <skinnedMesh name="Cube_4" geometry={nodes.Cube_4.geometry} material={materials['Material.003']} skeleton={nodes.Cube_4.skeleton} />
-            <skinnedMesh name="Cube_5" geometry={nodes.Cube_5.geometry} material={materials['Material.002']} skeleton={nodes.Cube_5.skeleton} />
+          <group name='Cube' position={[0, 0, 0.06]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Cube_1'
+              geometry={nodes.Cube_1.geometry}
+              material={materials.Material}
+              skeleton={nodes.Cube_1.skeleton}
+            />
+            <skinnedMesh
+              name='Cube_2'
+              geometry={nodes.Cube_2.geometry}
+              material={materials['Material.001']}
+              skeleton={nodes.Cube_2.skeleton}
+            />
+            <skinnedMesh
+              name='Cube_3'
+              geometry={nodes.Cube_3.geometry}
+              material={materials['Material.006']}
+              skeleton={nodes.Cube_3.skeleton}
+            />
+            <skinnedMesh
+              name='Cube_4'
+              geometry={nodes.Cube_4.geometry}
+              material={materials['Material.003']}
+              skeleton={nodes.Cube_4.skeleton}
+            />
+            <skinnedMesh
+              name='Cube_5'
+              geometry={nodes.Cube_5.geometry}
+              material={materials['Material.002']}
+              skeleton={nodes.Cube_5.skeleton}
+            />
           </group>
         </group>
       </group>

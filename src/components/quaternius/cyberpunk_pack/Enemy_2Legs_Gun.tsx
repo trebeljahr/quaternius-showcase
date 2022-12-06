@@ -29,30 +29,72 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'CharacterArmature|Attack' | 'CharacterArmature|Death' | 'CharacterArmature|Idle' | 'CharacterArmature|Jump' | 'CharacterArmature|Run' | 'CharacterArmature|Shoot' | 'CharacterArmature|Walk'
+type ActionName =
+  | 'CharacterArmature|Attack'
+  | 'CharacterArmature|Death'
+  | 'CharacterArmature|Idle'
+  | 'CharacterArmature|Jump'
+  | 'CharacterArmature|Run'
+  | 'CharacterArmature|Shoot'
+  | 'CharacterArmature|Walk'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Enemy_2Legs_Gun.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Enemy_2Legs_Gun.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="CharacterArmature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='CharacterArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Root} />
           </group>
-          <group name="Enemy_Robot_2Legs" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Enemy_Robot_2Legs_1" geometry={nodes.Enemy_Robot_2Legs_1.geometry} material={materials.Main2} skeleton={nodes.Enemy_Robot_2Legs_1.skeleton} />
-            <skinnedMesh name="Enemy_Robot_2Legs_2" geometry={nodes.Enemy_Robot_2Legs_2.geometry} material={materials.Main} skeleton={nodes.Enemy_Robot_2Legs_2.skeleton} />
-            <skinnedMesh name="Enemy_Robot_2Legs_3" geometry={nodes.Enemy_Robot_2Legs_3.geometry} material={materials.Edge} skeleton={nodes.Enemy_Robot_2Legs_3.skeleton} />
-            <skinnedMesh name="Enemy_Robot_2Legs_4" geometry={nodes.Enemy_Robot_2Legs_4.geometry} material={materials.Dark} skeleton={nodes.Enemy_Robot_2Legs_4.skeleton} />
-            <skinnedMesh name="Enemy_Robot_2Legs_5" geometry={nodes.Enemy_Robot_2Legs_5.geometry} material={materials.Eye} skeleton={nodes.Enemy_Robot_2Legs_5.skeleton} />
+          <group name='Enemy_Robot_2Legs' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Enemy_Robot_2Legs_1'
+              geometry={nodes.Enemy_Robot_2Legs_1.geometry}
+              material={materials.Main2}
+              skeleton={nodes.Enemy_Robot_2Legs_1.skeleton}
+            />
+            <skinnedMesh
+              name='Enemy_Robot_2Legs_2'
+              geometry={nodes.Enemy_Robot_2Legs_2.geometry}
+              material={materials.Main}
+              skeleton={nodes.Enemy_Robot_2Legs_2.skeleton}
+            />
+            <skinnedMesh
+              name='Enemy_Robot_2Legs_3'
+              geometry={nodes.Enemy_Robot_2Legs_3.geometry}
+              material={materials.Edge}
+              skeleton={nodes.Enemy_Robot_2Legs_3.skeleton}
+            />
+            <skinnedMesh
+              name='Enemy_Robot_2Legs_4'
+              geometry={nodes.Enemy_Robot_2Legs_4.geometry}
+              material={materials.Dark}
+              skeleton={nodes.Enemy_Robot_2Legs_4.skeleton}
+            />
+            <skinnedMesh
+              name='Enemy_Robot_2Legs_5'
+              geometry={nodes.Enemy_Robot_2Legs_5.geometry}
+              material={materials.Eye}
+              skeleton={nodes.Enemy_Robot_2Legs_5.skeleton}
+            />
           </group>
-          <group name="Cylinder" position={[0, 0.75, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={13.18}>
-            <skinnedMesh name="Cylinder_1" geometry={nodes.Cylinder_1.geometry} material={materials.Grey} skeleton={nodes.Cylinder_1.skeleton} />
-            <skinnedMesh name="Cylinder_2" geometry={nodes.Cylinder_2.geometry} material={materials.LightGrey} skeleton={nodes.Cylinder_2.skeleton} />
+          <group name='Cylinder' position={[0, 0.75, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={13.18}>
+            <skinnedMesh
+              name='Cylinder_1'
+              geometry={nodes.Cylinder_1.geometry}
+              material={materials.Grey}
+              skeleton={nodes.Cylinder_1.skeleton}
+            />
+            <skinnedMesh
+              name='Cylinder_2'
+              geometry={nodes.Cylinder_2.geometry}
+              material={materials.LightGrey}
+              skeleton={nodes.Cylinder_2.skeleton}
+            />
           </group>
         </group>
       </group>

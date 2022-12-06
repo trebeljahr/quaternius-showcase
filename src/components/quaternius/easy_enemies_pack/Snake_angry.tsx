@@ -29,28 +29,67 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'SnakeArmature|Snake_Attack' | 'SnakeArmature|Snake_Idle' | 'SnakeArmature|Snake_Jump' | 'SnakeArmature|Snake_Walk'
+type ActionName =
+  | 'SnakeArmature|Snake_Attack'
+  | 'SnakeArmature|Snake_Idle'
+  | 'SnakeArmature|Snake_Jump'
+  | 'SnakeArmature|Snake_Walk'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Snake_angry.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Snake_angry.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="SnakeArmature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='SnakeArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Root} />
           </group>
-          <group name="Snake" position={[0, 0.02, -0.03]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Snake_1" geometry={nodes.Snake_1.geometry} material={materials.DarkGreen} skeleton={nodes.Snake_1.skeleton} />
-            <skinnedMesh name="Snake_2" geometry={nodes.Snake_2.geometry} material={materials.LightGreen} skeleton={nodes.Snake_2.skeleton} />
-            <skinnedMesh name="Snake_3" geometry={nodes.Snake_3.geometry} material={materials.Red} skeleton={nodes.Snake_3.skeleton} />
-            <skinnedMesh name="Snake_4" geometry={nodes.Snake_4.geometry} material={materials.Teeth} skeleton={nodes.Snake_4.skeleton} />
-            <skinnedMesh name="Snake_5" geometry={nodes.Snake_5.geometry} material={materials.Purple} skeleton={nodes.Snake_5.skeleton} />
-            <skinnedMesh name="Snake_6" geometry={nodes.Snake_6.geometry} material={materials.Yellow} skeleton={nodes.Snake_6.skeleton} />
-            <skinnedMesh name="Snake_7" geometry={nodes.Snake_7.geometry} material={materials.DarkRed} skeleton={nodes.Snake_7.skeleton} />
+          <group name='Snake' position={[0, 0.02, -0.03]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Snake_1'
+              geometry={nodes.Snake_1.geometry}
+              material={materials.DarkGreen}
+              skeleton={nodes.Snake_1.skeleton}
+            />
+            <skinnedMesh
+              name='Snake_2'
+              geometry={nodes.Snake_2.geometry}
+              material={materials.LightGreen}
+              skeleton={nodes.Snake_2.skeleton}
+            />
+            <skinnedMesh
+              name='Snake_3'
+              geometry={nodes.Snake_3.geometry}
+              material={materials.Red}
+              skeleton={nodes.Snake_3.skeleton}
+            />
+            <skinnedMesh
+              name='Snake_4'
+              geometry={nodes.Snake_4.geometry}
+              material={materials.Teeth}
+              skeleton={nodes.Snake_4.skeleton}
+            />
+            <skinnedMesh
+              name='Snake_5'
+              geometry={nodes.Snake_5.geometry}
+              material={materials.Purple}
+              skeleton={nodes.Snake_5.skeleton}
+            />
+            <skinnedMesh
+              name='Snake_6'
+              geometry={nodes.Snake_6.geometry}
+              material={materials.Yellow}
+              skeleton={nodes.Snake_6.skeleton}
+            />
+            <skinnedMesh
+              name='Snake_7'
+              geometry={nodes.Snake_7.geometry}
+              material={materials.DarkRed}
+              skeleton={nodes.Snake_7.skeleton}
+            />
           </group>
         </group>
       </group>

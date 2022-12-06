@@ -33,30 +33,83 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'CharacterArmature|Attack' | 'CharacterArmature|Attack.001' | 'CharacterArmature|Death' | 'CharacterArmature|Idle' | 'CharacterArmature|Jump' | 'CharacterArmature|Run' | 'CharacterArmature|Shoot' | 'CharacterArmature|Walk'
+type ActionName =
+  | 'CharacterArmature|Attack'
+  | 'CharacterArmature|Attack.001'
+  | 'CharacterArmature|Death'
+  | 'CharacterArmature|Idle'
+  | 'CharacterArmature|Jump'
+  | 'CharacterArmature|Run'
+  | 'CharacterArmature|Shoot'
+  | 'CharacterArmature|Walk'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Enemy_Large_Gun.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Enemy_Large_Gun.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="CharacterArmature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='CharacterArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Root} />
           </group>
-          <group name="Cylinder001" rotation={[-Math.PI / 2, 0, 0]} scale={11.85}>
-            <skinnedMesh name="Cylinder001_1" geometry={nodes.Cylinder001_1.geometry} material={materials.Grey} skeleton={nodes.Cylinder001_1.skeleton} />
-            <skinnedMesh name="Cylinder001_2" geometry={nodes.Cylinder001_2.geometry} material={materials.LightGrey} skeleton={nodes.Cylinder001_2.skeleton} />
-            <skinnedMesh name="Cylinder001_3" geometry={nodes.Cylinder001_3.geometry} material={materials.Orange} skeleton={nodes.Cylinder001_3.skeleton} />
-            <skinnedMesh name="Cylinder001_4" geometry={nodes.Cylinder001_4.geometry} material={materials.LightGreen} skeleton={nodes.Cylinder001_4.skeleton} />
-            <skinnedMesh name="Cylinder001_5" geometry={nodes.Cylinder001_5.geometry} material={materials.Edge} skeleton={nodes.Cylinder001_5.skeleton} />
-            <skinnedMesh name="Cylinder001_6" geometry={nodes.Cylinder001_6.geometry} material={materials.Main2} skeleton={nodes.Cylinder001_6.skeleton} />
-            <skinnedMesh name="Cylinder001_7" geometry={nodes.Cylinder001_7.geometry} material={materials.Dark} skeleton={nodes.Cylinder001_7.skeleton} />
-            <skinnedMesh name="Cylinder001_8" geometry={nodes.Cylinder001_8.geometry} material={materials.Main} skeleton={nodes.Cylinder001_8.skeleton} />
-            <skinnedMesh name="Cylinder001_9" geometry={nodes.Cylinder001_9.geometry} material={materials.Eye} skeleton={nodes.Cylinder001_9.skeleton} />
+          <group name='Cylinder001' rotation={[-Math.PI / 2, 0, 0]} scale={11.85}>
+            <skinnedMesh
+              name='Cylinder001_1'
+              geometry={nodes.Cylinder001_1.geometry}
+              material={materials.Grey}
+              skeleton={nodes.Cylinder001_1.skeleton}
+            />
+            <skinnedMesh
+              name='Cylinder001_2'
+              geometry={nodes.Cylinder001_2.geometry}
+              material={materials.LightGrey}
+              skeleton={nodes.Cylinder001_2.skeleton}
+            />
+            <skinnedMesh
+              name='Cylinder001_3'
+              geometry={nodes.Cylinder001_3.geometry}
+              material={materials.Orange}
+              skeleton={nodes.Cylinder001_3.skeleton}
+            />
+            <skinnedMesh
+              name='Cylinder001_4'
+              geometry={nodes.Cylinder001_4.geometry}
+              material={materials.LightGreen}
+              skeleton={nodes.Cylinder001_4.skeleton}
+            />
+            <skinnedMesh
+              name='Cylinder001_5'
+              geometry={nodes.Cylinder001_5.geometry}
+              material={materials.Edge}
+              skeleton={nodes.Cylinder001_5.skeleton}
+            />
+            <skinnedMesh
+              name='Cylinder001_6'
+              geometry={nodes.Cylinder001_6.geometry}
+              material={materials.Main2}
+              skeleton={nodes.Cylinder001_6.skeleton}
+            />
+            <skinnedMesh
+              name='Cylinder001_7'
+              geometry={nodes.Cylinder001_7.geometry}
+              material={materials.Dark}
+              skeleton={nodes.Cylinder001_7.skeleton}
+            />
+            <skinnedMesh
+              name='Cylinder001_8'
+              geometry={nodes.Cylinder001_8.geometry}
+              material={materials.Main}
+              skeleton={nodes.Cylinder001_8.skeleton}
+            />
+            <skinnedMesh
+              name='Cylinder001_9'
+              geometry={nodes.Cylinder001_9.geometry}
+              material={materials.Eye}
+              skeleton={nodes.Cylinder001_9.skeleton}
+            />
           </group>
         </group>
       </group>

@@ -35,32 +35,84 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Punk.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Punk.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <primitive object={nodes.Root} />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Punk_Body_1.geometry} material={materials.Skin} skeleton={nodes.Punk_Body_1.skeleton} />
-        <skinnedMesh geometry={nodes.Punk_Body_2.geometry} material={materials.Pink} skeleton={nodes.Punk_Body_2.skeleton} />
-        <skinnedMesh geometry={nodes.Punk_Body_3.geometry} material={materials.Black} skeleton={nodes.Punk_Body_3.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Punk_Body_1.geometry}
+          material={materials.Skin}
+          skeleton={nodes.Punk_Body_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Punk_Body_2.geometry}
+          material={materials.Pink}
+          skeleton={nodes.Punk_Body_2.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Punk_Body_3.geometry}
+          material={materials.Black}
+          skeleton={nodes.Punk_Body_3.skeleton}
+        />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Punk_Feet_1.geometry} material={materials.Black} skeleton={nodes.Punk_Feet_1.skeleton} />
-        <skinnedMesh geometry={nodes.Punk_Feet_2.geometry} material={materials.Grey} skeleton={nodes.Punk_Feet_2.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Punk_Feet_1.geometry}
+          material={materials.Black}
+          skeleton={nodes.Punk_Feet_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Punk_Feet_2.geometry}
+          material={materials.Grey}
+          skeleton={nodes.Punk_Feet_2.skeleton}
+        />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Punk_Head_1.geometry} material={materials.Skin} skeleton={nodes.Punk_Head_1.skeleton} />
-        <skinnedMesh geometry={nodes.Punk_Head_2.geometry} material={materials.Pink} skeleton={nodes.Punk_Head_2.skeleton} />
-        <skinnedMesh geometry={nodes.Punk_Head_3.geometry} material={materials.Black} skeleton={nodes.Punk_Head_3.skeleton} />
-        <skinnedMesh geometry={nodes.Punk_Head_4.geometry} material={materials.Hair_Brown} skeleton={nodes.Punk_Head_4.skeleton} />
-        <skinnedMesh geometry={nodes.Punk_Head_5.geometry} material={materials.Brown} skeleton={nodes.Punk_Head_5.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Punk_Head_1.geometry}
+          material={materials.Skin}
+          skeleton={nodes.Punk_Head_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Punk_Head_2.geometry}
+          material={materials.Pink}
+          skeleton={nodes.Punk_Head_2.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Punk_Head_3.geometry}
+          material={materials.Black}
+          skeleton={nodes.Punk_Head_3.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Punk_Head_4.geometry}
+          material={materials.Hair_Brown}
+          skeleton={nodes.Punk_Head_4.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Punk_Head_5.geometry}
+          material={materials.Brown}
+          skeleton={nodes.Punk_Head_5.skeleton}
+        />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Punk_Legs_1.geometry} material={materials.Skin} skeleton={nodes.Punk_Legs_1.skeleton} />
-        <skinnedMesh geometry={nodes.Punk_Legs_2.geometry} material={materials.Pink} skeleton={nodes.Punk_Legs_2.skeleton} />
-        <skinnedMesh geometry={nodes.Punk_Legs_3.geometry} material={materials.Black} skeleton={nodes.Punk_Legs_3.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Punk_Legs_1.geometry}
+          material={materials.Skin}
+          skeleton={nodes.Punk_Legs_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Punk_Legs_2.geometry}
+          material={materials.Pink}
+          skeleton={nodes.Punk_Legs_2.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Punk_Legs_3.geometry}
+          material={materials.Black}
+          skeleton={nodes.Punk_Legs_3.skeleton}
+        />
       </group>
     </group>
   )

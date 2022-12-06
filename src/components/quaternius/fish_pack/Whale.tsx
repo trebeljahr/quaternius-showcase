@@ -24,18 +24,28 @@ type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Whale.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Whale.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="Armature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='Armature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Root} />
           </group>
-          <group name="Whale" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Whale_1" geometry={nodes.Whale_1.geometry} material={materials.Top} skeleton={nodes.Whale_1.skeleton} />
-            <skinnedMesh name="Whale_2" geometry={nodes.Whale_2.geometry} material={materials.Bottom} skeleton={nodes.Whale_2.skeleton} />
+          <group name='Whale' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Whale_1'
+              geometry={nodes.Whale_1.geometry}
+              material={materials.Top}
+              skeleton={nodes.Whale_1.skeleton}
+            />
+            <skinnedMesh
+              name='Whale_2'
+              geometry={nodes.Whale_2.geometry}
+              material={materials.Bottom}
+              skeleton={nodes.Whale_2.skeleton}
+            />
           </group>
         </group>
       </group>

@@ -19,23 +19,38 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'SpiderArmature|Spider_Attack' | 'SpiderArmature|Spider_Death' | 'SpiderArmature|Spider_Idle' | 'SpiderArmature|Spider_Jump' | 'SpiderArmature|Spider_Walk'
+type ActionName =
+  | 'SpiderArmature|Spider_Attack'
+  | 'SpiderArmature|Spider_Death'
+  | 'SpiderArmature|Spider_Idle'
+  | 'SpiderArmature|Spider_Jump'
+  | 'SpiderArmature|Spider_Walk'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Spider.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Spider.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="SpiderArmature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='SpiderArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Root} />
           </group>
-          <group name="Cube" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Cube_1" geometry={nodes.Cube_1.geometry} material={materials.Material} skeleton={nodes.Cube_1.skeleton} />
-            <skinnedMesh name="Cube_2" geometry={nodes.Cube_2.geometry} material={materials['Material.001']} skeleton={nodes.Cube_2.skeleton} />
+          <group name='Cube' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Cube_1'
+              geometry={nodes.Cube_1.geometry}
+              material={materials.Material}
+              skeleton={nodes.Cube_1.skeleton}
+            />
+            <skinnedMesh
+              name='Cube_2'
+              geometry={nodes.Cube_2.geometry}
+              material={materials['Material.001']}
+              skeleton={nodes.Cube_2.skeleton}
+            />
           </group>
         </group>
       </group>

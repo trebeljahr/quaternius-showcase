@@ -26,7 +26,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Viking boat.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Viking boat.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group position={[0.01, 1.65, -0.03]} rotation={[-Math.PI / 2, 0, 0]} scale={30}>

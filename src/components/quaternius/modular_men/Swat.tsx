@@ -29,26 +29,64 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Swat.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Swat.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <primitive object={nodes.Root} />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Swat_Body_1.geometry} material={materials.Swat_Black} skeleton={nodes.Swat_Body_1.skeleton} />
-        <skinnedMesh geometry={nodes.Swat_Body_2.geometry} material={materials.Skin} skeleton={nodes.Swat_Body_2.skeleton} />
-        <skinnedMesh geometry={nodes.Swat_Body_3.geometry} material={materials.Swat} skeleton={nodes.Swat_Body_3.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Swat_Body_1.geometry}
+          material={materials.Swat_Black}
+          skeleton={nodes.Swat_Body_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Swat_Body_2.geometry}
+          material={materials.Skin}
+          skeleton={nodes.Swat_Body_2.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Swat_Body_3.geometry}
+          material={materials.Swat}
+          skeleton={nodes.Swat_Body_3.skeleton}
+        />
       </group>
-      <skinnedMesh geometry={nodes.Swat_Feet.geometry} material={materials.Swat_Black} skeleton={nodes.Swat_Feet.skeleton} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <skinnedMesh
+        geometry={nodes.Swat_Feet.geometry}
+        material={materials.Swat_Black}
+        skeleton={nodes.Swat_Feet.skeleton}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Swat_Head_1.geometry} material={materials.Swat_Black} skeleton={nodes.Swat_Head_1.skeleton} />
-        <skinnedMesh geometry={nodes.Swat_Head_2.geometry} material={materials.Swat} skeleton={nodes.Swat_Head_2.skeleton} />
-        <skinnedMesh geometry={nodes.Swat_Head_3.geometry} material={materials.Visor} skeleton={nodes.Swat_Head_3.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Swat_Head_1.geometry}
+          material={materials.Swat_Black}
+          skeleton={nodes.Swat_Head_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Swat_Head_2.geometry}
+          material={materials.Swat}
+          skeleton={nodes.Swat_Head_2.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Swat_Head_3.geometry}
+          material={materials.Visor}
+          skeleton={nodes.Swat_Head_3.skeleton}
+        />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Swat_Legs_1.geometry} material={materials.Swat_Black} skeleton={nodes.Swat_Legs_1.skeleton} />
-        <skinnedMesh geometry={nodes.Swat_Legs_2.geometry} material={materials.Swat} skeleton={nodes.Swat_Legs_2.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Swat_Legs_1.geometry}
+          material={materials.Swat_Black}
+          skeleton={nodes.Swat_Legs_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Swat_Legs_2.geometry}
+          material={materials.Swat}
+          skeleton={nodes.Swat_Legs_2.skeleton}
+        />
       </group>
     </group>
   )

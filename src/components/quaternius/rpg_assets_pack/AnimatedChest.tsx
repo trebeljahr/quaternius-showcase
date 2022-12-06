@@ -26,18 +26,40 @@ type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/AnimatedChest.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/AnimatedChest.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="Armature" position={[-0.03, 0.07, 1.41]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='Armature' position={[-0.03, 0.07, 1.41]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Bone} />
           </group>
-          <mesh name="Gold" geometry={nodes.Gold.geometry} material={materials.Material} position={[2.48, -0.14, -0.49]} rotation={[-Math.PI / 2, 0, 0]} scale={111.64} />
-          <mesh name="BottomChest" geometry={nodes.BottomChest.geometry} material={materials['Material.002']} position={[1.76, -0.88, 1.29]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
-          <skinnedMesh name="Cylinder" geometry={nodes.Cylinder.geometry} material={materials['Material.001']} skeleton={nodes.Cylinder.skeleton} position={[0.84, 0.24, 1.31]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+          <mesh
+            name='Gold'
+            geometry={nodes.Gold.geometry}
+            material={materials.Material}
+            position={[2.48, -0.14, -0.49]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={111.64}
+          />
+          <mesh
+            name='BottomChest'
+            geometry={nodes.BottomChest.geometry}
+            material={materials['Material.002']}
+            position={[1.76, -0.88, 1.29]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={100}
+          />
+          <skinnedMesh
+            name='Cylinder'
+            geometry={nodes.Cylinder.geometry}
+            material={materials['Material.001']}
+            skeleton={nodes.Cylinder.skeleton}
+            position={[0.84, 0.24, 1.31]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={100}
+          />
         </group>
       </group>
     </group>

@@ -86,7 +86,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Streets_all.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Streets_all.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group position={[-3, 0, -5.89]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -177,7 +177,13 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         <mesh geometry={nodes.Street_Curve_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Curve_3.geometry} material={materials.White} />
       </group>
-      <mesh geometry={nodes.Street_Empty.geometry} material={materials.Grey} position={[-6, 0, -3]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <mesh
+        geometry={nodes.Street_Empty.geometry}
+        material={materials.Grey}
+        position={[-6, 0, -3]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
       <group position={[3, 0, -6]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Street_3Way_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_3Way_3.geometry} material={materials.Black} />

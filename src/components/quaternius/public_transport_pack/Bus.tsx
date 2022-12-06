@@ -30,10 +30,16 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Bus.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Bus.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.BackWheels.geometry} material={materials.Material} position={[3.19, -0.96, -0.36]} rotation={[0, Math.PI / 2, 0]} scale={100} />
+      <mesh
+        geometry={nodes.BackWheels.geometry}
+        material={materials.Material}
+        position={[3.19, -0.96, -0.36]}
+        rotation={[0, Math.PI / 2, 0]}
+        scale={100}
+      />
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Bus_1.geometry} material={materials.Top} />
         <mesh geometry={nodes.Bus_2.geometry} material={materials.Bottom} />
@@ -42,7 +48,13 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         <mesh geometry={nodes.Bus_5.geometry} material={materials.Lights} />
         <mesh geometry={nodes.Bus_6.geometry} material={materials.Details} />
       </group>
-      <mesh geometry={nodes.FrontWheels.geometry} material={materials.Material} position={[0.34, -0.96, -0.41]} rotation={[0, Math.PI / 2, 0]} scale={100} />
+      <mesh
+        geometry={nodes.FrontWheels.geometry}
+        material={materials.Material}
+        position={[0.34, -0.96, -0.41]}
+        rotation={[0, Math.PI / 2, 0]}
+        scale={100}
+      />
     </group>
   )
 }

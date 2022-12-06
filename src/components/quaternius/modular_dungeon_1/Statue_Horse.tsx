@@ -19,11 +19,23 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Statue_Horse.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Statue_Horse.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Pedestal.geometry} material={materials.Marble} position={[-0.01, 0, 5.45]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
-      <mesh geometry={nodes.Horse.geometry} material={materials.Statue} position={[-0.07, 2.3, 5.39]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <mesh
+        geometry={nodes.Pedestal.geometry}
+        material={materials.Marble}
+        position={[-0.01, 0, 5.45]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
+      <mesh
+        geometry={nodes.Horse.geometry}
+        material={materials.Statue}
+        position={[-0.07, 2.3, 5.39]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
     </group>
   )
 }

@@ -33,26 +33,66 @@ type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Chest.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Chest.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="Chest_Armature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='Chest_Armature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Root} />
           </group>
-          <group name="Chest_Bottom_1" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Chest_Bottom_2" geometry={nodes.Chest_Bottom_2.geometry} material={materials.DarkMetal} skeleton={nodes.Chest_Bottom_2.skeleton} />
-            <skinnedMesh name="Chest_Bottom_3" geometry={nodes.Chest_Bottom_3.geometry} material={materials.Wood} skeleton={nodes.Chest_Bottom_3.skeleton} />
-            <skinnedMesh name="Chest_Bottom_4" geometry={nodes.Chest_Bottom_4.geometry} material={materials.Metal} skeleton={nodes.Chest_Bottom_4.skeleton} />
-            <skinnedMesh name="Chest_Bottom_5" geometry={nodes.Chest_Bottom_5.geometry} material={materials.Gold} skeleton={nodes.Chest_Bottom_5.skeleton} />
-            <skinnedMesh name="Chest_Bottom_6" geometry={nodes.Chest_Bottom_6.geometry} material={materials.Gold_Dark} skeleton={nodes.Chest_Bottom_6.skeleton} />
+          <group name='Chest_Bottom_1' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Chest_Bottom_2'
+              geometry={nodes.Chest_Bottom_2.geometry}
+              material={materials.DarkMetal}
+              skeleton={nodes.Chest_Bottom_2.skeleton}
+            />
+            <skinnedMesh
+              name='Chest_Bottom_3'
+              geometry={nodes.Chest_Bottom_3.geometry}
+              material={materials.Wood}
+              skeleton={nodes.Chest_Bottom_3.skeleton}
+            />
+            <skinnedMesh
+              name='Chest_Bottom_4'
+              geometry={nodes.Chest_Bottom_4.geometry}
+              material={materials.Metal}
+              skeleton={nodes.Chest_Bottom_4.skeleton}
+            />
+            <skinnedMesh
+              name='Chest_Bottom_5'
+              geometry={nodes.Chest_Bottom_5.geometry}
+              material={materials.Gold}
+              skeleton={nodes.Chest_Bottom_5.skeleton}
+            />
+            <skinnedMesh
+              name='Chest_Bottom_6'
+              geometry={nodes.Chest_Bottom_6.geometry}
+              material={materials.Gold_Dark}
+              skeleton={nodes.Chest_Bottom_6.skeleton}
+            />
           </group>
-          <group name="Chest_Top_1" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Chest_Top_2" geometry={nodes.Chest_Top_2.geometry} material={materials.DarkMetal} skeleton={nodes.Chest_Top_2.skeleton} />
-            <skinnedMesh name="Chest_Top_3" geometry={nodes.Chest_Top_3.geometry} material={materials.Wood} skeleton={nodes.Chest_Top_3.skeleton} />
-            <skinnedMesh name="Chest_Top_4" geometry={nodes.Chest_Top_4.geometry} material={materials.Metal} skeleton={nodes.Chest_Top_4.skeleton} />
+          <group name='Chest_Top_1' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Chest_Top_2'
+              geometry={nodes.Chest_Top_2.geometry}
+              material={materials.DarkMetal}
+              skeleton={nodes.Chest_Top_2.skeleton}
+            />
+            <skinnedMesh
+              name='Chest_Top_3'
+              geometry={nodes.Chest_Top_3.geometry}
+              material={materials.Wood}
+              skeleton={nodes.Chest_Top_3.skeleton}
+            />
+            <skinnedMesh
+              name='Chest_Top_4'
+              geometry={nodes.Chest_Top_4.geometry}
+              material={materials.Metal}
+              skeleton={nodes.Chest_Top_4.skeleton}
+            />
           </group>
         </group>
       </group>

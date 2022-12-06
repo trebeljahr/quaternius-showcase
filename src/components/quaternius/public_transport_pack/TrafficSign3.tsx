@@ -21,7 +21,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/TrafficSign3.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/TrafficSign3.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group position={[0, 1.2, 0.05]} rotation={[-Math.PI / 2, Math.PI / 4, Math.PI / 2]} scale={1665.85}>

@@ -42,36 +42,96 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Adventurer.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Adventurer.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <primitive object={nodes.Root} />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Adventurer_Body_1.geometry} material={materials.Green} skeleton={nodes.Adventurer_Body_1.skeleton} />
-        <skinnedMesh geometry={nodes.Adventurer_Body_2.geometry} material={materials.LightGreen} skeleton={nodes.Adventurer_Body_2.skeleton} />
-        <skinnedMesh geometry={nodes.Adventurer_Body_3.geometry} material={materials.Skin} skeleton={nodes.Adventurer_Body_3.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Adventurer_Body_1.geometry}
+          material={materials.Green}
+          skeleton={nodes.Adventurer_Body_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Adventurer_Body_2.geometry}
+          material={materials.LightGreen}
+          skeleton={nodes.Adventurer_Body_2.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Adventurer_Body_3.geometry}
+          material={materials.Skin}
+          skeleton={nodes.Adventurer_Body_3.skeleton}
+        />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Adventurer_Feet_1.geometry} material={materials.Black} skeleton={nodes.Adventurer_Feet_1.skeleton} />
-        <skinnedMesh geometry={nodes.Adventurer_Feet_2.geometry} material={materials.Grey} skeleton={nodes.Adventurer_Feet_2.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Adventurer_Feet_1.geometry}
+          material={materials.Black}
+          skeleton={nodes.Adventurer_Feet_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Adventurer_Feet_2.geometry}
+          material={materials.Grey}
+          skeleton={nodes.Adventurer_Feet_2.skeleton}
+        />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Adventurer_Head_1.geometry} material={materials.Skin} skeleton={nodes.Adventurer_Head_1.skeleton} />
-        <skinnedMesh geometry={nodes.Adventurer_Head_2.geometry} material={materials.Eyebrows} skeleton={nodes.Adventurer_Head_2.skeleton} />
-        <skinnedMesh geometry={nodes.Adventurer_Head_3.geometry} material={materials.Eye} skeleton={nodes.Adventurer_Head_3.skeleton} />
-        <skinnedMesh geometry={nodes.Adventurer_Head_4.geometry} material={materials.Hair} skeleton={nodes.Adventurer_Head_4.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Adventurer_Head_1.geometry}
+          material={materials.Skin}
+          skeleton={nodes.Adventurer_Head_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Adventurer_Head_2.geometry}
+          material={materials.Eyebrows}
+          skeleton={nodes.Adventurer_Head_2.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Adventurer_Head_3.geometry}
+          material={materials.Eye}
+          skeleton={nodes.Adventurer_Head_3.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Adventurer_Head_4.geometry}
+          material={materials.Hair}
+          skeleton={nodes.Adventurer_Head_4.skeleton}
+        />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Adventurer_Legs_1.geometry} material={materials.Brown2} skeleton={nodes.Adventurer_Legs_1.skeleton} />
-        <skinnedMesh geometry={nodes.Adventurer_Legs_2.geometry} material={materials.Brown} skeleton={nodes.Adventurer_Legs_2.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Adventurer_Legs_1.geometry}
+          material={materials.Brown2}
+          skeleton={nodes.Adventurer_Legs_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Adventurer_Legs_2.geometry}
+          material={materials.Brown}
+          skeleton={nodes.Adventurer_Legs_2.skeleton}
+        />
       </group>
       <group position={[0, 1.37, -0.12]} rotation={[-Math.PI / 2, 0, Math.PI]} scale={26.08}>
-        <skinnedMesh geometry={nodes.Backpack_1.geometry} material={materials.Green} skeleton={nodes.Backpack_1.skeleton} />
-        <skinnedMesh geometry={nodes.Backpack_2.geometry} material={materials.LightGreen} skeleton={nodes.Backpack_2.skeleton} />
-        <skinnedMesh geometry={nodes.Backpack_3.geometry} material={materials.Brown} skeleton={nodes.Backpack_3.skeleton} />
-        <skinnedMesh geometry={nodes.Backpack_4.geometry} material={materials.Gold} skeleton={nodes.Backpack_4.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Backpack_1.geometry}
+          material={materials.Green}
+          skeleton={nodes.Backpack_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Backpack_2.geometry}
+          material={materials.LightGreen}
+          skeleton={nodes.Backpack_2.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Backpack_3.geometry}
+          material={materials.Brown}
+          skeleton={nodes.Backpack_3.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Backpack_4.geometry}
+          material={materials.Gold}
+          skeleton={nodes.Backpack_4.skeleton}
+        />
       </group>
     </group>
   )

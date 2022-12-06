@@ -31,7 +31,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/3Story_Small_Mat.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/3Story_Small_Mat.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>

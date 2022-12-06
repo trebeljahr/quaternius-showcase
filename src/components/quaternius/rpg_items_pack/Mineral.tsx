@@ -19,12 +19,24 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Mineral.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Mineral.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <mesh name="Mineral_1" geometry={nodes.Mineral_1.geometry} material={materials.Grey} morphTargetDictionary={nodes.Mineral_1.morphTargetDictionary} morphTargetInfluences={nodes.Mineral_1.morphTargetInfluences} />
-        <mesh name="Mineral_2" geometry={nodes.Mineral_2.geometry} material={materials.Pink} morphTargetDictionary={nodes.Mineral_2.morphTargetDictionary} morphTargetInfluences={nodes.Mineral_2.morphTargetInfluences} />
+        <mesh
+          name='Mineral_1'
+          geometry={nodes.Mineral_1.geometry}
+          material={materials.Grey}
+          morphTargetDictionary={nodes.Mineral_1.morphTargetDictionary}
+          morphTargetInfluences={nodes.Mineral_1.morphTargetInfluences}
+        />
+        <mesh
+          name='Mineral_2'
+          geometry={nodes.Mineral_2.geometry}
+          material={materials.Pink}
+          morphTargetDictionary={nodes.Mineral_2.morphTargetDictionary}
+          morphTargetInfluences={nodes.Mineral_2.morphTargetInfluences}
+        />
       </group>
     </group>
   )

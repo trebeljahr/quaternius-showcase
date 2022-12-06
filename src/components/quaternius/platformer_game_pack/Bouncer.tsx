@@ -24,18 +24,28 @@ type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Bouncer.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Bouncer.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="BouncerArmature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='BouncerArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Root} />
           </group>
-          <group name="Bouncer" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Bouncer_1" geometry={nodes.Bouncer_1.geometry} material={materials.Metal} skeleton={nodes.Bouncer_1.skeleton} />
-            <skinnedMesh name="Bouncer_2" geometry={nodes.Bouncer_2.geometry} material={materials.Red} skeleton={nodes.Bouncer_2.skeleton} />
+          <group name='Bouncer' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Bouncer_1'
+              geometry={nodes.Bouncer_1.geometry}
+              material={materials.Metal}
+              skeleton={nodes.Bouncer_1.skeleton}
+            />
+            <skinnedMesh
+              name='Bouncer_2'
+              geometry={nodes.Bouncer_2.geometry}
+              material={materials.Red}
+              skeleton={nodes.Bouncer_2.skeleton}
+            />
           </group>
         </group>
       </group>

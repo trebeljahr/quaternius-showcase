@@ -19,23 +19,48 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'RobotArmature|Dance' | 'RobotArmature|Death' | 'RobotArmature|Hello' | 'RobotArmature|HitRecieve_1' | 'RobotArmature|HitRecieve_2' | 'RobotArmature|Idle' | 'RobotArmature|Jump' | 'RobotArmature|Kick' | 'RobotArmature|No' | 'RobotArmature|Pickup' | 'RobotArmature|Punch' | 'RobotArmature|Run' | 'RobotArmature|Run_Tall' | 'RobotArmature|Shoot' | 'RobotArmature|SwordSlash' | 'RobotArmature|Walk' | 'RobotArmature|Walk_Tall' | 'RobotArmature|Yes'
+type ActionName =
+  | 'RobotArmature|Dance'
+  | 'RobotArmature|Death'
+  | 'RobotArmature|Hello'
+  | 'RobotArmature|HitRecieve_1'
+  | 'RobotArmature|HitRecieve_2'
+  | 'RobotArmature|Idle'
+  | 'RobotArmature|Jump'
+  | 'RobotArmature|Kick'
+  | 'RobotArmature|No'
+  | 'RobotArmature|Pickup'
+  | 'RobotArmature|Punch'
+  | 'RobotArmature|Run'
+  | 'RobotArmature|Run_Tall'
+  | 'RobotArmature|Shoot'
+  | 'RobotArmature|SwordSlash'
+  | 'RobotArmature|Walk'
+  | 'RobotArmature|Walk_Tall'
+  | 'RobotArmature|Yes'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Leela.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Leela.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="RobotArmature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='RobotArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Body} />
             <primitive object={nodes.FootL} />
             <primitive object={nodes.FootR} />
           </group>
-          <skinnedMesh name="Leela" geometry={nodes.Leela.geometry} material={materials.Leela_Texture} skeleton={nodes.Leela.skeleton} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+          <skinnedMesh
+            name='Leela'
+            geometry={nodes.Leela.geometry}
+            material={materials.Leela_Texture}
+            skeleton={nodes.Leela.skeleton}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={100}
+          />
         </group>
       </group>
     </group>

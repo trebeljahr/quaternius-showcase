@@ -21,24 +21,45 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'Armature|Triceratops_Attack' | 'Armature|Triceratops_Death' | 'Armature|Triceratops_Idle' | 'Armature|Triceratops_Jump' | 'Armature|Triceratops_Run' | 'Armature|Triceratops_Walk'
+type ActionName =
+  | 'Armature|Triceratops_Attack'
+  | 'Armature|Triceratops_Death'
+  | 'Armature|Triceratops_Idle'
+  | 'Armature|Triceratops_Jump'
+  | 'Armature|Triceratops_Run'
+  | 'Armature|Triceratops_Walk'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Triceratops.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Triceratops.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="Armature" rotation={[-Math.PI / 2, 0, 0]} scale={200}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='Armature' rotation={[-Math.PI / 2, 0, 0]} scale={200}>
             <primitive object={nodes.root} />
           </group>
-          <group name="Triceratops" rotation={[-0.47, 0, -Math.PI / 2]} scale={162.34}>
-            <skinnedMesh name="Triceratops_1" geometry={nodes.Triceratops_1.geometry} material={materials.LightBrown} skeleton={nodes.Triceratops_1.skeleton} />
-            <skinnedMesh name="Triceratops_2" geometry={nodes.Triceratops_2.geometry} material={materials.Purple} skeleton={nodes.Triceratops_2.skeleton} />
-            <skinnedMesh name="Triceratops_3" geometry={nodes.Triceratops_3.geometry} material={materials.Brown} skeleton={nodes.Triceratops_3.skeleton} />
+          <group name='Triceratops' rotation={[-0.47, 0, -Math.PI / 2]} scale={162.34}>
+            <skinnedMesh
+              name='Triceratops_1'
+              geometry={nodes.Triceratops_1.geometry}
+              material={materials.LightBrown}
+              skeleton={nodes.Triceratops_1.skeleton}
+            />
+            <skinnedMesh
+              name='Triceratops_2'
+              geometry={nodes.Triceratops_2.geometry}
+              material={materials.Purple}
+              skeleton={nodes.Triceratops_2.skeleton}
+            />
+            <skinnedMesh
+              name='Triceratops_3'
+              geometry={nodes.Triceratops_3.geometry}
+              material={materials.Brown}
+              skeleton={nodes.Triceratops_3.skeleton}
+            />
           </group>
         </group>
       </group>

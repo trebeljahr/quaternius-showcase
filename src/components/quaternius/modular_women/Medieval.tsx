@@ -38,32 +38,90 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Medieval.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Medieval.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <primitive object={nodes.Root} />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Medieval_Body_1.geometry} material={materials.Black} skeleton={nodes.Medieval_Body_1.skeleton} />
-        <skinnedMesh geometry={nodes.Medieval_Body_2.geometry} material={materials.LightBrown} skeleton={nodes.Medieval_Body_2.skeleton} />
-        <skinnedMesh geometry={nodes.Medieval_Body_3.geometry} material={materials.DarkBrown} skeleton={nodes.Medieval_Body_3.skeleton} />
-        <skinnedMesh geometry={nodes.Medieval_Body_4.geometry} material={materials.Skin} skeleton={nodes.Medieval_Body_4.skeleton} />
-        <skinnedMesh geometry={nodes.Medieval_Body_5.geometry} material={materials.Gold} skeleton={nodes.Medieval_Body_5.skeleton} />
-        <skinnedMesh geometry={nodes.Medieval_Body_6.geometry} material={materials.Metal} skeleton={nodes.Medieval_Body_6.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Medieval_Body_1.geometry}
+          material={materials.Black}
+          skeleton={nodes.Medieval_Body_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Medieval_Body_2.geometry}
+          material={materials.LightBrown}
+          skeleton={nodes.Medieval_Body_2.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Medieval_Body_3.geometry}
+          material={materials.DarkBrown}
+          skeleton={nodes.Medieval_Body_3.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Medieval_Body_4.geometry}
+          material={materials.Skin}
+          skeleton={nodes.Medieval_Body_4.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Medieval_Body_5.geometry}
+          material={materials.Gold}
+          skeleton={nodes.Medieval_Body_5.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Medieval_Body_6.geometry}
+          material={materials.Metal}
+          skeleton={nodes.Medieval_Body_6.skeleton}
+        />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Medieval_Feet_1.geometry} material={materials.LightBrown} skeleton={nodes.Medieval_Feet_1.skeleton} />
-        <skinnedMesh geometry={nodes.Medieval_Feet_2.geometry} material={materials.DarkBrown} skeleton={nodes.Medieval_Feet_2.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Medieval_Feet_1.geometry}
+          material={materials.LightBrown}
+          skeleton={nodes.Medieval_Feet_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Medieval_Feet_2.geometry}
+          material={materials.DarkBrown}
+          skeleton={nodes.Medieval_Feet_2.skeleton}
+        />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <skinnedMesh geometry={nodes.Medieval_Head_1.geometry} material={materials.Black} skeleton={nodes.Medieval_Head_1.skeleton} />
-        <skinnedMesh geometry={nodes.Medieval_Head_2.geometry} material={materials.DarkBrown} skeleton={nodes.Medieval_Head_2.skeleton} />
-        <skinnedMesh geometry={nodes.Medieval_Head_3.geometry} material={materials.Skin} skeleton={nodes.Medieval_Head_3.skeleton} />
-        <skinnedMesh geometry={nodes.Medieval_Head_4.geometry} material={materials.Brown} skeleton={nodes.Medieval_Head_4.skeleton} />
-        <skinnedMesh geometry={nodes.Medieval_Head_5.geometry} material={materials.White} skeleton={nodes.Medieval_Head_5.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Medieval_Head_1.geometry}
+          material={materials.Black}
+          skeleton={nodes.Medieval_Head_1.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Medieval_Head_2.geometry}
+          material={materials.DarkBrown}
+          skeleton={nodes.Medieval_Head_2.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Medieval_Head_3.geometry}
+          material={materials.Skin}
+          skeleton={nodes.Medieval_Head_3.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Medieval_Head_4.geometry}
+          material={materials.Brown}
+          skeleton={nodes.Medieval_Head_4.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Medieval_Head_5.geometry}
+          material={materials.White}
+          skeleton={nodes.Medieval_Head_5.skeleton}
+        />
       </group>
-      <skinnedMesh geometry={nodes.Medieval_Legs.geometry} material={materials.Black} skeleton={nodes.Medieval_Legs.skeleton} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <skinnedMesh
+        geometry={nodes.Medieval_Legs.geometry}
+        material={materials.Black}
+        skeleton={nodes.Medieval_Legs.skeleton}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
     </group>
   )
 }

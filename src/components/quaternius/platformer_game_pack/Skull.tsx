@@ -20,24 +20,44 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'MonsterArmature|Bite_Front' | 'MonsterArmature|Bite_InPlace' | 'MonsterArmature|Dance' | 'MonsterArmature|Death' | 'MonsterArmature|HitRecieve' | 'MonsterArmature|Idle' | 'MonsterArmature|Jump' | 'MonsterArmature|No' | 'MonsterArmature|Walk' | 'MonsterArmature|Yes'
+type ActionName =
+  | 'MonsterArmature|Bite_Front'
+  | 'MonsterArmature|Bite_InPlace'
+  | 'MonsterArmature|Dance'
+  | 'MonsterArmature|Death'
+  | 'MonsterArmature|HitRecieve'
+  | 'MonsterArmature|Idle'
+  | 'MonsterArmature|Jump'
+  | 'MonsterArmature|No'
+  | 'MonsterArmature|Walk'
+  | 'MonsterArmature|Yes'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Skull.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Skull.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="MonsterArmature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='MonsterArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Body} />
             <primitive object={nodes.Head} />
           </group>
-          <group name="Skull" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Skull_1" geometry={nodes.Skull_1.geometry} material={materials.Main} skeleton={nodes.Skull_1.skeleton} />
-            <skinnedMesh name="Skull_2" geometry={nodes.Skull_2.geometry} material={materials.Main_Light} skeleton={nodes.Skull_2.skeleton} />
+          <group name='Skull' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Skull_1'
+              geometry={nodes.Skull_1.geometry}
+              material={materials.Main}
+              skeleton={nodes.Skull_1.skeleton}
+            />
+            <skinnedMesh
+              name='Skull_2'
+              geometry={nodes.Skull_2.geometry}
+              material={materials.Main_Light}
+              skeleton={nodes.Skull_2.skeleton}
+            />
           </group>
         </group>
       </group>

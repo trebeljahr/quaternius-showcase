@@ -19,23 +19,39 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'RatArmature|Rat_Attack' | 'RatArmature|Rat_Death' | 'RatArmature|Rat_Idle' | 'RatArmature|Rat_Jump' | 'RatArmature|Rat_Run' | 'RatArmature|Rat_Walk'
+type ActionName =
+  | 'RatArmature|Rat_Attack'
+  | 'RatArmature|Rat_Death'
+  | 'RatArmature|Rat_Idle'
+  | 'RatArmature|Rat_Jump'
+  | 'RatArmature|Rat_Run'
+  | 'RatArmature|Rat_Walk'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Rat.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Rat.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="RatArmature" rotation={[-Math.PI / 2, 0, 0]} scale={39.55}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='RatArmature' rotation={[-Math.PI / 2, 0, 0]} scale={39.55}>
             <primitive object={nodes.root} />
           </group>
-          <group name="Rat" position={[0, 0.05, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Rat_1" geometry={nodes.Rat_1.geometry} material={materials.Grey} skeleton={nodes.Rat_1.skeleton} />
-            <skinnedMesh name="Rat_2" geometry={nodes.Rat_2.geometry} material={materials.Pink} skeleton={nodes.Rat_2.skeleton} />
+          <group name='Rat' position={[0, 0.05, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Rat_1'
+              geometry={nodes.Rat_1.geometry}
+              material={materials.Grey}
+              skeleton={nodes.Rat_1.skeleton}
+            />
+            <skinnedMesh
+              name='Rat_2'
+              geometry={nodes.Rat_2.geometry}
+              material={materials.Pink}
+              skeleton={nodes.Rat_2.skeleton}
+            />
           </group>
         </group>
       </group>

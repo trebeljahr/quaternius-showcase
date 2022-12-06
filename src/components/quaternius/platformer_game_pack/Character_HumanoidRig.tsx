@@ -33,7 +33,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Character_HumanoidRig.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Character_HumanoidRig.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -41,20 +41,38 @@ export function Model(props: JSX.IntrinsicElements['group']) {
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <skinnedMesh geometry={nodes.Body_1.geometry} material={materials.Main} skeleton={nodes.Body_1.skeleton} />
-        <skinnedMesh geometry={nodes.Body_2.geometry} material={materials.Main_Light} skeleton={nodes.Body_2.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Body_2.geometry}
+          material={materials.Main_Light}
+          skeleton={nodes.Body_2.skeleton}
+        />
         <skinnedMesh geometry={nodes.Body_3.geometry} material={materials.Main2} skeleton={nodes.Body_3.skeleton} />
       </group>
-      <skinnedMesh geometry={nodes.Ears.geometry} material={materials.Main} skeleton={nodes.Ears.skeleton} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <skinnedMesh
+        geometry={nodes.Ears.geometry}
+        material={materials.Main}
+        skeleton={nodes.Ears.skeleton}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <skinnedMesh geometry={nodes.Head_1.geometry} material={materials.Main} skeleton={nodes.Head_1.skeleton} />
-        <skinnedMesh geometry={nodes.Head_2.geometry} material={materials.Main_Light} skeleton={nodes.Head_2.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Head_2.geometry}
+          material={materials.Main_Light}
+          skeleton={nodes.Head_2.skeleton}
+        />
         <skinnedMesh geometry={nodes.Head_3.geometry} material={materials.EyeColor} skeleton={nodes.Head_3.skeleton} />
         <skinnedMesh geometry={nodes.Head_4.geometry} material={materials.White} skeleton={nodes.Head_4.skeleton} />
         <skinnedMesh geometry={nodes.Head_5.geometry} material={materials.Black} skeleton={nodes.Head_5.skeleton} />
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <skinnedMesh geometry={nodes.Arms_1.geometry} material={materials.Main} skeleton={nodes.Arms_1.skeleton} />
-        <skinnedMesh geometry={nodes.Arms_2.geometry} material={materials.Main_Light} skeleton={nodes.Arms_2.skeleton} />
+        <skinnedMesh
+          geometry={nodes.Arms_2.geometry}
+          material={materials.Main_Light}
+          skeleton={nodes.Arms_2.skeleton}
+        />
       </group>
     </group>
   )

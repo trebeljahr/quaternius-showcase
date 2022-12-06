@@ -24,7 +24,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/AR_3.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/AR_3.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -33,7 +33,13 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         <mesh geometry={nodes.AR_3_3.geometry} material={materials.Black} />
         <mesh geometry={nodes.AR_3_4.geometry} material={materials.Grey} />
       </group>
-      <mesh geometry={nodes.Magazine_AR_2.geometry} material={materials.Black} position={[0.41, 0.07, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <mesh
+        geometry={nodes.Magazine_AR_2.geometry}
+        material={materials.Black}
+        position={[0.41, 0.07, 0]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
     </group>
   )
 }

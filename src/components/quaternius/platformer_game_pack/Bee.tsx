@@ -28,28 +28,62 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'MonsterArmature|Bite_Front' | 'MonsterArmature|Death' | 'MonsterArmature|Flying' | 'MonsterArmature|HitRecieve'
+type ActionName =
+  | 'MonsterArmature|Bite_Front'
+  | 'MonsterArmature|Death'
+  | 'MonsterArmature|Flying'
+  | 'MonsterArmature|HitRecieve'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Bee.glb') as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/Bee.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="MonsterArmature" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='MonsterArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Body} />
             <primitive object={nodes.Head} />
           </group>
-          <group name="Bee" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Bee_1" geometry={nodes.Bee_1.geometry} material={materials.Main_2} skeleton={nodes.Bee_1.skeleton} />
-            <skinnedMesh name="Bee_2" geometry={nodes.Bee_2.geometry} material={materials.Main} skeleton={nodes.Bee_2.skeleton} />
-            <skinnedMesh name="Bee_3" geometry={nodes.Bee_3.geometry} material={materials.Eyes} skeleton={nodes.Bee_3.skeleton} />
-            <skinnedMesh name="Bee_4" geometry={nodes.Bee_4.geometry} material={materials.Wings} skeleton={nodes.Bee_4.skeleton} />
-            <skinnedMesh name="Bee_5" geometry={nodes.Bee_5.geometry} material={materials.Tongue} skeleton={nodes.Bee_5.skeleton} />
-            <skinnedMesh name="Bee_6" geometry={nodes.Bee_6.geometry} material={materials.Teeth} skeleton={nodes.Bee_6.skeleton} />
+          <group name='Bee' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Bee_1'
+              geometry={nodes.Bee_1.geometry}
+              material={materials.Main_2}
+              skeleton={nodes.Bee_1.skeleton}
+            />
+            <skinnedMesh
+              name='Bee_2'
+              geometry={nodes.Bee_2.geometry}
+              material={materials.Main}
+              skeleton={nodes.Bee_2.skeleton}
+            />
+            <skinnedMesh
+              name='Bee_3'
+              geometry={nodes.Bee_3.geometry}
+              material={materials.Eyes}
+              skeleton={nodes.Bee_3.skeleton}
+            />
+            <skinnedMesh
+              name='Bee_4'
+              geometry={nodes.Bee_4.geometry}
+              material={materials.Wings}
+              skeleton={nodes.Bee_4.skeleton}
+            />
+            <skinnedMesh
+              name='Bee_5'
+              geometry={nodes.Bee_5.geometry}
+              material={materials.Tongue}
+              skeleton={nodes.Bee_5.skeleton}
+            />
+            <skinnedMesh
+              name='Bee_6'
+              geometry={nodes.Bee_6.geometry}
+              material={materials.Teeth}
+              skeleton={nodes.Bee_6.skeleton}
+            />
           </group>
         </group>
       </group>

@@ -32,7 +32,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Sail ship.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/Sail ship.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group position={[0, 2.45, -1.05]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -54,7 +54,13 @@ export function Model(props: JSX.IntrinsicElements['group']) {
         <mesh geometry={nodes.BigShip_4.geometry} material={materials.DarkWood} />
         <mesh geometry={nodes.BigShip_5.geometry} material={materials.DarkRed} />
       </group>
-      <mesh geometry={nodes.Rudder.geometry} material={materials.Wood} position={[0, 1.27, -1.91]} rotation={[-Math.PI, 0, 0]} scale={[8.69, 8.69, 1.29]} />
+      <mesh
+        geometry={nodes.Rudder.geometry}
+        material={materials.Wood}
+        position={[0, 1.27, -1.91]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={[8.69, 8.69, 1.29]}
+      />
     </group>
   )
 }
