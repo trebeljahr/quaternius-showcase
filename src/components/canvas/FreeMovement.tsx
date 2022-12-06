@@ -2,6 +2,7 @@ import { Ocean } from './Ocean'
 import { Physics } from '@react-three/rapier'
 import { FlyingPlayer } from './FlyingPlayer'
 import { FollowingTrex } from './Trex'
+import { PointerLockControls } from '@react-three/drei'
 
 export default function FreeMovement() {
   return (
@@ -9,6 +10,8 @@ export default function FreeMovement() {
       <Physics>
         <FlyingPlayer />
       </Physics>
+      <PointerLockControls />
+
       <FollowingTrex />
 
       <Ocean />

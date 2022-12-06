@@ -46,7 +46,6 @@ export function FlyingPlayer({ children }: PropsWithChildren) {
         enabledRotations={[false, false, false]}>
         {children}
       </RigidBody>
-      <PointerLockControls />
     </>
   )
 }

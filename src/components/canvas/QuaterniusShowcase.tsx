@@ -1,25 +1,37 @@
 import { Physics } from '@react-three/rapier'
 import { Vector3 } from 'three'
-import * as NatureModels from '../quaternius/nature_pack'
-import * as CropModels from '../quaternius/crops_pack'
-import * as RealTimeStrategyModels from '../quaternius/fantasy_real_time_strategy'
+import * as AllModels from '../quaternius'
 
 import { FlyingPlayer } from './FlyingPlayer'
 import { Plane } from './ThirdPersonDemo'
+import { useControls } from 'leva'
+import { PointerLockControls } from '@react-three/drei'
+import { useEffect } from 'react'
 
 export default function QuaterniusShowcase() {
-  const AllModels = [
-    ...Object.values(NatureModels),
-    ...Object.values(CropModels),
-    ...Object.values(RealTimeStrategyModels),
-  ]
+  // const [selectedPack, setSelectedPack] = useState<keyof typeof AllModels>('animals_pack')
+  const { selectedPack } = useControls({ selectedPack: { options: AllModels } })
+  console.log(selectedPack)
+  useEffect(() => {
+    document.getElementById('selectedPack')?.blur()
+  }, [selectedPack])
+
+  // const AllModels = [
+  //   ...Object.values(NatureModels),
+  //   ...Object.values(CropModels),
+  //   ...Object.values(RealTimeStrategyModels),
+  // ]
+
+  // console.log(Object.keys())
   return (
     <>
       <Physics>
         <FlyingPlayer />
       </Physics>
+      <PointerLockControls />
+
       <Plane />
-      {Object.values(AllModels).map((Component, i) => {
+      {Object.values(selectedPack).map((Component, i) => {
         const rowSize = 10
 
         return (
