@@ -1,8 +1,8 @@
 import { Physics } from '@react-three/rapier'
 import { Vector3 } from 'three'
 import * as NatureModels from '../quaternius/nature_pack'
-import * as CropModels from '../quaternius/crops_pack'
-import * as RealTimeStrategyModels from '../quaternius/fantasy_real_time_strategy'
+// import * as CropModels from '../quaternius/crops_pack'
+// import * as RealTimeStrategyModels from '../quaternius/fantasy_real_time_strategy'
 
 import { FlyingPlayer } from './FlyingPlayer'
 import { Plane } from './ThirdPersonDemo'
