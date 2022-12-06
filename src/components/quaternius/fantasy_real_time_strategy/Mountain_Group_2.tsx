@@ -32,5 +32,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/Mountain_Group_2.glb')

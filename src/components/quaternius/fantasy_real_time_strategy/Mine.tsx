@@ -38,5 +38,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/Mine.glb')

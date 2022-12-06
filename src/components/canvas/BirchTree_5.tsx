@@ -50,5 +50,3 @@ export function BirchTreeWithColors() {
     </group>
   )
 }
-
-useGLTF.preload('/BirchTree_5.gltf')

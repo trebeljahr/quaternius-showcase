@@ -29,5 +29,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/Beet_4.glb')

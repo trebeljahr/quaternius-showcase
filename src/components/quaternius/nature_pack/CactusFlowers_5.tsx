@@ -29,5 +29,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/CactusFlowers_5.glb')

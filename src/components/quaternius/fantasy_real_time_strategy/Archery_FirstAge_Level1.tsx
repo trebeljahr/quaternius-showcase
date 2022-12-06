@@ -38,5 +38,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/Archery_FirstAge_Level1.glb')

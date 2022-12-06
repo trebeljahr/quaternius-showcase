@@ -50,5 +50,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/Barracks_SecondAge_Level2.glb')

@@ -25,4 +25,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Corn_2.glb')
+

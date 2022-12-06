@@ -41,5 +41,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/Farm_Dirt_Level3.glb')

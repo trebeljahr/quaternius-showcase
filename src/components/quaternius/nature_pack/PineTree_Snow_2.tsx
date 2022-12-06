@@ -32,5 +32,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/PineTree_Snow_2.glb')

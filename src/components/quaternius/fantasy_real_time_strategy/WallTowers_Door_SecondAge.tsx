@@ -35,5 +35,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/WallTowers_Door_SecondAge.glb')

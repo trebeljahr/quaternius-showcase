@@ -25,4 +25,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Rice_1.glb')
+

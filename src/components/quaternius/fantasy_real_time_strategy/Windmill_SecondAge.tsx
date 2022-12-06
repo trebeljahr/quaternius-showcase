@@ -44,5 +44,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/Windmill_SecondAge.glb')

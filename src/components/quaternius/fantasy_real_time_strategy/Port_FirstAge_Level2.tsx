@@ -35,5 +35,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/Port_FirstAge_Level2.glb')

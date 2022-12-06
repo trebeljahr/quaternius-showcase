@@ -35,5 +35,3 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     </group>
   )
 }
-
-useGLTF.preload('/Wonder_SecondAge_Level2.glb')

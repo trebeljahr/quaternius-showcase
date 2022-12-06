@@ -30,4 +30,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Apple_1.glb')
+
