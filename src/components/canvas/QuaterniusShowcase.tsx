@@ -1,6 +1,6 @@
 import { Physics } from '@react-three/rapier'
 import { Vector3 } from 'three'
-import * as Models from '../models'
+import * as Models from '../quaternius/nature_pack'
 import { FlyingPlayer } from './FlyingPlayer'
 import { Plane } from './ThirdPersonDemo'
 
