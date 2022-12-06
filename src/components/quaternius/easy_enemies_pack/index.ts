@@ -1,0 +1,6 @@
+export { Model as Frog } from "./Frog"
+export { Model as Rat } from "./Rat"
+export { Model as Snake } from "./Snake"
+export { Model as Snake_angry } from "./Snake_angry"
+export { Model as Spider } from "./Spider"
+export { Model as Wasp } from "./Wasp"
