@@ -19,6 +19,11 @@
     "jsx": "preserve",
     "resolveJsonModule": true
   },
+  "ts-node": {
+    "compilerOptions": {
+      "target": "esnext"
+    }
+  },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mts"],
   "exclude": ["node_modules"]
 }
