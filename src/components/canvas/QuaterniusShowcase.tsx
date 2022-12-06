@@ -8,29 +8,22 @@ import { FlyingPlayer } from './FlyingPlayer'
 import { Plane } from './ThirdPersonDemo'
 
 export default function QuaterniusShowcase() {
+  const AllModels = [
+    ...Object.values(NatureModels),
+    ...Object.values(CropModels),
+    ...Object.values(RealTimeStrategyModels),
+  ]
   return (
     <>
       <Physics>
         <FlyingPlayer />
       </Physics>
       <Plane />
-      {Object.values(NatureModels).map((Component, i) => {
+      {Object.values(AllModels).map((Component, i) => {
         const rowSize = 10
 
         return (
           <Component key={i} position={new Vector3(((i % rowSize) + 1) * 3, 0, (Math.floor(i / rowSize) + 1) * 3)} />
-        )
-      })}
-      {Object.values(CropModels).map((Component, i) => {
-        const rowSize = 10
-        return (
-          <Component key={i} position={new Vector3(((i % rowSize) + 1) * -3, 0, (Math.floor(i / rowSize) + 1) * 3)} />
-        )
-      })}
-      {Object.values(RealTimeStrategyModels).map((Component, i) => {
-        const rowSize = 10
-        return (
-          <Component key={i} position={new Vector3(((i % rowSize) + 1) * -3, 0, (Math.floor(i / rowSize) + 1) * -3)} />
         )
       })}
     </>
