@@ -1,31 +1,31 @@
 import { Camera, Group, Vector3 } from 'three'
 
-const currentPosition = new Vector3()
-const currentLookat = new Vector3()
-
 function calculateIdealOffset(target: Group) {
-  const idealOffset = new Vector3(0, 20, 0)
+  const idealOffset = new Vector3(-10, 15, -20)
   idealOffset.applyQuaternion(target.quaternion)
   idealOffset.add(target.position)
   return idealOffset
 }
 
 function calculateIdealLookat(target: Group) {
-  const idealLookat = new Vector3(0, 10, 10)
+  const idealLookat = new Vector3(0, 10, 20)
   idealLookat.applyQuaternion(target.quaternion)
   idealLookat.add(target.position)
   return idealLookat
 }
 
+const currentPosition = new Vector3()
+const currentLookAt = new Vector3()
+
 export function updateThirdPersonCamera(camera: Camera, target: Group, timeElapsed: number) {
   const idealOffset = calculateIdealOffset(target)
   const idealLookat = calculateIdealLookat(target)
 
-  const t = 1.0 - Math.pow(0.001, timeElapsed * 40)
+  const t = 1.0 - Math.pow(0.001, timeElapsed * 100)
 
   currentPosition.lerp(idealOffset, t)
-  currentLookat.lerp(idealLookat, t)
+  currentLookAt.lerp(idealLookat, t)
 
   camera.position.copy(currentPosition)
-  camera.lookAt(currentLookat)
+  camera.lookAt(currentLookAt)
 }

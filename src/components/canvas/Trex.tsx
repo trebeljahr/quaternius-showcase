@@ -1,9 +1,9 @@
 import * as THREE from 'three'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useGLTF, useAnimations, useKeyboardControls } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useFrame, useThree } from '@react-three/fiber'
-import { LoopOnce } from 'three'
+import { AnimationAction, AnimationClip, AnimationMixer, LoopOnce, Object3D } from 'three'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -36,6 +36,15 @@ interface GLTFAction extends THREE.AnimationClip {
   name: ActionName
 }
 
+interface PossibleActions {
+  'Armature|TRex_Attack': THREE.AnimationAction
+  'Armature|TRex_Death': THREE.AnimationAction
+  'Armature|TRex_Idle': THREE.AnimationAction
+  'Armature|TRex_Jump': THREE.AnimationAction
+  'Armature|TRex_Run': THREE.AnimationAction
+  'Armature|TRex_Walk': THREE.AnimationAction
+}
+
 // const rotationSpeed = 20
 // const speed = 0.5
 
@@ -58,84 +67,98 @@ export function FollowingTrex() {
   )
 }
 
-export function Trex(props: JSX.IntrinsicElements['group']) {
-  const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/Trex.glb') as unknown as GLTFResult
-  const { actions } = useAnimations(animations, group)
+function usePrevious<T>(value: T) {
+  const ref = useRef<T>()
+  useEffect(() => {
+    ref.current = value
+  }, [value])
+  return ref.current
+}
 
-  const [subscribe, get] = useKeyboardControls()
+function AnimationController({ actions }: { actions: PossibleActions }) {
+  const [state, setState] = useState<ActionName>('Armature|TRex_Idle')
+  const previousState = usePrevious(state)
+
+  const [subscribe] = useKeyboardControls()
 
   useEffect(() => {
     subscribe((state) => {
-      console.log({ state })
-      const { attack, jump } = state
+      // console.log({ state })
+      const { attack, jump, forward, backward, left, right } = state
       if (attack) {
         actions['Armature|TRex_Attack'].setLoop(LoopOnce, 1)
         actions['Armature|TRex_Attack'].clampWhenFinished = true
         actions['Armature|TRex_Attack'].reset().play()
       }
       if (jump) {
-        actions['Armature|TRex_Jump'].setLoop(LoopOnce, 1)
-        actions['Armature|TRex_Jump'].clampWhenFinished = true
-        actions['Armature|TRex_Jump'].reset().play()
+        if (!actions['Armature|TRex_Jump'].isRunning()) {
+          actions['Armature|TRex_Jump'].setLoop(LoopOnce, 1)
+          actions['Armature|TRex_Jump'].clampWhenFinished = true
+          actions['Armature|TRex_Jump'].reset().play()
+        }
       }
+      if (forward || backward || left || right) {
+        return setState('Armature|TRex_Run')
+      }
+      setState('Armature|TRex_Idle')
     })
-  }, [subscribe, actions])
+  }, [actions, subscribe])
 
-  useFrame(() => {
-    const { forward, backward, left, right } = get()
+  useEffect(() => {
+    const timeBetween = 0.5
+    const currentAction = actions[state].reset().fadeIn(timeBetween).play()
 
-    if (forward || backward || left || right) {
-      if (!actions['Armature|TRex_Run'].isRunning()) {
-        actions['Armature|TRex_Run'].play()
-      }
-    } else {
-      if (actions['Armature|TRex_Run'].isRunning()) {
-        actions['Armature|TRex_Run'].stop()
-      }
+    return () => {
+      currentAction.fadeOut(timeBetween)
     }
-  })
+  }, [state, actions])
+
+  return null
+}
+
+export function Trex(props: JSX.IntrinsicElements['group']) {
+  const group = useRef<THREE.Group>()
+  const { nodes, materials, animations } = useGLTF('/Trex.glb') as unknown as GLTFResult
+
+  const { actions } = useAnimations(animations, group)
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name='Root_Scene'>
-        <group name='RootNode'>
-          <group name='Armature' rotation={[-Math.PI / 2, 0, 0.05]} scale={300}>
-            <primitive object={nodes.root} />
-          </group>
-          <group name='Trex' rotation={[-Math.PI / 2, 0, 0.05]} scale={100}>
-            <skinnedMesh
-              name='Trex_1'
-              geometry={nodes.Trex_1.geometry}
-              material={materials.LightYellow}
-              skeleton={nodes.Trex_1.skeleton}
-            />
-            <skinnedMesh
-              name='Trex_2'
-              geometry={nodes.Trex_2.geometry}
-              material={materials.LightGreen}
-              skeleton={nodes.Trex_2.skeleton}
-            />
-            <skinnedMesh
-              name='Trex_3'
-              geometry={nodes.Trex_3.geometry}
-              material={materials.Green}
-              skeleton={nodes.Trex_3.skeleton}
-            />
-            <skinnedMesh
-              name='Trex_4'
-              geometry={nodes.Trex_4.geometry}
-              material={materials.Black}
-              skeleton={nodes.Trex_4.skeleton}
-            />
-            <skinnedMesh
-              name='Trex_5'
-              geometry={nodes.Trex_5.geometry}
-              material={materials.Red}
-              skeleton={nodes.Trex_5.skeleton}
-            />
-          </group>
-        </group>
+      <AnimationController actions={actions} />
+      <group name='Armature' rotation={[-Math.PI / 2, 0, 0.05]} scale={300}>
+        <primitive object={nodes.root} />
+      </group>
+      <group name='Trex' rotation={[-Math.PI / 2, 0, 0.05]} scale={100}>
+        <skinnedMesh
+          name='Trex_1'
+          geometry={nodes.Trex_1.geometry}
+          material={materials.LightYellow}
+          skeleton={nodes.Trex_1.skeleton}
+        />
+        <skinnedMesh
+          name='Trex_2'
+          geometry={nodes.Trex_2.geometry}
+          material={materials.LightGreen}
+          skeleton={nodes.Trex_2.skeleton}
+        />
+        <skinnedMesh
+          name='Trex_3'
+          geometry={nodes.Trex_3.geometry}
+          material={materials.Green}
+          skeleton={nodes.Trex_3.skeleton}
+        />
+        <skinnedMesh
+          name='Trex_4'
+          geometry={nodes.Trex_4.geometry}
+          material={materials.Black}
+          skeleton={nodes.Trex_4.skeleton}
+        />
+        <skinnedMesh
+          name='Trex_5'
+          geometry={nodes.Trex_5.geometry}
+          material={materials.Red}
+          skeleton={nodes.Trex_5.skeleton}
+        />
       </group>
     </group>
   )
