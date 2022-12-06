@@ -1,8 +1,8 @@
 import { Group, Quaternion, Vector3 } from 'three'
 import { useFrame, useThree } from '@react-three/fiber'
 import { useKeyboardControls } from '@react-three/drei'
-import { PropsWithChildren, useRef } from 'react'
-import { updateThirdPersonCamera } from '@/hooks/useThirdPersonCamera'
+import { PropsWithChildren, useEffect, useRef } from 'react'
+import { resetThirdPersonCamera, updateThirdPersonCamera } from '@/hooks/useThirdPersonCamera'
 
 const rotationSpeed = 20
 const speed = 2000
@@ -13,6 +13,12 @@ export function PlayerController({ children }: PropsWithChildren) {
   const group = useRef<Group>()
 
   const { camera } = useThree()
+
+  useEffect(() => {
+    if (!group.current) return
+
+    resetThirdPersonCamera(camera, group.current)
+  }, [camera, group])
 
   useFrame((state) => {
     if (!group.current) return
