@@ -1,10 +1,10 @@
 import React, { useLayoutEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { DoubleSide, Mesh } from 'three'
-import { useLoader } from '@react-three/fiber'
+import { GroupProps, useLoader } from '@react-three/fiber'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 
-export function BirchTree() {
+export function BirchTree(props: GroupProps) {
   const { nodes, materials } = useGLTF('/BirchTree_5.gltf')
   const [colorMap, normalMap] = useLoader(TextureLoader, [
     '/textures/BirchTree_Bark.png',
@@ -30,7 +30,7 @@ export function BirchTree() {
   }, [materials.BirchTree_Leaves, leavesColorMap])
 
   return (
-    <group dispose={null}>
+    <group {...props} dispose={null}>
       <mesh geometry={(nodes.Cube009 as Mesh).geometry} material={materials.BirchTree_Bark} />
       <mesh geometry={(nodes.Cube009_1 as Mesh).geometry} material={materials.BirchTree_Leaves} />
     </group>
