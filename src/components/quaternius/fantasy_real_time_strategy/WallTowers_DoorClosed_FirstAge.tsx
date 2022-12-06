@@ -19,7 +19,9 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/WallTowers_DoorClosed_FirstAge.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF(
+    '/glb/real_time_strategy_pack/WallTowers_DoorClosed_FirstAge.glb',
+  ) as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>

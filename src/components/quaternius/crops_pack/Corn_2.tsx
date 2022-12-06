@@ -17,12 +17,10 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Corn_2.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/crops_pack/Corn_2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Corn_2.geometry} material={materials.Green} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
     </group>
   )
 }
-
-
