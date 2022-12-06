@@ -34,7 +34,7 @@ type GLTFResult = GLTF & {
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF(
-    '/glb/real_time_strategy_pack/glb/fantasy_real_time_strategy/Archery_SecondAge_Level3.glb',
+    '/glb/real_time_strategy_pack/Archery_SecondAge_Level3.glb',
   ) as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>

@@ -22,7 +22,7 @@ type GLTFResult = GLTF & {
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF(
-    '/glb/real_time_strategy_pack/glb/fantasy_real_time_strategy/WonderWalls_SecondAge.glb',
+    '/glb/real_time_strategy_pack/WonderWalls_SecondAge.glb',
   ) as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
