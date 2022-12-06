@@ -21,7 +21,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/TrafficSign2.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/public_transport_pack/TrafficSign2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group position={[0, 1.23, 0.05]} scale={46.3}>
@@ -33,4 +33,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/TrafficSign2.glb')
+useGLTF.preload('/glb/public_transport_pack/TrafficSign2.glb')

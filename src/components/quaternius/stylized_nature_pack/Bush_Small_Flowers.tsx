@@ -19,7 +19,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Bush_Small_Flowers.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/stylized_nature_pack/Bush_Small_Flowers.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[2.81, -0.5, -2.89]} scale={100}>
@@ -30,4 +30,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Bush_Small_Flowers.glb')
+useGLTF.preload('/glb/stylized_nature_pack/Bush_Small_Flowers.glb')

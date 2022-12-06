@@ -53,7 +53,7 @@ type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/glb/Horse.glb') as unknown as GLTFResult
+  const { nodes, materials, animations } = useGLTF('/glb/animals_pack/Horse.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
@@ -122,4 +122,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Horse.glb')
+useGLTF.preload('/glb/animals_pack/Horse.glb')

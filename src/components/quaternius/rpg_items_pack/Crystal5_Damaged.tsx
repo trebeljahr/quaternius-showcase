@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Crystal5_Damaged.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/rpg_items_pack/Crystal5_Damaged.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -30,4 +30,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Crystal5_Damaged.glb')
+useGLTF.preload('/glb/rpg_items_pack/Crystal5_Damaged.glb')

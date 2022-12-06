@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Bridge_Small.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Bridge_Small.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -30,4 +30,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Bridge_Small.glb')
+useGLTF.preload('/glb/platformer_game_pack/Bridge_Small.glb')

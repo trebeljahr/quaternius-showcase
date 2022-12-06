@@ -19,7 +19,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/IceStaff.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/rpg_assets_pack/IceStaff.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -30,4 +30,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/IceStaff.glb')
+useGLTF.preload('/glb/rpg_assets_pack/IceStaff.glb')

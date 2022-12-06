@@ -23,7 +23,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/TrafficLight.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/public_transport_pack/TrafficLight.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={[17.35, 7.26, 17.35]}>
@@ -36,4 +36,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/TrafficLight.glb')
+useGLTF.preload('/glb/public_transport_pack/TrafficLight.glb')

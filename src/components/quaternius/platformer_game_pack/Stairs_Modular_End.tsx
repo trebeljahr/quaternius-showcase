@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Stairs_Modular_End.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Stairs_Modular_End.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -30,4 +30,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Stairs_Modular_End.glb')
+useGLTF.preload('/glb/platformer_game_pack/Stairs_Modular_End.glb')

@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Rock4.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/platformer_pack/Rock4.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Rock4.geometry} material={materials.Grey} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
@@ -25,4 +25,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Rock4.glb')
+useGLTF.preload('/glb/platformer_pack/Rock4.glb')

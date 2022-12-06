@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Cube_Grass_Center_Tall.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Cube_Grass_Center_Tall.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -30,4 +30,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Cube_Grass_Center_Tall.glb')
+useGLTF.preload('/glb/platformer_game_pack/Cube_Grass_Center_Tall.glb')

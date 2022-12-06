@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Thunder.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Thunder.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Thunder.geometry} material={materials.Gold} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
@@ -25,4 +25,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Thunder.glb')
+useGLTF.preload('/glb/platformer_game_pack/Thunder.glb')

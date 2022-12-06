@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/WallRocks.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/modular_dungeon_pack/WallRocks.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -30,4 +30,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/WallRocks.glb')
+useGLTF.preload('/glb/modular_dungeon_pack/WallRocks.glb')

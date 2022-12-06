@@ -19,7 +19,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Crown2.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/rpg_items_pack/Crown2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -30,4 +30,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Crown2.glb')
+useGLTF.preload('/glb/rpg_items_pack/Crown2.glb')

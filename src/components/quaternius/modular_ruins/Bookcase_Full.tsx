@@ -29,7 +29,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Bookcase_Full.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/modular_ruins/Bookcase_Full.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -45,4 +45,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Bookcase_Full.glb')
+useGLTF.preload('/glb/modular_ruins/Bookcase_Full.glb')

@@ -23,7 +23,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Door.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Door.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group position={[1.21, 2.21, 0.36]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -41,4 +41,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Door.glb')
+useGLTF.preload('/glb/platformer_game_pack/Door.glb')

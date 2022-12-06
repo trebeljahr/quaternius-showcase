@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Shelf_2.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/house_interior_pack/Shelf_2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Shelf_2.geometry} material={materials.White} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
@@ -25,4 +25,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Shelf_2.glb')
+useGLTF.preload('/glb/house_interior_pack/Shelf_2.glb')

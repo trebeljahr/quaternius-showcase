@@ -23,7 +23,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Wall_ArchRound_Overgrown_Broken.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/modular_ruins/Wall_ArchRound_Overgrown_Broken.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group scale={[100, 100, 5.97]}>
@@ -36,4 +36,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Wall_ArchRound_Overgrown_Broken.glb')
+useGLTF.preload('/glb/modular_ruins/Wall_ArchRound_Overgrown_Broken.glb')

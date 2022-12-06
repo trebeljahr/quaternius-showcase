@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Striker.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/spaceships_pack/Striker.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -30,4 +30,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Striker.glb')
+useGLTF.preload('/glb/spaceships_pack/Striker.glb')

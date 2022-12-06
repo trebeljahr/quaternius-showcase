@@ -19,7 +19,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/Club.glb') as unknown as GLTFResult
+  const { nodes, materials } = useGLTF('/glb/single_knight_pack/Club.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group position={[0, -0.29, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -30,4 +30,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Club.glb')
+useGLTF.preload('/glb/single_knight_pack/Club.glb')
