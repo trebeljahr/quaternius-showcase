@@ -17,25 +17,44 @@ type GLTFResult = GLTF & {
     Material: THREE.MeshStandardMaterial
     Brown: THREE.MeshStandardMaterial
   }
+  animations: GLTFAction[]
 }
 
-type ActionName = 'Armature|Apatosaurus_Attack' | 'Armature|Apatosaurus_Idle' | 'Armature|Apatosaurus_Jump' | 'Armature|Apatosaurus_Run' | 'Armature|Apatosaurus_Walk' | 'Armature|Stegosaurus_Death'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
+type ActionName =
+  | 'Armature|Apatosaurus_Attack'
+  | 'Armature|Apatosaurus_Idle'
+  | 'Armature|Apatosaurus_Jump'
+  | 'Armature|Apatosaurus_Run'
+  | 'Armature|Apatosaurus_Walk'
+  | 'Armature|Stegosaurus_Death'
+interface GLTFAction extends THREE.AnimationClip {
+  name: ActionName
+}
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/glb/dinosaurs_pack/Apatosaurus.glb') as unknown as GLTFResult
-  const { actions } = useAnimations<GLTFActions>(animations, group)
+  const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Root_Scene">
-        <group name="RootNode">
-          <group name="Armature" rotation={[-Math.PI / 2, 0, 0]} scale={300}>
+      <group name='Root_Scene'>
+        <group name='RootNode'>
+          <group name='Armature' rotation={[-Math.PI / 2, 0, 0]} scale={300}>
             <primitive object={nodes.root} />
           </group>
-          <group name="Cylinder" position={[0, 1.86, 1.07]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <skinnedMesh name="Cylinder_1" geometry={nodes.Cylinder_1.geometry} material={materials.Material} skeleton={nodes.Cylinder_1.skeleton} />
-            <skinnedMesh name="Cylinder_2" geometry={nodes.Cylinder_2.geometry} material={materials.Brown} skeleton={nodes.Cylinder_2.skeleton} />
+          <group name='Cylinder' position={[0, 1.86, 1.07]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+            <skinnedMesh
+              name='Cylinder_1'
+              geometry={nodes.Cylinder_1.geometry}
+              material={materials.Material}
+              skeleton={nodes.Cylinder_1.skeleton}
+            />
+            <skinnedMesh
+              name='Cylinder_2'
+              geometry={nodes.Cylinder_2.geometry}
+              material={materials.Brown}
+              skeleton={nodes.Cylinder_2.skeleton}
+            />
           </group>
         </group>
       </group>

@@ -19,6 +19,7 @@ type GLTFResult = GLTF & {
     Purple: THREE.MeshStandardMaterial
     Brown: THREE.MeshStandardMaterial
   }
+  animations: GLTFAction[]
 }
 
 type ActionName =
@@ -28,12 +29,14 @@ type ActionName =
   | 'Armature|Triceratops_Jump'
   | 'Armature|Triceratops_Run'
   | 'Armature|Triceratops_Walk'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
+interface GLTFAction extends THREE.AnimationClip {
+  name: ActionName
+}
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/glb/dinosaurs_pack/Triceratops.glb') as unknown as GLTFResult
-  const { actions } = useAnimations<GLTFActions>(animations, group)
+  const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
       <group name='Root_Scene'>

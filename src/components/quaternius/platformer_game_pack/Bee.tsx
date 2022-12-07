@@ -26,6 +26,7 @@ type GLTFResult = GLTF & {
     Tongue: THREE.MeshStandardMaterial
     Teeth: THREE.MeshStandardMaterial
   }
+  animations: GLTFAction[]
 }
 
 type ActionName =
@@ -33,12 +34,14 @@ type ActionName =
   | 'MonsterArmature|Death'
   | 'MonsterArmature|Flying'
   | 'MonsterArmature|HitRecieve'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
+interface GLTFAction extends THREE.AnimationClip {
+  name: ActionName
+}
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/glb/platformer_game_pack/Bee.glb') as unknown as GLTFResult
-  const { actions } = useAnimations<GLTFActions>(animations, group)
+  const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
       <group name='Root_Scene'>

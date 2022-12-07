@@ -29,6 +29,7 @@ type GLTFResult = GLTF & {
     ['Material.001']: THREE.MeshStandardMaterial
     ['Material.011']: THREE.MeshStandardMaterial
   }
+  animations: GLTFAction[]
 }
 
 type ActionName =
@@ -45,12 +46,14 @@ type ActionName =
   | 'AnimalArmature|Idle_HitReact_Right'
   | 'AnimalArmature|Jump_toIdle'
   | 'AnimalArmature|Walk'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
+interface GLTFAction extends THREE.AnimationClip {
+  name: ActionName
+}
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/glb/animals_pack/Stag.glb') as unknown as GLTFResult
-  const { actions } = useAnimations<GLTFActions>(animations, group)
+  const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
       <group name='Root_Scene'>

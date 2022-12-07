@@ -17,15 +17,20 @@ type GLTFResult = GLTF & {
     Red: THREE.MeshStandardMaterial
     Grey: THREE.MeshStandardMaterial
   }
+  animations: GLTFAction[]
 }
 
 type ActionName = 'SpikeTrap_Activate' | 'Hazard_SpikeTrap_Armature|SpikeTrap_Activate'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
+interface GLTFAction extends THREE.AnimationClip {
+  name: ActionName
+}
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/glb/platformer_game_pack/Hazard_SpikeTrap.glb') as unknown as GLTFResult
-  const { actions } = useAnimations<GLTFActions>(animations, group)
+  const { nodes, materials, animations } = useGLTF(
+    '/glb/platformer_game_pack/Hazard_SpikeTrap.glb',
+  ) as unknown as GLTFResult
+  const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
       <group name='Root_Scene'>

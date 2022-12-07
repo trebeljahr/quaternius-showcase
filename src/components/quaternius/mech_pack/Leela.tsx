@@ -17,6 +17,7 @@ type GLTFResult = GLTF & {
   materials: {
     Leela_Texture: THREE.MeshStandardMaterial
   }
+  animations: GLTFAction[]
 }
 
 type ActionName =
@@ -38,12 +39,14 @@ type ActionName =
   | 'RobotArmature|Walk'
   | 'RobotArmature|Walk_Tall'
   | 'RobotArmature|Yes'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
+interface GLTFAction extends THREE.AnimationClip {
+  name: ActionName
+}
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/glb/mech_pack/Leela.glb') as unknown as GLTFResult
-  const { actions } = useAnimations<GLTFActions>(animations, group)
+  const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
       <group name='Root_Scene'>

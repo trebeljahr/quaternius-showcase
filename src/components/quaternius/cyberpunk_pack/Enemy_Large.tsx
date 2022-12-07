@@ -27,6 +27,7 @@ type GLTFResult = GLTF & {
     Main: THREE.MeshStandardMaterial
     Eye: THREE.MeshStandardMaterial
   }
+  animations: GLTFAction[]
 }
 
 type ActionName =
@@ -38,12 +39,14 @@ type ActionName =
   | 'CharacterArmature|Run'
   | 'CharacterArmature|Shoot'
   | 'CharacterArmature|Walk'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
+interface GLTFAction extends THREE.AnimationClip {
+  name: ActionName
+}
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/glb/cyberpunk_pack/Enemy_Large.glb') as unknown as GLTFResult
-  const { actions } = useAnimations<GLTFActions>(animations, group)
+  const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
       <group name='Root_Scene'>
