@@ -2039,6 +2039,11 @@
   "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001412.tgz"
   "version" "1.0.30001412"
 
+"case@^1.6.3":
+  "integrity" "sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ=="
+  "resolved" "https://registry.npmjs.org/case/-/case-1.6.3.tgz"
+  "version" "1.6.3"
+
 "chalk@^2.0.0", "chalk@^2.1.0", "chalk@^2.4.2":
   "integrity" "sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ=="
   "resolved" "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz"

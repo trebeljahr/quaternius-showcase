@@ -6,6 +6,15 @@ import { join } from 'path'
 import { ComponentType, Suspense, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { GroupProps } from '@react-three/fiber'
+import { capital } from 'case'
+
+const activeSide = 'z-20  w-60 bg-gray-800 h-screen  transform transition-all fixed duration-700 text-white p-2'
+const hiddenSide =
+  'z-20  w-60 bg-gray-800 h-screen  transform transition-all fixed duration-700 text-white p-2 -translate-x-60'
+const activeButton =
+  'z-20 absolute w-10 h-10 bg-yellow-400 top-0 cursor-pointer transition-all transform duration-700 flex items-center justify-center'
+const normalButton =
+  'z-20 absolute w-10 h-10 bg-yellow-400 top-0 cursor-pointer transition-all transform duration-700 flex items-center justify-center translate-x-60'
 
 export default function Page() {
   const [open, setOpen] = useState(true)
@@ -14,15 +23,18 @@ export default function Page() {
   }
   return (
     <>
+      <button className={open ? normalButton : activeButton} onClick={toggleOpen}>
+        {open ? '<' : '>'}
+      </button>
       <div
-        style={{ width: 'fit-content', height: '100vw', overflow: 'hidden', overflowY: 'auto' }}
-        className='absolute top-0 left-0 z-20 bg-zinc-900 text-gray-50'>
-        <button onClick={toggleOpen}>{open ? '<' : '>'}</button>
+        style={{ height: '100vw', overflow: 'hidden', overflowY: 'auto' }}
+        className={open ? activeSide : hiddenSide}>
         {open &&
-          Object.keys(AllModels).map((pack_name) => {
+          Object.keys(AllModels).map((name) => {
+            const pack_name = capital(name)
             return (
               <div key={pack_name}>
-                <Link href={`/quaternius/${pack_name}`} as={`/quaternius/${pack_name}`}>
+                <Link href={`/quaternius/${name}`} as={`/quaternius/${name}`}>
                   {pack_name}
                 </Link>
               </div>
