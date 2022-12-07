@@ -20,9 +20,9 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/spaceships_pack/Zenith.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Zenith.geometry} material={materials.Texture} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <mesh geometry={nodes.Zenith.geometry} material={materials.Texture} />
     </group>
   )
 }
 
-useGLTF.preload('/glb/spaceships_pack/Zenith.glb')
+useGLTF.preload('/Zenith.glb')

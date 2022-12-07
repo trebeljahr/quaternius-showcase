@@ -17,6 +17,7 @@ async function codeGenForImports() {
       const filePath = join(modelPackPath, file + '.tsx')
       let contents = await readFile(filePath, 'utf-8')
       contents = contents.replace(new RegExp(`useGLTF\\('/${file}\\.glb`, 'g'), `useGLTF('/glb/${packName}/${file}.glb`)
+      contents = contents.replace(new RegExp(`\\) as GLTFResult`, 'g'), `) as unknown as GLTFResult`)
       contents = contents.replace(new RegExp(`/glb/glb/`, 'g'), `/glb/`)
       contents = contents.replace(
         new RegExp(`useGLTF\\('/glb/${packName}/glb/${packName}/${file}\\.glb`, 'g'),
