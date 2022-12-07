@@ -36,19 +36,22 @@ export default function Page() {
 type Ids = keyof typeof AllModels
 // type SelectedPack = typeof AllModels[keyof typeof AllModels]
 
-function CanvasComponent(props: { id: Ids }) {
+function CanvasComponent({ id }: { id: Ids }) {
   const [state, setState] = useState(0)
-  const [Model, setModel] = useState<ComponentType<GroupProps> | null>(null)
-  const { id } = props
-  const selectedPack = AllModels[id]
-
-  const components = Object.values(selectedPack).map((Component) => {
-    // @ts-ignore: nextline
-    Component.render.preload()
-    return Component
-  })
+  const [components, setComponents] = useState<ComponentType<GroupProps>[]>([])
 
   useEffect(() => {
+    const selectedPack = AllModels[id]
+    setComponents(
+      Object.values(selectedPack).map((Component) => {
+        return Component
+      }),
+    )
+  }, [id])
+
+  useEffect(() => {
+    console.log('Running useEffect')
+
     setState(0)
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'ArrowRight') {
@@ -67,23 +70,17 @@ function CanvasComponent(props: { id: Ids }) {
     }
 
     window.addEventListener('keydown', handleKeyDown)
+
+    // window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight' }))
+
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [components.length])
 
-  useEffect(() => {
-    setModel(components[state])
-  }, [state, components])
-
-  console.log(Model)
-
+  const Model = components[state]
   return (
     <>
       <Stage intensity={0.5} preset='rembrandt' shadows={true} environment='city'>
-        {Model && (
-          <Suspense>
-            <Model />
-          </Suspense>
-        )}
+        {Model && <Model />}
       </Stage>
       <OrbitControls makeDefault />
       <color attach='background' args={['#f5efe6']} />
