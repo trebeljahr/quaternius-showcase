@@ -16,16 +16,20 @@ type GLTFResult = GLTF & {
   }
   materials: {
     George_Texture: THREE.MeshBasicMaterial
-  }
+  },
+    animations: GLTFAction[],
 }
 
 type ActionName = 'Dance' | 'Death' | 'Hello' | 'HitRecieve_1' | 'HitRecieve_2' | 'Idle' | 'Jump' | 'Kick' | 'No' | 'Pickup' | 'Punch' | 'Run' | 'Run_Holding' | 'Run_Tall' | 'Shoot' | 'SwordSlash' | 'Walk' | 'Walk_Holding' | 'Walk_Tall' | 'Yes'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
+
+interface GLTFAction extends THREE.AnimationClip {
+  name: ActionName
+}
 
 export default function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/glb/mech_pack/George.glb') as unknown as GLTFResult
-  const { actions } = useAnimations<GLTFActions>(animations, group)
+  const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">

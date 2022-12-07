@@ -17,23 +17,50 @@ type GLTFResult = GLTF & {
   materials: {
     Stan_Texture: THREE.MeshBasicMaterial
   }
+  animations: GLTFAction[]
 }
 
-type ActionName = 'Dance' | 'Death' | 'Hello' | 'HitRecieve_1' | 'HitRecieve_2' | 'Idle' | 'Jump' | 'Kick' | 'No' | 'Pickup' | 'Punch' | 'Run' | 'Run_Holding' | 'Shoot' | 'SwordSlash' | 'Walk' | 'Walk_Holding' | 'Yes'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
+type ActionName =
+  | 'Dance'
+  | 'Death'
+  | 'Hello'
+  | 'HitRecieve_1'
+  | 'HitRecieve_2'
+  | 'Idle'
+  | 'Jump'
+  | 'Kick'
+  | 'No'
+  | 'Pickup'
+  | 'Punch'
+  | 'Run'
+  | 'Run_Holding'
+  | 'Shoot'
+  | 'SwordSlash'
+  | 'Walk'
+  | 'Walk_Holding'
+  | 'Yes'
+
+interface GLTFAction extends THREE.AnimationClip {
+  name: ActionName
+}
 
 export default function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/glb/mech_pack/Stan.glb') as unknown as GLTFResult
-  const { actions } = useAnimations<GLTFActions>(animations, group)
+  const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
-        <group name="RobotArmature">
+      <group name='Scene'>
+        <group name='RobotArmature'>
           <primitive object={nodes.Body} />
           <primitive object={nodes.FootL} />
           <primitive object={nodes.FootR} />
-          <skinnedMesh name="Stan" geometry={nodes.Stan.geometry} material={materials.Stan_Texture} skeleton={nodes.Stan.skeleton} />
+          <skinnedMesh
+            name='Stan'
+            geometry={nodes.Stan.geometry}
+            material={materials.Stan_Texture}
+            skeleton={nodes.Stan.skeleton}
+          />
         </group>
       </group>
     </group>
