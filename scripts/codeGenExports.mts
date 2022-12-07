@@ -22,12 +22,16 @@ async function codeGenForImports() {
         new RegExp(`useGLTF\\('/glb/${packName}/glb/${packName}/${file}\\.glb`, 'g'),
         `useGLTF('/glb/${packName}/${file}.glb`,
       )
+      contents = contents.replace(new RegExp(`export function Model`, 'g'), `export default function Model`)
 
       await writeFile(filePath, contents)
     }
 
-    const importStatements = components.map((name) => `export { Model as ${name} } from './${name}'`)
-    const fileContent = `${importStatements.join('\n')}`
+    const importStatements = components.map(
+      (name) => `export const ${name} = dynamic(() => import('./${name}'), { ssr: false })`,
+    )
+    // const importStatements = components.map((name) => `export { Model as ${name} } from './${name}'`)
+    const fileContent = `import dynamic from 'next/dynamic'\n\n${importStatements.join('\n')}`
 
     const filePath = join(modelPackPath, 'index.ts')
     await writeFile(filePath, fileContent)
