@@ -9,8 +9,8 @@ import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
-    Cone_1: THREE.Mesh
-    Cone_2: THREE.Mesh
+    ['Cone_Cone001-Mesh']: THREE.Mesh
+    ['Cone_Cone001-Mesh_1']: THREE.Mesh
   }
   materials: {
     Orange: THREE.MeshStandardMaterial
@@ -22,10 +22,8 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/public_transport_pack/TrafficCone.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={42.43}>
-        <mesh geometry={nodes.Cone_1.geometry} material={materials.Orange} />
-        <mesh geometry={nodes.Cone_2.geometry} material={materials.White} />
-      </group>
+      <mesh geometry={nodes['Cone_Cone001-Mesh'].geometry} material={materials.Orange} />
+      <mesh geometry={nodes['Cone_Cone001-Mesh_1'].geometry} material={materials.White} />
     </group>
   )
 }

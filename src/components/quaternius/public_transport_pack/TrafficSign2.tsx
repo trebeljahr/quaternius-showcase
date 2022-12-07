@@ -9,9 +9,9 @@ import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
-    TrafficSign_1: THREE.Mesh
-    TrafficSign_2: THREE.Mesh
-    TrafficSign_3: THREE.Mesh
+    ['TrafficSign_Cylinder-Mesh']: THREE.Mesh
+    ['TrafficSign_Cylinder-Mesh_1']: THREE.Mesh
+    ['TrafficSign_Cylinder-Mesh_2']: THREE.Mesh
   }
   materials: {
     Border: THREE.MeshStandardMaterial
@@ -24,11 +24,9 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/public_transport_pack/TrafficSign2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 1.23, 0.05]} scale={46.3}>
-        <mesh geometry={nodes.TrafficSign_1.geometry} material={materials.Border} />
-        <mesh geometry={nodes.TrafficSign_2.geometry} material={materials.Sign} />
-        <mesh geometry={nodes.TrafficSign_3.geometry} material={materials.Pole} />
-      </group>
+      <mesh geometry={nodes['TrafficSign_Cylinder-Mesh'].geometry} material={materials.Border} />
+      <mesh geometry={nodes['TrafficSign_Cylinder-Mesh_1'].geometry} material={materials.Sign} />
+      <mesh geometry={nodes['TrafficSign_Cylinder-Mesh_2'].geometry} material={materials.Pole} />
     </group>
   )
 }

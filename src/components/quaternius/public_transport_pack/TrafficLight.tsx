@@ -9,16 +9,16 @@ import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
-    TrafficLight_1: THREE.Mesh
-    TrafficLight_2: THREE.Mesh
-    TrafficLight_3: THREE.Mesh
-    TrafficLight_4: THREE.Mesh
+    ['TrafficLight_Cube001-Mesh']: THREE.Mesh
+    ['TrafficLight_Cube001-Mesh_1']: THREE.Mesh
+    ['TrafficLight_Cube001-Mesh_2']: THREE.Mesh
+    ['TrafficLight_Cube001-Mesh_3']: THREE.Mesh
   }
   materials: {
     TrafficLight: THREE.MeshStandardMaterial
     Green: THREE.MeshStandardMaterial
-    Red: THREE.MeshStandardMaterial
     Yellow: THREE.MeshStandardMaterial
+    Red: THREE.MeshStandardMaterial
   }
 }
 
@@ -26,12 +26,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/public_transport_pack/TrafficLight.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={[17.35, 7.26, 17.35]}>
-        <mesh geometry={nodes.TrafficLight_1.geometry} material={materials.TrafficLight} />
-        <mesh geometry={nodes.TrafficLight_2.geometry} material={materials.Green} />
-        <mesh geometry={nodes.TrafficLight_3.geometry} material={materials.Red} />
-        <mesh geometry={nodes.TrafficLight_4.geometry} material={materials.Yellow} />
-      </group>
+      <mesh geometry={nodes['TrafficLight_Cube001-Mesh'].geometry} material={materials.TrafficLight} />
+      <mesh geometry={nodes['TrafficLight_Cube001-Mesh_1'].geometry} material={materials.Green} />
+      <mesh geometry={nodes['TrafficLight_Cube001-Mesh_2'].geometry} material={materials.Yellow} />
+      <mesh geometry={nodes['TrafficLight_Cube001-Mesh_3'].geometry} material={materials.Red} />
     </group>
   )
 }

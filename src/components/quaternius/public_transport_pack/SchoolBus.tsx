@@ -9,21 +9,21 @@ import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
-    BackWheels: THREE.Mesh
-    SchoolBus_1: THREE.Mesh
-    SchoolBus_2: THREE.Mesh
-    SchoolBus_3: THREE.Mesh
-    SchoolBus_4: THREE.Mesh
-    SchoolBus_5: THREE.Mesh
-    FrontWheels: THREE.Mesh
+    BackWheels_Cylinder007: THREE.Mesh
+    ['SchoolBus_Cube001-Mesh']: THREE.Mesh
+    ['SchoolBus_Cube001-Mesh_1']: THREE.Mesh
+    ['SchoolBus_Cube001-Mesh_2']: THREE.Mesh
+    ['SchoolBus_Cube001-Mesh_3']: THREE.Mesh
+    ['SchoolBus_Cube001-Mesh_4']: THREE.Mesh
+    FrontWheels_Cylinder006: THREE.Mesh
   }
   materials: {
     Wheel: THREE.MeshStandardMaterial
     Yellow: THREE.MeshStandardMaterial
     Windows: THREE.MeshStandardMaterial
+    Details: THREE.MeshStandardMaterial
     Bumper: THREE.MeshStandardMaterial
     Lights: THREE.MeshStandardMaterial
-    Details: THREE.MeshStandardMaterial
   }
 }
 
@@ -31,27 +31,13 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/public_transport_pack/SchoolBus.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.BackWheels.geometry}
-        material={materials.Wheel}
-        position={[3.19, -0.96, -0.36]}
-        rotation={[0, Math.PI / 2, 0]}
-        scale={100}
-      />
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <mesh geometry={nodes.SchoolBus_1.geometry} material={materials.Yellow} />
-        <mesh geometry={nodes.SchoolBus_2.geometry} material={materials.Windows} />
-        <mesh geometry={nodes.SchoolBus_3.geometry} material={materials.Bumper} />
-        <mesh geometry={nodes.SchoolBus_4.geometry} material={materials.Lights} />
-        <mesh geometry={nodes.SchoolBus_5.geometry} material={materials.Details} />
-      </group>
-      <mesh
-        geometry={nodes.FrontWheels.geometry}
-        material={materials.Wheel}
-        position={[-0.37, -0.96, -0.41]}
-        rotation={[0, Math.PI / 2, 0]}
-        scale={100}
-      />
+      <mesh geometry={nodes.BackWheels_Cylinder007.geometry} material={materials.Wheel} />
+      <mesh geometry={nodes['SchoolBus_Cube001-Mesh'].geometry} material={materials.Yellow} />
+      <mesh geometry={nodes['SchoolBus_Cube001-Mesh_1'].geometry} material={materials.Windows} />
+      <mesh geometry={nodes['SchoolBus_Cube001-Mesh_2'].geometry} material={materials.Details} />
+      <mesh geometry={nodes['SchoolBus_Cube001-Mesh_3'].geometry} material={materials.Bumper} />
+      <mesh geometry={nodes['SchoolBus_Cube001-Mesh_4'].geometry} material={materials.Lights} />
+      <mesh geometry={nodes.FrontWheels_Cylinder006.geometry} material={materials.Wheel} />
     </group>
   )
 }

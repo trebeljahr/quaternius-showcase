@@ -9,9 +9,9 @@ import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
-    BackWheels: THREE.Mesh
-    Front_Wheels: THREE.Mesh
-    Taxi: THREE.Mesh
+    BackWheels_Cylinder003: THREE.Mesh
+    Front_Wheels_Cylinder001: THREE.Mesh
+    Taxi_Cube001: THREE.Mesh
   }
   materials: {
     ['Material.002']: THREE.MeshStandardMaterial
@@ -23,27 +23,9 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/public_transport_pack/Taxi.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.BackWheels.geometry}
-        material={materials['Material.002']}
-        position={[0, -0.52, -1.27]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
-      <mesh
-        geometry={nodes.Front_Wheels.geometry}
-        material={materials['Material.002']}
-        position={[0, -0.52, 1.31]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
-      <mesh
-        geometry={nodes.Taxi.geometry}
-        material={materials['Material.003']}
-        position={[0, 0.03, 0]}
-        rotation={[Math.PI / 2, 0, 0]}
-        scale={-63.08}
-      />
+      <mesh geometry={nodes.BackWheels_Cylinder003.geometry} material={materials['Material.002']} />
+      <mesh geometry={nodes.Front_Wheels_Cylinder001.geometry} material={materials['Material.002']} />
+      <mesh geometry={nodes.Taxi_Cube001.geometry} material={materials['Material.003']} />
     </group>
   )
 }

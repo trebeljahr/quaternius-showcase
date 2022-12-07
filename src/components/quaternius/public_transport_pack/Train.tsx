@@ -9,16 +9,16 @@ import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
-    Train_1: THREE.Mesh
-    Train_2: THREE.Mesh
-    Train_3: THREE.Mesh
-    Train_4: THREE.Mesh
+    ['Train_Cube001-Mesh']: THREE.Mesh
+    ['Train_Cube001-Mesh_1']: THREE.Mesh
+    ['Train_Cube001-Mesh_2']: THREE.Mesh
+    ['Train_Cube001-Mesh_3']: THREE.Mesh
   }
   materials: {
     Outside: THREE.MeshStandardMaterial
-    Black: THREE.MeshStandardMaterial
-    Windows: THREE.MeshStandardMaterial
     Top: THREE.MeshStandardMaterial
+    Windows: THREE.MeshStandardMaterial
+    Black: THREE.MeshStandardMaterial
   }
 }
 
@@ -26,12 +26,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/public_transport_pack/Train.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 0.08, -1.52]} rotation={[-Math.PI / 2, 0, 0]} scale={130.25}>
-        <mesh geometry={nodes.Train_1.geometry} material={materials.Outside} />
-        <mesh geometry={nodes.Train_2.geometry} material={materials.Black} />
-        <mesh geometry={nodes.Train_3.geometry} material={materials.Windows} />
-        <mesh geometry={nodes.Train_4.geometry} material={materials.Top} />
-      </group>
+      <mesh geometry={nodes['Train_Cube001-Mesh'].geometry} material={materials.Outside} />
+      <mesh geometry={nodes['Train_Cube001-Mesh_1'].geometry} material={materials.Top} />
+      <mesh geometry={nodes['Train_Cube001-Mesh_2'].geometry} material={materials.Windows} />
+      <mesh geometry={nodes['Train_Cube001-Mesh_3'].geometry} material={materials.Black} />
     </group>
   )
 }

@@ -9,8 +9,8 @@ import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
-    TrafficSign_1: THREE.Mesh
-    TrafficSign_2: THREE.Mesh
+    ['TrafficSign_Cylinder002-Mesh']: THREE.Mesh
+    ['TrafficSign_Cylinder002-Mesh_1']: THREE.Mesh
   }
   materials: {
     Border: THREE.MeshStandardMaterial
@@ -22,10 +22,8 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/public_transport_pack/TrafficSign1.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group position={[0.02, 0, 0]} rotation={[-Math.PI / 2, 0, -Math.PI / 2]} scale={3.25}>
-        <mesh geometry={nodes.TrafficSign_1.geometry} material={materials.Border} />
-        <mesh geometry={nodes.TrafficSign_2.geometry} material={materials.Sign} />
-      </group>
+      <mesh geometry={nodes['TrafficSign_Cylinder002-Mesh'].geometry} material={materials.Border} />
+      <mesh geometry={nodes['TrafficSign_Cylinder002-Mesh_1'].geometry} material={materials.Sign} />
     </group>
   )
 }

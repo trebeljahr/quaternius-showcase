@@ -9,12 +9,12 @@ import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
-    Handle_1: THREE.Mesh
-    Handle_2: THREE.Mesh
-    FrontWheel: THREE.Mesh
-    Saddle: THREE.Mesh
-    Frame: THREE.Mesh
-    BackWheel: THREE.Mesh
+    ['Handle_Cube000-Mesh']: THREE.Mesh
+    ['Handle_Cube000-Mesh_1']: THREE.Mesh
+    FrontWheel_Cylinder002: THREE.Mesh
+    Saddle_Cube007: THREE.Mesh
+    Frame_Cube005: THREE.Mesh
+    BackWheel_Cylinder001: THREE.Mesh
   }
   materials: {
     Bike: THREE.MeshStandardMaterial
@@ -28,38 +28,12 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/public_transport_pack/Bicycle.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 1.23, -1.3]} rotation={[-1.36, 0, 0]} scale={5.5}>
-        <mesh geometry={nodes.Handle_1.geometry} material={materials.Bike} />
-        <mesh geometry={nodes.Handle_2.geometry} material={materials.Handle} />
-      </group>
-      <mesh
-        geometry={nodes.FrontWheel.geometry}
-        material={materials.Wheel}
-        position={[0, 0, -1.68]}
-        rotation={[-Math.PI / 2, Math.PI / 2, 0]}
-        scale={12.87}
-      />
-      <mesh
-        geometry={nodes.Saddle.geometry}
-        material={materials['Material.003']}
-        position={[0, 1.84, 1.4]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={14.94}
-      />
-      <mesh
-        geometry={nodes.Frame.geometry}
-        material={materials.Bike}
-        position={[0, 0.66, 1.15]}
-        rotation={[-1.36, 0, 0]}
-        scale={5.5}
-      />
-      <mesh
-        geometry={nodes.BackWheel.geometry}
-        material={materials.Wheel}
-        position={[0, 0, 2.25]}
-        rotation={[-Math.PI / 2, Math.PI / 2, 0]}
-        scale={12.87}
-      />
+      <mesh geometry={nodes['Handle_Cube000-Mesh'].geometry} material={materials.Bike} />
+      <mesh geometry={nodes['Handle_Cube000-Mesh_1'].geometry} material={materials.Handle} />
+      <mesh geometry={nodes.FrontWheel_Cylinder002.geometry} material={materials.Wheel} />
+      <mesh geometry={nodes.Saddle_Cube007.geometry} material={materials['Material.003']} />
+      <mesh geometry={nodes.Frame_Cube005.geometry} material={materials.Bike} />
+      <mesh geometry={nodes.BackWheel_Cylinder001.geometry} material={materials.Wheel} />
     </group>
   )
 }
