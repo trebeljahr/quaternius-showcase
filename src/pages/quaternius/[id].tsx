@@ -83,10 +83,15 @@ function CanvasComponent({ id }: { id: Ids }) {
 
     window.addEventListener('keydown', handleKeyDown)
 
-    // window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight' }))
-
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [components.length])
+
+  useEffect(() => {
+    components.forEach((component) => {
+      // @ts-ignore: next-line
+      component.render.preload()
+    })
+  }, [components])
 
   const Model = components[state]
   return (
