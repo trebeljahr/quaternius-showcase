@@ -11,8 +11,9 @@ export default function App({ Component, pageProps = { title: 'index' } }) {
   return (
     <>
       <Header title={pageProps.title} />
+      <Component {...pageProps} />
+
       <Layout ref={ref}>
-        <Component {...pageProps} />
         {Component?.canvas && (
           <Scene className='pointer-events-none' eventSource={ref} eventPrefix='client'>
             {Component.canvas(pageProps)}

@@ -3,10 +3,34 @@ import { OrbitControls, Stage } from '@react-three/drei'
 import { readdir } from 'fs/promises'
 import { GetStaticPropsContext } from 'next'
 import { join } from 'path'
-import { useEffect, useState } from 'react'
+import { ComponentType, Suspense, useEffect, useState } from 'react'
+import Link from 'next/link'
+import { GroupProps } from '@react-three/fiber'
 
 export default function Page() {
-  return <></>
+  const [open, setOpen] = useState(true)
+  const toggleOpen = () => {
+    setOpen(!open)
+  }
+  return (
+    <>
+      <div
+        style={{ width: 'fit-content', height: '100vw', overflow: 'hidden', overflowY: 'auto' }}
+        className='absolute top-0 left-0 z-20 bg-zinc-900 text-gray-50'>
+        <button onClick={toggleOpen}>{open ? '<' : '>'}</button>
+        {open &&
+          Object.keys(AllModels).map((pack_name) => {
+            return (
+              <div key={pack_name}>
+                <Link href={`/quaternius/${pack_name}`} as={`/quaternius/${pack_name}`}>
+                  {pack_name}
+                </Link>
+              </div>
+            )
+          })}
+      </div>
+    </>
+  )
 }
 
 type Ids = keyof typeof AllModels
@@ -14,6 +38,7 @@ type Ids = keyof typeof AllModels
 
 function CanvasComponent(props: { id: Ids }) {
   const [state, setState] = useState(0)
+  const [Model, setModel] = useState<ComponentType<GroupProps> | null>(null)
   const { id } = props
   const selectedPack = AllModels[id]
 
@@ -24,6 +49,7 @@ function CanvasComponent(props: { id: Ids }) {
   })
 
   useEffect(() => {
+    setState(0)
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'ArrowRight') {
         setState((old) => {
@@ -44,20 +70,23 @@ function CanvasComponent(props: { id: Ids }) {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [components.length])
 
-  const Model = components[state]
+  useEffect(() => {
+    setModel(components[state])
+  }, [state, components])
+
+  console.log(Model)
+
   return (
     <>
-      <Stage
-        intensity={0.5}
-        preset='rembrandt'
-        // @ts-ignore: next-line
-        shadows={{ type: 'accumulative', color: 'skyblue', colorBlend: 2, opacity: 2 }}
-        // @ts-ignore: next-line
-        adjustCamera={1.75}
-        environment='city'>
-        <Model />
+      <Stage intensity={0.5} preset='rembrandt' shadows={true} environment='city'>
+        {Model && (
+          <Suspense>
+            <Model />
+          </Suspense>
+        )}
       </Stage>
       <OrbitControls makeDefault />
+      <color attach='background' args={['#f5efe6']} />
     </>
   )
 }
