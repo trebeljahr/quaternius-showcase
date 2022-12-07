@@ -19,8 +19,6 @@ type GLTFResult = GLTF & {
   materials: {
     DarkWood: THREE.MeshStandardMaterial
     LightWood: THREE.MeshStandardMaterial
-    DarkWood: THREE.MeshStandardMaterial
-    LightWood: THREE.MeshStandardMaterial
   }
 }
 

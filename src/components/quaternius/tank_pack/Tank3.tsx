@@ -24,10 +24,7 @@ type GLTFResult = GLTF & {
     Main_Light: THREE.MeshStandardMaterial
     Main_Dark: THREE.MeshStandardMaterial
     Main: THREE.MeshStandardMaterial
-    Main_Dark: THREE.MeshStandardMaterial
-    Main_Details: THREE.MeshStandardMaterial
     Wheels: THREE.MeshStandardMaterial
-    Main: THREE.MeshStandardMaterial
     Main_Details: THREE.MeshStandardMaterial
   }
   animations: GLTFAction[]

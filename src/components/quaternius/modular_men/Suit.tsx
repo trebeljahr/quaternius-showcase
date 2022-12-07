@@ -22,7 +22,6 @@ type GLTFResult = GLTF & {
     Root: THREE.Bone
   }
   materials: {
-    Suit: THREE.MeshStandardMaterial
     White: THREE.MeshStandardMaterial
     Tie: THREE.MeshStandardMaterial
     Skin: THREE.MeshStandardMaterial

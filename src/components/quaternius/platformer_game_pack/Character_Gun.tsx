@@ -27,10 +27,7 @@ type GLTFResult = GLTF & {
     Root: THREE.Bone
   }
   materials: {
-    White: THREE.MeshStandardMaterial
-    Black: THREE.MeshStandardMaterial
     Gun_Grey: THREE.MeshStandardMaterial
-    Main: THREE.MeshStandardMaterial
     Main: THREE.MeshStandardMaterial
     Main_Light: THREE.MeshStandardMaterial
     Main2: THREE.MeshStandardMaterial

@@ -168,7 +168,6 @@ type GLTFResult = GLTF & {
     Hair: THREE.MeshStandardMaterial
     Visor: THREE.MeshStandardMaterial
     White: THREE.MeshStandardMaterial
-    LightBlue: THREE.MeshStandardMaterial
     Beige: THREE.MeshStandardMaterial
     Red: THREE.MeshStandardMaterial
     Worker_Yellow: THREE.MeshStandardMaterial
@@ -190,7 +189,6 @@ type GLTFResult = GLTF & {
     Skin_Darker: THREE.MeshStandardMaterial
     Purple: THREE.MeshStandardMaterial
     LightBlue: THREE.MeshStandardMaterial
-    Suit: THREE.MeshStandardMaterial
     Suit: THREE.MeshStandardMaterial
     Tie: THREE.MeshStandardMaterial
   }

@@ -58,18 +58,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
           <group name='CharacterArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Root} />
           </group>
-          <directionalLight
-            name='Sun001'
-            intensity={4.3}
-            decay={2}
-            position={[1.57, 0.75, -0.56]}
-            rotation={[0, -Math.PI / 4, -Math.PI / 4]}
-            scale={100}>
-            <group position={[0, 0, -1]} />
-          </directionalLight>
-          <directionalLight name='Sun' intensity={1} decay={2} position={[1.47, 0.8, -0.54]} scale={100}>
-            <group position={[0, 0, -1]} />
-          </directionalLight>
+
           <group name='Sphere001' position={[0, 0.47, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <skinnedMesh
               name='Sphere001_1'

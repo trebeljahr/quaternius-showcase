@@ -142,18 +142,13 @@ type GLTFResult = GLTF & {
   }
   materials: {
     Metal: THREE.MeshStandardMaterial
-    Brown2: THREE.MeshStandardMaterial
     Metal_Dark: THREE.MeshStandardMaterial
-    DarkBrown: THREE.MeshStandardMaterial
-    Grey: THREE.MeshStandardMaterial
-    Black: THREE.MeshStandardMaterial
     Black: THREE.MeshStandardMaterial
     Swat: THREE.MeshStandardMaterial
     Skin: THREE.MeshStandardMaterial
     Worker_Vest: THREE.MeshStandardMaterial
     Worker_Yellow: THREE.MeshStandardMaterial
     White: THREE.MeshStandardMaterial
-    Metal: THREE.MeshStandardMaterial
     LightBlue: THREE.MeshStandardMaterial
     Blue: THREE.MeshStandardMaterial
     Pink: THREE.MeshStandardMaterial
