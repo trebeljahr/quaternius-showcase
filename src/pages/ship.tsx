@@ -1,6 +1,6 @@
 import { FlyingPlayer } from '@/components/canvas/FlyingPlayer'
 import { Ocean } from '@/components/canvas/Ocean'
-import { PointerLockControls } from '@react-three/drei'
+import { PointerLockControls, Sky } from '@react-three/drei'
 import { Physics } from '@react-three/rapier'
 import dynamic from 'next/dynamic'
 
@@ -12,6 +12,7 @@ export default function Page() {
 
 Page.canvas = () => (
   <>
+    <Sky azimuth={1} inclination={0.6} distance={1000} />
     <Physics>
       <FlyingPlayer />
     </Physics>

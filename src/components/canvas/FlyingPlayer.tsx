@@ -3,9 +3,8 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { useKeyboardControls } from '@react-three/drei'
 import { PropsWithChildren, useRef } from 'react'
 import { RigidBody, RigidBodyApi } from '@react-three/rapier'
-import { PointerLockControls } from '@react-three/drei'
 
-const SPEED = 5
+const SPEED = 20
 const direction = new Vector3()
 const frontVector = new Vector3()
 const sideVector = new Vector3()

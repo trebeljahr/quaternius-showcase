@@ -5,7 +5,7 @@ import * as AllModels from '../quaternius'
 import { FlyingPlayer } from './FlyingPlayer'
 import { Plane } from './ThirdPersonDemo'
 import { useControls } from 'leva'
-import { PointerLockControls } from '@react-three/drei'
+import { PointerLockControls, Sky } from '@react-three/drei'
 import { useEffect } from 'react'
 
 export default function QuaterniusShowcase() {
@@ -25,6 +25,8 @@ export default function QuaterniusShowcase() {
   // console.log(Object.keys())
   return (
     <>
+      <Sky azimuth={1} inclination={0.6} distance={1000} />
+
       <Physics>
         <FlyingPlayer />
       </Physics>

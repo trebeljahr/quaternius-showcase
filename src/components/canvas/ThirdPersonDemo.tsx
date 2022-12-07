@@ -1,14 +1,9 @@
-import { PointerLockControls } from '@react-three/drei'
+import { PointerLockControls, Sky } from '@react-three/drei'
 import { Physics } from '@react-three/rapier'
-import { useRef } from 'react'
-import { DoubleSide, Group, Vector3 } from 'three'
-import { BirchTree } from './BirchTree_5'
+import { DoubleSide, Vector3 } from 'three'
+import { BirchTree_1 } from '../quaternius/nature_pack'
 import { PlayerController } from './PlayerController'
 import { Trex } from './Trex'
-
-// function getRandomArbitrary(min: number, max: number) {
-//     return Math.random() * (max - min) + min;
-// }
 
 function random(min: number, max: number) {
   min = Math.ceil(min)
@@ -22,7 +17,7 @@ export function Trees() {
     <>
       {positions.map((pos, index) => {
         console.log(pos)
-        return <BirchTree key={index} position={pos} scale={new Vector3(5, 5, 5)} />
+        return <BirchTree_1 key={index} position={pos} scale={new Vector3(5, 5, 5)} />
       })}
     </>
   )
@@ -39,9 +34,11 @@ export function Plane() {
 export default function ThirdPersonDemo() {
   return (
     <>
+      <Sky azimuth={1} inclination={0.6} distance={1000} />
+
       <Physics>
         <PlayerController>
-          <Trex />
+          <Trex withAnimations={true} />
         </PlayerController>
         <Trees />
         <Plane />

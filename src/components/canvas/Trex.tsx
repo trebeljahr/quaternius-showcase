@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useGLTF, useAnimations, useKeyboardControls } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useFrame, useThree } from '@react-three/fiber'
-import { AnimationAction, AnimationClip, AnimationMixer, LoopOnce, Object3D } from 'three'
+import { AnimationAction, AnimationClip, AnimationMixer, LoopOnce, Object3D, Vector3 } from 'three'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -61,7 +61,7 @@ export function FollowingTrex() {
   })
 
   return (
-    <group ref={group}>
+    <group position={new Vector3(0, 0, -30)} ref={group}>
       <Trex />
     </group>
   )
@@ -77,7 +77,6 @@ function usePrevious<T>(value: T) {
 
 function AnimationController({ actions }: { actions: PossibleActions }) {
   const [state, setState] = useState<ActionName>('Armature|TRex_Idle')
-  const previousState = usePrevious(state)
 
   const [subscribe] = useKeyboardControls()
 
@@ -116,15 +115,15 @@ function AnimationController({ actions }: { actions: PossibleActions }) {
   return null
 }
 
-export function Trex(props: JSX.IntrinsicElements['group']) {
+export function Trex(props: JSX.IntrinsicElements['group'] & { withAnimations?: boolean }) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/Trex.glb') as unknown as GLTFResult
-
+  const { withAnimations = false } = props
   const { actions } = useAnimations(animations, group)
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <AnimationController actions={actions} />
+      {withAnimations && <AnimationController actions={actions} />}{' '}
       <group name='Armature' rotation={[-Math.PI / 2, 0, 0.05]} scale={300}>
         <primitive object={nodes.root} />
       </group>

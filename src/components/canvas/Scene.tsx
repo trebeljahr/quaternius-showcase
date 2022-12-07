@@ -14,7 +14,6 @@ export default function Scene({ children, ...props }) {
         { name: 'attack', keys: ['F', 'f'] },
       ]}>
       <Canvas {...props}>
-        {/* <Sky azimuth={1} inclination={0.6} distance={1000} /> */}
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         {children}

@@ -2,11 +2,14 @@ import { Ocean } from './Ocean'
 import { Physics } from '@react-three/rapier'
 import { FlyingPlayer } from './FlyingPlayer'
 import { FollowingTrex } from './Trex'
-import { PointerLockControls } from '@react-three/drei'
+import { PointerLockControls, Sky } from '@react-three/drei'
+import { Plane, Trees } from './ThirdPersonDemo'
 
 export default function FreeMovement() {
   return (
     <>
+      <Sky azimuth={1} inclination={0.6} distance={1000} />
+
       <Physics>
         <FlyingPlayer />
       </Physics>
@@ -14,7 +17,8 @@ export default function FreeMovement() {
 
       <FollowingTrex />
 
-      <Ocean />
+      <Trees />
+      <Plane />
     </>
   )
 }
