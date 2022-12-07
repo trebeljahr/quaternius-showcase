@@ -15,55 +15,25 @@ type GLTFResult = GLTF & {
     FootR: THREE.Bone
   }
   materials: {
-    Leela_Texture: THREE.MeshStandardMaterial
+    Leela_Texture: THREE.MeshBasicMaterial
   }
-  animations: GLTFAction[]
 }
 
-type ActionName =
-  | 'RobotArmature|Dance'
-  | 'RobotArmature|Death'
-  | 'RobotArmature|Hello'
-  | 'RobotArmature|HitRecieve_1'
-  | 'RobotArmature|HitRecieve_2'
-  | 'RobotArmature|Idle'
-  | 'RobotArmature|Jump'
-  | 'RobotArmature|Kick'
-  | 'RobotArmature|No'
-  | 'RobotArmature|Pickup'
-  | 'RobotArmature|Punch'
-  | 'RobotArmature|Run'
-  | 'RobotArmature|Run_Tall'
-  | 'RobotArmature|Shoot'
-  | 'RobotArmature|SwordSlash'
-  | 'RobotArmature|Walk'
-  | 'RobotArmature|Walk_Tall'
-  | 'RobotArmature|Yes'
-interface GLTFAction extends THREE.AnimationClip {
-  name: ActionName
-}
+type ActionName = 'Dance' | 'Death' | 'Hello' | 'HitRecieve_1' | 'HitRecieve_2' | 'Idle' | 'Jump' | 'Kick' | 'No' | 'Pickup' | 'Punch' | 'Run' | 'Run_Tall' | 'Shoot' | 'SwordSlash' | 'Walk' | 'Walk_Tall' | 'Yes'
+type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 export default function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/glb/mech_pack/Leela.glb') as unknown as GLTFResult
-  const { actions } = useAnimations(animations, group)
+  const { actions } = useAnimations<GLTFActions>(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name='Root_Scene'>
-        <group name='RootNode'>
-          <group name='RobotArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <primitive object={nodes.Body} />
-            <primitive object={nodes.FootL} />
-            <primitive object={nodes.FootR} />
-          </group>
-          <skinnedMesh
-            name='Leela'
-            geometry={nodes.Leela.geometry}
-            material={materials.Leela_Texture}
-            skeleton={nodes.Leela.skeleton}
-            rotation={[-Math.PI / 2, 0, 0]}
-            scale={100}
-          />
+      <group name="Scene">
+        <group name="RobotArmature">
+          <primitive object={nodes.Body} />
+          <primitive object={nodes.FootL} />
+          <primitive object={nodes.FootR} />
+          <skinnedMesh name="Leela" geometry={nodes.Leela.geometry} material={materials.Leela_Texture} skeleton={nodes.Leela.skeleton} />
         </group>
       </group>
     </group>
