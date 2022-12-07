@@ -12,7 +12,7 @@ type GLTFResult = GLTF & {
     Grass_Large: THREE.Mesh
   }
   materials: {
-    DefaultMaterial: THREE.MeshStandardMaterial
+    ['default']: THREE.MeshStandardMaterial
   }
 }
 
@@ -20,12 +20,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/stylized_nature_pack/Grass_Large.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.Grass_Large.geometry}
-        material={materials.DefaultMaterial}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
+      <mesh geometry={nodes.Grass_Large.geometry} material={materials['default']} />
     </group>
   )
 }

@@ -25,4 +25,4 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Bob.glb')
+useGLTF.preload('/glb/spaceships_pack/Bob.glb')

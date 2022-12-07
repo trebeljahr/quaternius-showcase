@@ -25,4 +25,4 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Dispatcher.glb')
+useGLTF.preload('/glb/spaceships_pack/Dispatcher.glb')

@@ -9,8 +9,8 @@ import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
-    PalmTree_1_1: THREE.Mesh
-    PalmTree_1_2: THREE.Mesh
+    Cube003: THREE.Mesh
+    Cube003_1: THREE.Mesh
   }
   materials: {
     PalmTree_Trunk: THREE.MeshStandardMaterial
@@ -22,10 +22,8 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/stylized_nature_pack/PalmTree_1.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-        <mesh geometry={nodes.PalmTree_1_1.geometry} material={materials.PalmTree_Trunk} />
-        <mesh geometry={nodes.PalmTree_1_2.geometry} material={materials.PalmTree_Leaves} />
-      </group>
+      <mesh geometry={nodes.Cube003.geometry} material={materials.PalmTree_Trunk} />
+      <mesh geometry={nodes.Cube003_1.geometry} material={materials.PalmTree_Leaves} />
     </group>
   )
 }

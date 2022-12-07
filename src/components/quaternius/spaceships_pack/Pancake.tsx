@@ -25,4 +25,4 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Pancake.glb')
+useGLTF.preload('/glb/spaceships_pack/Pancake.glb')

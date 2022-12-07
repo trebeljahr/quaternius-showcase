@@ -12,7 +12,7 @@ type GLTFResult = GLTF & {
     Flower_5_Clump: THREE.Mesh
   }
   materials: {
-    Flowers: THREE.MeshStandardMaterial
+    ['default']: THREE.MeshStandardMaterial
   }
 }
 
@@ -20,12 +20,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/stylized_nature_pack/Flower_5_Clump.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.Flower_5_Clump.geometry}
-        material={materials.Flowers}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
+      <mesh geometry={nodes.Flower_5_Clump.geometry} material={materials['default']} />
     </group>
   )
 }
