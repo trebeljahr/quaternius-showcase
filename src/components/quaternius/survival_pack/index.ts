@@ -1,53 +1,55 @@
-export { Model as Axe } from './Axe'
-export { Model as Axe_Small } from './Axe_Small'
-export { Model as Backpack } from './Backpack'
-export { Model as Bandages } from './Bandages'
-export { Model as Battery_Big } from './Battery_Big'
-export { Model as Battery_Small } from './Battery_Small'
-export { Model as BearTrap_Closed } from './BearTrap_Closed'
-export { Model as BearTrap_Open } from './BearTrap_Open'
-export { Model as Bonfire } from './Bonfire'
-export { Model as Bonfire_Fire } from './Bonfire_Fire'
-export { Model as Can_Broken } from './Can_Broken'
-export { Model as Can_Closed } from './Can_Closed'
-export { Model as Can_Open } from './Can_Open'
-export { Model as Can_Red } from './Can_Red'
-export { Model as Compass_Closed } from './Compass_Closed'
-export { Model as Compass_Open } from './Compass_Open'
-export { Model as FirstAidKit } from './FirstAidKit'
-export { Model as FirstAidKit_Hard } from './FirstAidKit_Hard'
-export { Model as FlareGun } from './FlareGun'
-export { Model as GasCan } from './GasCan'
-export { Model as Knife } from './Knife'
-export { Model as Match } from './Match'
-export { Model as Match_Burnt } from './Match_Burnt'
-export { Model as Match_Fire } from './Match_Fire'
-export { Model as Matchbox } from './Matchbox'
-export { Model as Pan } from './Pan'
-export { Model as Pan_Small } from './Pan_Small'
-export { Model as Phone } from './Phone'
-export { Model as Pistol_1 } from './Pistol_1'
-export { Model as Pistol_2 } from './Pistol_2'
-export { Model as Pot } from './Pot'
-export { Model as Pot_Small } from './Pot_Small'
-export { Model as PropaneTank } from './PropaneTank'
-export { Model as Radio } from './Radio'
-export { Model as Raft } from './Raft'
-export { Model as Raft_Paddle } from './Raft_Paddle'
-export { Model as Revolver_1 } from './Revolver_1'
-export { Model as Revolver_2 } from './Revolver_2'
-export { Model as Revolver_3 } from './Revolver_3'
-export { Model as Shotgun_1 } from './Shotgun_1'
-export { Model as Shotgun_2 } from './Shotgun_2'
-export { Model as Shotgun_SawedOff } from './Shotgun_SawedOff'
-export { Model as Shotgun_ShortStock } from './Shotgun_ShortStock'
-export { Model as Shovel } from './Shovel'
-export { Model as Tent } from './Tent'
-export { Model as Torch } from './Torch'
-export { Model as Trashcan } from './Trashcan'
-export { Model as WaterBottle_1 } from './WaterBottle_1'
-export { Model as WaterBottle_2 } from './WaterBottle_2'
-export { Model as WaterBottle_3 } from './WaterBottle_3'
-export { Model as WoodLog } from './WoodLog'
-export { Model as WoodenTorch } from './WoodenTorch'
-export { Model as WoodenTorch_Fire } from './WoodenTorch_Fire'
+import dynamic from 'next/dynamic'
+
+export const Axe = dynamic(() => import('./Axe'), { ssr: false })
+export const Axe_Small = dynamic(() => import('./Axe_Small'), { ssr: false })
+export const Backpack = dynamic(() => import('./Backpack'), { ssr: false })
+export const Bandages = dynamic(() => import('./Bandages'), { ssr: false })
+export const Battery_Big = dynamic(() => import('./Battery_Big'), { ssr: false })
+export const Battery_Small = dynamic(() => import('./Battery_Small'), { ssr: false })
+export const BearTrap_Closed = dynamic(() => import('./BearTrap_Closed'), { ssr: false })
+export const BearTrap_Open = dynamic(() => import('./BearTrap_Open'), { ssr: false })
+export const Bonfire = dynamic(() => import('./Bonfire'), { ssr: false })
+export const Bonfire_Fire = dynamic(() => import('./Bonfire_Fire'), { ssr: false })
+export const Can_Broken = dynamic(() => import('./Can_Broken'), { ssr: false })
+export const Can_Closed = dynamic(() => import('./Can_Closed'), { ssr: false })
+export const Can_Open = dynamic(() => import('./Can_Open'), { ssr: false })
+export const Can_Red = dynamic(() => import('./Can_Red'), { ssr: false })
+export const Compass_Closed = dynamic(() => import('./Compass_Closed'), { ssr: false })
+export const Compass_Open = dynamic(() => import('./Compass_Open'), { ssr: false })
+export const FirstAidKit = dynamic(() => import('./FirstAidKit'), { ssr: false })
+export const FirstAidKit_Hard = dynamic(() => import('./FirstAidKit_Hard'), { ssr: false })
+export const FlareGun = dynamic(() => import('./FlareGun'), { ssr: false })
+export const GasCan = dynamic(() => import('./GasCan'), { ssr: false })
+export const Knife = dynamic(() => import('./Knife'), { ssr: false })
+export const Match = dynamic(() => import('./Match'), { ssr: false })
+export const Match_Burnt = dynamic(() => import('./Match_Burnt'), { ssr: false })
+export const Match_Fire = dynamic(() => import('./Match_Fire'), { ssr: false })
+export const Matchbox = dynamic(() => import('./Matchbox'), { ssr: false })
+export const Pan = dynamic(() => import('./Pan'), { ssr: false })
+export const Pan_Small = dynamic(() => import('./Pan_Small'), { ssr: false })
+export const Phone = dynamic(() => import('./Phone'), { ssr: false })
+export const Pistol_1 = dynamic(() => import('./Pistol_1'), { ssr: false })
+export const Pistol_2 = dynamic(() => import('./Pistol_2'), { ssr: false })
+export const Pot = dynamic(() => import('./Pot'), { ssr: false })
+export const Pot_Small = dynamic(() => import('./Pot_Small'), { ssr: false })
+export const PropaneTank = dynamic(() => import('./PropaneTank'), { ssr: false })
+export const Radio = dynamic(() => import('./Radio'), { ssr: false })
+export const Raft = dynamic(() => import('./Raft'), { ssr: false })
+export const Raft_Paddle = dynamic(() => import('./Raft_Paddle'), { ssr: false })
+export const Revolver_1 = dynamic(() => import('./Revolver_1'), { ssr: false })
+export const Revolver_2 = dynamic(() => import('./Revolver_2'), { ssr: false })
+export const Revolver_3 = dynamic(() => import('./Revolver_3'), { ssr: false })
+export const Shotgun_1 = dynamic(() => import('./Shotgun_1'), { ssr: false })
+export const Shotgun_2 = dynamic(() => import('./Shotgun_2'), { ssr: false })
+export const Shotgun_SawedOff = dynamic(() => import('./Shotgun_SawedOff'), { ssr: false })
+export const Shotgun_ShortStock = dynamic(() => import('./Shotgun_ShortStock'), { ssr: false })
+export const Shovel = dynamic(() => import('./Shovel'), { ssr: false })
+export const Tent = dynamic(() => import('./Tent'), { ssr: false })
+export const Torch = dynamic(() => import('./Torch'), { ssr: false })
+export const Trashcan = dynamic(() => import('./Trashcan'), { ssr: false })
+export const WaterBottle_1 = dynamic(() => import('./WaterBottle_1'), { ssr: false })
+export const WaterBottle_2 = dynamic(() => import('./WaterBottle_2'), { ssr: false })
+export const WaterBottle_3 = dynamic(() => import('./WaterBottle_3'), { ssr: false })
+export const WoodLog = dynamic(() => import('./WoodLog'), { ssr: false })
+export const WoodenTorch = dynamic(() => import('./WoodenTorch'), { ssr: false })
+export const WoodenTorch_Fire = dynamic(() => import('./WoodenTorch_Fire'), { ssr: false })

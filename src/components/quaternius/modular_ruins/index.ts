@@ -1,92 +1,94 @@
-export { Model as Arch_Gothic } from './Arch_Gothic'
-export { Model as Arch_Gothic_RoundColumn } from './Arch_Gothic_RoundColumn'
-export { Model as Arch_Round } from './Arch_Round'
-export { Model as Arch_Round_RoundColumn } from './Arch_Round_RoundColumn'
-export { Model as Barrel } from './Barrel'
-export { Model as BearTrap_Closed } from './BearTrap_Closed'
-export { Model as BearTrap_Open } from './BearTrap_Open'
-export { Model as Bookcase_Empty } from './Bookcase_Empty'
-export { Model as Bookcase_Full } from './Bookcase_Full'
-export { Model as Brick } from './Brick'
-export { Model as Bricks } from './Bricks'
-export { Model as BridgeSection } from './BridgeSection'
-export { Model as Bush_1x1 } from './Bush_1x1'
-export { Model as Bush_2x1 } from './Bush_2x1'
-export { Model as Bush_2x2 } from './Bush_2x2'
-export { Model as Bush_Large } from './Bush_Large'
-export { Model as Bush_Round } from './Bush_Round'
-export { Model as Candles_1 } from './Candles_1'
-export { Model as Candles_2 } from './Candles_2'
-export { Model as Cart } from './Cart'
-export { Model as Character_Animated } from './Character_Animated'
-export { Model as Chest } from './Chest'
-export { Model as Chest_Gold } from './Chest_Gold'
-export { Model as Column_BridgeSupport } from './Column_BridgeSupport'
-export { Model as Column_Round } from './Column_Round'
-export { Model as Column_Round_Short } from './Column_Round_Short'
-export { Model as Column_Square } from './Column_Square'
-export { Model as Crate } from './Crate'
-export { Model as Curve_1 } from './Curve_1'
-export { Model as Curve_1_Overgrown } from './Curve_1_Overgrown'
-export { Model as Curve_2 } from './Curve_2'
-export { Model as Curve_2_Overgrown } from './Curve_2_Overgrown'
-export { Model as DeadTree_1 } from './DeadTree_1'
-export { Model as DeadTree_2 } from './DeadTree_2'
-export { Model as DeadTree_3 } from './DeadTree_3'
-export { Model as Doors_GothicArch } from './Doors_GothicArch'
-export { Model as Doors_GothicArch_Covered } from './Doors_GothicArch_Covered'
-export { Model as Doors_RoundArch } from './Doors_RoundArch'
-export { Model as Doors_RoundArch_Covered } from './Doors_RoundArch_Covered'
-export { Model as Flag_GothicArch } from './Flag_GothicArch'
-export { Model as Flag_RoundArch } from './Flag_RoundArch'
-export { Model as Flag_Wall } from './Flag_Wall'
-export { Model as Flag_Wall2 } from './Flag_Wall2'
-export { Model as Floor_Diamond } from './Floor_Diamond'
-export { Model as Floor_Hole_Corner } from './Floor_Hole_Corner'
-export { Model as Floor_Hole_Straight } from './Floor_Hole_Straight'
-export { Model as Floor_SquareLarge } from './Floor_SquareLarge'
-export { Model as Floor_Squares } from './Floor_Squares'
-export { Model as Floor_Standard } from './Floor_Standard'
-export { Model as Floor_Standard_Half } from './Floor_Standard_Half'
-export { Model as Floor_Tree } from './Floor_Tree'
-export { Model as Grass } from './Grass'
-export { Model as Pot1 } from './Pot1'
-export { Model as Pot1_Broken } from './Pot1_Broken'
-export { Model as Pot2 } from './Pot2'
-export { Model as Pot2_Broken } from './Pot2_Broken'
-export { Model as Pot3 } from './Pot3'
-export { Model as Pot3_Broken } from './Pot3_Broken'
-export { Model as Rail_Corner } from './Rail_Corner'
-export { Model as Rail_Divider } from './Rail_Divider'
-export { Model as Rail_Straight } from './Rail_Straight'
-export { Model as Skull } from './Skull'
-export { Model as Stairs } from './Stairs'
-export { Model as Stairs_2 } from './Stairs_2'
-export { Model as Statue_Fox } from './Statue_Fox'
-export { Model as Statue_Stag } from './Statue_Stag'
-export { Model as Support_Center } from './Support_Center'
-export { Model as Support_Left } from './Support_Left'
-export { Model as Support_Right } from './Support_Right'
-export { Model as Support_Tall } from './Support_Tall'
-export { Model as Torch } from './Torch'
-export { Model as Trapdoor } from './Trapdoor'
-export { Model as Tree_1 } from './Tree_1'
-export { Model as Tree_2 } from './Tree_2'
-export { Model as Tree_3 } from './Tree_3'
-export { Model as Wall } from './Wall'
-export { Model as Wall_ArchGothic } from './Wall_ArchGothic'
-export { Model as Wall_ArchRound } from './Wall_ArchRound'
-export { Model as Wall_ArchRound_Broken } from './Wall_ArchRound_Broken'
-export { Model as Wall_ArchRound_Overgrown } from './Wall_ArchRound_Overgrown'
-export { Model as Wall_ArchRound_Overgrown_Broken } from './Wall_ArchRound_Overgrown_Broken'
-export { Model as Wall_Broken } from './Wall_Broken'
-export { Model as Wall_Double_Broken } from './Wall_Double_Broken'
-export { Model as Wall_Double_Hole } from './Wall_Double_Hole'
-export { Model as Wall_Half } from './Wall_Half'
-export { Model as Wall_Hole } from './Wall_Hole'
-export { Model as Wall_Overgrown } from './Wall_Overgrown'
-export { Model as Window_Bars } from './Window_Bars'
-export { Model as Window_Bars_Double_Overgrown } from './Window_Bars_Double_Overgrown'
-export { Model as Window_Bars_Overgrown } from './Window_Bars_Overgrown'
-export { Model as Window_Open } from './Window_Open'
-export { Model as Window_Open_Double } from './Window_Open_Double'
+import dynamic from 'next/dynamic'
+
+export const Arch_Gothic = dynamic(() => import('./Arch_Gothic'), { ssr: false })
+export const Arch_Gothic_RoundColumn = dynamic(() => import('./Arch_Gothic_RoundColumn'), { ssr: false })
+export const Arch_Round = dynamic(() => import('./Arch_Round'), { ssr: false })
+export const Arch_Round_RoundColumn = dynamic(() => import('./Arch_Round_RoundColumn'), { ssr: false })
+export const Barrel = dynamic(() => import('./Barrel'), { ssr: false })
+export const BearTrap_Closed = dynamic(() => import('./BearTrap_Closed'), { ssr: false })
+export const BearTrap_Open = dynamic(() => import('./BearTrap_Open'), { ssr: false })
+export const Bookcase_Empty = dynamic(() => import('./Bookcase_Empty'), { ssr: false })
+export const Bookcase_Full = dynamic(() => import('./Bookcase_Full'), { ssr: false })
+export const Brick = dynamic(() => import('./Brick'), { ssr: false })
+export const Bricks = dynamic(() => import('./Bricks'), { ssr: false })
+export const BridgeSection = dynamic(() => import('./BridgeSection'), { ssr: false })
+export const Bush_1x1 = dynamic(() => import('./Bush_1x1'), { ssr: false })
+export const Bush_2x1 = dynamic(() => import('./Bush_2x1'), { ssr: false })
+export const Bush_2x2 = dynamic(() => import('./Bush_2x2'), { ssr: false })
+export const Bush_Large = dynamic(() => import('./Bush_Large'), { ssr: false })
+export const Bush_Round = dynamic(() => import('./Bush_Round'), { ssr: false })
+export const Candles_1 = dynamic(() => import('./Candles_1'), { ssr: false })
+export const Candles_2 = dynamic(() => import('./Candles_2'), { ssr: false })
+export const Cart = dynamic(() => import('./Cart'), { ssr: false })
+export const Character_Animated = dynamic(() => import('./Character_Animated'), { ssr: false })
+export const Chest = dynamic(() => import('./Chest'), { ssr: false })
+export const Chest_Gold = dynamic(() => import('./Chest_Gold'), { ssr: false })
+export const Column_BridgeSupport = dynamic(() => import('./Column_BridgeSupport'), { ssr: false })
+export const Column_Round = dynamic(() => import('./Column_Round'), { ssr: false })
+export const Column_Round_Short = dynamic(() => import('./Column_Round_Short'), { ssr: false })
+export const Column_Square = dynamic(() => import('./Column_Square'), { ssr: false })
+export const Crate = dynamic(() => import('./Crate'), { ssr: false })
+export const Curve_1 = dynamic(() => import('./Curve_1'), { ssr: false })
+export const Curve_1_Overgrown = dynamic(() => import('./Curve_1_Overgrown'), { ssr: false })
+export const Curve_2 = dynamic(() => import('./Curve_2'), { ssr: false })
+export const Curve_2_Overgrown = dynamic(() => import('./Curve_2_Overgrown'), { ssr: false })
+export const DeadTree_1 = dynamic(() => import('./DeadTree_1'), { ssr: false })
+export const DeadTree_2 = dynamic(() => import('./DeadTree_2'), { ssr: false })
+export const DeadTree_3 = dynamic(() => import('./DeadTree_3'), { ssr: false })
+export const Doors_GothicArch = dynamic(() => import('./Doors_GothicArch'), { ssr: false })
+export const Doors_GothicArch_Covered = dynamic(() => import('./Doors_GothicArch_Covered'), { ssr: false })
+export const Doors_RoundArch = dynamic(() => import('./Doors_RoundArch'), { ssr: false })
+export const Doors_RoundArch_Covered = dynamic(() => import('./Doors_RoundArch_Covered'), { ssr: false })
+export const Flag_GothicArch = dynamic(() => import('./Flag_GothicArch'), { ssr: false })
+export const Flag_RoundArch = dynamic(() => import('./Flag_RoundArch'), { ssr: false })
+export const Flag_Wall = dynamic(() => import('./Flag_Wall'), { ssr: false })
+export const Flag_Wall2 = dynamic(() => import('./Flag_Wall2'), { ssr: false })
+export const Floor_Diamond = dynamic(() => import('./Floor_Diamond'), { ssr: false })
+export const Floor_Hole_Corner = dynamic(() => import('./Floor_Hole_Corner'), { ssr: false })
+export const Floor_Hole_Straight = dynamic(() => import('./Floor_Hole_Straight'), { ssr: false })
+export const Floor_SquareLarge = dynamic(() => import('./Floor_SquareLarge'), { ssr: false })
+export const Floor_Squares = dynamic(() => import('./Floor_Squares'), { ssr: false })
+export const Floor_Standard = dynamic(() => import('./Floor_Standard'), { ssr: false })
+export const Floor_Standard_Half = dynamic(() => import('./Floor_Standard_Half'), { ssr: false })
+export const Floor_Tree = dynamic(() => import('./Floor_Tree'), { ssr: false })
+export const Grass = dynamic(() => import('./Grass'), { ssr: false })
+export const Pot1 = dynamic(() => import('./Pot1'), { ssr: false })
+export const Pot1_Broken = dynamic(() => import('./Pot1_Broken'), { ssr: false })
+export const Pot2 = dynamic(() => import('./Pot2'), { ssr: false })
+export const Pot2_Broken = dynamic(() => import('./Pot2_Broken'), { ssr: false })
+export const Pot3 = dynamic(() => import('./Pot3'), { ssr: false })
+export const Pot3_Broken = dynamic(() => import('./Pot3_Broken'), { ssr: false })
+export const Rail_Corner = dynamic(() => import('./Rail_Corner'), { ssr: false })
+export const Rail_Divider = dynamic(() => import('./Rail_Divider'), { ssr: false })
+export const Rail_Straight = dynamic(() => import('./Rail_Straight'), { ssr: false })
+export const Skull = dynamic(() => import('./Skull'), { ssr: false })
+export const Stairs = dynamic(() => import('./Stairs'), { ssr: false })
+export const Stairs_2 = dynamic(() => import('./Stairs_2'), { ssr: false })
+export const Statue_Fox = dynamic(() => import('./Statue_Fox'), { ssr: false })
+export const Statue_Stag = dynamic(() => import('./Statue_Stag'), { ssr: false })
+export const Support_Center = dynamic(() => import('./Support_Center'), { ssr: false })
+export const Support_Left = dynamic(() => import('./Support_Left'), { ssr: false })
+export const Support_Right = dynamic(() => import('./Support_Right'), { ssr: false })
+export const Support_Tall = dynamic(() => import('./Support_Tall'), { ssr: false })
+export const Torch = dynamic(() => import('./Torch'), { ssr: false })
+export const Trapdoor = dynamic(() => import('./Trapdoor'), { ssr: false })
+export const Tree_1 = dynamic(() => import('./Tree_1'), { ssr: false })
+export const Tree_2 = dynamic(() => import('./Tree_2'), { ssr: false })
+export const Tree_3 = dynamic(() => import('./Tree_3'), { ssr: false })
+export const Wall = dynamic(() => import('./Wall'), { ssr: false })
+export const Wall_ArchGothic = dynamic(() => import('./Wall_ArchGothic'), { ssr: false })
+export const Wall_ArchRound = dynamic(() => import('./Wall_ArchRound'), { ssr: false })
+export const Wall_ArchRound_Broken = dynamic(() => import('./Wall_ArchRound_Broken'), { ssr: false })
+export const Wall_ArchRound_Overgrown = dynamic(() => import('./Wall_ArchRound_Overgrown'), { ssr: false })
+export const Wall_ArchRound_Overgrown_Broken = dynamic(() => import('./Wall_ArchRound_Overgrown_Broken'), { ssr: false })
+export const Wall_Broken = dynamic(() => import('./Wall_Broken'), { ssr: false })
+export const Wall_Double_Broken = dynamic(() => import('./Wall_Double_Broken'), { ssr: false })
+export const Wall_Double_Hole = dynamic(() => import('./Wall_Double_Hole'), { ssr: false })
+export const Wall_Half = dynamic(() => import('./Wall_Half'), { ssr: false })
+export const Wall_Hole = dynamic(() => import('./Wall_Hole'), { ssr: false })
+export const Wall_Overgrown = dynamic(() => import('./Wall_Overgrown'), { ssr: false })
+export const Window_Bars = dynamic(() => import('./Window_Bars'), { ssr: false })
+export const Window_Bars_Double_Overgrown = dynamic(() => import('./Window_Bars_Double_Overgrown'), { ssr: false })
+export const Window_Bars_Overgrown = dynamic(() => import('./Window_Bars_Overgrown'), { ssr: false })
+export const Window_Open = dynamic(() => import('./Window_Open'), { ssr: false })
+export const Window_Open_Double = dynamic(() => import('./Window_Open_Double'), { ssr: false })

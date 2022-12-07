@@ -1,123 +1,125 @@
-export { Model as Bathroom_Bathtub } from './Bathroom_Bathtub'
-export { Model as Bathroom_Mirror1 } from './Bathroom_Mirror1'
-export { Model as Bathroom_Mirror2 } from './Bathroom_Mirror2'
-export { Model as Bathroom_Shower1 } from './Bathroom_Shower1'
-export { Model as Bathroom_Sink } from './Bathroom_Sink'
-export { Model as Bathroom_Toilet } from './Bathroom_Toilet'
-export { Model as Bathroom_Toilet2 } from './Bathroom_Toilet2'
-export { Model as Bathroom_ToiletPaper } from './Bathroom_ToiletPaper'
-export { Model as Bathroom_ToiletPaperPile } from './Bathroom_ToiletPaperPile'
-export { Model as Bathroom_Towel } from './Bathroom_Towel'
-export { Model as Bathroom_WashingMachine } from './Bathroom_WashingMachine'
-export { Model as Bed_Bunk } from './Bed_Bunk'
-export { Model as Bed_King } from './Bed_King'
-export { Model as Bed_Single } from './Bed_Single'
-export { Model as Bookshelf } from './Bookshelf'
-export { Model as Carpet_1 } from './Carpet_1'
-export { Model as Carpet_2 } from './Carpet_2'
-export { Model as Carpet_Round } from './Carpet_Round'
-export { Model as Chair_1 } from './Chair_1'
-export { Model as Chair_2 } from './Chair_2'
-export { Model as Chair_3 } from './Chair_3'
-export { Model as Chair_4 } from './Chair_4'
-export { Model as Column_Round1 } from './Column_Round1'
-export { Model as Column_Round2 } from './Column_Round2'
-export { Model as Column_Round3 } from './Column_Round3'
-export { Model as Column_SquareBig } from './Column_SquareBig'
-export { Model as Column_SquareSmall } from './Column_SquareSmall'
-export { Model as Couch_L } from './Couch_L'
-export { Model as Couch_Large1 } from './Couch_Large1'
-export { Model as Couch_Large2 } from './Couch_Large2'
-export { Model as Couch_Large3 } from './Couch_Large3'
-export { Model as Couch_Medium1 } from './Couch_Medium1'
-export { Model as Couch_Medium2 } from './Couch_Medium2'
-export { Model as Couch_Small1 } from './Couch_Small1'
-export { Model as Couch_Small2 } from './Couch_Small2'
-export { Model as Curtains_Double } from './Curtains_Double'
-export { Model as Curtains_Single } from './Curtains_Single'
-export { Model as Door_1 } from './Door_1'
-export { Model as Door_2 } from './Door_2'
-export { Model as Door_3 } from './Door_3'
-export { Model as Door_4 } from './Door_4'
-export { Model as Door_5 } from './Door_5'
-export { Model as Door_6 } from './Door_6'
-export { Model as Door_7 } from './Door_7'
-export { Model as Door_8 } from './Door_8'
-export { Model as Door_9 } from './Door_9'
-export { Model as Door_Double } from './Door_Double'
-export { Model as Drawer_1 } from './Drawer_1'
-export { Model as Drawer_2 } from './Drawer_2'
-export { Model as Drawer_3 } from './Drawer_3'
-export { Model as Drawer_4 } from './Drawer_4'
-export { Model as Drawer_5 } from './Drawer_5'
-export { Model as Fireplace } from './Fireplace'
-export { Model as Fork } from './Fork'
-export { Model as Houseplant_1 } from './Houseplant_1'
-export { Model as Houseplant_2 } from './Houseplant_2'
-export { Model as Houseplant_3 } from './Houseplant_3'
-export { Model as Houseplant_4 } from './Houseplant_4'
-export { Model as Houseplant_5 } from './Houseplant_5'
-export { Model as Houseplant_6 } from './Houseplant_6'
-export { Model as Houseplant_7 } from './Houseplant_7'
-export { Model as Houseplant_8 } from './Houseplant_8'
-export { Model as Kitchen_1Drawers } from './Kitchen_1Drawers'
-export { Model as Kitchen_2Drawers } from './Kitchen_2Drawers'
-export { Model as Kitchen_3Drawers } from './Kitchen_3Drawers'
-export { Model as Kitchen_Cabinet1 } from './Kitchen_Cabinet1'
-export { Model as Kitchen_Cabinet2 } from './Kitchen_Cabinet2'
-export { Model as Kitchen_CabinetSmall } from './Kitchen_CabinetSmall'
-export { Model as Kitchen_Fridge } from './Kitchen_Fridge'
-export { Model as Kitchen_Oven } from './Kitchen_Oven'
-export { Model as Kitchen_Oven_Large } from './Kitchen_Oven_Large'
-export { Model as Kitchen_Sink } from './Kitchen_Sink'
-export { Model as Knife } from './Knife'
-export { Model as Light_Ceiling1 } from './Light_Ceiling1'
-export { Model as Light_Ceiling2 } from './Light_Ceiling2'
-export { Model as Light_Ceiling3 } from './Light_Ceiling3'
-export { Model as Light_Ceiling4 } from './Light_Ceiling4'
-export { Model as Light_Ceiling5 } from './Light_Ceiling5'
-export { Model as Light_Ceiling6 } from './Light_Ceiling6'
-export { Model as Light_CeilingSingle } from './Light_CeilingSingle'
-export { Model as Light_Chandelier } from './Light_Chandelier'
-export { Model as Light_Cube } from './Light_Cube'
-export { Model as Light_Cube2 } from './Light_Cube2'
-export { Model as Light_Desk } from './Light_Desk'
-export { Model as Light_Floor1 } from './Light_Floor1'
-export { Model as Light_Floor2 } from './Light_Floor2'
-export { Model as Light_Floor3 } from './Light_Floor3'
-export { Model as Light_Floor4 } from './Light_Floor4'
-export { Model as Light_Icosahedron } from './Light_Icosahedron'
-export { Model as Light_Icosahedron2 } from './Light_Icosahedron2'
-export { Model as Light_Small } from './Light_Small'
-export { Model as Light_Stand1 } from './Light_Stand1'
-export { Model as Light_Stand2 } from './Light_Stand2'
-export { Model as NightStand_1 } from './NightStand_1'
-export { Model as NightStand_2 } from './NightStand_2'
-export { Model as NightStand_3 } from './NightStand_3'
-export { Model as Plate_1 } from './Plate_1'
-export { Model as Plate_2 } from './Plate_2'
-export { Model as Plate_3 } from './Plate_3'
-export { Model as Shelf_1 } from './Shelf_1'
-export { Model as Shelf_2 } from './Shelf_2'
-export { Model as Shelf_Large } from './Shelf_Large'
-export { Model as Shelf_Small1 } from './Shelf_Small1'
-export { Model as Shelf_Small2 } from './Shelf_Small2'
-export { Model as Shelf_Small3 } from './Shelf_Small3'
-export { Model as Spoon } from './Spoon'
-export { Model as Stool } from './Stool'
-export { Model as Table_RoundLarge } from './Table_RoundLarge'
-export { Model as Table_RoundSmall } from './Table_RoundSmall'
-export { Model as Table_RoundSmall2 } from './Table_RoundSmall2'
-export { Model as Trashcan_Cylindric } from './Trashcan_Cylindric'
-export { Model as Trashcan_Green } from './Trashcan_Green'
-export { Model as Trashcan_Large } from './Trashcan_Large'
-export { Model as Trashcan_Small1 } from './Trashcan_Small1'
-export { Model as Trashcan_Small2 } from './Trashcan_Small2'
-export { Model as Window_Large1 } from './Window_Large1'
-export { Model as Window_Large2 } from './Window_Large2'
-export { Model as Window_Round1 } from './Window_Round1'
-export { Model as Window_Round2 } from './Window_Round2'
-export { Model as Window_Round3 } from './Window_Round3'
-export { Model as Window_Small1 } from './Window_Small1'
-export { Model as Window_Small2 } from './Window_Small2'
-export { Model as Window_Small3 } from './Window_Small3'
+import dynamic from 'next/dynamic'
+
+export const Bathroom_Bathtub = dynamic(() => import('./Bathroom_Bathtub'), { ssr: false })
+export const Bathroom_Mirror1 = dynamic(() => import('./Bathroom_Mirror1'), { ssr: false })
+export const Bathroom_Mirror2 = dynamic(() => import('./Bathroom_Mirror2'), { ssr: false })
+export const Bathroom_Shower1 = dynamic(() => import('./Bathroom_Shower1'), { ssr: false })
+export const Bathroom_Sink = dynamic(() => import('./Bathroom_Sink'), { ssr: false })
+export const Bathroom_Toilet = dynamic(() => import('./Bathroom_Toilet'), { ssr: false })
+export const Bathroom_Toilet2 = dynamic(() => import('./Bathroom_Toilet2'), { ssr: false })
+export const Bathroom_ToiletPaper = dynamic(() => import('./Bathroom_ToiletPaper'), { ssr: false })
+export const Bathroom_ToiletPaperPile = dynamic(() => import('./Bathroom_ToiletPaperPile'), { ssr: false })
+export const Bathroom_Towel = dynamic(() => import('./Bathroom_Towel'), { ssr: false })
+export const Bathroom_WashingMachine = dynamic(() => import('./Bathroom_WashingMachine'), { ssr: false })
+export const Bed_Bunk = dynamic(() => import('./Bed_Bunk'), { ssr: false })
+export const Bed_King = dynamic(() => import('./Bed_King'), { ssr: false })
+export const Bed_Single = dynamic(() => import('./Bed_Single'), { ssr: false })
+export const Bookshelf = dynamic(() => import('./Bookshelf'), { ssr: false })
+export const Carpet_1 = dynamic(() => import('./Carpet_1'), { ssr: false })
+export const Carpet_2 = dynamic(() => import('./Carpet_2'), { ssr: false })
+export const Carpet_Round = dynamic(() => import('./Carpet_Round'), { ssr: false })
+export const Chair_1 = dynamic(() => import('./Chair_1'), { ssr: false })
+export const Chair_2 = dynamic(() => import('./Chair_2'), { ssr: false })
+export const Chair_3 = dynamic(() => import('./Chair_3'), { ssr: false })
+export const Chair_4 = dynamic(() => import('./Chair_4'), { ssr: false })
+export const Column_Round1 = dynamic(() => import('./Column_Round1'), { ssr: false })
+export const Column_Round2 = dynamic(() => import('./Column_Round2'), { ssr: false })
+export const Column_Round3 = dynamic(() => import('./Column_Round3'), { ssr: false })
+export const Column_SquareBig = dynamic(() => import('./Column_SquareBig'), { ssr: false })
+export const Column_SquareSmall = dynamic(() => import('./Column_SquareSmall'), { ssr: false })
+export const Couch_L = dynamic(() => import('./Couch_L'), { ssr: false })
+export const Couch_Large1 = dynamic(() => import('./Couch_Large1'), { ssr: false })
+export const Couch_Large2 = dynamic(() => import('./Couch_Large2'), { ssr: false })
+export const Couch_Large3 = dynamic(() => import('./Couch_Large3'), { ssr: false })
+export const Couch_Medium1 = dynamic(() => import('./Couch_Medium1'), { ssr: false })
+export const Couch_Medium2 = dynamic(() => import('./Couch_Medium2'), { ssr: false })
+export const Couch_Small1 = dynamic(() => import('./Couch_Small1'), { ssr: false })
+export const Couch_Small2 = dynamic(() => import('./Couch_Small2'), { ssr: false })
+export const Curtains_Double = dynamic(() => import('./Curtains_Double'), { ssr: false })
+export const Curtains_Single = dynamic(() => import('./Curtains_Single'), { ssr: false })
+export const Door_1 = dynamic(() => import('./Door_1'), { ssr: false })
+export const Door_2 = dynamic(() => import('./Door_2'), { ssr: false })
+export const Door_3 = dynamic(() => import('./Door_3'), { ssr: false })
+export const Door_4 = dynamic(() => import('./Door_4'), { ssr: false })
+export const Door_5 = dynamic(() => import('./Door_5'), { ssr: false })
+export const Door_6 = dynamic(() => import('./Door_6'), { ssr: false })
+export const Door_7 = dynamic(() => import('./Door_7'), { ssr: false })
+export const Door_8 = dynamic(() => import('./Door_8'), { ssr: false })
+export const Door_9 = dynamic(() => import('./Door_9'), { ssr: false })
+export const Door_Double = dynamic(() => import('./Door_Double'), { ssr: false })
+export const Drawer_1 = dynamic(() => import('./Drawer_1'), { ssr: false })
+export const Drawer_2 = dynamic(() => import('./Drawer_2'), { ssr: false })
+export const Drawer_3 = dynamic(() => import('./Drawer_3'), { ssr: false })
+export const Drawer_4 = dynamic(() => import('./Drawer_4'), { ssr: false })
+export const Drawer_5 = dynamic(() => import('./Drawer_5'), { ssr: false })
+export const Fireplace = dynamic(() => import('./Fireplace'), { ssr: false })
+export const Fork = dynamic(() => import('./Fork'), { ssr: false })
+export const Houseplant_1 = dynamic(() => import('./Houseplant_1'), { ssr: false })
+export const Houseplant_2 = dynamic(() => import('./Houseplant_2'), { ssr: false })
+export const Houseplant_3 = dynamic(() => import('./Houseplant_3'), { ssr: false })
+export const Houseplant_4 = dynamic(() => import('./Houseplant_4'), { ssr: false })
+export const Houseplant_5 = dynamic(() => import('./Houseplant_5'), { ssr: false })
+export const Houseplant_6 = dynamic(() => import('./Houseplant_6'), { ssr: false })
+export const Houseplant_7 = dynamic(() => import('./Houseplant_7'), { ssr: false })
+export const Houseplant_8 = dynamic(() => import('./Houseplant_8'), { ssr: false })
+export const Kitchen_1Drawers = dynamic(() => import('./Kitchen_1Drawers'), { ssr: false })
+export const Kitchen_2Drawers = dynamic(() => import('./Kitchen_2Drawers'), { ssr: false })
+export const Kitchen_3Drawers = dynamic(() => import('./Kitchen_3Drawers'), { ssr: false })
+export const Kitchen_Cabinet1 = dynamic(() => import('./Kitchen_Cabinet1'), { ssr: false })
+export const Kitchen_Cabinet2 = dynamic(() => import('./Kitchen_Cabinet2'), { ssr: false })
+export const Kitchen_CabinetSmall = dynamic(() => import('./Kitchen_CabinetSmall'), { ssr: false })
+export const Kitchen_Fridge = dynamic(() => import('./Kitchen_Fridge'), { ssr: false })
+export const Kitchen_Oven = dynamic(() => import('./Kitchen_Oven'), { ssr: false })
+export const Kitchen_Oven_Large = dynamic(() => import('./Kitchen_Oven_Large'), { ssr: false })
+export const Kitchen_Sink = dynamic(() => import('./Kitchen_Sink'), { ssr: false })
+export const Knife = dynamic(() => import('./Knife'), { ssr: false })
+export const Light_Ceiling1 = dynamic(() => import('./Light_Ceiling1'), { ssr: false })
+export const Light_Ceiling2 = dynamic(() => import('./Light_Ceiling2'), { ssr: false })
+export const Light_Ceiling3 = dynamic(() => import('./Light_Ceiling3'), { ssr: false })
+export const Light_Ceiling4 = dynamic(() => import('./Light_Ceiling4'), { ssr: false })
+export const Light_Ceiling5 = dynamic(() => import('./Light_Ceiling5'), { ssr: false })
+export const Light_Ceiling6 = dynamic(() => import('./Light_Ceiling6'), { ssr: false })
+export const Light_CeilingSingle = dynamic(() => import('./Light_CeilingSingle'), { ssr: false })
+export const Light_Chandelier = dynamic(() => import('./Light_Chandelier'), { ssr: false })
+export const Light_Cube = dynamic(() => import('./Light_Cube'), { ssr: false })
+export const Light_Cube2 = dynamic(() => import('./Light_Cube2'), { ssr: false })
+export const Light_Desk = dynamic(() => import('./Light_Desk'), { ssr: false })
+export const Light_Floor1 = dynamic(() => import('./Light_Floor1'), { ssr: false })
+export const Light_Floor2 = dynamic(() => import('./Light_Floor2'), { ssr: false })
+export const Light_Floor3 = dynamic(() => import('./Light_Floor3'), { ssr: false })
+export const Light_Floor4 = dynamic(() => import('./Light_Floor4'), { ssr: false })
+export const Light_Icosahedron = dynamic(() => import('./Light_Icosahedron'), { ssr: false })
+export const Light_Icosahedron2 = dynamic(() => import('./Light_Icosahedron2'), { ssr: false })
+export const Light_Small = dynamic(() => import('./Light_Small'), { ssr: false })
+export const Light_Stand1 = dynamic(() => import('./Light_Stand1'), { ssr: false })
+export const Light_Stand2 = dynamic(() => import('./Light_Stand2'), { ssr: false })
+export const NightStand_1 = dynamic(() => import('./NightStand_1'), { ssr: false })
+export const NightStand_2 = dynamic(() => import('./NightStand_2'), { ssr: false })
+export const NightStand_3 = dynamic(() => import('./NightStand_3'), { ssr: false })
+export const Plate_1 = dynamic(() => import('./Plate_1'), { ssr: false })
+export const Plate_2 = dynamic(() => import('./Plate_2'), { ssr: false })
+export const Plate_3 = dynamic(() => import('./Plate_3'), { ssr: false })
+export const Shelf_1 = dynamic(() => import('./Shelf_1'), { ssr: false })
+export const Shelf_2 = dynamic(() => import('./Shelf_2'), { ssr: false })
+export const Shelf_Large = dynamic(() => import('./Shelf_Large'), { ssr: false })
+export const Shelf_Small1 = dynamic(() => import('./Shelf_Small1'), { ssr: false })
+export const Shelf_Small2 = dynamic(() => import('./Shelf_Small2'), { ssr: false })
+export const Shelf_Small3 = dynamic(() => import('./Shelf_Small3'), { ssr: false })
+export const Spoon = dynamic(() => import('./Spoon'), { ssr: false })
+export const Stool = dynamic(() => import('./Stool'), { ssr: false })
+export const Table_RoundLarge = dynamic(() => import('./Table_RoundLarge'), { ssr: false })
+export const Table_RoundSmall = dynamic(() => import('./Table_RoundSmall'), { ssr: false })
+export const Table_RoundSmall2 = dynamic(() => import('./Table_RoundSmall2'), { ssr: false })
+export const Trashcan_Cylindric = dynamic(() => import('./Trashcan_Cylindric'), { ssr: false })
+export const Trashcan_Green = dynamic(() => import('./Trashcan_Green'), { ssr: false })
+export const Trashcan_Large = dynamic(() => import('./Trashcan_Large'), { ssr: false })
+export const Trashcan_Small1 = dynamic(() => import('./Trashcan_Small1'), { ssr: false })
+export const Trashcan_Small2 = dynamic(() => import('./Trashcan_Small2'), { ssr: false })
+export const Window_Large1 = dynamic(() => import('./Window_Large1'), { ssr: false })
+export const Window_Large2 = dynamic(() => import('./Window_Large2'), { ssr: false })
+export const Window_Round1 = dynamic(() => import('./Window_Round1'), { ssr: false })
+export const Window_Round2 = dynamic(() => import('./Window_Round2'), { ssr: false })
+export const Window_Round3 = dynamic(() => import('./Window_Round3'), { ssr: false })
+export const Window_Small1 = dynamic(() => import('./Window_Small1'), { ssr: false })
+export const Window_Small2 = dynamic(() => import('./Window_Small2'), { ssr: false })
+export const Window_Small3 = dynamic(() => import('./Window_Small3'), { ssr: false })

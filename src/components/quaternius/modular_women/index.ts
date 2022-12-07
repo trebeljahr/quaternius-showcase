@@ -1,12 +1,14 @@
-export { Model as Adventurer } from './Adventurer'
-export { Model as Casual } from './Casual'
-export { Model as Formal } from './Formal'
-export { Model as Medieval } from './Medieval'
-export { Model as Punk } from './Punk'
-export { Model as Rig } from './Rig'
-export { Model as SciFi } from './SciFi'
-export { Model as Soldier } from './Soldier'
-export { Model as Suit } from './Suit'
-export { Model as Together } from './Together'
-export { Model as Witch } from './Witch'
-export { Model as Worker } from './Worker'
+import dynamic from 'next/dynamic'
+
+export const Adventurer = dynamic(() => import('./Adventurer'), { ssr: false })
+export const Casual = dynamic(() => import('./Casual'), { ssr: false })
+export const Formal = dynamic(() => import('./Formal'), { ssr: false })
+export const Medieval = dynamic(() => import('./Medieval'), { ssr: false })
+export const Punk = dynamic(() => import('./Punk'), { ssr: false })
+export const Rig = dynamic(() => import('./Rig'), { ssr: false })
+export const SciFi = dynamic(() => import('./SciFi'), { ssr: false })
+export const Soldier = dynamic(() => import('./Soldier'), { ssr: false })
+export const Suit = dynamic(() => import('./Suit'), { ssr: false })
+export const Together = dynamic(() => import('./Together'), { ssr: false })
+export const Witch = dynamic(() => import('./Witch'), { ssr: false })
+export const Worker = dynamic(() => import('./Worker'), { ssr: false })

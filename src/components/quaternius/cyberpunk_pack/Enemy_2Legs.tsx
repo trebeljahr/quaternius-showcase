@@ -38,7 +38,7 @@ interface GLTFAction extends THREE.AnimationClip {
   name: ActionName
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/glb/cyberpunk_pack/Enemy_2Legs.glb') as unknown as GLTFResult
   const { actions } = useAnimations(animations, group)

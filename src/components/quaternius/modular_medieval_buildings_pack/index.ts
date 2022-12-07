@@ -1,30 +1,32 @@
-export { Model as Banner } from './Banner'
-export { Model as Bridge } from './Bridge'
-export { Model as Door } from './Door'
-export { Model as Dummy } from './Dummy'
-export { Model as LargeSimpleTower } from './LargeSimpleTower'
-export { Model as LargeSquareTower } from './LargeSquareTower'
-export { Model as LargeSquareTowerBricks } from './LargeSquareTowerBricks'
-export { Model as LargeTower } from './LargeTower'
-export { Model as PointyTower } from './PointyTower'
-export { Model as SimpleTowerBricks } from './SimpleTowerBricks'
-export { Model as Simpletower } from './Simpletower'
-export { Model as SmallSquareTower } from './SmallSquareTower'
-export { Model as SmallSquareTowerBricks } from './SmallSquareTowerBricks'
-export { Model as SmallTower } from './SmallTower'
-export { Model as TallWall } from './TallWall'
-export { Model as TallWallBricks } from './TallWallBricks'
-export { Model as TallWallEntrance } from './TallWallEntrance'
-export { Model as Target } from './Target'
-export { Model as TargetWithArrows } from './TargetWithArrows'
-export { Model as Tower } from './Tower'
-export { Model as Tunnel } from './Tunnel'
-export { Model as Wall } from './Wall'
-export { Model as WallBricks } from './WallBricks'
-export { Model as WallEntrance } from './WallEntrance'
-export { Model as WallEntranceBricks } from './WallEntranceBricks'
-export { Model as WatchTowerWRoof } from './WatchTowerWRoof'
-export { Model as Watchtower } from './Watchtower'
-export { Model as Well } from './Well'
-export { Model as WindowGothic } from './WindowGothic'
-export { Model as WindowSquare } from './WindowSquare'
+import dynamic from 'next/dynamic'
+
+export const Banner = dynamic(() => import('./Banner'), { ssr: false })
+export const Bridge = dynamic(() => import('./Bridge'), { ssr: false })
+export const Door = dynamic(() => import('./Door'), { ssr: false })
+export const Dummy = dynamic(() => import('./Dummy'), { ssr: false })
+export const LargeSimpleTower = dynamic(() => import('./LargeSimpleTower'), { ssr: false })
+export const LargeSquareTower = dynamic(() => import('./LargeSquareTower'), { ssr: false })
+export const LargeSquareTowerBricks = dynamic(() => import('./LargeSquareTowerBricks'), { ssr: false })
+export const LargeTower = dynamic(() => import('./LargeTower'), { ssr: false })
+export const PointyTower = dynamic(() => import('./PointyTower'), { ssr: false })
+export const SimpleTowerBricks = dynamic(() => import('./SimpleTowerBricks'), { ssr: false })
+export const Simpletower = dynamic(() => import('./Simpletower'), { ssr: false })
+export const SmallSquareTower = dynamic(() => import('./SmallSquareTower'), { ssr: false })
+export const SmallSquareTowerBricks = dynamic(() => import('./SmallSquareTowerBricks'), { ssr: false })
+export const SmallTower = dynamic(() => import('./SmallTower'), { ssr: false })
+export const TallWall = dynamic(() => import('./TallWall'), { ssr: false })
+export const TallWallBricks = dynamic(() => import('./TallWallBricks'), { ssr: false })
+export const TallWallEntrance = dynamic(() => import('./TallWallEntrance'), { ssr: false })
+export const Target = dynamic(() => import('./Target'), { ssr: false })
+export const TargetWithArrows = dynamic(() => import('./TargetWithArrows'), { ssr: false })
+export const Tower = dynamic(() => import('./Tower'), { ssr: false })
+export const Tunnel = dynamic(() => import('./Tunnel'), { ssr: false })
+export const Wall = dynamic(() => import('./Wall'), { ssr: false })
+export const WallBricks = dynamic(() => import('./WallBricks'), { ssr: false })
+export const WallEntrance = dynamic(() => import('./WallEntrance'), { ssr: false })
+export const WallEntranceBricks = dynamic(() => import('./WallEntranceBricks'), { ssr: false })
+export const WatchTowerWRoof = dynamic(() => import('./WatchTowerWRoof'), { ssr: false })
+export const Watchtower = dynamic(() => import('./Watchtower'), { ssr: false })
+export const Well = dynamic(() => import('./Well'), { ssr: false })
+export const WindowGothic = dynamic(() => import('./WindowGothic'), { ssr: false })
+export const WindowSquare = dynamic(() => import('./WindowSquare'), { ssr: false })

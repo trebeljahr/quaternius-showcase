@@ -1,41 +1,43 @@
-export { Model as Barrel } from './Barrel'
-export { Model as Bars } from './Bars'
-export { Model as Bones } from './Bones'
-export { Model as Bones2 } from './Bones2'
-export { Model as Book2 } from './Book2'
-export { Model as Book3 } from './Book3'
-export { Model as Book_Open } from './Book_Open'
-export { Model as Candelabrum } from './Candelabrum'
-export { Model as Candelabrum_tall } from './Candelabrum_tall'
-export { Model as Candle } from './Candle'
-export { Model as Carpet } from './Carpet'
-export { Model as Chest } from './Chest'
-export { Model as Chest_gold } from './Chest_gold'
-export { Model as Column } from './Column'
-export { Model as Column_Broken } from './Column_Broken'
-export { Model as Column_Broken2 } from './Column_Broken2'
-export { Model as Entrance } from './Entrance'
-export { Model as Entrance2 } from './Entrance2'
-export { Model as ModularColumn_bottom } from './ModularColumn_bottom'
-export { Model as ModularColumn_middle } from './ModularColumn_middle'
-export { Model as ModularColumn_top } from './ModularColumn_top'
-export { Model as ModularFloor } from './ModularFloor'
-export { Model as ModularStoneWall } from './ModularStoneWall'
-export { Model as ModularStoneWall_EntranceTop } from './ModularStoneWall_EntranceTop'
-export { Model as ModularStoneWall_top } from './ModularStoneWall_top'
-export { Model as Potion } from './Potion'
-export { Model as Potion2 } from './Potion2'
-export { Model as Potion3 } from './Potion3'
-export { Model as Potion4 } from './Potion4'
-export { Model as Potion5 } from './Potion5'
-export { Model as Potion6 } from './Potion6'
-export { Model as Rock1 } from './Rock1'
-export { Model as Rock2 } from './Rock2'
-export { Model as Rock3 } from './Rock3'
-export { Model as Rock4 } from './Rock4'
-export { Model as Rock5 } from './Rock5'
-export { Model as Stairs } from './Stairs'
-export { Model as Torch } from './Torch'
-export { Model as Torch_wall } from './Torch_wall'
-export { Model as WallRocks } from './WallRocks'
-export { Model as Window } from './Window'
+import dynamic from 'next/dynamic'
+
+export const Barrel = dynamic(() => import('./Barrel'), { ssr: false })
+export const Bars = dynamic(() => import('./Bars'), { ssr: false })
+export const Bones = dynamic(() => import('./Bones'), { ssr: false })
+export const Bones2 = dynamic(() => import('./Bones2'), { ssr: false })
+export const Book2 = dynamic(() => import('./Book2'), { ssr: false })
+export const Book3 = dynamic(() => import('./Book3'), { ssr: false })
+export const Book_Open = dynamic(() => import('./Book_Open'), { ssr: false })
+export const Candelabrum = dynamic(() => import('./Candelabrum'), { ssr: false })
+export const Candelabrum_tall = dynamic(() => import('./Candelabrum_tall'), { ssr: false })
+export const Candle = dynamic(() => import('./Candle'), { ssr: false })
+export const Carpet = dynamic(() => import('./Carpet'), { ssr: false })
+export const Chest = dynamic(() => import('./Chest'), { ssr: false })
+export const Chest_gold = dynamic(() => import('./Chest_gold'), { ssr: false })
+export const Column = dynamic(() => import('./Column'), { ssr: false })
+export const Column_Broken = dynamic(() => import('./Column_Broken'), { ssr: false })
+export const Column_Broken2 = dynamic(() => import('./Column_Broken2'), { ssr: false })
+export const Entrance = dynamic(() => import('./Entrance'), { ssr: false })
+export const Entrance2 = dynamic(() => import('./Entrance2'), { ssr: false })
+export const ModularColumn_bottom = dynamic(() => import('./ModularColumn_bottom'), { ssr: false })
+export const ModularColumn_middle = dynamic(() => import('./ModularColumn_middle'), { ssr: false })
+export const ModularColumn_top = dynamic(() => import('./ModularColumn_top'), { ssr: false })
+export const ModularFloor = dynamic(() => import('./ModularFloor'), { ssr: false })
+export const ModularStoneWall = dynamic(() => import('./ModularStoneWall'), { ssr: false })
+export const ModularStoneWall_EntranceTop = dynamic(() => import('./ModularStoneWall_EntranceTop'), { ssr: false })
+export const ModularStoneWall_top = dynamic(() => import('./ModularStoneWall_top'), { ssr: false })
+export const Potion = dynamic(() => import('./Potion'), { ssr: false })
+export const Potion2 = dynamic(() => import('./Potion2'), { ssr: false })
+export const Potion3 = dynamic(() => import('./Potion3'), { ssr: false })
+export const Potion4 = dynamic(() => import('./Potion4'), { ssr: false })
+export const Potion5 = dynamic(() => import('./Potion5'), { ssr: false })
+export const Potion6 = dynamic(() => import('./Potion6'), { ssr: false })
+export const Rock1 = dynamic(() => import('./Rock1'), { ssr: false })
+export const Rock2 = dynamic(() => import('./Rock2'), { ssr: false })
+export const Rock3 = dynamic(() => import('./Rock3'), { ssr: false })
+export const Rock4 = dynamic(() => import('./Rock4'), { ssr: false })
+export const Rock5 = dynamic(() => import('./Rock5'), { ssr: false })
+export const Stairs = dynamic(() => import('./Stairs'), { ssr: false })
+export const Torch = dynamic(() => import('./Torch'), { ssr: false })
+export const Torch_wall = dynamic(() => import('./Torch_wall'), { ssr: false })
+export const WallRocks = dynamic(() => import('./WallRocks'), { ssr: false })
+export const Window = dynamic(() => import('./Window'), { ssr: false })

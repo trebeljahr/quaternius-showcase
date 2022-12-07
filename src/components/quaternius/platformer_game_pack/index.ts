@@ -1,100 +1,102 @@
-export { Model as Arrow } from './Arrow'
-export { Model as Arrow_Side } from './Arrow_Side'
-export { Model as Arrow_Up } from './Arrow_Up'
-export { Model as Bee } from './Bee'
-export { Model as Bomb } from './Bomb'
-export { Model as Bouncer } from './Bouncer'
-export { Model as Bridge_Modular } from './Bridge_Modular'
-export { Model as Bridge_Modular_Center } from './Bridge_Modular_Center'
-export { Model as Bridge_Small } from './Bridge_Small'
-export { Model as Bush } from './Bush'
-export { Model as Bush_Fruit } from './Bush_Fruit'
-export { Model as Cannon } from './Cannon'
-export { Model as Cannonball } from './Cannonball'
-export { Model as Character } from './Character'
-export { Model as Character_Gun } from './Character_Gun'
-export { Model as Character_HumanoidRig } from './Character_HumanoidRig'
-export { Model as Chest } from './Chest'
-export { Model as Cloud_1 } from './Cloud_1'
-export { Model as Cloud_2 } from './Cloud_2'
-export { Model as Cloud_3 } from './Cloud_3'
-export { Model as Coin } from './Coin'
-export { Model as Crab } from './Crab'
-export { Model as Cube_Bricks } from './Cube_Bricks'
-export { Model as Cube_Crate } from './Cube_Crate'
-export { Model as Cube_Default } from './Cube_Default'
-export { Model as Cube_Dirt_Center_Tall } from './Cube_Dirt_Center_Tall'
-export { Model as Cube_Dirt_Corner_Tall } from './Cube_Dirt_Corner_Tall'
-export { Model as Cube_Dirt_Side_Tall } from './Cube_Dirt_Side_Tall'
-export { Model as Cube_Dirt_Single } from './Cube_Dirt_Single'
-export { Model as Cube_Exclamation } from './Cube_Exclamation'
-export { Model as Cube_Grass_Bottom_Tall } from './Cube_Grass_Bottom_Tall'
-export { Model as Cube_Grass_Center_Tall } from './Cube_Grass_Center_Tall'
-export { Model as Cube_Grass_CornerBottom_Tall } from './Cube_Grass_CornerBottom_Tall'
-export { Model as Cube_Grass_CornerCenter_Tall } from './Cube_Grass_CornerCenter_Tall'
-export { Model as Cube_Grass_Corner_Tall } from './Cube_Grass_Corner_Tall'
-export { Model as Cube_Grass_SideBottom_Tall } from './Cube_Grass_SideBottom_Tall'
-export { Model as Cube_Grass_SideCenter_Tall } from './Cube_Grass_SideCenter_Tall'
-export { Model as Cube_Grass_Side_Tall } from './Cube_Grass_Side_Tall'
-export { Model as Cube_Grass_Single } from './Cube_Grass_Single'
-export { Model as Cube_Question } from './Cube_Question'
-export { Model as Cube_Spikes } from './Cube_Spikes'
-export { Model as Door } from './Door'
-export { Model as Enemy } from './Enemy'
-export { Model as Fence_1 } from './Fence_1'
-export { Model as Fence_Corner } from './Fence_Corner'
-export { Model as Fence_Middle } from './Fence_Middle'
-export { Model as Fruit } from './Fruit'
-export { Model as Gem_Blue } from './Gem_Blue'
-export { Model as Gem_Green } from './Gem_Green'
-export { Model as Gem_Pink } from './Gem_Pink'
-export { Model as Goal_Flag } from './Goal_Flag'
-export { Model as Grass_1 } from './Grass_1'
-export { Model as Grass_2 } from './Grass_2'
-export { Model as Grass_3 } from './Grass_3'
-export { Model as Hazard_Cylinder } from './Hazard_Cylinder'
-export { Model as Hazard_Saw } from './Hazard_Saw'
-export { Model as Hazard_SpikeTrap } from './Hazard_SpikeTrap'
-export { Model as Heart } from './Heart'
-export { Model as Heart_Half } from './Heart_Half'
-export { Model as Heart_Outline } from './Heart_Outline'
-export { Model as Key } from './Key'
-export { Model as Lever } from './Lever'
-export { Model as Numbers_0 } from './Numbers_0'
-export { Model as Numbers_1 } from './Numbers_1'
-export { Model as Numbers_2 } from './Numbers_2'
-export { Model as Numbers_3 } from './Numbers_3'
-export { Model as Numbers_4 } from './Numbers_4'
-export { Model as Numbers_5 } from './Numbers_5'
-export { Model as Numbers_6 } from './Numbers_6'
-export { Model as Numbers_7 } from './Numbers_7'
-export { Model as Numbers_8 } from './Numbers_8'
-export { Model as Numbers_9 } from './Numbers_9'
-export { Model as Pipe_90 } from './Pipe_90'
-export { Model as Pipe_End } from './Pipe_End'
-export { Model as Pipe_Straight } from './Pipe_Straight'
-export { Model as Pipe_T } from './Pipe_T'
-export { Model as Plant_Large } from './Plant_Large'
-export { Model as Plant_Small } from './Plant_Small'
-export { Model as RockPlatform_Tall } from './RockPlatform_Tall'
-export { Model as RockPlatforms_1 } from './RockPlatforms_1'
-export { Model as RockPlatforms_2 } from './RockPlatforms_2'
-export { Model as RockPlatforms_3 } from './RockPlatforms_3'
-export { Model as RockPlatforms_Large } from './RockPlatforms_Large'
-export { Model as RockPlatforms_Medium } from './RockPlatforms_Medium'
-export { Model as Rock_1 } from './Rock_1'
-export { Model as Rock_2 } from './Rock_2'
-export { Model as Skull } from './Skull'
-export { Model as Spikes } from './Spikes'
-export { Model as SpikyBall } from './SpikyBall'
-export { Model as Stairs } from './Stairs'
-export { Model as Stairs_Modular_End } from './Stairs_Modular_End'
-export { Model as Stairs_Modular_Middle } from './Stairs_Modular_Middle'
-export { Model as Stairs_Modular_Start } from './Stairs_Modular_Start'
-export { Model as Stairs_Small } from './Stairs_Small'
-export { Model as Star } from './Star'
-export { Model as Star_Outline } from './Star_Outline'
-export { Model as Thunder } from './Thunder'
-export { Model as Tower } from './Tower'
-export { Model as Tree } from './Tree'
-export { Model as Tree_Fruit } from './Tree_Fruit'
+import dynamic from 'next/dynamic'
+
+export const Arrow = dynamic(() => import('./Arrow'), { ssr: false })
+export const Arrow_Side = dynamic(() => import('./Arrow_Side'), { ssr: false })
+export const Arrow_Up = dynamic(() => import('./Arrow_Up'), { ssr: false })
+export const Bee = dynamic(() => import('./Bee'), { ssr: false })
+export const Bomb = dynamic(() => import('./Bomb'), { ssr: false })
+export const Bouncer = dynamic(() => import('./Bouncer'), { ssr: false })
+export const Bridge_Modular = dynamic(() => import('./Bridge_Modular'), { ssr: false })
+export const Bridge_Modular_Center = dynamic(() => import('./Bridge_Modular_Center'), { ssr: false })
+export const Bridge_Small = dynamic(() => import('./Bridge_Small'), { ssr: false })
+export const Bush = dynamic(() => import('./Bush'), { ssr: false })
+export const Bush_Fruit = dynamic(() => import('./Bush_Fruit'), { ssr: false })
+export const Cannon = dynamic(() => import('./Cannon'), { ssr: false })
+export const Cannonball = dynamic(() => import('./Cannonball'), { ssr: false })
+export const Character = dynamic(() => import('./Character'), { ssr: false })
+export const Character_Gun = dynamic(() => import('./Character_Gun'), { ssr: false })
+export const Character_HumanoidRig = dynamic(() => import('./Character_HumanoidRig'), { ssr: false })
+export const Chest = dynamic(() => import('./Chest'), { ssr: false })
+export const Cloud_1 = dynamic(() => import('./Cloud_1'), { ssr: false })
+export const Cloud_2 = dynamic(() => import('./Cloud_2'), { ssr: false })
+export const Cloud_3 = dynamic(() => import('./Cloud_3'), { ssr: false })
+export const Coin = dynamic(() => import('./Coin'), { ssr: false })
+export const Crab = dynamic(() => import('./Crab'), { ssr: false })
+export const Cube_Bricks = dynamic(() => import('./Cube_Bricks'), { ssr: false })
+export const Cube_Crate = dynamic(() => import('./Cube_Crate'), { ssr: false })
+export const Cube_Default = dynamic(() => import('./Cube_Default'), { ssr: false })
+export const Cube_Dirt_Center_Tall = dynamic(() => import('./Cube_Dirt_Center_Tall'), { ssr: false })
+export const Cube_Dirt_Corner_Tall = dynamic(() => import('./Cube_Dirt_Corner_Tall'), { ssr: false })
+export const Cube_Dirt_Side_Tall = dynamic(() => import('./Cube_Dirt_Side_Tall'), { ssr: false })
+export const Cube_Dirt_Single = dynamic(() => import('./Cube_Dirt_Single'), { ssr: false })
+export const Cube_Exclamation = dynamic(() => import('./Cube_Exclamation'), { ssr: false })
+export const Cube_Grass_Bottom_Tall = dynamic(() => import('./Cube_Grass_Bottom_Tall'), { ssr: false })
+export const Cube_Grass_Center_Tall = dynamic(() => import('./Cube_Grass_Center_Tall'), { ssr: false })
+export const Cube_Grass_CornerBottom_Tall = dynamic(() => import('./Cube_Grass_CornerBottom_Tall'), { ssr: false })
+export const Cube_Grass_CornerCenter_Tall = dynamic(() => import('./Cube_Grass_CornerCenter_Tall'), { ssr: false })
+export const Cube_Grass_Corner_Tall = dynamic(() => import('./Cube_Grass_Corner_Tall'), { ssr: false })
+export const Cube_Grass_SideBottom_Tall = dynamic(() => import('./Cube_Grass_SideBottom_Tall'), { ssr: false })
+export const Cube_Grass_SideCenter_Tall = dynamic(() => import('./Cube_Grass_SideCenter_Tall'), { ssr: false })
+export const Cube_Grass_Side_Tall = dynamic(() => import('./Cube_Grass_Side_Tall'), { ssr: false })
+export const Cube_Grass_Single = dynamic(() => import('./Cube_Grass_Single'), { ssr: false })
+export const Cube_Question = dynamic(() => import('./Cube_Question'), { ssr: false })
+export const Cube_Spikes = dynamic(() => import('./Cube_Spikes'), { ssr: false })
+export const Door = dynamic(() => import('./Door'), { ssr: false })
+export const Enemy = dynamic(() => import('./Enemy'), { ssr: false })
+export const Fence_1 = dynamic(() => import('./Fence_1'), { ssr: false })
+export const Fence_Corner = dynamic(() => import('./Fence_Corner'), { ssr: false })
+export const Fence_Middle = dynamic(() => import('./Fence_Middle'), { ssr: false })
+export const Fruit = dynamic(() => import('./Fruit'), { ssr: false })
+export const Gem_Blue = dynamic(() => import('./Gem_Blue'), { ssr: false })
+export const Gem_Green = dynamic(() => import('./Gem_Green'), { ssr: false })
+export const Gem_Pink = dynamic(() => import('./Gem_Pink'), { ssr: false })
+export const Goal_Flag = dynamic(() => import('./Goal_Flag'), { ssr: false })
+export const Grass_1 = dynamic(() => import('./Grass_1'), { ssr: false })
+export const Grass_2 = dynamic(() => import('./Grass_2'), { ssr: false })
+export const Grass_3 = dynamic(() => import('./Grass_3'), { ssr: false })
+export const Hazard_Cylinder = dynamic(() => import('./Hazard_Cylinder'), { ssr: false })
+export const Hazard_Saw = dynamic(() => import('./Hazard_Saw'), { ssr: false })
+export const Hazard_SpikeTrap = dynamic(() => import('./Hazard_SpikeTrap'), { ssr: false })
+export const Heart = dynamic(() => import('./Heart'), { ssr: false })
+export const Heart_Half = dynamic(() => import('./Heart_Half'), { ssr: false })
+export const Heart_Outline = dynamic(() => import('./Heart_Outline'), { ssr: false })
+export const Key = dynamic(() => import('./Key'), { ssr: false })
+export const Lever = dynamic(() => import('./Lever'), { ssr: false })
+export const Numbers_0 = dynamic(() => import('./Numbers_0'), { ssr: false })
+export const Numbers_1 = dynamic(() => import('./Numbers_1'), { ssr: false })
+export const Numbers_2 = dynamic(() => import('./Numbers_2'), { ssr: false })
+export const Numbers_3 = dynamic(() => import('./Numbers_3'), { ssr: false })
+export const Numbers_4 = dynamic(() => import('./Numbers_4'), { ssr: false })
+export const Numbers_5 = dynamic(() => import('./Numbers_5'), { ssr: false })
+export const Numbers_6 = dynamic(() => import('./Numbers_6'), { ssr: false })
+export const Numbers_7 = dynamic(() => import('./Numbers_7'), { ssr: false })
+export const Numbers_8 = dynamic(() => import('./Numbers_8'), { ssr: false })
+export const Numbers_9 = dynamic(() => import('./Numbers_9'), { ssr: false })
+export const Pipe_90 = dynamic(() => import('./Pipe_90'), { ssr: false })
+export const Pipe_End = dynamic(() => import('./Pipe_End'), { ssr: false })
+export const Pipe_Straight = dynamic(() => import('./Pipe_Straight'), { ssr: false })
+export const Pipe_T = dynamic(() => import('./Pipe_T'), { ssr: false })
+export const Plant_Large = dynamic(() => import('./Plant_Large'), { ssr: false })
+export const Plant_Small = dynamic(() => import('./Plant_Small'), { ssr: false })
+export const RockPlatform_Tall = dynamic(() => import('./RockPlatform_Tall'), { ssr: false })
+export const RockPlatforms_1 = dynamic(() => import('./RockPlatforms_1'), { ssr: false })
+export const RockPlatforms_2 = dynamic(() => import('./RockPlatforms_2'), { ssr: false })
+export const RockPlatforms_3 = dynamic(() => import('./RockPlatforms_3'), { ssr: false })
+export const RockPlatforms_Large = dynamic(() => import('./RockPlatforms_Large'), { ssr: false })
+export const RockPlatforms_Medium = dynamic(() => import('./RockPlatforms_Medium'), { ssr: false })
+export const Rock_1 = dynamic(() => import('./Rock_1'), { ssr: false })
+export const Rock_2 = dynamic(() => import('./Rock_2'), { ssr: false })
+export const Skull = dynamic(() => import('./Skull'), { ssr: false })
+export const Spikes = dynamic(() => import('./Spikes'), { ssr: false })
+export const SpikyBall = dynamic(() => import('./SpikyBall'), { ssr: false })
+export const Stairs = dynamic(() => import('./Stairs'), { ssr: false })
+export const Stairs_Modular_End = dynamic(() => import('./Stairs_Modular_End'), { ssr: false })
+export const Stairs_Modular_Middle = dynamic(() => import('./Stairs_Modular_Middle'), { ssr: false })
+export const Stairs_Modular_Start = dynamic(() => import('./Stairs_Modular_Start'), { ssr: false })
+export const Stairs_Small = dynamic(() => import('./Stairs_Small'), { ssr: false })
+export const Star = dynamic(() => import('./Star'), { ssr: false })
+export const Star_Outline = dynamic(() => import('./Star_Outline'), { ssr: false })
+export const Thunder = dynamic(() => import('./Thunder'), { ssr: false })
+export const Tower = dynamic(() => import('./Tower'), { ssr: false })
+export const Tree = dynamic(() => import('./Tree'), { ssr: false })
+export const Tree_Fruit = dynamic(() => import('./Tree_Fruit'), { ssr: false })

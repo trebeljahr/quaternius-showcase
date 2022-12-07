@@ -1,9 +1,11 @@
-export { Model as Club } from './Club'
-export { Model as Helmet1 } from './Helmet1'
-export { Model as Helmet2 } from './Helmet2'
-export { Model as Helmet3 } from './Helmet3'
-export { Model as Katana } from './Katana'
-export { Model as KnightCharacter } from './KnightCharacter'
-export { Model as ShortSword } from './ShortSword'
-export { Model as ShoulderPads } from './ShoulderPads'
-export { Model as Sword } from './Sword'
+import dynamic from 'next/dynamic'
+
+export const Club = dynamic(() => import('./Club'), { ssr: false })
+export const Helmet1 = dynamic(() => import('./Helmet1'), { ssr: false })
+export const Helmet2 = dynamic(() => import('./Helmet2'), { ssr: false })
+export const Helmet3 = dynamic(() => import('./Helmet3'), { ssr: false })
+export const Katana = dynamic(() => import('./Katana'), { ssr: false })
+export const KnightCharacter = dynamic(() => import('./KnightCharacter'), { ssr: false })
+export const ShortSword = dynamic(() => import('./ShortSword'), { ssr: false })
+export const ShoulderPads = dynamic(() => import('./ShoulderPads'), { ssr: false })
+export const Sword = dynamic(() => import('./Sword'), { ssr: false })

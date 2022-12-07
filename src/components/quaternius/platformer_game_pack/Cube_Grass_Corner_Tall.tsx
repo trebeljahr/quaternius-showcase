@@ -22,7 +22,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Cube_Grass_Corner_Tall.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>

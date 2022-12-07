@@ -18,7 +18,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF(
     '/glb/real_time_strategy_pack/WallTowers_Door_FirstAge.glb',
   ) as unknown as GLTFResult

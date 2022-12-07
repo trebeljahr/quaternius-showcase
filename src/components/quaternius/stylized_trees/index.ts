@@ -1,45 +1,47 @@
-export { Model as Birch_1 } from './Birch_1'
-export { Model as Birch_10 } from './Birch_10'
-export { Model as Birch_2 } from './Birch_2'
-export { Model as Birch_3 } from './Birch_3'
-export { Model as Birch_4 } from './Birch_4'
-export { Model as Birch_5 } from './Birch_5'
-export { Model as Birch_6 } from './Birch_6'
-export { Model as Birch_7 } from './Birch_7'
-export { Model as Birch_8 } from './Birch_8'
-export { Model as Birch_9 } from './Birch_9'
-export { Model as DeadBirch_1 } from './DeadBirch_1'
-export { Model as DeadBirch_10 } from './DeadBirch_10'
-export { Model as DeadBirch_2 } from './DeadBirch_2'
-export { Model as DeadBirch_3 } from './DeadBirch_3'
-export { Model as DeadBirch_4 } from './DeadBirch_4'
-export { Model as DeadBirch_5 } from './DeadBirch_5'
-export { Model as DeadBirch_6 } from './DeadBirch_6'
-export { Model as DeadBirch_7 } from './DeadBirch_7'
-export { Model as DeadBirch_8 } from './DeadBirch_8'
-export { Model as DeadBirch_9 } from './DeadBirch_9'
-export { Model as DeadTree_1 } from './DeadTree_1'
-export { Model as DeadTree_10 } from './DeadTree_10'
-export { Model as DeadTree_2 } from './DeadTree_2'
-export { Model as DeadTree_3 } from './DeadTree_3'
-export { Model as DeadTree_4 } from './DeadTree_4'
-export { Model as DeadTree_5 } from './DeadTree_5'
-export { Model as DeadTree_6 } from './DeadTree_6'
-export { Model as DeadTree_7 } from './DeadTree_7'
-export { Model as DeadTree_8 } from './DeadTree_8'
-export { Model as DeadTree_9 } from './DeadTree_9'
-export { Model as Pine_1 } from './Pine_1'
-export { Model as Pine_2 } from './Pine_2'
-export { Model as Pine_3 } from './Pine_3'
-export { Model as Pine_4 } from './Pine_4'
-export { Model as Pine_5 } from './Pine_5'
-export { Model as Tree_1 } from './Tree_1'
-export { Model as Tree_10 } from './Tree_10'
-export { Model as Tree_2 } from './Tree_2'
-export { Model as Tree_3 } from './Tree_3'
-export { Model as Tree_4 } from './Tree_4'
-export { Model as Tree_5 } from './Tree_5'
-export { Model as Tree_6 } from './Tree_6'
-export { Model as Tree_7 } from './Tree_7'
-export { Model as Tree_8 } from './Tree_8'
-export { Model as Tree_9 } from './Tree_9'
+import dynamic from 'next/dynamic'
+
+export const Birch_1 = dynamic(() => import('./Birch_1'), { ssr: false })
+export const Birch_10 = dynamic(() => import('./Birch_10'), { ssr: false })
+export const Birch_2 = dynamic(() => import('./Birch_2'), { ssr: false })
+export const Birch_3 = dynamic(() => import('./Birch_3'), { ssr: false })
+export const Birch_4 = dynamic(() => import('./Birch_4'), { ssr: false })
+export const Birch_5 = dynamic(() => import('./Birch_5'), { ssr: false })
+export const Birch_6 = dynamic(() => import('./Birch_6'), { ssr: false })
+export const Birch_7 = dynamic(() => import('./Birch_7'), { ssr: false })
+export const Birch_8 = dynamic(() => import('./Birch_8'), { ssr: false })
+export const Birch_9 = dynamic(() => import('./Birch_9'), { ssr: false })
+export const DeadBirch_1 = dynamic(() => import('./DeadBirch_1'), { ssr: false })
+export const DeadBirch_10 = dynamic(() => import('./DeadBirch_10'), { ssr: false })
+export const DeadBirch_2 = dynamic(() => import('./DeadBirch_2'), { ssr: false })
+export const DeadBirch_3 = dynamic(() => import('./DeadBirch_3'), { ssr: false })
+export const DeadBirch_4 = dynamic(() => import('./DeadBirch_4'), { ssr: false })
+export const DeadBirch_5 = dynamic(() => import('./DeadBirch_5'), { ssr: false })
+export const DeadBirch_6 = dynamic(() => import('./DeadBirch_6'), { ssr: false })
+export const DeadBirch_7 = dynamic(() => import('./DeadBirch_7'), { ssr: false })
+export const DeadBirch_8 = dynamic(() => import('./DeadBirch_8'), { ssr: false })
+export const DeadBirch_9 = dynamic(() => import('./DeadBirch_9'), { ssr: false })
+export const DeadTree_1 = dynamic(() => import('./DeadTree_1'), { ssr: false })
+export const DeadTree_10 = dynamic(() => import('./DeadTree_10'), { ssr: false })
+export const DeadTree_2 = dynamic(() => import('./DeadTree_2'), { ssr: false })
+export const DeadTree_3 = dynamic(() => import('./DeadTree_3'), { ssr: false })
+export const DeadTree_4 = dynamic(() => import('./DeadTree_4'), { ssr: false })
+export const DeadTree_5 = dynamic(() => import('./DeadTree_5'), { ssr: false })
+export const DeadTree_6 = dynamic(() => import('./DeadTree_6'), { ssr: false })
+export const DeadTree_7 = dynamic(() => import('./DeadTree_7'), { ssr: false })
+export const DeadTree_8 = dynamic(() => import('./DeadTree_8'), { ssr: false })
+export const DeadTree_9 = dynamic(() => import('./DeadTree_9'), { ssr: false })
+export const Pine_1 = dynamic(() => import('./Pine_1'), { ssr: false })
+export const Pine_2 = dynamic(() => import('./Pine_2'), { ssr: false })
+export const Pine_3 = dynamic(() => import('./Pine_3'), { ssr: false })
+export const Pine_4 = dynamic(() => import('./Pine_4'), { ssr: false })
+export const Pine_5 = dynamic(() => import('./Pine_5'), { ssr: false })
+export const Tree_1 = dynamic(() => import('./Tree_1'), { ssr: false })
+export const Tree_10 = dynamic(() => import('./Tree_10'), { ssr: false })
+export const Tree_2 = dynamic(() => import('./Tree_2'), { ssr: false })
+export const Tree_3 = dynamic(() => import('./Tree_3'), { ssr: false })
+export const Tree_4 = dynamic(() => import('./Tree_4'), { ssr: false })
+export const Tree_5 = dynamic(() => import('./Tree_5'), { ssr: false })
+export const Tree_6 = dynamic(() => import('./Tree_6'), { ssr: false })
+export const Tree_7 = dynamic(() => import('./Tree_7'), { ssr: false })
+export const Tree_8 = dynamic(() => import('./Tree_8'), { ssr: false })
+export const Tree_9 = dynamic(() => import('./Tree_9'), { ssr: false })

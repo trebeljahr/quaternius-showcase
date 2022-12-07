@@ -1,63 +1,65 @@
-export { Model as BirchTree_1 } from './BirchTree_1'
-export { Model as BirchTree_2 } from './BirchTree_2'
-export { Model as BirchTree_3 } from './BirchTree_3'
-export { Model as BirchTree_4 } from './BirchTree_4'
-export { Model as BirchTree_5 } from './BirchTree_5'
-export { Model as Bush } from './Bush'
-export { Model as Bush_Flowers } from './Bush_Flowers'
-export { Model as Bush_Large } from './Bush_Large'
-export { Model as Bush_Large_Flowers } from './Bush_Large_Flowers'
-export { Model as Bush_Small } from './Bush_Small'
-export { Model as Bush_Small_Flowers } from './Bush_Small_Flowers'
-export { Model as DeadTree_1 } from './DeadTree_1'
-export { Model as DeadTree_10 } from './DeadTree_10'
-export { Model as DeadTree_2 } from './DeadTree_2'
-export { Model as DeadTree_3 } from './DeadTree_3'
-export { Model as DeadTree_4 } from './DeadTree_4'
-export { Model as DeadTree_5 } from './DeadTree_5'
-export { Model as DeadTree_6 } from './DeadTree_6'
-export { Model as DeadTree_7 } from './DeadTree_7'
-export { Model as DeadTree_8 } from './DeadTree_8'
-export { Model as DeadTree_9 } from './DeadTree_9'
-export { Model as Flower_1 } from './Flower_1'
-export { Model as Flower_1_Clump } from './Flower_1_Clump'
-export { Model as Flower_2 } from './Flower_2'
-export { Model as Flower_2_Clump } from './Flower_2_Clump'
-export { Model as Flower_3_Clump } from './Flower_3_Clump'
-export { Model as Flower_4_Clump } from './Flower_4_Clump'
-export { Model as Flower_5_Clump } from './Flower_5_Clump'
-export { Model as Grass_Large } from './Grass_Large'
-export { Model as Grass_Large_Extruded } from './Grass_Large_Extruded'
-export { Model as Grass_Small } from './Grass_Small'
-export { Model as MapleTree_1 } from './MapleTree_1'
-export { Model as MapleTree_2 } from './MapleTree_2'
-export { Model as MapleTree_3 } from './MapleTree_3'
-export { Model as MapleTree_4 } from './MapleTree_4'
-export { Model as MapleTree_5 } from './MapleTree_5'
-export { Model as NormalTree_1 } from './NormalTree_1'
-export { Model as NormalTree_2 } from './NormalTree_2'
-export { Model as NormalTree_3 } from './NormalTree_3'
-export { Model as NormalTree_4 } from './NormalTree_4'
-export { Model as NormalTree_5 } from './NormalTree_5'
-export { Model as PalmTree_1 } from './PalmTree_1'
-export { Model as PalmTree_2 } from './PalmTree_2'
-export { Model as PalmTree_3 } from './PalmTree_3'
-export { Model as PalmTree_4 } from './PalmTree_4'
-export { Model as PalmTree_5 } from './PalmTree_5'
-export { Model as Petals_1 } from './Petals_1'
-export { Model as Petals_2 } from './Petals_2'
-export { Model as Petals_3 } from './Petals_3'
-export { Model as Petals_4 } from './Petals_4'
-export { Model as PineTree_1 } from './PineTree_1'
-export { Model as PineTree_2 } from './PineTree_2'
-export { Model as PineTree_3 } from './PineTree_3'
-export { Model as PineTree_4 } from './PineTree_4'
-export { Model as PineTree_5 } from './PineTree_5'
-export { Model as Plant_1 } from './Plant_1'
-export { Model as Plant_2 } from './Plant_2'
-export { Model as Plant_Flowers } from './Plant_Flowers'
-export { Model as Rock_1 } from './Rock_1'
-export { Model as Rock_2 } from './Rock_2'
-export { Model as Rock_3 } from './Rock_3'
-export { Model as Rock_4 } from './Rock_4'
-export { Model as Rock_5 } from './Rock_5'
+import dynamic from 'next/dynamic'
+
+export const BirchTree_1 = dynamic(() => import('./BirchTree_1'), { ssr: false })
+export const BirchTree_2 = dynamic(() => import('./BirchTree_2'), { ssr: false })
+export const BirchTree_3 = dynamic(() => import('./BirchTree_3'), { ssr: false })
+export const BirchTree_4 = dynamic(() => import('./BirchTree_4'), { ssr: false })
+export const BirchTree_5 = dynamic(() => import('./BirchTree_5'), { ssr: false })
+export const Bush = dynamic(() => import('./Bush'), { ssr: false })
+export const Bush_Flowers = dynamic(() => import('./Bush_Flowers'), { ssr: false })
+export const Bush_Large = dynamic(() => import('./Bush_Large'), { ssr: false })
+export const Bush_Large_Flowers = dynamic(() => import('./Bush_Large_Flowers'), { ssr: false })
+export const Bush_Small = dynamic(() => import('./Bush_Small'), { ssr: false })
+export const Bush_Small_Flowers = dynamic(() => import('./Bush_Small_Flowers'), { ssr: false })
+export const DeadTree_1 = dynamic(() => import('./DeadTree_1'), { ssr: false })
+export const DeadTree_10 = dynamic(() => import('./DeadTree_10'), { ssr: false })
+export const DeadTree_2 = dynamic(() => import('./DeadTree_2'), { ssr: false })
+export const DeadTree_3 = dynamic(() => import('./DeadTree_3'), { ssr: false })
+export const DeadTree_4 = dynamic(() => import('./DeadTree_4'), { ssr: false })
+export const DeadTree_5 = dynamic(() => import('./DeadTree_5'), { ssr: false })
+export const DeadTree_6 = dynamic(() => import('./DeadTree_6'), { ssr: false })
+export const DeadTree_7 = dynamic(() => import('./DeadTree_7'), { ssr: false })
+export const DeadTree_8 = dynamic(() => import('./DeadTree_8'), { ssr: false })
+export const DeadTree_9 = dynamic(() => import('./DeadTree_9'), { ssr: false })
+export const Flower_1 = dynamic(() => import('./Flower_1'), { ssr: false })
+export const Flower_1_Clump = dynamic(() => import('./Flower_1_Clump'), { ssr: false })
+export const Flower_2 = dynamic(() => import('./Flower_2'), { ssr: false })
+export const Flower_2_Clump = dynamic(() => import('./Flower_2_Clump'), { ssr: false })
+export const Flower_3_Clump = dynamic(() => import('./Flower_3_Clump'), { ssr: false })
+export const Flower_4_Clump = dynamic(() => import('./Flower_4_Clump'), { ssr: false })
+export const Flower_5_Clump = dynamic(() => import('./Flower_5_Clump'), { ssr: false })
+export const Grass_Large = dynamic(() => import('./Grass_Large'), { ssr: false })
+export const Grass_Large_Extruded = dynamic(() => import('./Grass_Large_Extruded'), { ssr: false })
+export const Grass_Small = dynamic(() => import('./Grass_Small'), { ssr: false })
+export const MapleTree_1 = dynamic(() => import('./MapleTree_1'), { ssr: false })
+export const MapleTree_2 = dynamic(() => import('./MapleTree_2'), { ssr: false })
+export const MapleTree_3 = dynamic(() => import('./MapleTree_3'), { ssr: false })
+export const MapleTree_4 = dynamic(() => import('./MapleTree_4'), { ssr: false })
+export const MapleTree_5 = dynamic(() => import('./MapleTree_5'), { ssr: false })
+export const NormalTree_1 = dynamic(() => import('./NormalTree_1'), { ssr: false })
+export const NormalTree_2 = dynamic(() => import('./NormalTree_2'), { ssr: false })
+export const NormalTree_3 = dynamic(() => import('./NormalTree_3'), { ssr: false })
+export const NormalTree_4 = dynamic(() => import('./NormalTree_4'), { ssr: false })
+export const NormalTree_5 = dynamic(() => import('./NormalTree_5'), { ssr: false })
+export const PalmTree_1 = dynamic(() => import('./PalmTree_1'), { ssr: false })
+export const PalmTree_2 = dynamic(() => import('./PalmTree_2'), { ssr: false })
+export const PalmTree_3 = dynamic(() => import('./PalmTree_3'), { ssr: false })
+export const PalmTree_4 = dynamic(() => import('./PalmTree_4'), { ssr: false })
+export const PalmTree_5 = dynamic(() => import('./PalmTree_5'), { ssr: false })
+export const Petals_1 = dynamic(() => import('./Petals_1'), { ssr: false })
+export const Petals_2 = dynamic(() => import('./Petals_2'), { ssr: false })
+export const Petals_3 = dynamic(() => import('./Petals_3'), { ssr: false })
+export const Petals_4 = dynamic(() => import('./Petals_4'), { ssr: false })
+export const PineTree_1 = dynamic(() => import('./PineTree_1'), { ssr: false })
+export const PineTree_2 = dynamic(() => import('./PineTree_2'), { ssr: false })
+export const PineTree_3 = dynamic(() => import('./PineTree_3'), { ssr: false })
+export const PineTree_4 = dynamic(() => import('./PineTree_4'), { ssr: false })
+export const PineTree_5 = dynamic(() => import('./PineTree_5'), { ssr: false })
+export const Plant_1 = dynamic(() => import('./Plant_1'), { ssr: false })
+export const Plant_2 = dynamic(() => import('./Plant_2'), { ssr: false })
+export const Plant_Flowers = dynamic(() => import('./Plant_Flowers'), { ssr: false })
+export const Rock_1 = dynamic(() => import('./Rock_1'), { ssr: false })
+export const Rock_2 = dynamic(() => import('./Rock_2'), { ssr: false })
+export const Rock_3 = dynamic(() => import('./Rock_3'), { ssr: false })
+export const Rock_4 = dynamic(() => import('./Rock_4'), { ssr: false })
+export const Rock_5 = dynamic(() => import('./Rock_5'), { ssr: false })

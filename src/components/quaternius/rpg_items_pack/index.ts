@@ -1,106 +1,108 @@
-export { Model as Armor_Black } from './Armor_Black'
-export { Model as Armor_Golden } from './Armor_Golden'
-export { Model as Armor_Leather } from './Armor_Leather'
-export { Model as Armor_Metal } from './Armor_Metal'
-export { Model as Armor_Metal2 } from './Armor_Metal2'
-export { Model as Arrow } from './Arrow'
-export { Model as Arrow_Golden } from './Arrow_Golden'
-export { Model as Axe_Double } from './Axe_Double'
-export { Model as Axe_Double_Golden } from './Axe_Double_Golden'
-export { Model as Axe_small } from './Axe_small'
-export { Model as Axe_small_Golden } from './Axe_small_Golden'
-export { Model as Backpack } from './Backpack'
-export { Model as Bag } from './Bag'
-export { Model as Bone } from './Bone'
-export { Model as Book1_Closed } from './Book1_Closed'
-export { Model as Book1_Open } from './Book1_Open'
-export { Model as Book2_Closed } from './Book2_Closed'
-export { Model as Book2_Open } from './Book2_Open'
-export { Model as Book3_Closed } from './Book3_Closed'
-export { Model as Book3_Open } from './Book3_Open'
-export { Model as Book4_Closed } from './Book4_Closed'
-export { Model as Book4_Open } from './Book4_Open'
-export { Model as Bow_Golden } from './Bow_Golden'
-export { Model as Bow_Wooden } from './Bow_Wooden'
-export { Model as Chalice } from './Chalice'
-export { Model as Chest_Closed } from './Chest_Closed'
-export { Model as Chest_Ingots } from './Chest_Ingots'
-export { Model as Chest_Open } from './Chest_Open'
-export { Model as ChickenLeg } from './ChickenLeg'
-export { Model as Coin } from './Coin'
-export { Model as Coin_Skull } from './Coin_Skull'
-export { Model as Coin_Star } from './Coin_Star'
-export { Model as Crown } from './Crown'
-export { Model as Crown2 } from './Crown2'
-export { Model as Crystal1 } from './Crystal1'
-export { Model as Crystal1_Damaged } from './Crystal1_Damaged'
-export { Model as Crystal2 } from './Crystal2'
-export { Model as Crystal2_Damaged } from './Crystal2_Damaged'
-export { Model as Crystal3 } from './Crystal3'
-export { Model as Crystal3_Damaged } from './Crystal3_Damaged'
-export { Model as Crystal4 } from './Crystal4'
-export { Model as Crystal5 } from './Crystal5'
-export { Model as Crystal5_Damaged } from './Crystal5_Damaged'
-export { Model as Dagger } from './Dagger'
-export { Model as Dagger_Golden } from './Dagger_Golden'
-export { Model as Dart } from './Dart'
-export { Model as Dart_Golden } from './Dart_Golden'
-export { Model as FishBone } from './FishBone'
-export { Model as Glove } from './Glove'
-export { Model as Gold_Ingots } from './Gold_Ingots'
-export { Model as Hammer_Double } from './Hammer_Double'
-export { Model as Hammer_Double_Golden } from './Hammer_Double_Golden'
-export { Model as Heart } from './Heart'
-export { Model as Heart_Broken } from './Heart_Broken'
-export { Model as Heart_Half } from './Heart_Half'
-export { Model as Key1 } from './Key1'
-export { Model as Key2 } from './Key2'
-export { Model as Key3 } from './Key3'
-export { Model as Key4 } from './Key4'
-export { Model as Mineral } from './Mineral'
-export { Model as Necklace1 } from './Necklace1'
-export { Model as Necklace2 } from './Necklace2'
-export { Model as Necklace3 } from './Necklace3'
-export { Model as Padlock } from './Padlock'
-export { Model as Parchment } from './Parchment'
-export { Model as Potion10_Empty } from './Potion10_Empty'
-export { Model as Potion10_Filled } from './Potion10_Filled'
-export { Model as Potion11_Empty } from './Potion11_Empty'
-export { Model as Potion11_Filled } from './Potion11_Filled'
-export { Model as Potion1_Empty } from './Potion1_Empty'
-export { Model as Potion1_Filled } from './Potion1_Filled'
-export { Model as Potion2_Empty } from './Potion2_Empty'
-export { Model as Potion2_Filled } from './Potion2_Filled'
-export { Model as Potion3_Empty } from './Potion3_Empty'
-export { Model as Potion3_Filled } from './Potion3_Filled'
-export { Model as Potion4_Empty } from './Potion4_Empty'
-export { Model as Potion4_Filled } from './Potion4_Filled'
-export { Model as Potion5_Empty } from './Potion5_Empty'
-export { Model as Potion5_Filled } from './Potion5_Filled'
-export { Model as Potion6_Empty } from './Potion6_Empty'
-export { Model as Potion6_Filled } from './Potion6_Filled'
-export { Model as Potion7_Empty } from './Potion7_Empty'
-export { Model as Potion7_Filled } from './Potion7_Filled'
-export { Model as Potion8_Empty } from './Potion8_Empty'
-export { Model as Potion8_Filled } from './Potion8_Filled'
-export { Model as Potion9_Empty } from './Potion9_Empty'
-export { Model as Potion9_Filled } from './Potion9_Filled'
-export { Model as Pouch } from './Pouch'
-export { Model as Ring1 } from './Ring1'
-export { Model as Ring2 } from './Ring2'
-export { Model as Ring3 } from './Ring3'
-export { Model as Ring4 } from './Ring4'
-export { Model as Ring5 } from './Ring5'
-export { Model as Ring6 } from './Ring6'
-export { Model as Ring7 } from './Ring7'
-export { Model as Scroll } from './Scroll'
-export { Model as Skull } from './Skull'
-export { Model as Skull2 } from './Skull2'
-export { Model as Snowflake1 } from './Snowflake1'
-export { Model as Snowflake2 } from './Snowflake2'
-export { Model as Snowflake3 } from './Snowflake3'
-export { Model as Star } from './Star'
-export { Model as Sword } from './Sword'
-export { Model as Sword_Golden } from './Sword_Golden'
-export { Model as Sword_big } from './Sword_big'
-export { Model as Sword_big_Golden } from './Sword_big_Golden'
+import dynamic from 'next/dynamic'
+
+export const Armor_Black = dynamic(() => import('./Armor_Black'), { ssr: false })
+export const Armor_Golden = dynamic(() => import('./Armor_Golden'), { ssr: false })
+export const Armor_Leather = dynamic(() => import('./Armor_Leather'), { ssr: false })
+export const Armor_Metal = dynamic(() => import('./Armor_Metal'), { ssr: false })
+export const Armor_Metal2 = dynamic(() => import('./Armor_Metal2'), { ssr: false })
+export const Arrow = dynamic(() => import('./Arrow'), { ssr: false })
+export const Arrow_Golden = dynamic(() => import('./Arrow_Golden'), { ssr: false })
+export const Axe_Double = dynamic(() => import('./Axe_Double'), { ssr: false })
+export const Axe_Double_Golden = dynamic(() => import('./Axe_Double_Golden'), { ssr: false })
+export const Axe_small = dynamic(() => import('./Axe_small'), { ssr: false })
+export const Axe_small_Golden = dynamic(() => import('./Axe_small_Golden'), { ssr: false })
+export const Backpack = dynamic(() => import('./Backpack'), { ssr: false })
+export const Bag = dynamic(() => import('./Bag'), { ssr: false })
+export const Bone = dynamic(() => import('./Bone'), { ssr: false })
+export const Book1_Closed = dynamic(() => import('./Book1_Closed'), { ssr: false })
+export const Book1_Open = dynamic(() => import('./Book1_Open'), { ssr: false })
+export const Book2_Closed = dynamic(() => import('./Book2_Closed'), { ssr: false })
+export const Book2_Open = dynamic(() => import('./Book2_Open'), { ssr: false })
+export const Book3_Closed = dynamic(() => import('./Book3_Closed'), { ssr: false })
+export const Book3_Open = dynamic(() => import('./Book3_Open'), { ssr: false })
+export const Book4_Closed = dynamic(() => import('./Book4_Closed'), { ssr: false })
+export const Book4_Open = dynamic(() => import('./Book4_Open'), { ssr: false })
+export const Bow_Golden = dynamic(() => import('./Bow_Golden'), { ssr: false })
+export const Bow_Wooden = dynamic(() => import('./Bow_Wooden'), { ssr: false })
+export const Chalice = dynamic(() => import('./Chalice'), { ssr: false })
+export const Chest_Closed = dynamic(() => import('./Chest_Closed'), { ssr: false })
+export const Chest_Ingots = dynamic(() => import('./Chest_Ingots'), { ssr: false })
+export const Chest_Open = dynamic(() => import('./Chest_Open'), { ssr: false })
+export const ChickenLeg = dynamic(() => import('./ChickenLeg'), { ssr: false })
+export const Coin = dynamic(() => import('./Coin'), { ssr: false })
+export const Coin_Skull = dynamic(() => import('./Coin_Skull'), { ssr: false })
+export const Coin_Star = dynamic(() => import('./Coin_Star'), { ssr: false })
+export const Crown = dynamic(() => import('./Crown'), { ssr: false })
+export const Crown2 = dynamic(() => import('./Crown2'), { ssr: false })
+export const Crystal1 = dynamic(() => import('./Crystal1'), { ssr: false })
+export const Crystal1_Damaged = dynamic(() => import('./Crystal1_Damaged'), { ssr: false })
+export const Crystal2 = dynamic(() => import('./Crystal2'), { ssr: false })
+export const Crystal2_Damaged = dynamic(() => import('./Crystal2_Damaged'), { ssr: false })
+export const Crystal3 = dynamic(() => import('./Crystal3'), { ssr: false })
+export const Crystal3_Damaged = dynamic(() => import('./Crystal3_Damaged'), { ssr: false })
+export const Crystal4 = dynamic(() => import('./Crystal4'), { ssr: false })
+export const Crystal5 = dynamic(() => import('./Crystal5'), { ssr: false })
+export const Crystal5_Damaged = dynamic(() => import('./Crystal5_Damaged'), { ssr: false })
+export const Dagger = dynamic(() => import('./Dagger'), { ssr: false })
+export const Dagger_Golden = dynamic(() => import('./Dagger_Golden'), { ssr: false })
+export const Dart = dynamic(() => import('./Dart'), { ssr: false })
+export const Dart_Golden = dynamic(() => import('./Dart_Golden'), { ssr: false })
+export const FishBone = dynamic(() => import('./FishBone'), { ssr: false })
+export const Glove = dynamic(() => import('./Glove'), { ssr: false })
+export const Gold_Ingots = dynamic(() => import('./Gold_Ingots'), { ssr: false })
+export const Hammer_Double = dynamic(() => import('./Hammer_Double'), { ssr: false })
+export const Hammer_Double_Golden = dynamic(() => import('./Hammer_Double_Golden'), { ssr: false })
+export const Heart = dynamic(() => import('./Heart'), { ssr: false })
+export const Heart_Broken = dynamic(() => import('./Heart_Broken'), { ssr: false })
+export const Heart_Half = dynamic(() => import('./Heart_Half'), { ssr: false })
+export const Key1 = dynamic(() => import('./Key1'), { ssr: false })
+export const Key2 = dynamic(() => import('./Key2'), { ssr: false })
+export const Key3 = dynamic(() => import('./Key3'), { ssr: false })
+export const Key4 = dynamic(() => import('./Key4'), { ssr: false })
+export const Mineral = dynamic(() => import('./Mineral'), { ssr: false })
+export const Necklace1 = dynamic(() => import('./Necklace1'), { ssr: false })
+export const Necklace2 = dynamic(() => import('./Necklace2'), { ssr: false })
+export const Necklace3 = dynamic(() => import('./Necklace3'), { ssr: false })
+export const Padlock = dynamic(() => import('./Padlock'), { ssr: false })
+export const Parchment = dynamic(() => import('./Parchment'), { ssr: false })
+export const Potion10_Empty = dynamic(() => import('./Potion10_Empty'), { ssr: false })
+export const Potion10_Filled = dynamic(() => import('./Potion10_Filled'), { ssr: false })
+export const Potion11_Empty = dynamic(() => import('./Potion11_Empty'), { ssr: false })
+export const Potion11_Filled = dynamic(() => import('./Potion11_Filled'), { ssr: false })
+export const Potion1_Empty = dynamic(() => import('./Potion1_Empty'), { ssr: false })
+export const Potion1_Filled = dynamic(() => import('./Potion1_Filled'), { ssr: false })
+export const Potion2_Empty = dynamic(() => import('./Potion2_Empty'), { ssr: false })
+export const Potion2_Filled = dynamic(() => import('./Potion2_Filled'), { ssr: false })
+export const Potion3_Empty = dynamic(() => import('./Potion3_Empty'), { ssr: false })
+export const Potion3_Filled = dynamic(() => import('./Potion3_Filled'), { ssr: false })
+export const Potion4_Empty = dynamic(() => import('./Potion4_Empty'), { ssr: false })
+export const Potion4_Filled = dynamic(() => import('./Potion4_Filled'), { ssr: false })
+export const Potion5_Empty = dynamic(() => import('./Potion5_Empty'), { ssr: false })
+export const Potion5_Filled = dynamic(() => import('./Potion5_Filled'), { ssr: false })
+export const Potion6_Empty = dynamic(() => import('./Potion6_Empty'), { ssr: false })
+export const Potion6_Filled = dynamic(() => import('./Potion6_Filled'), { ssr: false })
+export const Potion7_Empty = dynamic(() => import('./Potion7_Empty'), { ssr: false })
+export const Potion7_Filled = dynamic(() => import('./Potion7_Filled'), { ssr: false })
+export const Potion8_Empty = dynamic(() => import('./Potion8_Empty'), { ssr: false })
+export const Potion8_Filled = dynamic(() => import('./Potion8_Filled'), { ssr: false })
+export const Potion9_Empty = dynamic(() => import('./Potion9_Empty'), { ssr: false })
+export const Potion9_Filled = dynamic(() => import('./Potion9_Filled'), { ssr: false })
+export const Pouch = dynamic(() => import('./Pouch'), { ssr: false })
+export const Ring1 = dynamic(() => import('./Ring1'), { ssr: false })
+export const Ring2 = dynamic(() => import('./Ring2'), { ssr: false })
+export const Ring3 = dynamic(() => import('./Ring3'), { ssr: false })
+export const Ring4 = dynamic(() => import('./Ring4'), { ssr: false })
+export const Ring5 = dynamic(() => import('./Ring5'), { ssr: false })
+export const Ring6 = dynamic(() => import('./Ring6'), { ssr: false })
+export const Ring7 = dynamic(() => import('./Ring7'), { ssr: false })
+export const Scroll = dynamic(() => import('./Scroll'), { ssr: false })
+export const Skull = dynamic(() => import('./Skull'), { ssr: false })
+export const Skull2 = dynamic(() => import('./Skull2'), { ssr: false })
+export const Snowflake1 = dynamic(() => import('./Snowflake1'), { ssr: false })
+export const Snowflake2 = dynamic(() => import('./Snowflake2'), { ssr: false })
+export const Snowflake3 = dynamic(() => import('./Snowflake3'), { ssr: false })
+export const Star = dynamic(() => import('./Star'), { ssr: false })
+export const Sword = dynamic(() => import('./Sword'), { ssr: false })
+export const Sword_Golden = dynamic(() => import('./Sword_Golden'), { ssr: false })
+export const Sword_big = dynamic(() => import('./Sword_big'), { ssr: false })
+export const Sword_big_Golden = dynamic(() => import('./Sword_big_Golden'), { ssr: false })

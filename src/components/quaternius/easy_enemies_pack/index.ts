@@ -1,6 +1,8 @@
-export { Model as Frog } from './Frog'
-export { Model as Rat } from './Rat'
-export { Model as Snake } from './Snake'
-export { Model as Snake_angry } from './Snake_angry'
-export { Model as Spider } from './Spider'
-export { Model as Wasp } from './Wasp'
+import dynamic from 'next/dynamic'
+
+export const Frog = dynamic(() => import('./Frog'), { ssr: false })
+export const Rat = dynamic(() => import('./Rat'), { ssr: false })
+export const Snake = dynamic(() => import('./Snake'), { ssr: false })
+export const Snake_angry = dynamic(() => import('./Snake_angry'), { ssr: false })
+export const Spider = dynamic(() => import('./Spider'), { ssr: false })
+export const Wasp = dynamic(() => import('./Wasp'), { ssr: false })

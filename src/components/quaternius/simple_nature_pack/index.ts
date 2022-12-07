@@ -1,13 +1,15 @@
-export { Model as Bush1 } from './Bush1'
-export { Model as Bush2 } from './Bush2'
-export { Model as Bush3 } from './Bush3'
-export { Model as Grass1 } from './Grass1'
-export { Model as Grass2 } from './Grass2'
-export { Model as Grass3 } from './Grass3'
-export { Model as Rock1 } from './Rock1'
-export { Model as Rock2 } from './Rock2'
-export { Model as Rock3 } from './Rock3'
-export { Model as Tree1 } from './Tree1'
-export { Model as Tree2 } from './Tree2'
-export { Model as Tree3 } from './Tree3'
-export { Model as Tree4 } from './Tree4'
+import dynamic from 'next/dynamic'
+
+export const Bush1 = dynamic(() => import('./Bush1'), { ssr: false })
+export const Bush2 = dynamic(() => import('./Bush2'), { ssr: false })
+export const Bush3 = dynamic(() => import('./Bush3'), { ssr: false })
+export const Grass1 = dynamic(() => import('./Grass1'), { ssr: false })
+export const Grass2 = dynamic(() => import('./Grass2'), { ssr: false })
+export const Grass3 = dynamic(() => import('./Grass3'), { ssr: false })
+export const Rock1 = dynamic(() => import('./Rock1'), { ssr: false })
+export const Rock2 = dynamic(() => import('./Rock2'), { ssr: false })
+export const Rock3 = dynamic(() => import('./Rock3'), { ssr: false })
+export const Tree1 = dynamic(() => import('./Tree1'), { ssr: false })
+export const Tree2 = dynamic(() => import('./Tree2'), { ssr: false })
+export const Tree3 = dynamic(() => import('./Tree3'), { ssr: false })
+export const Tree4 = dynamic(() => import('./Tree4'), { ssr: false })

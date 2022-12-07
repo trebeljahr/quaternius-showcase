@@ -1,102 +1,104 @@
-export { Model as Apple_1 } from './Apple_1'
-export { Model as Apple_2 } from './Apple_2'
-export { Model as Apple_3 } from './Apple_3'
-export { Model as Apple_4 } from './Apple_4'
-export { Model as Apple_Crop } from './Apple_Crop'
-export { Model as Apple_Harvested } from './Apple_Harvested'
-export { Model as Bamboo_1 } from './Bamboo_1'
-export { Model as Bamboo_2 } from './Bamboo_2'
-export { Model as Bamboo_3 } from './Bamboo_3'
-export { Model as Bamboo_4 } from './Bamboo_4'
-export { Model as Bamboo_Crop } from './Bamboo_Crop'
-export { Model as Beet_1 } from './Beet_1'
-export { Model as Beet_2 } from './Beet_2'
-export { Model as Beet_3 } from './Beet_3'
-export { Model as Beet_4 } from './Beet_4'
-export { Model as Beet_Crop } from './Beet_Crop'
-export { Model as BushBerries_1 } from './BushBerries_1'
-export { Model as BushBerries_2 } from './BushBerries_2'
-export { Model as BushBerries_3 } from './BushBerries_3'
-export { Model as BushBerries_4 } from './BushBerries_4'
-export { Model as BushBerries_Crop } from './BushBerries_Crop'
-export { Model as BushBerries_Harvested } from './BushBerries_Harvested'
-export { Model as Cactus_1 } from './Cactus_1'
-export { Model as Cactus_2 } from './Cactus_2'
-export { Model as Cactus_3 } from './Cactus_3'
-export { Model as Cactus_4 } from './Cactus_4'
-export { Model as Cactus_Crop } from './Cactus_Crop'
-export { Model as Cactus_Harvested } from './Cactus_Harvested'
-export { Model as Carrot_1 } from './Carrot_1'
-export { Model as Carrot_2 } from './Carrot_2'
-export { Model as Carrot_3 } from './Carrot_3'
-export { Model as Carrot_4 } from './Carrot_4'
-export { Model as Carrot_Crop } from './Carrot_Crop'
-export { Model as Coconut_Half } from './Coconut_Half'
-export { Model as Corn_1 } from './Corn_1'
-export { Model as Corn_2 } from './Corn_2'
-export { Model as Corn_3 } from './Corn_3'
-export { Model as Corn_4 } from './Corn_4'
-export { Model as Corn_Crop } from './Corn_Crop'
-export { Model as Corn_Harvested } from './Corn_Harvested'
-export { Model as Flower_1 } from './Flower_1'
-export { Model as Flower_2 } from './Flower_2'
-export { Model as Flower_3 } from './Flower_3'
-export { Model as Flower_4 } from './Flower_4'
-export { Model as Flowers_Crop } from './Flowers_Crop'
-export { Model as Flowers_Harvested } from './Flowers_Harvested'
-export { Model as Grass_1 } from './Grass_1'
-export { Model as Grass_2 } from './Grass_2'
-export { Model as Grass_3 } from './Grass_3'
-export { Model as Grass_4 } from './Grass_4'
-export { Model as Lettuce_1 } from './Lettuce_1'
-export { Model as Lettuce_2 } from './Lettuce_2'
-export { Model as Lettuce_3 } from './Lettuce_3'
-export { Model as Lettuce_4 } from './Lettuce_4'
-export { Model as Lettuce_Crop } from './Lettuce_Crop'
-export { Model as Lettuce_Harvested } from './Lettuce_Harvested'
-export { Model as Mushroom_1 } from './Mushroom_1'
-export { Model as Mushroom_2 } from './Mushroom_2'
-export { Model as Mushroom_3 } from './Mushroom_3'
-export { Model as Mushroom_4 } from './Mushroom_4'
-export { Model as Mushroom_Crop } from './Mushroom_Crop'
-export { Model as Mushroom_Harvested } from './Mushroom_Harvested'
-export { Model as Orange_1 } from './Orange_1'
-export { Model as Orange_2 } from './Orange_2'
-export { Model as Orange_3 } from './Orange_3'
-export { Model as Orange_4 } from './Orange_4'
-export { Model as Orange_Crop } from './Orange_Crop'
-export { Model as Orange_Harvested } from './Orange_Harvested'
-export { Model as PalmTree_1 } from './PalmTree_1'
-export { Model as PalmTree_2 } from './PalmTree_2'
-export { Model as PalmTree_3 } from './PalmTree_3'
-export { Model as PalmTree_4 } from './PalmTree_4'
-export { Model as PalmTree_Crop } from './PalmTree_Crop'
-export { Model as PalmTree_Harvested } from './PalmTree_Harvested'
-export { Model as Pumpkin_1 } from './Pumpkin_1'
-export { Model as Pumpkin_2 } from './Pumpkin_2'
-export { Model as Pumpkin_3 } from './Pumpkin_3'
-export { Model as Pumpkin_4 } from './Pumpkin_4'
-export { Model as Pumpkin_Crop } from './Pumpkin_Crop'
-export { Model as Pumpkin_Harvested } from './Pumpkin_Harvested'
-export { Model as Rice_1 } from './Rice_1'
-export { Model as Rice_2 } from './Rice_2'
-export { Model as Rice_3 } from './Rice_3'
-export { Model as Rice_4 } from './Rice_4'
-export { Model as Rice_Crop } from './Rice_Crop'
-export { Model as Tomato_1 } from './Tomato_1'
-export { Model as Tomato_2 } from './Tomato_2'
-export { Model as Tomato_3 } from './Tomato_3'
-export { Model as Tomato_4 } from './Tomato_4'
-export { Model as Tomato_Crop } from './Tomato_Crop'
-export { Model as Tomato_Harvested } from './Tomato_Harvested'
-export { Model as Watermelon_1 } from './Watermelon_1'
-export { Model as Watermelon_2 } from './Watermelon_2'
-export { Model as Watermelon_3 } from './Watermelon_3'
-export { Model as Watermelon_4 } from './Watermelon_4'
-export { Model as Watermelon_Crop } from './Watermelon_Crop'
-export { Model as Watermelon_Harvested } from './Watermelon_Harvested'
-export { Model as Wheat_1 } from './Wheat_1'
-export { Model as Wheat_2 } from './Wheat_2'
-export { Model as Wheat_3 } from './Wheat_3'
-export { Model as Wheat_4 } from './Wheat_4'
-export { Model as Wheat_Crop } from './Wheat_Crop'
+import dynamic from 'next/dynamic'
+
+export const Apple_1 = dynamic(() => import('./Apple_1'), { ssr: false })
+export const Apple_2 = dynamic(() => import('./Apple_2'), { ssr: false })
+export const Apple_3 = dynamic(() => import('./Apple_3'), { ssr: false })
+export const Apple_4 = dynamic(() => import('./Apple_4'), { ssr: false })
+export const Apple_Crop = dynamic(() => import('./Apple_Crop'), { ssr: false })
+export const Apple_Harvested = dynamic(() => import('./Apple_Harvested'), { ssr: false })
+export const Bamboo_1 = dynamic(() => import('./Bamboo_1'), { ssr: false })
+export const Bamboo_2 = dynamic(() => import('./Bamboo_2'), { ssr: false })
+export const Bamboo_3 = dynamic(() => import('./Bamboo_3'), { ssr: false })
+export const Bamboo_4 = dynamic(() => import('./Bamboo_4'), { ssr: false })
+export const Bamboo_Crop = dynamic(() => import('./Bamboo_Crop'), { ssr: false })
+export const Beet_1 = dynamic(() => import('./Beet_1'), { ssr: false })
+export const Beet_2 = dynamic(() => import('./Beet_2'), { ssr: false })
+export const Beet_3 = dynamic(() => import('./Beet_3'), { ssr: false })
+export const Beet_4 = dynamic(() => import('./Beet_4'), { ssr: false })
+export const Beet_Crop = dynamic(() => import('./Beet_Crop'), { ssr: false })
+export const BushBerries_1 = dynamic(() => import('./BushBerries_1'), { ssr: false })
+export const BushBerries_2 = dynamic(() => import('./BushBerries_2'), { ssr: false })
+export const BushBerries_3 = dynamic(() => import('./BushBerries_3'), { ssr: false })
+export const BushBerries_4 = dynamic(() => import('./BushBerries_4'), { ssr: false })
+export const BushBerries_Crop = dynamic(() => import('./BushBerries_Crop'), { ssr: false })
+export const BushBerries_Harvested = dynamic(() => import('./BushBerries_Harvested'), { ssr: false })
+export const Cactus_1 = dynamic(() => import('./Cactus_1'), { ssr: false })
+export const Cactus_2 = dynamic(() => import('./Cactus_2'), { ssr: false })
+export const Cactus_3 = dynamic(() => import('./Cactus_3'), { ssr: false })
+export const Cactus_4 = dynamic(() => import('./Cactus_4'), { ssr: false })
+export const Cactus_Crop = dynamic(() => import('./Cactus_Crop'), { ssr: false })
+export const Cactus_Harvested = dynamic(() => import('./Cactus_Harvested'), { ssr: false })
+export const Carrot_1 = dynamic(() => import('./Carrot_1'), { ssr: false })
+export const Carrot_2 = dynamic(() => import('./Carrot_2'), { ssr: false })
+export const Carrot_3 = dynamic(() => import('./Carrot_3'), { ssr: false })
+export const Carrot_4 = dynamic(() => import('./Carrot_4'), { ssr: false })
+export const Carrot_Crop = dynamic(() => import('./Carrot_Crop'), { ssr: false })
+export const Coconut_Half = dynamic(() => import('./Coconut_Half'), { ssr: false })
+export const Corn_1 = dynamic(() => import('./Corn_1'), { ssr: false })
+export const Corn_2 = dynamic(() => import('./Corn_2'), { ssr: false })
+export const Corn_3 = dynamic(() => import('./Corn_3'), { ssr: false })
+export const Corn_4 = dynamic(() => import('./Corn_4'), { ssr: false })
+export const Corn_Crop = dynamic(() => import('./Corn_Crop'), { ssr: false })
+export const Corn_Harvested = dynamic(() => import('./Corn_Harvested'), { ssr: false })
+export const Flower_1 = dynamic(() => import('./Flower_1'), { ssr: false })
+export const Flower_2 = dynamic(() => import('./Flower_2'), { ssr: false })
+export const Flower_3 = dynamic(() => import('./Flower_3'), { ssr: false })
+export const Flower_4 = dynamic(() => import('./Flower_4'), { ssr: false })
+export const Flowers_Crop = dynamic(() => import('./Flowers_Crop'), { ssr: false })
+export const Flowers_Harvested = dynamic(() => import('./Flowers_Harvested'), { ssr: false })
+export const Grass_1 = dynamic(() => import('./Grass_1'), { ssr: false })
+export const Grass_2 = dynamic(() => import('./Grass_2'), { ssr: false })
+export const Grass_3 = dynamic(() => import('./Grass_3'), { ssr: false })
+export const Grass_4 = dynamic(() => import('./Grass_4'), { ssr: false })
+export const Lettuce_1 = dynamic(() => import('./Lettuce_1'), { ssr: false })
+export const Lettuce_2 = dynamic(() => import('./Lettuce_2'), { ssr: false })
+export const Lettuce_3 = dynamic(() => import('./Lettuce_3'), { ssr: false })
+export const Lettuce_4 = dynamic(() => import('./Lettuce_4'), { ssr: false })
+export const Lettuce_Crop = dynamic(() => import('./Lettuce_Crop'), { ssr: false })
+export const Lettuce_Harvested = dynamic(() => import('./Lettuce_Harvested'), { ssr: false })
+export const Mushroom_1 = dynamic(() => import('./Mushroom_1'), { ssr: false })
+export const Mushroom_2 = dynamic(() => import('./Mushroom_2'), { ssr: false })
+export const Mushroom_3 = dynamic(() => import('./Mushroom_3'), { ssr: false })
+export const Mushroom_4 = dynamic(() => import('./Mushroom_4'), { ssr: false })
+export const Mushroom_Crop = dynamic(() => import('./Mushroom_Crop'), { ssr: false })
+export const Mushroom_Harvested = dynamic(() => import('./Mushroom_Harvested'), { ssr: false })
+export const Orange_1 = dynamic(() => import('./Orange_1'), { ssr: false })
+export const Orange_2 = dynamic(() => import('./Orange_2'), { ssr: false })
+export const Orange_3 = dynamic(() => import('./Orange_3'), { ssr: false })
+export const Orange_4 = dynamic(() => import('./Orange_4'), { ssr: false })
+export const Orange_Crop = dynamic(() => import('./Orange_Crop'), { ssr: false })
+export const Orange_Harvested = dynamic(() => import('./Orange_Harvested'), { ssr: false })
+export const PalmTree_1 = dynamic(() => import('./PalmTree_1'), { ssr: false })
+export const PalmTree_2 = dynamic(() => import('./PalmTree_2'), { ssr: false })
+export const PalmTree_3 = dynamic(() => import('./PalmTree_3'), { ssr: false })
+export const PalmTree_4 = dynamic(() => import('./PalmTree_4'), { ssr: false })
+export const PalmTree_Crop = dynamic(() => import('./PalmTree_Crop'), { ssr: false })
+export const PalmTree_Harvested = dynamic(() => import('./PalmTree_Harvested'), { ssr: false })
+export const Pumpkin_1 = dynamic(() => import('./Pumpkin_1'), { ssr: false })
+export const Pumpkin_2 = dynamic(() => import('./Pumpkin_2'), { ssr: false })
+export const Pumpkin_3 = dynamic(() => import('./Pumpkin_3'), { ssr: false })
+export const Pumpkin_4 = dynamic(() => import('./Pumpkin_4'), { ssr: false })
+export const Pumpkin_Crop = dynamic(() => import('./Pumpkin_Crop'), { ssr: false })
+export const Pumpkin_Harvested = dynamic(() => import('./Pumpkin_Harvested'), { ssr: false })
+export const Rice_1 = dynamic(() => import('./Rice_1'), { ssr: false })
+export const Rice_2 = dynamic(() => import('./Rice_2'), { ssr: false })
+export const Rice_3 = dynamic(() => import('./Rice_3'), { ssr: false })
+export const Rice_4 = dynamic(() => import('./Rice_4'), { ssr: false })
+export const Rice_Crop = dynamic(() => import('./Rice_Crop'), { ssr: false })
+export const Tomato_1 = dynamic(() => import('./Tomato_1'), { ssr: false })
+export const Tomato_2 = dynamic(() => import('./Tomato_2'), { ssr: false })
+export const Tomato_3 = dynamic(() => import('./Tomato_3'), { ssr: false })
+export const Tomato_4 = dynamic(() => import('./Tomato_4'), { ssr: false })
+export const Tomato_Crop = dynamic(() => import('./Tomato_Crop'), { ssr: false })
+export const Tomato_Harvested = dynamic(() => import('./Tomato_Harvested'), { ssr: false })
+export const Watermelon_1 = dynamic(() => import('./Watermelon_1'), { ssr: false })
+export const Watermelon_2 = dynamic(() => import('./Watermelon_2'), { ssr: false })
+export const Watermelon_3 = dynamic(() => import('./Watermelon_3'), { ssr: false })
+export const Watermelon_4 = dynamic(() => import('./Watermelon_4'), { ssr: false })
+export const Watermelon_Crop = dynamic(() => import('./Watermelon_Crop'), { ssr: false })
+export const Watermelon_Harvested = dynamic(() => import('./Watermelon_Harvested'), { ssr: false })
+export const Wheat_1 = dynamic(() => import('./Wheat_1'), { ssr: false })
+export const Wheat_2 = dynamic(() => import('./Wheat_2'), { ssr: false })
+export const Wheat_3 = dynamic(() => import('./Wheat_3'), { ssr: false })
+export const Wheat_4 = dynamic(() => import('./Wheat_4'), { ssr: false })
+export const Wheat_Crop = dynamic(() => import('./Wheat_Crop'), { ssr: false })

@@ -18,7 +18,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/nature_pack/Rock_Moss_6.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>

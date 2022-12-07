@@ -1,91 +1,93 @@
-export { Model as Column_1 } from './Column_1'
-export { Model as Column_2 } from './Column_2'
-export { Model as Column_3 } from './Column_3'
-export { Model as Column_Slim } from './Column_Slim'
-export { Model as Details_Arrow } from './Details_Arrow'
-export { Model as Details_Arrow_2 } from './Details_Arrow_2'
-export { Model as Details_Basic_1 } from './Details_Basic_1'
-export { Model as Details_Basic_2 } from './Details_Basic_2'
-export { Model as Details_Basic_3 } from './Details_Basic_3'
-export { Model as Details_Basic_4 } from './Details_Basic_4'
-export { Model as Details_Cylinder } from './Details_Cylinder'
-export { Model as Details_Cylinder_Long } from './Details_Cylinder_Long'
-export { Model as Details_Dots } from './Details_Dots'
-export { Model as Details_Hexagon } from './Details_Hexagon'
-export { Model as Details_Output } from './Details_Output'
-export { Model as Details_Output_Small } from './Details_Output_Small'
-export { Model as Details_Pipes_Long } from './Details_Pipes_Long'
-export { Model as Details_Pipes_Medium } from './Details_Pipes_Medium'
-export { Model as Details_Pipes_Small } from './Details_Pipes_Small'
-export { Model as Details_Plate_Details } from './Details_Plate_Details'
-export { Model as Details_Plate_Large } from './Details_Plate_Large'
-export { Model as Details_Plate_Long } from './Details_Plate_Long'
-export { Model as Details_Plate_Small } from './Details_Plate_Small'
-export { Model as Details_Triangles } from './Details_Triangles'
-export { Model as Details_Vent_1 } from './Details_Vent_1'
-export { Model as Details_Vent_2 } from './Details_Vent_2'
-export { Model as Details_Vent_3 } from './Details_Vent_3'
-export { Model as Details_Vent_4 } from './Details_Vent_4'
-export { Model as Details_Vent_5 } from './Details_Vent_5'
-export { Model as Details_X } from './Details_X'
-export { Model as DoorDoubleLong_Wall_SideA } from './DoorDoubleLong_Wall_SideA'
-export { Model as DoorDouble_Wall_SideA } from './DoorDouble_Wall_SideA'
-export { Model as DoorDouble_Wall_SideB } from './DoorDouble_Wall_SideB'
-export { Model as DoorSingleLong_Wall_SideA } from './DoorSingleLong_Wall_SideA'
-export { Model as DoorSingle_Wall_SideA } from './DoorSingle_Wall_SideA'
-export { Model as DoorSingle_Wall_SideB } from './DoorSingle_Wall_SideB'
-export { Model as Door_Double } from './Door_Double'
-export { Model as Door_Single } from './Door_Single'
-export { Model as FloorTile_Basic } from './FloorTile_Basic'
-export { Model as FloorTile_Basic2 } from './FloorTile_Basic2'
-export { Model as FloorTile_Corner } from './FloorTile_Corner'
-export { Model as FloorTile_Double_Hallway } from './FloorTile_Double_Hallway'
-export { Model as FloorTile_Empty } from './FloorTile_Empty'
-export { Model as FloorTile_InnerCorner } from './FloorTile_InnerCorner'
-export { Model as FloorTile_Side } from './FloorTile_Side'
-export { Model as LongWindow_Wall_SideA } from './LongWindow_Wall_SideA'
-export { Model as LongWindow_Wall_SideB } from './LongWindow_Wall_SideB'
-export { Model as Pipes } from './Pipes'
-export { Model as Props_Base } from './Props_Base'
-export { Model as Props_Capsule } from './Props_Capsule'
-export { Model as Props_Chest } from './Props_Chest'
-export { Model as Props_Computer } from './Props_Computer'
-export { Model as Props_ComputerSmall } from './Props_ComputerSmall'
-export { Model as Props_ContainerFull } from './Props_ContainerFull'
-export { Model as Props_Crate } from './Props_Crate'
-export { Model as Props_CrateLong } from './Props_CrateLong'
-export { Model as Props_Laser } from './Props_Laser'
-export { Model as Props_Pod } from './Props_Pod'
-export { Model as Props_Shelf } from './Props_Shelf'
-export { Model as Props_Shelf_Tall } from './Props_Shelf_Tall'
-export { Model as Props_Statue } from './Props_Statue'
-export { Model as Props_Teleporter_1 } from './Props_Teleporter_1'
-export { Model as Props_Teleporter_2 } from './Props_Teleporter_2'
-export { Model as Props_Vessel } from './Props_Vessel'
-export { Model as Props_Vessel_Short } from './Props_Vessel_Short'
-export { Model as Props_Vessel_Tall } from './Props_Vessel_Tall'
-export { Model as RoofTile_Corner_Pipes } from './RoofTile_Corner_Pipes'
-export { Model as RoofTile_Details } from './RoofTile_Details'
-export { Model as RoofTile_Empty } from './RoofTile_Empty'
-export { Model as RoofTile_InnerCorner_Pipes } from './RoofTile_InnerCorner_Pipes'
-export { Model as RoofTile_OrangeVent } from './RoofTile_OrangeVent'
-export { Model as RoofTile_Pipes1 } from './RoofTile_Pipes1'
-export { Model as RoofTile_Pipes2 } from './RoofTile_Pipes2'
-export { Model as RoofTile_Plate } from './RoofTile_Plate'
-export { Model as RoofTile_Plate2 } from './RoofTile_Plate2'
-export { Model as RoofTile_Sides_Pipes } from './RoofTile_Sides_Pipes'
-export { Model as RoofTile_SmallVents } from './RoofTile_SmallVents'
-export { Model as RoofTile_Vents } from './RoofTile_Vents'
-export { Model as SmallWindows_Wall_SideA } from './SmallWindows_Wall_SideA'
-export { Model as SmallWindows_Wall_SideB } from './SmallWindows_Wall_SideB'
-export { Model as Staircase } from './Staircase'
-export { Model as ThreeWindows_Wall_SideA } from './ThreeWindows_Wall_SideA'
-export { Model as ThreeWindows_Wall_SideB } from './ThreeWindows_Wall_SideB'
-export { Model as Wall_1 } from './Wall_1'
-export { Model as Wall_2 } from './Wall_2'
-export { Model as Wall_3 } from './Wall_3'
-export { Model as Wall_4 } from './Wall_4'
-export { Model as Wall_5 } from './Wall_5'
-export { Model as Wall_Empty } from './Wall_Empty'
-export { Model as Window_Wall_SideA } from './Window_Wall_SideA'
-export { Model as Window_Wall_SideB } from './Window_Wall_SideB'
+import dynamic from 'next/dynamic'
+
+export const Column_1 = dynamic(() => import('./Column_1'), { ssr: false })
+export const Column_2 = dynamic(() => import('./Column_2'), { ssr: false })
+export const Column_3 = dynamic(() => import('./Column_3'), { ssr: false })
+export const Column_Slim = dynamic(() => import('./Column_Slim'), { ssr: false })
+export const Details_Arrow = dynamic(() => import('./Details_Arrow'), { ssr: false })
+export const Details_Arrow_2 = dynamic(() => import('./Details_Arrow_2'), { ssr: false })
+export const Details_Basic_1 = dynamic(() => import('./Details_Basic_1'), { ssr: false })
+export const Details_Basic_2 = dynamic(() => import('./Details_Basic_2'), { ssr: false })
+export const Details_Basic_3 = dynamic(() => import('./Details_Basic_3'), { ssr: false })
+export const Details_Basic_4 = dynamic(() => import('./Details_Basic_4'), { ssr: false })
+export const Details_Cylinder = dynamic(() => import('./Details_Cylinder'), { ssr: false })
+export const Details_Cylinder_Long = dynamic(() => import('./Details_Cylinder_Long'), { ssr: false })
+export const Details_Dots = dynamic(() => import('./Details_Dots'), { ssr: false })
+export const Details_Hexagon = dynamic(() => import('./Details_Hexagon'), { ssr: false })
+export const Details_Output = dynamic(() => import('./Details_Output'), { ssr: false })
+export const Details_Output_Small = dynamic(() => import('./Details_Output_Small'), { ssr: false })
+export const Details_Pipes_Long = dynamic(() => import('./Details_Pipes_Long'), { ssr: false })
+export const Details_Pipes_Medium = dynamic(() => import('./Details_Pipes_Medium'), { ssr: false })
+export const Details_Pipes_Small = dynamic(() => import('./Details_Pipes_Small'), { ssr: false })
+export const Details_Plate_Details = dynamic(() => import('./Details_Plate_Details'), { ssr: false })
+export const Details_Plate_Large = dynamic(() => import('./Details_Plate_Large'), { ssr: false })
+export const Details_Plate_Long = dynamic(() => import('./Details_Plate_Long'), { ssr: false })
+export const Details_Plate_Small = dynamic(() => import('./Details_Plate_Small'), { ssr: false })
+export const Details_Triangles = dynamic(() => import('./Details_Triangles'), { ssr: false })
+export const Details_Vent_1 = dynamic(() => import('./Details_Vent_1'), { ssr: false })
+export const Details_Vent_2 = dynamic(() => import('./Details_Vent_2'), { ssr: false })
+export const Details_Vent_3 = dynamic(() => import('./Details_Vent_3'), { ssr: false })
+export const Details_Vent_4 = dynamic(() => import('./Details_Vent_4'), { ssr: false })
+export const Details_Vent_5 = dynamic(() => import('./Details_Vent_5'), { ssr: false })
+export const Details_X = dynamic(() => import('./Details_X'), { ssr: false })
+export const DoorDoubleLong_Wall_SideA = dynamic(() => import('./DoorDoubleLong_Wall_SideA'), { ssr: false })
+export const DoorDouble_Wall_SideA = dynamic(() => import('./DoorDouble_Wall_SideA'), { ssr: false })
+export const DoorDouble_Wall_SideB = dynamic(() => import('./DoorDouble_Wall_SideB'), { ssr: false })
+export const DoorSingleLong_Wall_SideA = dynamic(() => import('./DoorSingleLong_Wall_SideA'), { ssr: false })
+export const DoorSingle_Wall_SideA = dynamic(() => import('./DoorSingle_Wall_SideA'), { ssr: false })
+export const DoorSingle_Wall_SideB = dynamic(() => import('./DoorSingle_Wall_SideB'), { ssr: false })
+export const Door_Double = dynamic(() => import('./Door_Double'), { ssr: false })
+export const Door_Single = dynamic(() => import('./Door_Single'), { ssr: false })
+export const FloorTile_Basic = dynamic(() => import('./FloorTile_Basic'), { ssr: false })
+export const FloorTile_Basic2 = dynamic(() => import('./FloorTile_Basic2'), { ssr: false })
+export const FloorTile_Corner = dynamic(() => import('./FloorTile_Corner'), { ssr: false })
+export const FloorTile_Double_Hallway = dynamic(() => import('./FloorTile_Double_Hallway'), { ssr: false })
+export const FloorTile_Empty = dynamic(() => import('./FloorTile_Empty'), { ssr: false })
+export const FloorTile_InnerCorner = dynamic(() => import('./FloorTile_InnerCorner'), { ssr: false })
+export const FloorTile_Side = dynamic(() => import('./FloorTile_Side'), { ssr: false })
+export const LongWindow_Wall_SideA = dynamic(() => import('./LongWindow_Wall_SideA'), { ssr: false })
+export const LongWindow_Wall_SideB = dynamic(() => import('./LongWindow_Wall_SideB'), { ssr: false })
+export const Pipes = dynamic(() => import('./Pipes'), { ssr: false })
+export const Props_Base = dynamic(() => import('./Props_Base'), { ssr: false })
+export const Props_Capsule = dynamic(() => import('./Props_Capsule'), { ssr: false })
+export const Props_Chest = dynamic(() => import('./Props_Chest'), { ssr: false })
+export const Props_Computer = dynamic(() => import('./Props_Computer'), { ssr: false })
+export const Props_ComputerSmall = dynamic(() => import('./Props_ComputerSmall'), { ssr: false })
+export const Props_ContainerFull = dynamic(() => import('./Props_ContainerFull'), { ssr: false })
+export const Props_Crate = dynamic(() => import('./Props_Crate'), { ssr: false })
+export const Props_CrateLong = dynamic(() => import('./Props_CrateLong'), { ssr: false })
+export const Props_Laser = dynamic(() => import('./Props_Laser'), { ssr: false })
+export const Props_Pod = dynamic(() => import('./Props_Pod'), { ssr: false })
+export const Props_Shelf = dynamic(() => import('./Props_Shelf'), { ssr: false })
+export const Props_Shelf_Tall = dynamic(() => import('./Props_Shelf_Tall'), { ssr: false })
+export const Props_Statue = dynamic(() => import('./Props_Statue'), { ssr: false })
+export const Props_Teleporter_1 = dynamic(() => import('./Props_Teleporter_1'), { ssr: false })
+export const Props_Teleporter_2 = dynamic(() => import('./Props_Teleporter_2'), { ssr: false })
+export const Props_Vessel = dynamic(() => import('./Props_Vessel'), { ssr: false })
+export const Props_Vessel_Short = dynamic(() => import('./Props_Vessel_Short'), { ssr: false })
+export const Props_Vessel_Tall = dynamic(() => import('./Props_Vessel_Tall'), { ssr: false })
+export const RoofTile_Corner_Pipes = dynamic(() => import('./RoofTile_Corner_Pipes'), { ssr: false })
+export const RoofTile_Details = dynamic(() => import('./RoofTile_Details'), { ssr: false })
+export const RoofTile_Empty = dynamic(() => import('./RoofTile_Empty'), { ssr: false })
+export const RoofTile_InnerCorner_Pipes = dynamic(() => import('./RoofTile_InnerCorner_Pipes'), { ssr: false })
+export const RoofTile_OrangeVent = dynamic(() => import('./RoofTile_OrangeVent'), { ssr: false })
+export const RoofTile_Pipes1 = dynamic(() => import('./RoofTile_Pipes1'), { ssr: false })
+export const RoofTile_Pipes2 = dynamic(() => import('./RoofTile_Pipes2'), { ssr: false })
+export const RoofTile_Plate = dynamic(() => import('./RoofTile_Plate'), { ssr: false })
+export const RoofTile_Plate2 = dynamic(() => import('./RoofTile_Plate2'), { ssr: false })
+export const RoofTile_Sides_Pipes = dynamic(() => import('./RoofTile_Sides_Pipes'), { ssr: false })
+export const RoofTile_SmallVents = dynamic(() => import('./RoofTile_SmallVents'), { ssr: false })
+export const RoofTile_Vents = dynamic(() => import('./RoofTile_Vents'), { ssr: false })
+export const SmallWindows_Wall_SideA = dynamic(() => import('./SmallWindows_Wall_SideA'), { ssr: false })
+export const SmallWindows_Wall_SideB = dynamic(() => import('./SmallWindows_Wall_SideB'), { ssr: false })
+export const Staircase = dynamic(() => import('./Staircase'), { ssr: false })
+export const ThreeWindows_Wall_SideA = dynamic(() => import('./ThreeWindows_Wall_SideA'), { ssr: false })
+export const ThreeWindows_Wall_SideB = dynamic(() => import('./ThreeWindows_Wall_SideB'), { ssr: false })
+export const Wall_1 = dynamic(() => import('./Wall_1'), { ssr: false })
+export const Wall_2 = dynamic(() => import('./Wall_2'), { ssr: false })
+export const Wall_3 = dynamic(() => import('./Wall_3'), { ssr: false })
+export const Wall_4 = dynamic(() => import('./Wall_4'), { ssr: false })
+export const Wall_5 = dynamic(() => import('./Wall_5'), { ssr: false })
+export const Wall_Empty = dynamic(() => import('./Wall_Empty'), { ssr: false })
+export const Window_Wall_SideA = dynamic(() => import('./Window_Wall_SideA'), { ssr: false })
+export const Window_Wall_SideB = dynamic(() => import('./Window_Wall_SideB'), { ssr: false })

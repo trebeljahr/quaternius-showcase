@@ -1,4 +1,6 @@
-export { Model as Tank } from './Tank'
-export { Model as Tank2 } from './Tank2'
-export { Model as Tank3 } from './Tank3'
-export { Model as Tank4 } from './Tank4'
+import dynamic from 'next/dynamic'
+
+export const Tank = dynamic(() => import('./Tank'), { ssr: false })
+export const Tank2 = dynamic(() => import('./Tank2'), { ssr: false })
+export const Tank3 = dynamic(() => import('./Tank3'), { ssr: false })
+export const Tank4 = dynamic(() => import('./Tank4'), { ssr: false })

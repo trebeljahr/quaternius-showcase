@@ -1,71 +1,73 @@
-export { Model as AC } from './AC'
-export { Model as AC_Side } from './AC_Side'
-export { Model as AC_Stacked } from './AC_Stacked'
-export { Model as Antenna_1 } from './Antenna_1'
-export { Model as Antenna_2 } from './Antenna_2'
-export { Model as Cable_Long } from './Cable_Long'
-export { Model as Cable_Small } from './Cable_Small'
-export { Model as Cable_Thick } from './Cable_Thick'
-export { Model as Character } from './Character'
-export { Model as Collectible_Board } from './Collectible_Board'
-export { Model as Collectible_Gear } from './Collectible_Gear'
-export { Model as Computer } from './Computer'
-export { Model as Computer_Large } from './Computer_Large'
-export { Model as Door } from './Door'
-export { Model as Enemy_2Legs } from './Enemy_2Legs'
-export { Model as Enemy_2Legs_Gun } from './Enemy_2Legs_Gun'
-export { Model as Enemy_Flying } from './Enemy_Flying'
-export { Model as Enemy_Flying_Gun } from './Enemy_Flying_Gun'
-export { Model as Enemy_Large } from './Enemy_Large'
-export { Model as Enemy_Large_Gun } from './Enemy_Large_Gun'
-export { Model as Fence } from './Fence'
-export { Model as Lever } from './Lever'
-export { Model as Light_Square } from './Light_Square'
-export { Model as Light_Street_1 } from './Light_Street_1'
-export { Model as Light_Street_2 } from './Light_Street_2'
-export { Model as Lootbox } from './Lootbox'
-export { Model as Pickup_Health } from './Pickup_Health'
-export { Model as Pickup_Heart } from './Pickup_Heart'
-export { Model as Pickup_Tank } from './Pickup_Tank'
-export { Model as Pipe_1 } from './Pipe_1'
-export { Model as Pipe_2 } from './Pipe_2'
-export { Model as Pipe_Corner } from './Pipe_Corner'
-export { Model as Pipe_Corner_2 } from './Pipe_Corner_2'
-export { Model as Platform_1x1_Empty } from './Platform_1x1_Empty'
-export { Model as Platform_2x1_Empty } from './Platform_2x1_Empty'
-export { Model as Platform_2x2 } from './Platform_2x2'
-export { Model as Platform_2x2_Empty } from './Platform_2x2_Empty'
-export { Model as Platform_4x1 } from './Platform_4x1'
-export { Model as Platform_4x1_Empty } from './Platform_4x1_Empty'
-export { Model as Platform_4x2 } from './Platform_4x2'
-export { Model as Platform_4x4 } from './Platform_4x4'
-export { Model as Platform_4x4_Empty } from './Platform_4x4_Empty'
-export { Model as Rail_Corner } from './Rail_Corner'
-export { Model as Rail_Corner_2 } from './Rail_Corner_2'
-export { Model as Rail_Long } from './Rail_Long'
-export { Model as Rail_Short } from './Rail_Short'
-export { Model as Sign_1 } from './Sign_1'
-export { Model as Sign_2 } from './Sign_2'
-export { Model as Sign_3 } from './Sign_3'
-export { Model as Sign_4 } from './Sign_4'
-export { Model as Sign_Corner_1 } from './Sign_Corner_1'
-export { Model as Sign_Corner_2 } from './Sign_Corner_2'
-export { Model as Sign_Corner_3 } from './Sign_Corner_3'
-export { Model as Sign_Corner_3_Fenced } from './Sign_Corner_3_Fenced'
-export { Model as Sign_Corner_Hazard } from './Sign_Corner_Hazard'
-export { Model as Sign_Corner_Small1 } from './Sign_Corner_Small1'
-export { Model as Sign_Corner_Small2 } from './Sign_Corner_Small2'
-export { Model as Sign_Small_1 } from './Sign_Small_1'
-export { Model as Sign_Small_2 } from './Sign_Small_2'
-export { Model as Sign_Small_3 } from './Sign_Small_3'
-export { Model as Support } from './Support'
-export { Model as Support_Long } from './Support_Long'
-export { Model as Support_Short } from './Support_Short'
-export { Model as TV_1 } from './TV_1'
-export { Model as TV_2 } from './TV_2'
-export { Model as TV_3 } from './TV_3'
-export { Model as Tank } from './Tank'
-export { Model as Turret_Cannon } from './Turret_Cannon'
-export { Model as Turret_Gun } from './Turret_Gun'
-export { Model as Turret_GunDouble } from './Turret_GunDouble'
-export { Model as Turret_Teleporter } from './Turret_Teleporter'
+import dynamic from 'next/dynamic'
+
+export const AC = dynamic(() => import('./AC'), { ssr: false })
+export const AC_Side = dynamic(() => import('./AC_Side'), { ssr: false })
+export const AC_Stacked = dynamic(() => import('./AC_Stacked'), { ssr: false })
+export const Antenna_1 = dynamic(() => import('./Antenna_1'), { ssr: false })
+export const Antenna_2 = dynamic(() => import('./Antenna_2'), { ssr: false })
+export const Cable_Long = dynamic(() => import('./Cable_Long'), { ssr: false })
+export const Cable_Small = dynamic(() => import('./Cable_Small'), { ssr: false })
+export const Cable_Thick = dynamic(() => import('./Cable_Thick'), { ssr: false })
+export const Character = dynamic(() => import('./Character'), { ssr: false })
+export const Collectible_Board = dynamic(() => import('./Collectible_Board'), { ssr: false })
+export const Collectible_Gear = dynamic(() => import('./Collectible_Gear'), { ssr: false })
+export const Computer = dynamic(() => import('./Computer'), { ssr: false })
+export const Computer_Large = dynamic(() => import('./Computer_Large'), { ssr: false })
+export const Door = dynamic(() => import('./Door'), { ssr: false })
+export const Enemy_2Legs = dynamic(() => import('./Enemy_2Legs'), { ssr: false })
+export const Enemy_2Legs_Gun = dynamic(() => import('./Enemy_2Legs_Gun'), { ssr: false })
+export const Enemy_Flying = dynamic(() => import('./Enemy_Flying'), { ssr: false })
+export const Enemy_Flying_Gun = dynamic(() => import('./Enemy_Flying_Gun'), { ssr: false })
+export const Enemy_Large = dynamic(() => import('./Enemy_Large'), { ssr: false })
+export const Enemy_Large_Gun = dynamic(() => import('./Enemy_Large_Gun'), { ssr: false })
+export const Fence = dynamic(() => import('./Fence'), { ssr: false })
+export const Lever = dynamic(() => import('./Lever'), { ssr: false })
+export const Light_Square = dynamic(() => import('./Light_Square'), { ssr: false })
+export const Light_Street_1 = dynamic(() => import('./Light_Street_1'), { ssr: false })
+export const Light_Street_2 = dynamic(() => import('./Light_Street_2'), { ssr: false })
+export const Lootbox = dynamic(() => import('./Lootbox'), { ssr: false })
+export const Pickup_Health = dynamic(() => import('./Pickup_Health'), { ssr: false })
+export const Pickup_Heart = dynamic(() => import('./Pickup_Heart'), { ssr: false })
+export const Pickup_Tank = dynamic(() => import('./Pickup_Tank'), { ssr: false })
+export const Pipe_1 = dynamic(() => import('./Pipe_1'), { ssr: false })
+export const Pipe_2 = dynamic(() => import('./Pipe_2'), { ssr: false })
+export const Pipe_Corner = dynamic(() => import('./Pipe_Corner'), { ssr: false })
+export const Pipe_Corner_2 = dynamic(() => import('./Pipe_Corner_2'), { ssr: false })
+export const Platform_1x1_Empty = dynamic(() => import('./Platform_1x1_Empty'), { ssr: false })
+export const Platform_2x1_Empty = dynamic(() => import('./Platform_2x1_Empty'), { ssr: false })
+export const Platform_2x2 = dynamic(() => import('./Platform_2x2'), { ssr: false })
+export const Platform_2x2_Empty = dynamic(() => import('./Platform_2x2_Empty'), { ssr: false })
+export const Platform_4x1 = dynamic(() => import('./Platform_4x1'), { ssr: false })
+export const Platform_4x1_Empty = dynamic(() => import('./Platform_4x1_Empty'), { ssr: false })
+export const Platform_4x2 = dynamic(() => import('./Platform_4x2'), { ssr: false })
+export const Platform_4x4 = dynamic(() => import('./Platform_4x4'), { ssr: false })
+export const Platform_4x4_Empty = dynamic(() => import('./Platform_4x4_Empty'), { ssr: false })
+export const Rail_Corner = dynamic(() => import('./Rail_Corner'), { ssr: false })
+export const Rail_Corner_2 = dynamic(() => import('./Rail_Corner_2'), { ssr: false })
+export const Rail_Long = dynamic(() => import('./Rail_Long'), { ssr: false })
+export const Rail_Short = dynamic(() => import('./Rail_Short'), { ssr: false })
+export const Sign_1 = dynamic(() => import('./Sign_1'), { ssr: false })
+export const Sign_2 = dynamic(() => import('./Sign_2'), { ssr: false })
+export const Sign_3 = dynamic(() => import('./Sign_3'), { ssr: false })
+export const Sign_4 = dynamic(() => import('./Sign_4'), { ssr: false })
+export const Sign_Corner_1 = dynamic(() => import('./Sign_Corner_1'), { ssr: false })
+export const Sign_Corner_2 = dynamic(() => import('./Sign_Corner_2'), { ssr: false })
+export const Sign_Corner_3 = dynamic(() => import('./Sign_Corner_3'), { ssr: false })
+export const Sign_Corner_3_Fenced = dynamic(() => import('./Sign_Corner_3_Fenced'), { ssr: false })
+export const Sign_Corner_Hazard = dynamic(() => import('./Sign_Corner_Hazard'), { ssr: false })
+export const Sign_Corner_Small1 = dynamic(() => import('./Sign_Corner_Small1'), { ssr: false })
+export const Sign_Corner_Small2 = dynamic(() => import('./Sign_Corner_Small2'), { ssr: false })
+export const Sign_Small_1 = dynamic(() => import('./Sign_Small_1'), { ssr: false })
+export const Sign_Small_2 = dynamic(() => import('./Sign_Small_2'), { ssr: false })
+export const Sign_Small_3 = dynamic(() => import('./Sign_Small_3'), { ssr: false })
+export const Support = dynamic(() => import('./Support'), { ssr: false })
+export const Support_Long = dynamic(() => import('./Support_Long'), { ssr: false })
+export const Support_Short = dynamic(() => import('./Support_Short'), { ssr: false })
+export const TV_1 = dynamic(() => import('./TV_1'), { ssr: false })
+export const TV_2 = dynamic(() => import('./TV_2'), { ssr: false })
+export const TV_3 = dynamic(() => import('./TV_3'), { ssr: false })
+export const Tank = dynamic(() => import('./Tank'), { ssr: false })
+export const Turret_Cannon = dynamic(() => import('./Turret_Cannon'), { ssr: false })
+export const Turret_Gun = dynamic(() => import('./Turret_Gun'), { ssr: false })
+export const Turret_GunDouble = dynamic(() => import('./Turret_GunDouble'), { ssr: false })
+export const Turret_Teleporter = dynamic(() => import('./Turret_Teleporter'), { ssr: false })

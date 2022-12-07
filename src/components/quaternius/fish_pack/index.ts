@@ -1,7 +1,9 @@
-export { Model as Dolphin } from './Dolphin'
-export { Model as Fish1 } from './Fish1'
-export { Model as Fish2 } from './Fish2'
-export { Model as Fish3 } from './Fish3'
-export { Model as Ray } from './Ray'
-export { Model as Shark } from './Shark'
-export { Model as Whale } from './Whale'
+import dynamic from 'next/dynamic'
+
+export const Dolphin = dynamic(() => import('./Dolphin'), { ssr: false })
+export const Fish1 = dynamic(() => import('./Fish1'), { ssr: false })
+export const Fish2 = dynamic(() => import('./Fish2'), { ssr: false })
+export const Fish3 = dynamic(() => import('./Fish3'), { ssr: false })
+export const Ray = dynamic(() => import('./Ray'), { ssr: false })
+export const Shark = dynamic(() => import('./Shark'), { ssr: false })
+export const Whale = dynamic(() => import('./Whale'), { ssr: false })

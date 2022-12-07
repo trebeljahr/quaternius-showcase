@@ -1,53 +1,55 @@
-export { Model as BearTrap_Closed } from './BearTrap_Closed'
-export { Model as BearTrap_Open } from './BearTrap_Open'
-export { Model as Bomb } from './Bomb'
-export { Model as Cloud1 } from './Cloud1'
-export { Model as Cloud2 } from './Cloud2'
-export { Model as Cloud3 } from './Cloud3'
-export { Model as Cloud4 } from './Cloud4'
-export { Model as Cloud5 } from './Cloud5'
-export { Model as Coin } from './Coin'
-export { Model as Crate } from './Crate'
-export { Model as Fence } from './Fence'
-export { Model as Flag } from './Flag'
-export { Model as Grass } from './Grass'
-export { Model as Grass1 } from './Grass1'
-export { Model as Grass2 } from './Grass2'
-export { Model as Heart_Full } from './Heart_Full'
-export { Model as Heart_Half } from './Heart_Half'
-export { Model as Key } from './Key'
-export { Model as Ladder_long } from './Ladder_long'
-export { Model as Ladder_medium } from './Ladder_medium'
-export { Model as Ladder_short } from './Ladder_short'
-export { Model as Lever } from './Lever'
-export { Model as MovingPlatform } from './MovingPlatform'
-export { Model as MovingPlatform_Long } from './MovingPlatform_Long'
-export { Model as Mushroom } from './Mushroom'
-export { Model as Pipe } from './Pipe'
-export { Model as Platform_BottomLeft } from './Platform_BottomLeft'
-export { Model as Platform_BottomMiddle } from './Platform_BottomMiddle'
-export { Model as Platform_BottomRight } from './Platform_BottomRight'
-export { Model as Platform_CenterLeft } from './Platform_CenterLeft'
-export { Model as Platform_CenterMiddle } from './Platform_CenterMiddle'
-export { Model as Platform_CenterRight } from './Platform_CenterRight'
-export { Model as Platform_TopLeft } from './Platform_TopLeft'
-export { Model as Platform_TopMiddle } from './Platform_TopMiddle'
-export { Model as Platform_TopRight } from './Platform_TopRight'
-export { Model as Rock1 } from './Rock1'
-export { Model as Rock2 } from './Rock2'
-export { Model as Rock3 } from './Rock3'
-export { Model as Rock4 } from './Rock4'
-export { Model as Rope_Long } from './Rope_Long'
-export { Model as Rope_Short } from './Rope_Short'
-export { Model as Sign_Left } from './Sign_Left'
-export { Model as Sign_LeftRight } from './Sign_LeftRight'
-export { Model as Sign_Right } from './Sign_Right'
-export { Model as Spike_Group } from './Spike_Group'
-export { Model as Spike_Single } from './Spike_Single'
-export { Model as Spikes_Platform } from './Spikes_Platform'
-export { Model as Star } from './Star'
-export { Model as Tree1 } from './Tree1'
-export { Model as Tree2 } from './Tree2'
-export { Model as Tree3 } from './Tree3'
-export { Model as Tree4 } from './Tree4'
-export { Model as YellowBox } from './YellowBox'
+import dynamic from 'next/dynamic'
+
+export const BearTrap_Closed = dynamic(() => import('./BearTrap_Closed'), { ssr: false })
+export const BearTrap_Open = dynamic(() => import('./BearTrap_Open'), { ssr: false })
+export const Bomb = dynamic(() => import('./Bomb'), { ssr: false })
+export const Cloud1 = dynamic(() => import('./Cloud1'), { ssr: false })
+export const Cloud2 = dynamic(() => import('./Cloud2'), { ssr: false })
+export const Cloud3 = dynamic(() => import('./Cloud3'), { ssr: false })
+export const Cloud4 = dynamic(() => import('./Cloud4'), { ssr: false })
+export const Cloud5 = dynamic(() => import('./Cloud5'), { ssr: false })
+export const Coin = dynamic(() => import('./Coin'), { ssr: false })
+export const Crate = dynamic(() => import('./Crate'), { ssr: false })
+export const Fence = dynamic(() => import('./Fence'), { ssr: false })
+export const Flag = dynamic(() => import('./Flag'), { ssr: false })
+export const Grass = dynamic(() => import('./Grass'), { ssr: false })
+export const Grass1 = dynamic(() => import('./Grass1'), { ssr: false })
+export const Grass2 = dynamic(() => import('./Grass2'), { ssr: false })
+export const Heart_Full = dynamic(() => import('./Heart_Full'), { ssr: false })
+export const Heart_Half = dynamic(() => import('./Heart_Half'), { ssr: false })
+export const Key = dynamic(() => import('./Key'), { ssr: false })
+export const Ladder_long = dynamic(() => import('./Ladder_long'), { ssr: false })
+export const Ladder_medium = dynamic(() => import('./Ladder_medium'), { ssr: false })
+export const Ladder_short = dynamic(() => import('./Ladder_short'), { ssr: false })
+export const Lever = dynamic(() => import('./Lever'), { ssr: false })
+export const MovingPlatform = dynamic(() => import('./MovingPlatform'), { ssr: false })
+export const MovingPlatform_Long = dynamic(() => import('./MovingPlatform_Long'), { ssr: false })
+export const Mushroom = dynamic(() => import('./Mushroom'), { ssr: false })
+export const Pipe = dynamic(() => import('./Pipe'), { ssr: false })
+export const Platform_BottomLeft = dynamic(() => import('./Platform_BottomLeft'), { ssr: false })
+export const Platform_BottomMiddle = dynamic(() => import('./Platform_BottomMiddle'), { ssr: false })
+export const Platform_BottomRight = dynamic(() => import('./Platform_BottomRight'), { ssr: false })
+export const Platform_CenterLeft = dynamic(() => import('./Platform_CenterLeft'), { ssr: false })
+export const Platform_CenterMiddle = dynamic(() => import('./Platform_CenterMiddle'), { ssr: false })
+export const Platform_CenterRight = dynamic(() => import('./Platform_CenterRight'), { ssr: false })
+export const Platform_TopLeft = dynamic(() => import('./Platform_TopLeft'), { ssr: false })
+export const Platform_TopMiddle = dynamic(() => import('./Platform_TopMiddle'), { ssr: false })
+export const Platform_TopRight = dynamic(() => import('./Platform_TopRight'), { ssr: false })
+export const Rock1 = dynamic(() => import('./Rock1'), { ssr: false })
+export const Rock2 = dynamic(() => import('./Rock2'), { ssr: false })
+export const Rock3 = dynamic(() => import('./Rock3'), { ssr: false })
+export const Rock4 = dynamic(() => import('./Rock4'), { ssr: false })
+export const Rope_Long = dynamic(() => import('./Rope_Long'), { ssr: false })
+export const Rope_Short = dynamic(() => import('./Rope_Short'), { ssr: false })
+export const Sign_Left = dynamic(() => import('./Sign_Left'), { ssr: false })
+export const Sign_LeftRight = dynamic(() => import('./Sign_LeftRight'), { ssr: false })
+export const Sign_Right = dynamic(() => import('./Sign_Right'), { ssr: false })
+export const Spike_Group = dynamic(() => import('./Spike_Group'), { ssr: false })
+export const Spike_Single = dynamic(() => import('./Spike_Single'), { ssr: false })
+export const Spikes_Platform = dynamic(() => import('./Spikes_Platform'), { ssr: false })
+export const Star = dynamic(() => import('./Star'), { ssr: false })
+export const Tree1 = dynamic(() => import('./Tree1'), { ssr: false })
+export const Tree2 = dynamic(() => import('./Tree2'), { ssr: false })
+export const Tree3 = dynamic(() => import('./Tree3'), { ssr: false })
+export const Tree4 = dynamic(() => import('./Tree4'), { ssr: false })
+export const YellowBox = dynamic(() => import('./YellowBox'), { ssr: false })

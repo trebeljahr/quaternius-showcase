@@ -30,7 +30,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF(
     '/glb/real_time_strategy_pack/Market_SecondAge_Level2.glb',
   ) as unknown as GLTFResult

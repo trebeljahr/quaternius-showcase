@@ -20,7 +20,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/rpg_assets_pack/Barrel.glb') as unknown as GLTFResult
   console.log(materials)
 

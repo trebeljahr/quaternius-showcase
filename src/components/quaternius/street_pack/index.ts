@@ -1,25 +1,27 @@
-export { Model as Sign_NoParking } from './Sign_NoParking'
-export { Model as Sign_Stop } from './Sign_Stop'
-export { Model as Sign_Triangle } from './Sign_Triangle'
-export { Model as Street_3Way } from './Street_3Way'
-export { Model as Street_3Way_2 } from './Street_3Way_2'
-export { Model as Street_4Way } from './Street_4Way'
-export { Model as Street_4Way_2 } from './Street_4Way_2'
-export { Model as Street_Bridge } from './Street_Bridge'
-export { Model as Street_Bridge_Ramp } from './Street_Bridge_Ramp'
-export { Model as Street_Bridge_Underpass } from './Street_Bridge_Underpass'
-export { Model as Street_Bridge_Water } from './Street_Bridge_Water'
-export { Model as Street_Bridge_WaterRamp } from './Street_Bridge_WaterRamp'
-export { Model as Street_Curve } from './Street_Curve'
-export { Model as Street_Deadend } from './Street_Deadend'
-export { Model as Street_Elevated } from './Street_Elevated'
-export { Model as Street_Elevated_Ramp } from './Street_Elevated_Ramp'
-export { Model as Street_Empty } from './Street_Empty'
-export { Model as Street_Empty_Water } from './Street_Empty_Water'
-export { Model as Street_Straight } from './Street_Straight'
-export { Model as Streetlight_Double } from './Streetlight_Double'
-export { Model as Streetlight_Single } from './Streetlight_Single'
-export { Model as Streetlight_Triple } from './Streetlight_Triple'
-export { Model as Streets_all } from './Streets_all'
-export { Model as TrafficLight } from './TrafficLight'
-export { Model as TrafficLight_2 } from './TrafficLight_2'
+import dynamic from 'next/dynamic'
+
+export const Sign_NoParking = dynamic(() => import('./Sign_NoParking'), { ssr: false })
+export const Sign_Stop = dynamic(() => import('./Sign_Stop'), { ssr: false })
+export const Sign_Triangle = dynamic(() => import('./Sign_Triangle'), { ssr: false })
+export const Street_3Way = dynamic(() => import('./Street_3Way'), { ssr: false })
+export const Street_3Way_2 = dynamic(() => import('./Street_3Way_2'), { ssr: false })
+export const Street_4Way = dynamic(() => import('./Street_4Way'), { ssr: false })
+export const Street_4Way_2 = dynamic(() => import('./Street_4Way_2'), { ssr: false })
+export const Street_Bridge = dynamic(() => import('./Street_Bridge'), { ssr: false })
+export const Street_Bridge_Ramp = dynamic(() => import('./Street_Bridge_Ramp'), { ssr: false })
+export const Street_Bridge_Underpass = dynamic(() => import('./Street_Bridge_Underpass'), { ssr: false })
+export const Street_Bridge_Water = dynamic(() => import('./Street_Bridge_Water'), { ssr: false })
+export const Street_Bridge_WaterRamp = dynamic(() => import('./Street_Bridge_WaterRamp'), { ssr: false })
+export const Street_Curve = dynamic(() => import('./Street_Curve'), { ssr: false })
+export const Street_Deadend = dynamic(() => import('./Street_Deadend'), { ssr: false })
+export const Street_Elevated = dynamic(() => import('./Street_Elevated'), { ssr: false })
+export const Street_Elevated_Ramp = dynamic(() => import('./Street_Elevated_Ramp'), { ssr: false })
+export const Street_Empty = dynamic(() => import('./Street_Empty'), { ssr: false })
+export const Street_Empty_Water = dynamic(() => import('./Street_Empty_Water'), { ssr: false })
+export const Street_Straight = dynamic(() => import('./Street_Straight'), { ssr: false })
+export const Streetlight_Double = dynamic(() => import('./Streetlight_Double'), { ssr: false })
+export const Streetlight_Single = dynamic(() => import('./Streetlight_Single'), { ssr: false })
+export const Streetlight_Triple = dynamic(() => import('./Streetlight_Triple'), { ssr: false })
+export const Streets_all = dynamic(() => import('./Streets_all'), { ssr: false })
+export const TrafficLight = dynamic(() => import('./TrafficLight'), { ssr: false })
+export const TrafficLight_2 = dynamic(() => import('./TrafficLight_2'), { ssr: false })

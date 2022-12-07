@@ -1,18 +1,20 @@
-export { Model as AnimatedChest } from './AnimatedChest'
-export { Model as Barrel } from './Barrel'
-export { Model as Boat } from './Boat'
-export { Model as BoatWSail } from './BoatWSail'
-export { Model as Book } from './Book'
-export { Model as CruiseShip } from './CruiseShip'
-export { Model as Dagger } from './Dagger'
-export { Model as Gems } from './Gems'
-export { Model as IceStaff } from './IceStaff'
-export { Model as KnightHelmet } from './KnightHelmet'
-export { Model as Lifeboat } from './Lifeboat'
-export { Model as Rollofpaper } from './Rollofpaper'
-export { Model as Scroll } from './Scroll'
-export { Model as Shield } from './Shield'
-export { Model as Ship } from './Ship'
-export { Model as Staff } from './Staff'
-export { Model as Sword } from './Sword'
-export { Model as WoodenStaff } from './WoodenStaff'
+import dynamic from 'next/dynamic'
+
+export const AnimatedChest = dynamic(() => import('./AnimatedChest'), { ssr: false })
+export const Barrel = dynamic(() => import('./Barrel'), { ssr: false })
+export const Boat = dynamic(() => import('./Boat'), { ssr: false })
+export const BoatWSail = dynamic(() => import('./BoatWSail'), { ssr: false })
+export const Book = dynamic(() => import('./Book'), { ssr: false })
+export const CruiseShip = dynamic(() => import('./CruiseShip'), { ssr: false })
+export const Dagger = dynamic(() => import('./Dagger'), { ssr: false })
+export const Gems = dynamic(() => import('./Gems'), { ssr: false })
+export const IceStaff = dynamic(() => import('./IceStaff'), { ssr: false })
+export const KnightHelmet = dynamic(() => import('./KnightHelmet'), { ssr: false })
+export const Lifeboat = dynamic(() => import('./Lifeboat'), { ssr: false })
+export const Rollofpaper = dynamic(() => import('./Rollofpaper'), { ssr: false })
+export const Scroll = dynamic(() => import('./Scroll'), { ssr: false })
+export const Shield = dynamic(() => import('./Shield'), { ssr: false })
+export const Ship = dynamic(() => import('./Ship'), { ssr: false })
+export const Staff = dynamic(() => import('./Staff'), { ssr: false })
+export const Sword = dynamic(() => import('./Sword'), { ssr: false })
+export const WoodenStaff = dynamic(() => import('./WoodenStaff'), { ssr: false })

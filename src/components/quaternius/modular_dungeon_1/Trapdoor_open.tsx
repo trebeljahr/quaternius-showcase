@@ -22,7 +22,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_dungeon_1/Trapdoor_open.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>

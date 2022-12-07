@@ -1,24 +1,26 @@
-export { Model as Arrow } from './Arrow'
-export { Model as Axe } from './Axe'
-export { Model as Axe_Double } from './Axe_Double'
-export { Model as Axe_Small } from './Axe_Small'
-export { Model as Bow_Evil } from './Bow_Evil'
-export { Model as Bow_Golden } from './Bow_Golden'
-export { Model as Bow_Wooden } from './Bow_Wooden'
-export { Model as Bow_Wooden2 } from './Bow_Wooden2'
-export { Model as Claymore } from './Claymore'
-export { Model as Dagger } from './Dagger'
-export { Model as Dagger_2 } from './Dagger_2'
-export { Model as Hammer_Double } from './Hammer_Double'
-export { Model as Hammer_Small } from './Hammer_Small'
-export { Model as Scythe } from './Scythe'
-export { Model as Shield_Celtic_Golden } from './Shield_Celtic_Golden'
-export { Model as Shield_Heater } from './Shield_Heater'
-export { Model as Shield_Heater_2 } from './Shield_Heater_2'
-export { Model as Shield_Round } from './Shield_Round'
-export { Model as Shield_Round_2 } from './Shield_Round_2'
-export { Model as Spear } from './Spear'
-export { Model as Sword } from './Sword'
-export { Model as Sword_2 } from './Sword_2'
-export { Model as Sword_Big } from './Sword_Big'
-export { Model as Sword_Golden } from './Sword_Golden'
+import dynamic from 'next/dynamic'
+
+export const Arrow = dynamic(() => import('./Arrow'), { ssr: false })
+export const Axe = dynamic(() => import('./Axe'), { ssr: false })
+export const Axe_Double = dynamic(() => import('./Axe_Double'), { ssr: false })
+export const Axe_Small = dynamic(() => import('./Axe_Small'), { ssr: false })
+export const Bow_Evil = dynamic(() => import('./Bow_Evil'), { ssr: false })
+export const Bow_Golden = dynamic(() => import('./Bow_Golden'), { ssr: false })
+export const Bow_Wooden = dynamic(() => import('./Bow_Wooden'), { ssr: false })
+export const Bow_Wooden2 = dynamic(() => import('./Bow_Wooden2'), { ssr: false })
+export const Claymore = dynamic(() => import('./Claymore'), { ssr: false })
+export const Dagger = dynamic(() => import('./Dagger'), { ssr: false })
+export const Dagger_2 = dynamic(() => import('./Dagger_2'), { ssr: false })
+export const Hammer_Double = dynamic(() => import('./Hammer_Double'), { ssr: false })
+export const Hammer_Small = dynamic(() => import('./Hammer_Small'), { ssr: false })
+export const Scythe = dynamic(() => import('./Scythe'), { ssr: false })
+export const Shield_Celtic_Golden = dynamic(() => import('./Shield_Celtic_Golden'), { ssr: false })
+export const Shield_Heater = dynamic(() => import('./Shield_Heater'), { ssr: false })
+export const Shield_Heater_2 = dynamic(() => import('./Shield_Heater_2'), { ssr: false })
+export const Shield_Round = dynamic(() => import('./Shield_Round'), { ssr: false })
+export const Shield_Round_2 = dynamic(() => import('./Shield_Round_2'), { ssr: false })
+export const Spear = dynamic(() => import('./Spear'), { ssr: false })
+export const Sword = dynamic(() => import('./Sword'), { ssr: false })
+export const Sword_2 = dynamic(() => import('./Sword_2'), { ssr: false })
+export const Sword_Big = dynamic(() => import('./Sword_Big'), { ssr: false })
+export const Sword_Golden = dynamic(() => import('./Sword_Golden'), { ssr: false })

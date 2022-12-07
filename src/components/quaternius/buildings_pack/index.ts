@@ -1,10 +1,12 @@
-export { Model as Bank } from './Bank'
-export { Model as Flat } from './Flat'
-export { Model as Flat2 } from './Flat2'
-export { Model as Hospital } from './Hospital'
-export { Model as House } from './House'
-export { Model as House2 } from './House2'
-export { Model as House3 } from './House3'
-export { Model as House4 } from './House4'
-export { Model as House5 } from './House5'
-export { Model as Shop } from './Shop'
+import dynamic from 'next/dynamic'
+
+export const Bank = dynamic(() => import('./Bank'), { ssr: false })
+export const Flat = dynamic(() => import('./Flat'), { ssr: false })
+export const Flat2 = dynamic(() => import('./Flat2'), { ssr: false })
+export const Hospital = dynamic(() => import('./Hospital'), { ssr: false })
+export const House = dynamic(() => import('./House'), { ssr: false })
+export const House2 = dynamic(() => import('./House2'), { ssr: false })
+export const House3 = dynamic(() => import('./House3'), { ssr: false })
+export const House4 = dynamic(() => import('./House4'), { ssr: false })
+export const House5 = dynamic(() => import('./House5'), { ssr: false })
+export const Shop = dynamic(() => import('./Shop'), { ssr: false })

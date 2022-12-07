@@ -1,128 +1,130 @@
-export { Model as Archery_FirstAge_Level1 } from './Archery_FirstAge_Level1'
-export { Model as Archery_FirstAge_Level2 } from './Archery_FirstAge_Level2'
-export { Model as Archery_FirstAge_Level3 } from './Archery_FirstAge_Level3'
-export { Model as Archery_SecondAge_Level1 } from './Archery_SecondAge_Level1'
-export { Model as Archery_SecondAge_Level2 } from './Archery_SecondAge_Level2'
-export { Model as Archery_SecondAge_Level3 } from './Archery_SecondAge_Level3'
-export { Model as Barracks_FirstAge_Level1 } from './Barracks_FirstAge_Level1'
-export { Model as Barracks_FirstAge_Level2 } from './Barracks_FirstAge_Level2'
-export { Model as Barracks_FirstAge_Level3 } from './Barracks_FirstAge_Level3'
-export { Model as Barracks_SecondAge_Level1 } from './Barracks_SecondAge_Level1'
-export { Model as Barracks_SecondAge_Level2 } from './Barracks_SecondAge_Level2'
-export { Model as Barracks_SecondAge_Level3 } from './Barracks_SecondAge_Level3'
-export { Model as Barrel } from './Barrel'
-export { Model as Crate } from './Crate'
-export { Model as Crate_Big_Stack2 } from './Crate_Big_Stack2'
-export { Model as Crate_Stack1 } from './Crate_Stack1'
-export { Model as Crate_Stack2 } from './Crate_Stack2'
-export { Model as Dock_FirstAge } from './Dock_FirstAge'
-export { Model as Farm_Dirt_Level1 } from './Farm_Dirt_Level1'
-export { Model as Farm_Dirt_Level2 } from './Farm_Dirt_Level2'
-export { Model as Farm_Dirt_Level3 } from './Farm_Dirt_Level3'
-export { Model as Farm_FirstAge_Level1 } from './Farm_FirstAge_Level1'
-export { Model as Farm_FirstAge_Level1_Wheat } from './Farm_FirstAge_Level1_Wheat'
-export { Model as Farm_FirstAge_Level2 } from './Farm_FirstAge_Level2'
-export { Model as Farm_FirstAge_Level2_Wheat } from './Farm_FirstAge_Level2_Wheat'
-export { Model as Farm_FirstAge_Level3 } from './Farm_FirstAge_Level3'
-export { Model as Farm_FirstAge_Level3_Wheat } from './Farm_FirstAge_Level3_Wheat'
-export { Model as Farm_SecondAge_Level1 } from './Farm_SecondAge_Level1'
-export { Model as Farm_SecondAge_Level1_Wheat } from './Farm_SecondAge_Level1_Wheat'
-export { Model as Farm_SecondAge_Level2 } from './Farm_SecondAge_Level2'
-export { Model as Farm_SecondAge_Level2_Wheat } from './Farm_SecondAge_Level2_Wheat'
-export { Model as Farm_SecondAge_Level3 } from './Farm_SecondAge_Level3'
-export { Model as Farm_SecondAge_Level3_Wheat } from './Farm_SecondAge_Level3_Wheat'
-export { Model as Houses_FirstAge_1_Level1 } from './Houses_FirstAge_1_Level1'
-export { Model as Houses_FirstAge_1_Level2 } from './Houses_FirstAge_1_Level2'
-export { Model as Houses_FirstAge_1_Level3 } from './Houses_FirstAge_1_Level3'
-export { Model as Houses_FirstAge_2_Level1 } from './Houses_FirstAge_2_Level1'
-export { Model as Houses_FirstAge_2_Level2 } from './Houses_FirstAge_2_Level2'
-export { Model as Houses_FirstAge_2_Level3 } from './Houses_FirstAge_2_Level3'
-export { Model as Houses_FirstAge_3_Level1 } from './Houses_FirstAge_3_Level1'
-export { Model as Houses_FirstAge_3_Level2 } from './Houses_FirstAge_3_Level2'
-export { Model as Houses_FirstAge_3_Level3 } from './Houses_FirstAge_3_Level3'
-export { Model as Houses_SecondAge_1_Level1 } from './Houses_SecondAge_1_Level1'
-export { Model as Houses_SecondAge_1_Level2 } from './Houses_SecondAge_1_Level2'
-export { Model as Houses_SecondAge_1_Level3 } from './Houses_SecondAge_1_Level3'
-export { Model as Houses_SecondAge_2_Level1 } from './Houses_SecondAge_2_Level1'
-export { Model as Houses_SecondAge_2_Level2 } from './Houses_SecondAge_2_Level2'
-export { Model as Houses_SecondAge_2_Level3 } from './Houses_SecondAge_2_Level3'
-export { Model as Houses_SecondAge_3_Level1 } from './Houses_SecondAge_3_Level1'
-export { Model as Houses_SecondAge_3_Level2 } from './Houses_SecondAge_3_Level2'
-export { Model as Houses_SecondAge_3_Level3 } from './Houses_SecondAge_3_Level3'
-export { Model as Logs } from './Logs'
-export { Model as Market_FirstAge_Level1 } from './Market_FirstAge_Level1'
-export { Model as Market_FirstAge_Level2 } from './Market_FirstAge_Level2'
-export { Model as Market_FirstAge_Level3 } from './Market_FirstAge_Level3'
-export { Model as Market_SecondAge_Level1 } from './Market_SecondAge_Level1'
-export { Model as Market_SecondAge_Level2 } from './Market_SecondAge_Level2'
-export { Model as Market_SecondAge_Level3 } from './Market_SecondAge_Level3'
-export { Model as Mine } from './Mine'
-export { Model as MountainLarge_Single } from './MountainLarge_Single'
-export { Model as Mountain_Group_1 } from './Mountain_Group_1'
-export { Model as Mountain_Group_2 } from './Mountain_Group_2'
-export { Model as Mountain_Single } from './Mountain_Single'
-export { Model as Port_FirstAge_Level1 } from './Port_FirstAge_Level1'
-export { Model as Port_FirstAge_Level2 } from './Port_FirstAge_Level2'
-export { Model as Port_FirstAge_Level3 } from './Port_FirstAge_Level3'
-export { Model as Port_SecondAge_Level1 } from './Port_SecondAge_Level1'
-export { Model as Port_SecondAge_Level2 } from './Port_SecondAge_Level2'
-export { Model as Port_SecondAge_Level3 } from './Port_SecondAge_Level3'
-export { Model as Resource_Gold_1 } from './Resource_Gold_1'
-export { Model as Resource_Gold_2 } from './Resource_Gold_2'
-export { Model as Resource_Gold_3 } from './Resource_Gold_3'
-export { Model as Resource_PineTree } from './Resource_PineTree'
-export { Model as Resource_PineTree_Group } from './Resource_PineTree_Group'
-export { Model as Resource_PineTree_Group_Cut } from './Resource_PineTree_Group_Cut'
-export { Model as Resource_Rock_1 } from './Resource_Rock_1'
-export { Model as Resource_Rock_2 } from './Resource_Rock_2'
-export { Model as Resource_Rock_3 } from './Resource_Rock_3'
-export { Model as Resource_Tree1 } from './Resource_Tree1'
-export { Model as Resource_Tree2 } from './Resource_Tree2'
-export { Model as Resource_Tree_Group } from './Resource_Tree_Group'
-export { Model as Resource_Tree_Group_Cut } from './Resource_Tree_Group_Cut'
-export { Model as Rock } from './Rock'
-export { Model as Rock_Group } from './Rock_Group'
-export { Model as Storage_FirstAge_Leve3 } from './Storage_FirstAge_Leve3'
-export { Model as Storage_FirstAge_Level1 } from './Storage_FirstAge_Level1'
-export { Model as Storage_FirstAge_Level2 } from './Storage_FirstAge_Level2'
-export { Model as Storage_SecondAge_Level1 } from './Storage_SecondAge_Level1'
-export { Model as Storage_SecondAge_Level2 } from './Storage_SecondAge_Level2'
-export { Model as Storage_SecondAge_Level3 } from './Storage_SecondAge_Level3'
-export { Model as Temple_FirstAge_Level1 } from './Temple_FirstAge_Level1'
-export { Model as Temple_FirstAge_Level2 } from './Temple_FirstAge_Level2'
-export { Model as Temple_FirstAge_Level3 } from './Temple_FirstAge_Level3'
-export { Model as Temple_SecondAge_Level1 } from './Temple_SecondAge_Level1'
-export { Model as Temple_SecondAge_Level2 } from './Temple_SecondAge_Level2'
-export { Model as Temple_SecondAge_Level3 } from './Temple_SecondAge_Level3'
-export { Model as TowerHouse_FirstAge } from './TowerHouse_FirstAge'
-export { Model as TowerHouse_SecondAge } from './TowerHouse_SecondAge'
-export { Model as TownCenter_FirstAge_Level1 } from './TownCenter_FirstAge_Level1'
-export { Model as TownCenter_FirstAge_Level2 } from './TownCenter_FirstAge_Level2'
-export { Model as TownCenter_FirstAge_Level3 } from './TownCenter_FirstAge_Level3'
-export { Model as TownCenter_SecondAge_Level1 } from './TownCenter_SecondAge_Level1'
-export { Model as TownCenter_SecondAge_Level2 } from './TownCenter_SecondAge_Level2'
-export { Model as TownCenter_SecondAge_Level3 } from './TownCenter_SecondAge_Level3'
-export { Model as WallTowers_DoorClosed_FirstAge } from './WallTowers_DoorClosed_FirstAge'
-export { Model as WallTowers_DoorClosed_SecondAge } from './WallTowers_DoorClosed_SecondAge'
-export { Model as WallTowers_Door_FirstAge } from './WallTowers_Door_FirstAge'
-export { Model as WallTowers_Door_SecondAge } from './WallTowers_Door_SecondAge'
-export { Model as WallTowers_FirstAge } from './WallTowers_FirstAge'
-export { Model as WallTowers_SecondAge } from './WallTowers_SecondAge'
-export { Model as Wall_FirstAge } from './Wall_FirstAge'
-export { Model as Wall_SecondAge } from './Wall_SecondAge'
-export { Model as WatchTower_FirstAge_Level1 } from './WatchTower_FirstAge_Level1'
-export { Model as WatchTower_FirstAge_Level2 } from './WatchTower_FirstAge_Level2'
-export { Model as WatchTower_FirstAge_Level3 } from './WatchTower_FirstAge_Level3'
-export { Model as WatchTower_SecondAge_Level1 } from './WatchTower_SecondAge_Level1'
-export { Model as WatchTower_SecondAge_Level2 } from './WatchTower_SecondAge_Level2'
-export { Model as WatchTower_SecondAge_Level3 } from './WatchTower_SecondAge_Level3'
-export { Model as Windmill_FirstAge } from './Windmill_FirstAge'
-export { Model as Windmill_SecondAge } from './Windmill_SecondAge'
-export { Model as WonderWalls_FirstAge } from './WonderWalls_FirstAge'
-export { Model as WonderWalls_SecondAge } from './WonderWalls_SecondAge'
-export { Model as Wonder_FirstAge_Level1 } from './Wonder_FirstAge_Level1'
-export { Model as Wonder_FirstAge_Level2 } from './Wonder_FirstAge_Level2'
-export { Model as Wonder_FirstAge_Level3 } from './Wonder_FirstAge_Level3'
-export { Model as Wonder_SecondAge_Level1 } from './Wonder_SecondAge_Level1'
-export { Model as Wonder_SecondAge_Level2 } from './Wonder_SecondAge_Level2'
-export { Model as Wonder_SecondAge_Level3 } from './Wonder_SecondAge_Level3'
+import dynamic from 'next/dynamic'
+
+export const Archery_FirstAge_Level1 = dynamic(() => import('./Archery_FirstAge_Level1'), { ssr: false })
+export const Archery_FirstAge_Level2 = dynamic(() => import('./Archery_FirstAge_Level2'), { ssr: false })
+export const Archery_FirstAge_Level3 = dynamic(() => import('./Archery_FirstAge_Level3'), { ssr: false })
+export const Archery_SecondAge_Level1 = dynamic(() => import('./Archery_SecondAge_Level1'), { ssr: false })
+export const Archery_SecondAge_Level2 = dynamic(() => import('./Archery_SecondAge_Level2'), { ssr: false })
+export const Archery_SecondAge_Level3 = dynamic(() => import('./Archery_SecondAge_Level3'), { ssr: false })
+export const Barracks_FirstAge_Level1 = dynamic(() => import('./Barracks_FirstAge_Level1'), { ssr: false })
+export const Barracks_FirstAge_Level2 = dynamic(() => import('./Barracks_FirstAge_Level2'), { ssr: false })
+export const Barracks_FirstAge_Level3 = dynamic(() => import('./Barracks_FirstAge_Level3'), { ssr: false })
+export const Barracks_SecondAge_Level1 = dynamic(() => import('./Barracks_SecondAge_Level1'), { ssr: false })
+export const Barracks_SecondAge_Level2 = dynamic(() => import('./Barracks_SecondAge_Level2'), { ssr: false })
+export const Barracks_SecondAge_Level3 = dynamic(() => import('./Barracks_SecondAge_Level3'), { ssr: false })
+export const Barrel = dynamic(() => import('./Barrel'), { ssr: false })
+export const Crate = dynamic(() => import('./Crate'), { ssr: false })
+export const Crate_Big_Stack2 = dynamic(() => import('./Crate_Big_Stack2'), { ssr: false })
+export const Crate_Stack1 = dynamic(() => import('./Crate_Stack1'), { ssr: false })
+export const Crate_Stack2 = dynamic(() => import('./Crate_Stack2'), { ssr: false })
+export const Dock_FirstAge = dynamic(() => import('./Dock_FirstAge'), { ssr: false })
+export const Farm_Dirt_Level1 = dynamic(() => import('./Farm_Dirt_Level1'), { ssr: false })
+export const Farm_Dirt_Level2 = dynamic(() => import('./Farm_Dirt_Level2'), { ssr: false })
+export const Farm_Dirt_Level3 = dynamic(() => import('./Farm_Dirt_Level3'), { ssr: false })
+export const Farm_FirstAge_Level1 = dynamic(() => import('./Farm_FirstAge_Level1'), { ssr: false })
+export const Farm_FirstAge_Level1_Wheat = dynamic(() => import('./Farm_FirstAge_Level1_Wheat'), { ssr: false })
+export const Farm_FirstAge_Level2 = dynamic(() => import('./Farm_FirstAge_Level2'), { ssr: false })
+export const Farm_FirstAge_Level2_Wheat = dynamic(() => import('./Farm_FirstAge_Level2_Wheat'), { ssr: false })
+export const Farm_FirstAge_Level3 = dynamic(() => import('./Farm_FirstAge_Level3'), { ssr: false })
+export const Farm_FirstAge_Level3_Wheat = dynamic(() => import('./Farm_FirstAge_Level3_Wheat'), { ssr: false })
+export const Farm_SecondAge_Level1 = dynamic(() => import('./Farm_SecondAge_Level1'), { ssr: false })
+export const Farm_SecondAge_Level1_Wheat = dynamic(() => import('./Farm_SecondAge_Level1_Wheat'), { ssr: false })
+export const Farm_SecondAge_Level2 = dynamic(() => import('./Farm_SecondAge_Level2'), { ssr: false })
+export const Farm_SecondAge_Level2_Wheat = dynamic(() => import('./Farm_SecondAge_Level2_Wheat'), { ssr: false })
+export const Farm_SecondAge_Level3 = dynamic(() => import('./Farm_SecondAge_Level3'), { ssr: false })
+export const Farm_SecondAge_Level3_Wheat = dynamic(() => import('./Farm_SecondAge_Level3_Wheat'), { ssr: false })
+export const Houses_FirstAge_1_Level1 = dynamic(() => import('./Houses_FirstAge_1_Level1'), { ssr: false })
+export const Houses_FirstAge_1_Level2 = dynamic(() => import('./Houses_FirstAge_1_Level2'), { ssr: false })
+export const Houses_FirstAge_1_Level3 = dynamic(() => import('./Houses_FirstAge_1_Level3'), { ssr: false })
+export const Houses_FirstAge_2_Level1 = dynamic(() => import('./Houses_FirstAge_2_Level1'), { ssr: false })
+export const Houses_FirstAge_2_Level2 = dynamic(() => import('./Houses_FirstAge_2_Level2'), { ssr: false })
+export const Houses_FirstAge_2_Level3 = dynamic(() => import('./Houses_FirstAge_2_Level3'), { ssr: false })
+export const Houses_FirstAge_3_Level1 = dynamic(() => import('./Houses_FirstAge_3_Level1'), { ssr: false })
+export const Houses_FirstAge_3_Level2 = dynamic(() => import('./Houses_FirstAge_3_Level2'), { ssr: false })
+export const Houses_FirstAge_3_Level3 = dynamic(() => import('./Houses_FirstAge_3_Level3'), { ssr: false })
+export const Houses_SecondAge_1_Level1 = dynamic(() => import('./Houses_SecondAge_1_Level1'), { ssr: false })
+export const Houses_SecondAge_1_Level2 = dynamic(() => import('./Houses_SecondAge_1_Level2'), { ssr: false })
+export const Houses_SecondAge_1_Level3 = dynamic(() => import('./Houses_SecondAge_1_Level3'), { ssr: false })
+export const Houses_SecondAge_2_Level1 = dynamic(() => import('./Houses_SecondAge_2_Level1'), { ssr: false })
+export const Houses_SecondAge_2_Level2 = dynamic(() => import('./Houses_SecondAge_2_Level2'), { ssr: false })
+export const Houses_SecondAge_2_Level3 = dynamic(() => import('./Houses_SecondAge_2_Level3'), { ssr: false })
+export const Houses_SecondAge_3_Level1 = dynamic(() => import('./Houses_SecondAge_3_Level1'), { ssr: false })
+export const Houses_SecondAge_3_Level2 = dynamic(() => import('./Houses_SecondAge_3_Level2'), { ssr: false })
+export const Houses_SecondAge_3_Level3 = dynamic(() => import('./Houses_SecondAge_3_Level3'), { ssr: false })
+export const Logs = dynamic(() => import('./Logs'), { ssr: false })
+export const Market_FirstAge_Level1 = dynamic(() => import('./Market_FirstAge_Level1'), { ssr: false })
+export const Market_FirstAge_Level2 = dynamic(() => import('./Market_FirstAge_Level2'), { ssr: false })
+export const Market_FirstAge_Level3 = dynamic(() => import('./Market_FirstAge_Level3'), { ssr: false })
+export const Market_SecondAge_Level1 = dynamic(() => import('./Market_SecondAge_Level1'), { ssr: false })
+export const Market_SecondAge_Level2 = dynamic(() => import('./Market_SecondAge_Level2'), { ssr: false })
+export const Market_SecondAge_Level3 = dynamic(() => import('./Market_SecondAge_Level3'), { ssr: false })
+export const Mine = dynamic(() => import('./Mine'), { ssr: false })
+export const MountainLarge_Single = dynamic(() => import('./MountainLarge_Single'), { ssr: false })
+export const Mountain_Group_1 = dynamic(() => import('./Mountain_Group_1'), { ssr: false })
+export const Mountain_Group_2 = dynamic(() => import('./Mountain_Group_2'), { ssr: false })
+export const Mountain_Single = dynamic(() => import('./Mountain_Single'), { ssr: false })
+export const Port_FirstAge_Level1 = dynamic(() => import('./Port_FirstAge_Level1'), { ssr: false })
+export const Port_FirstAge_Level2 = dynamic(() => import('./Port_FirstAge_Level2'), { ssr: false })
+export const Port_FirstAge_Level3 = dynamic(() => import('./Port_FirstAge_Level3'), { ssr: false })
+export const Port_SecondAge_Level1 = dynamic(() => import('./Port_SecondAge_Level1'), { ssr: false })
+export const Port_SecondAge_Level2 = dynamic(() => import('./Port_SecondAge_Level2'), { ssr: false })
+export const Port_SecondAge_Level3 = dynamic(() => import('./Port_SecondAge_Level3'), { ssr: false })
+export const Resource_Gold_1 = dynamic(() => import('./Resource_Gold_1'), { ssr: false })
+export const Resource_Gold_2 = dynamic(() => import('./Resource_Gold_2'), { ssr: false })
+export const Resource_Gold_3 = dynamic(() => import('./Resource_Gold_3'), { ssr: false })
+export const Resource_PineTree = dynamic(() => import('./Resource_PineTree'), { ssr: false })
+export const Resource_PineTree_Group = dynamic(() => import('./Resource_PineTree_Group'), { ssr: false })
+export const Resource_PineTree_Group_Cut = dynamic(() => import('./Resource_PineTree_Group_Cut'), { ssr: false })
+export const Resource_Rock_1 = dynamic(() => import('./Resource_Rock_1'), { ssr: false })
+export const Resource_Rock_2 = dynamic(() => import('./Resource_Rock_2'), { ssr: false })
+export const Resource_Rock_3 = dynamic(() => import('./Resource_Rock_3'), { ssr: false })
+export const Resource_Tree1 = dynamic(() => import('./Resource_Tree1'), { ssr: false })
+export const Resource_Tree2 = dynamic(() => import('./Resource_Tree2'), { ssr: false })
+export const Resource_Tree_Group = dynamic(() => import('./Resource_Tree_Group'), { ssr: false })
+export const Resource_Tree_Group_Cut = dynamic(() => import('./Resource_Tree_Group_Cut'), { ssr: false })
+export const Rock = dynamic(() => import('./Rock'), { ssr: false })
+export const Rock_Group = dynamic(() => import('./Rock_Group'), { ssr: false })
+export const Storage_FirstAge_Leve3 = dynamic(() => import('./Storage_FirstAge_Leve3'), { ssr: false })
+export const Storage_FirstAge_Level1 = dynamic(() => import('./Storage_FirstAge_Level1'), { ssr: false })
+export const Storage_FirstAge_Level2 = dynamic(() => import('./Storage_FirstAge_Level2'), { ssr: false })
+export const Storage_SecondAge_Level1 = dynamic(() => import('./Storage_SecondAge_Level1'), { ssr: false })
+export const Storage_SecondAge_Level2 = dynamic(() => import('./Storage_SecondAge_Level2'), { ssr: false })
+export const Storage_SecondAge_Level3 = dynamic(() => import('./Storage_SecondAge_Level3'), { ssr: false })
+export const Temple_FirstAge_Level1 = dynamic(() => import('./Temple_FirstAge_Level1'), { ssr: false })
+export const Temple_FirstAge_Level2 = dynamic(() => import('./Temple_FirstAge_Level2'), { ssr: false })
+export const Temple_FirstAge_Level3 = dynamic(() => import('./Temple_FirstAge_Level3'), { ssr: false })
+export const Temple_SecondAge_Level1 = dynamic(() => import('./Temple_SecondAge_Level1'), { ssr: false })
+export const Temple_SecondAge_Level2 = dynamic(() => import('./Temple_SecondAge_Level2'), { ssr: false })
+export const Temple_SecondAge_Level3 = dynamic(() => import('./Temple_SecondAge_Level3'), { ssr: false })
+export const TowerHouse_FirstAge = dynamic(() => import('./TowerHouse_FirstAge'), { ssr: false })
+export const TowerHouse_SecondAge = dynamic(() => import('./TowerHouse_SecondAge'), { ssr: false })
+export const TownCenter_FirstAge_Level1 = dynamic(() => import('./TownCenter_FirstAge_Level1'), { ssr: false })
+export const TownCenter_FirstAge_Level2 = dynamic(() => import('./TownCenter_FirstAge_Level2'), { ssr: false })
+export const TownCenter_FirstAge_Level3 = dynamic(() => import('./TownCenter_FirstAge_Level3'), { ssr: false })
+export const TownCenter_SecondAge_Level1 = dynamic(() => import('./TownCenter_SecondAge_Level1'), { ssr: false })
+export const TownCenter_SecondAge_Level2 = dynamic(() => import('./TownCenter_SecondAge_Level2'), { ssr: false })
+export const TownCenter_SecondAge_Level3 = dynamic(() => import('./TownCenter_SecondAge_Level3'), { ssr: false })
+export const WallTowers_DoorClosed_FirstAge = dynamic(() => import('./WallTowers_DoorClosed_FirstAge'), { ssr: false })
+export const WallTowers_DoorClosed_SecondAge = dynamic(() => import('./WallTowers_DoorClosed_SecondAge'), { ssr: false })
+export const WallTowers_Door_FirstAge = dynamic(() => import('./WallTowers_Door_FirstAge'), { ssr: false })
+export const WallTowers_Door_SecondAge = dynamic(() => import('./WallTowers_Door_SecondAge'), { ssr: false })
+export const WallTowers_FirstAge = dynamic(() => import('./WallTowers_FirstAge'), { ssr: false })
+export const WallTowers_SecondAge = dynamic(() => import('./WallTowers_SecondAge'), { ssr: false })
+export const Wall_FirstAge = dynamic(() => import('./Wall_FirstAge'), { ssr: false })
+export const Wall_SecondAge = dynamic(() => import('./Wall_SecondAge'), { ssr: false })
+export const WatchTower_FirstAge_Level1 = dynamic(() => import('./WatchTower_FirstAge_Level1'), { ssr: false })
+export const WatchTower_FirstAge_Level2 = dynamic(() => import('./WatchTower_FirstAge_Level2'), { ssr: false })
+export const WatchTower_FirstAge_Level3 = dynamic(() => import('./WatchTower_FirstAge_Level3'), { ssr: false })
+export const WatchTower_SecondAge_Level1 = dynamic(() => import('./WatchTower_SecondAge_Level1'), { ssr: false })
+export const WatchTower_SecondAge_Level2 = dynamic(() => import('./WatchTower_SecondAge_Level2'), { ssr: false })
+export const WatchTower_SecondAge_Level3 = dynamic(() => import('./WatchTower_SecondAge_Level3'), { ssr: false })
+export const Windmill_FirstAge = dynamic(() => import('./Windmill_FirstAge'), { ssr: false })
+export const Windmill_SecondAge = dynamic(() => import('./Windmill_SecondAge'), { ssr: false })
+export const WonderWalls_FirstAge = dynamic(() => import('./WonderWalls_FirstAge'), { ssr: false })
+export const WonderWalls_SecondAge = dynamic(() => import('./WonderWalls_SecondAge'), { ssr: false })
+export const Wonder_FirstAge_Level1 = dynamic(() => import('./Wonder_FirstAge_Level1'), { ssr: false })
+export const Wonder_FirstAge_Level2 = dynamic(() => import('./Wonder_FirstAge_Level2'), { ssr: false })
+export const Wonder_FirstAge_Level3 = dynamic(() => import('./Wonder_FirstAge_Level3'), { ssr: false })
+export const Wonder_SecondAge_Level1 = dynamic(() => import('./Wonder_SecondAge_Level1'), { ssr: false })
+export const Wonder_SecondAge_Level2 = dynamic(() => import('./Wonder_SecondAge_Level2'), { ssr: false })
+export const Wonder_SecondAge_Level3 = dynamic(() => import('./Wonder_SecondAge_Level3'), { ssr: false })

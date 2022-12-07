@@ -20,7 +20,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/street_pack/Street_Deadend.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>

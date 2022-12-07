@@ -22,7 +22,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_sci_fi/RoofTile_Pipes2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
