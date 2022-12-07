@@ -18,6 +18,8 @@ function CanvasComponent(props: { id: Ids }) {
   const selectedPack = AllModels[id]
 
   const components = Object.values(selectedPack).map((Component) => {
+    // @ts-ignore: nextline
+    Component.render.preload()
     return Component
   })
 
