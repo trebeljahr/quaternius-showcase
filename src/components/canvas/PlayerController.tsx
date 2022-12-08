@@ -158,10 +158,19 @@ export function ImprovedPlayerController({ children }: PropsWithChildren) {
   const cameraTargetRef = useRef(new Vector3())
 
   useCharacterController(modelRef, cameraTargetRef)
+
+  const orbitControlsProps = {
+    enableDamping: true,
+    minDistance: 5,
+    maxDistance: 15,
+    enablePan: false,
+    maxPolarAngle: Math.PI / 2 - 0.05,
+  }
   return (
     <>
       <Trex ref={modelRef} />
-      <OrbitControls target={cameraTargetRef.current} />
+
+      <OrbitControls target={cameraTargetRef.current} {...orbitControlsProps} />
     </>
   )
 }
