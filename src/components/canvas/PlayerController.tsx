@@ -3,48 +3,61 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls, useKeyboardControls } from '@react-three/drei'
 import React, { MutableRefObject, useEffect, useRef } from 'react'
 import { Trex } from './Trex'
+import { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 
 const velocity = 5
 
-export function useCharacterController(modelRef: MutableRefObject<Group>, cameraTargetRef: MutableRefObject<Vector3>) {
+export function useCharacterController(
+  modelRef: MutableRefObject<Group>,
+  orbitControlsRef: MutableRefObject<OrbitControlsImpl>,
+) {
   const walkDirectionRef = useRef(new Vector3())
   const rotateAngleRef = useRef(new Vector3(0, 1, 0))
   const rotateQuaternionRef = useRef(new Quaternion())
-  const cameraTarget = useRef(new Vector3())
+  const cameraTargetRef = useRef(new Vector3())
 
   const { camera } = useThree()
   const [, get] = useKeyboardControls()
 
   useEffect(() => {
     const model = modelRef.current
-    cameraTarget.current.x = model.position.x
-    cameraTarget.current.y = model.position.y + 1
-    cameraTarget.current.z = model.position.z
-    cameraTargetRef.current = cameraTarget.current
-  }, [cameraTargetRef, modelRef, cameraTarget])
+    const cameraTarget = cameraTargetRef.current
+    const orbitControls = orbitControlsRef.current
+    if (!model || !orbitControls || !cameraTarget) return
+
+    cameraTarget.x = model.position.x
+    cameraTarget.y = model.position.y + 1
+    cameraTarget.z = model.position.z
+    orbitControls.target = cameraTarget
+  }, [orbitControlsRef, modelRef, cameraTargetRef])
 
   useFrame((_, delta) => {
     const model = modelRef.current
     const walkDirection = walkDirectionRef.current
     const rotateAngle = rotateAngleRef.current
     const rotateQuaternion = rotateQuaternionRef.current
+    const cameraTarget = cameraTargetRef.current
+    const orbitControls = orbitControlsRef.current
 
-    if (!model || !walkDirection || !rotateAngle || !rotateQuaternion) return
+    if (!model || !walkDirection || !rotateAngle || !rotateQuaternion || !cameraTarget || !orbitControls) return
 
     function updateCameraTarget(moveX: number, moveZ: number) {
       camera.position.x += moveX
       camera.position.z += moveZ
 
-      cameraTarget.current.x = model.position.x
-      cameraTarget.current.y = model.position.y + 1
-      cameraTarget.current.z = model.position.z
+      cameraTarget.x = model.position.x
+      cameraTarget.y = model.position.y
+      cameraTarget.z = model.position.z
 
-      cameraTargetRef.current = cameraTarget.current
+      orbitControls.target = cameraTarget
 
-      console.log({ target: cameraTarget.current })
-      console.log({ target: cameraTargetRef.current })
-      console.log({ object: model.position })
-      console.log({ camera: camera.position })
+      // console.log(cameraTarget.current)
+      // console.log(cameraTargetRef.current)
+      // console.log(model.position)
+      // console.log(camera.position)
+      console.log(orbitControls.target.clone().sub(model.position).length())
+
+      // console.log(camera.position.clone().sub(model.position).length())
     }
 
     function getDirectionOffset() {
@@ -104,9 +117,9 @@ export function useCharacterController(modelRef: MutableRefObject<Group>, camera
 }
 export function ImprovedPlayerController() {
   const modelRef = useRef<Group>()
-  const cameraTargetRef = useRef(new Vector3())
+  const orbitControlsRef = useRef<OrbitControlsImpl>()
 
-  useCharacterController(modelRef, cameraTargetRef)
+  useCharacterController(modelRef, orbitControlsRef)
 
   const orbitControlsProps = {
     enableDamping: true,
@@ -115,11 +128,12 @@ export function ImprovedPlayerController() {
     enablePan: false,
     maxPolarAngle: Math.PI / 2 - 0.05,
   }
+
   return (
     <>
       <Trex ref={modelRef} />
 
-      <OrbitControls target={cameraTargetRef.current} {...orbitControlsProps} />
+      <OrbitControls ref={orbitControlsRef} {...orbitControlsProps} />
     </>
   )
 }
