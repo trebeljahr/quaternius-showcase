@@ -20,13 +20,20 @@ export function useCharacterController(
   const [, get] = useKeyboardControls()
 
   useEffect(() => {
+    camera.position.x = 13.215805596242717
+    camera.position.y = 11.909650511238405
+    camera.position.z = 6.833426473391409
+  }, [camera])
+
+  useEffect(() => {
     const model = modelRef.current
     const cameraTarget = cameraTargetRef.current
     const orbitControls = orbitControlsRef.current
+
     if (!model || !orbitControls || !cameraTarget) return
 
     cameraTarget.x = model.position.x
-    cameraTarget.y = model.position.y + 1
+    cameraTarget.y = model.position.y + 10
     cameraTarget.z = model.position.z
     orbitControls.target = cameraTarget
   }, [orbitControlsRef, modelRef, cameraTargetRef])
@@ -41,12 +48,14 @@ export function useCharacterController(
 
     if (!model || !walkDirection || !rotateAngle || !rotateQuaternion || !cameraTarget || !orbitControls) return
 
+    // console.log(camera.position)
+
     function updateCameraTarget(moveX: number, moveZ: number) {
       camera.position.x += moveX
       camera.position.z += moveZ
 
       cameraTarget.x = model.position.x
-      cameraTarget.y = model.position.y
+      cameraTarget.y = model.position.y + 10
       cameraTarget.z = model.position.z
 
       orbitControls.target = cameraTarget
@@ -55,7 +64,7 @@ export function useCharacterController(
       // console.log(cameraTargetRef.current)
       // console.log(model.position)
       // console.log(camera.position)
-      console.log(orbitControls.target.clone().sub(model.position).length())
+      // console.log(orbitControls.target.clone().sub(model.position).length())
 
       // console.log(camera.position.clone().sub(model.position).length())
     }
@@ -124,14 +133,14 @@ export function ImprovedPlayerController() {
   const orbitControlsProps = {
     enableDamping: true,
     minDistance: 5,
-    maxDistance: 15,
+    maxDistance: 30,
     enablePan: false,
     maxPolarAngle: Math.PI / 2 - 0.05,
   }
 
   return (
     <>
-      <Trex ref={modelRef} />
+      <Trex ref={modelRef} withAnimations={true} />
 
       <OrbitControls ref={orbitControlsRef} {...orbitControlsProps} />
     </>

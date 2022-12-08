@@ -82,9 +82,6 @@ function AnimationController({ actions }: { actions: PossibleActions }) {
   const [subscribe] = useKeyboardControls()
 
   useEffect(() => {
-    actions['Armature|TRex_Idle'].reset().setEffectiveWeight(1).play()
-    actions['Armature|TRex_Run'].reset().setEffectiveWeight(0).play()
-
     subscribe((state) => {
       // console.log({ state })
       const { attack, jump, forward, backward, left, right } = state
@@ -108,8 +105,11 @@ function AnimationController({ actions }: { actions: PossibleActions }) {
   }, [actions, subscribe])
 
   useEffect(() => {
-    const timeBetween = 0.5
-    actions[previousState]?.crossFadeTo(actions[state], timeBetween, false)
+    const fadeDuration = 0.5
+    const current = actions[previousState]
+    const toPlay = actions[state]
+    current?.fadeOut(fadeDuration)
+    toPlay?.reset().fadeIn(fadeDuration).play()
   }, [state, actions, previousState])
 
   return null
