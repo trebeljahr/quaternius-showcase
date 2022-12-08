@@ -91,7 +91,7 @@ export default function ThirdPersonDemo() {
       <Physics colliders='hull'>
         {/* <PlayerController> */}
         <ImprovedPlayerController>
-          <Trex withAnimations={true} />
+          {/* <Trex withAnimations={true} rotation={[0, -Math.PI, 0]} /> */}
         </ImprovedPlayerController>
         {/* </PlayerController> */}
         {/* <FlyingPlayer /> */}

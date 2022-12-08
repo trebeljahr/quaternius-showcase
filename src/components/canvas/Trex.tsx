@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { forwardRef, MutableRefObject, Ref, useEffect, useRef, useState } from 'react'
 import { useGLTF, useAnimations, useKeyboardControls } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { Camera, useFrame, useThree } from '@react-three/fiber'
@@ -115,14 +115,16 @@ function AnimationController({ actions }: { actions: PossibleActions }) {
   return null
 }
 
-export function Trex(props: JSX.IntrinsicElements['group'] & { withAnimations?: boolean }) {
-  const group = useRef<THREE.Group>()
+export const Trex = React.forwardRef(function Trex(
+  props: JSX.IntrinsicElements['group'] & { withAnimations?: boolean },
+  ref: MutableRefObject<Group>,
+) {
   const { nodes, materials, animations } = useGLTF('/Trex.glb') as unknown as GLTFResult
   const { withAnimations = false } = props
-  const { actions } = useAnimations(animations, group)
+  const { actions } = useAnimations(animations, ref)
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group {...props} dispose={null}>
       {withAnimations && <AnimationController actions={actions} />}
       <group name='Armature' rotation={[-Math.PI / 2, 0, 0.05]} scale={300}>
         <primitive object={nodes.root} />
@@ -161,4 +163,4 @@ export function Trex(props: JSX.IntrinsicElements['group'] & { withAnimations?: 
       </group>
     </group>
   )
-}
+})

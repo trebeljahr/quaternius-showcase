@@ -1,8 +1,9 @@
 import { Camera, Group, Quaternion, Vector3 } from 'three'
 import { useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls, useKeyboardControls } from '@react-three/drei'
-import { PropsWithChildren, useEffect, useRef } from 'react'
+import React, { MutableRefObject, PropsWithChildren, useEffect, useRef } from 'react'
 import { resetThirdPersonCamera, updateThirdPersonCamera } from '@/hooks/useThirdPersonCamera'
+import { Trex } from './Trex'
 
 const rotationSpeed = 20
 const speed = 2000
@@ -74,39 +75,37 @@ export function PlayerController({ children }: PropsWithChildren) {
   )
 }
 
-const velocity = 20
+const velocity = 5
 
-export function ImprovedPlayerController({ children }: PropsWithChildren) {
-  const modelRef = useRef<Group>()
-  const cameraTargetRef = useRef(new Vector3())
+export function useCharacterController(modelRef: MutableRefObject<Group>, cameraTargetRef: MutableRefObject<Vector3>) {
   const walkDirectionRef = useRef(new Vector3())
   const rotateAngleRef = useRef(new Vector3(0, 1, 0))
-  const rotateQuarternionRef = useRef(new Quaternion())
+  const rotateQuaternionRef = useRef(new Quaternion())
 
   const { camera } = useThree()
   const [, get] = useKeyboardControls()
 
   useFrame((_, delta) => {
     const model = modelRef.current
-    const cameraTarget = cameraTargetRef.current
     const walkDirection = walkDirectionRef.current
     const rotateAngle = rotateAngleRef.current
-    const rotateQuarternion = rotateQuarternionRef.current
+    const rotateQuarternion = rotateQuaternionRef.current
 
-    if (!model || !cameraTarget) return
+    if (!model) return
 
     function updateCameraTarget(moveX: number, moveZ: number) {
-      // camera.position.x += moveX
-      // camera.position.z += moveZ
-      // cameraTarget.x = model.position.x
-      // cameraTarget.y = model.position.y + 1
-      // cameraTarget.z = model.position.z
+      camera.position.x += moveX
+      camera.position.z += moveZ
+
+      cameraTargetRef.current = new Vector3(model.position.x, model.position.y + 1, model.position.z)
     }
 
     function getDirectionOffset() {
       let directionOffset = 0
       const { forward, left, right, backward } = get()
+      if (!forward && !left && !right && !backward) return { directionOffset, isMoving: false }
 
+      console.log({ forward, left, right, backward })
       if (forward) {
         if (left) {
           directionOffset = Math.PI / 4
@@ -127,12 +126,14 @@ export function ImprovedPlayerController({ children }: PropsWithChildren) {
         directionOffset = -Math.PI / 2
       }
 
-      return directionOffset
+      return { directionOffset, isMoving: true }
     }
 
     function updateCamera() {
+      let { directionOffset, isMoving } = getDirectionOffset()
+      if (!isMoving) return
+
       let angleYCameraDirection = Math.atan2(camera.position.x - model.position.x, camera.position.z - model.position.z)
-      let directionOffset = getDirectionOffset()
 
       rotateQuarternion.setFromAxisAngle(rotateAngle, angleYCameraDirection + directionOffset)
       model.quaternion.rotateTowards(rotateQuarternion, 0.2)
@@ -151,10 +152,17 @@ export function ImprovedPlayerController({ children }: PropsWithChildren) {
 
     updateCamera()
   })
+}
+export function ImprovedPlayerController({ children }: PropsWithChildren) {
+  const modelRef = React.createRef<Group>()
+  const cameraTargetRef = useRef(new Vector3())
 
+  useCharacterController(modelRef, cameraTargetRef)
   return (
     <>
-      <group ref={modelRef}>{children}</group>
+      <group ref={modelRef}>
+        <Trex />
+      </group>
       <OrbitControls target={cameraTargetRef.current} />
     </>
   )
