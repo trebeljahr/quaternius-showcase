@@ -115,7 +115,7 @@ function AnimationController({ actions }: { actions: PossibleActions }) {
   return null
 }
 
-export const Trex = React.forwardRef(function Trex(
+export const Trex = React.forwardRef(function TrexModel(
   props: JSX.IntrinsicElements['group'] & { withAnimations?: boolean },
   ref: MutableRefObject<Group>,
 ) {
@@ -124,12 +124,12 @@ export const Trex = React.forwardRef(function Trex(
   const { actions } = useAnimations(animations, ref)
 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} ref={ref} dispose={null}>
       {withAnimations && <AnimationController actions={actions} />}
-      <group name='Armature' rotation={[-Math.PI / 2, 0, 0.05]} scale={300}>
+      <group name='Armature' rotation={[-Math.PI / 2, 0, Math.PI]} scale={300}>
         <primitive object={nodes.root} />
       </group>
-      <group name='Trex' rotation={[-Math.PI / 2, 0, 0.05]} scale={100}>
+      <group name='Trex' rotation={[-Math.PI / 2, 0, Math.PI]} scale={100}>
         <skinnedMesh
           name='Trex_1'
           geometry={nodes.Trex_1.geometry}

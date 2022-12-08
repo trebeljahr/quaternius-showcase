@@ -1,4 +1,4 @@
-import { Camera, Group, Quaternion, Vector3 } from 'three'
+import { Camera, Euler, Group, Quaternion, Vector3 } from 'three'
 import { useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls, useKeyboardControls } from '@react-three/drei'
 import React, { MutableRefObject, PropsWithChildren, useEffect, useRef } from 'react'
@@ -154,15 +154,13 @@ export function useCharacterController(modelRef: MutableRefObject<Group>, camera
   })
 }
 export function ImprovedPlayerController({ children }: PropsWithChildren) {
-  const modelRef = React.createRef<Group>()
+  const modelRef = useRef<Group>()
   const cameraTargetRef = useRef(new Vector3())
 
   useCharacterController(modelRef, cameraTargetRef)
   return (
     <>
-      <group ref={modelRef}>
-        <Trex />
-      </group>
+      <Trex ref={modelRef} />
       <OrbitControls target={cameraTargetRef.current} />
     </>
   )
