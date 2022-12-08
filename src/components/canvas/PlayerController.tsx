@@ -77,8 +77,8 @@ export function PlayerController({ children }: PropsWithChildren) {
 const velocity = 20
 
 export function ImprovedPlayerController({ children }: PropsWithChildren) {
-  const group = useRef<Group>()
-  const cameraTargetRef = useRef([0, 0, 0])
+  const modelRef = useRef<Group>()
+  const cameraTargetRef = useRef(new Vector3())
   const walkDirectionRef = useRef(new Vector3())
   const rotateAngleRef = useRef(new Vector3(0, 1, 0))
   const rotateQuarternionRef = useRef(new Quaternion())
@@ -87,7 +87,7 @@ export function ImprovedPlayerController({ children }: PropsWithChildren) {
   const [, get] = useKeyboardControls()
 
   useFrame((_, delta) => {
-    const model = group.current
+    const model = modelRef.current
     const cameraTarget = cameraTargetRef.current
     const walkDirection = walkDirectionRef.current
     const rotateAngle = rotateAngleRef.current
@@ -96,12 +96,11 @@ export function ImprovedPlayerController({ children }: PropsWithChildren) {
     if (!model || !cameraTarget) return
 
     function updateCameraTarget(moveX: number, moveZ: number) {
-      camera.position.x += moveX
-      camera.position.z += moveZ
-
-      cameraTarget[0] = model.position.x
-      cameraTarget[1] = model.position.y + 1
-      cameraTarget[2] = model.position.z
+      // camera.position.x += moveX
+      // camera.position.z += moveZ
+      // cameraTarget.x = model.position.x
+      // cameraTarget.y = model.position.y + 1
+      // cameraTarget.z = model.position.z
     }
 
     function getDirectionOffset() {
@@ -154,9 +153,9 @@ export function ImprovedPlayerController({ children }: PropsWithChildren) {
   })
 
   return (
-    <group ref={group}>
-      {children}
-      <OrbitControls />
-    </group>
+    <>
+      <group ref={modelRef}>{children}</group>
+      <OrbitControls target={cameraTargetRef.current} />
+    </>
   )
 }
