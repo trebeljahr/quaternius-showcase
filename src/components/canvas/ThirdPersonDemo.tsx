@@ -1,12 +1,10 @@
-import { Box, PointerLockControls, Sky } from '@react-three/drei'
+import { Box, Sky } from '@react-three/drei'
 import { InstancedRigidBodies, InstancedRigidBodyApi, Physics, RigidBody } from '@react-three/rapier'
 import { useEffect, useRef } from 'react'
-import { DoubleSide, Euler, InstancedMesh, Vector3 } from 'three'
+import { DoubleSide, Euler, Vector3 } from 'three'
 import { BirchTree_1 } from '../quaternius/nature_pack'
 import { useTree1 } from '../quaternius/nature_pack/CommonTree_1'
-import { FlyingPlayer } from './FlyingPlayer'
-import { ImprovedPlayerController, PlayerController } from './PlayerController'
-import { Trex } from './Trex'
+import { ImprovedPlayerController } from './PlayerController'
 
 function random(min: number, max: number) {
   min = Math.ceil(min)
@@ -19,7 +17,6 @@ export function Trees() {
   return (
     <>
       {positions.map((pos, index) => {
-        console.log(pos)
         return <BirchTree_1 key={index} position={pos} scale={new Vector3(5, 5, 5)} />
       })}
     </>
@@ -50,17 +47,11 @@ export const InstancedTreesWithPhysics = () => {
   useEffect(() => {
     if (api.current) {
       api.current.forEach((body) => {
-        // body.applyImpulse({
-        //   x: -Math.random() * 5,
-        //   y: Math.random() * 5,
-        //   z: -Math.random() * 5,
-        // })
         console.log(body)
         console.log(body.translation())
       })
     }
   }, [])
-  // const ref = useRef<InstancedMesh>(null)
 
   const { nodes, materials } = useTree1()
   const COUNT = 10
@@ -89,17 +80,11 @@ export default function ThirdPersonDemo() {
       <Sky azimuth={1} inclination={0.6} distance={1000} />
 
       <Physics colliders='hull'>
-        {/* <PlayerController> */}
-        <ImprovedPlayerController>
-          {/* <Trex withAnimations={true} rotation={[0, -Math.PI, 0]} /> */}
-        </ImprovedPlayerController>
-        {/* </PlayerController> */}
-        {/* <FlyingPlayer /> */}
+        <ImprovedPlayerController />
         <Floor />
         <InstancedTreesWithPhysics />
         {/* <Trees /> */}
         {/* <Plane /> */}
-        {/* <PointerLockControls /> */}
       </Physics>
     </>
   )
