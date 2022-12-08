@@ -5,7 +5,7 @@ import React, { MutableRefObject, useEffect, useRef } from 'react'
 import { Trex } from './Trex'
 import { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 
-const velocity = 5
+const velocity = 20
 
 export function useCharacterController(
   modelRef: MutableRefObject<Group>,
