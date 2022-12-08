@@ -2,8 +2,8 @@ import * as THREE from 'three'
 import React, { useEffect, useRef, useState } from 'react'
 import { useGLTF, useAnimations, useKeyboardControls } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import { useFrame, useThree } from '@react-three/fiber'
-import { AnimationAction, AnimationClip, AnimationMixer, LoopOnce, Object3D, Vector3 } from 'three'
+import { Camera, useFrame, useThree } from '@react-three/fiber'
+import { AnimationAction, AnimationClip, AnimationMixer, Group, LoopOnce, Object3D, Vector3 } from 'three'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -77,10 +77,14 @@ function usePrevious<T>(value: T) {
 
 function AnimationController({ actions }: { actions: PossibleActions }) {
   const [state, setState] = useState<ActionName>('Armature|TRex_Idle')
+  const previousState = usePrevious(state)
 
   const [subscribe] = useKeyboardControls()
 
   useEffect(() => {
+    actions['Armature|TRex_Idle'].reset().setEffectiveWeight(1).play()
+    actions['Armature|TRex_Run'].reset().setEffectiveWeight(0).play()
+
     subscribe((state) => {
       // console.log({ state })
       const { attack, jump, forward, backward, left, right } = state
@@ -99,18 +103,14 @@ function AnimationController({ actions }: { actions: PossibleActions }) {
       if (forward || backward || left || right) {
         return setState('Armature|TRex_Run')
       }
-      setState('Armature|TRex_Idle')
+      return setState('Armature|TRex_Idle')
     })
   }, [actions, subscribe])
 
   useEffect(() => {
     const timeBetween = 0.5
-    const currentAction = actions[state].reset().fadeIn(timeBetween).play()
-
-    return () => {
-      currentAction.fadeOut(timeBetween)
-    }
-  }, [state, actions])
+    actions[previousState]?.crossFadeTo(actions[state], timeBetween, false)
+  }, [state, actions, previousState])
 
   return null
 }
@@ -123,7 +123,7 @@ export function Trex(props: JSX.IntrinsicElements['group'] & { withAnimations?: 
 
   return (
     <group ref={group} {...props} dispose={null}>
-      {withAnimations && <AnimationController actions={actions} />}{' '}
+      {withAnimations && <AnimationController actions={actions} />}
       <group name='Armature' rotation={[-Math.PI / 2, 0, 0.05]} scale={300}>
         <primitive object={nodes.root} />
       </group>

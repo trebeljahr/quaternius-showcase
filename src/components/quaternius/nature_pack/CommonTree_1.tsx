@@ -18,6 +18,11 @@ type GLTFResult = GLTF & {
   }
 }
 
+export function useTree1() {
+  const { nodes, materials } = useGLTF('/glb/nature_pack/CommonTree_1.glb') as unknown as GLTFResult
+  return { nodes, materials }
+}
+
 export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/nature_pack/CommonTree_1.glb') as unknown as GLTFResult
   return (
