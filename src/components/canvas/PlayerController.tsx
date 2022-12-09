@@ -124,11 +124,12 @@ export function useCharacterController(
 
       const translation = rigidBody.translation()
       if (translation.y < -1) {
-        rigidBody.setNextKinematicTranslation({
+        rigidBody.setTranslation({
           x: 0,
           y: 10,
           z: 0,
         })
+        rigidBody.setLinvel({ x: 0, y: 0, z: 0 })
       } else {
         const cameraPositionOffset = camera.position.sub(position)
         // model.position.x = translation.x
@@ -157,8 +158,7 @@ export function useCharacterController(
 
         console.log(walkDirection)
 
-        rigidBody.applyImpulse(walkDirection)
-        rigidBody.setTranslation({
+        rigidBody.setLinvel({
           x: translation.x + walkDirection.x,
           y: translation.y + walkDirection.y,
           z: translation.z + walkDirection.z,
@@ -190,7 +190,7 @@ export function ImprovedPlayerController() {
 
   return (
     <>
-      <RigidBody ref={rigidBodyRef} type='dynamic'>
+      <RigidBody ref={rigidBodyRef} type='dynamic' enabledRotations={[false, true, false]}>
         <Trex withAnimations={true} />
       </RigidBody>
       <Debug />
