@@ -5,7 +5,7 @@ import React, { MutableRefObject, useEffect, useRef } from 'react'
 import { Trex, useTrex } from './Trex'
 import { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import { Debug, RigidBody, RigidBodyApi, useRapier } from '@react-three/rapier'
-import { Ray } from '@dimforge/rapier3d-compat'
+import { KinematicCharacterController, Ray } from '@dimforge/rapier3d-compat'
 
 const velocity = 20
 
@@ -20,9 +20,16 @@ export function useCharacterController(
   const rotateQuaternionRef = useRef(new Quaternion())
   const cameraTargetRef = useRef(new Vector3())
   const storedFallRef = useRef(0)
+  const characterControllerRef = useRef<KinematicCharacterController>()
 
   const { camera } = useThree()
   const rapier = useRapier()
+  useEffect(() => {
+    const world = rapier.world.raw()
+    const offset = 0.01
+    characterControllerRef.current = world.createCharacterController(offset)
+    characterControllerRef.current.setSlideEnabled(true)
+  }, [rapier.world])
 
   const [, get] = useKeyboardControls()
 
@@ -51,8 +58,18 @@ export function useCharacterController(
     const cameraTarget = cameraTargetRef.current
     const orbitControls = orbitControlsRef.current
     const rigidBody = rigidBodyRef.current
+    const characterController = characterControllerRef.current
 
-    if (!walkDirection || !rotateAngle || !rotateQuaternion || !cameraTarget || !orbitControls || !rigidBody) return
+    if (
+      !characterController ||
+      !walkDirection ||
+      !rotateAngle ||
+      !rotateQuaternion ||
+      !cameraTarget ||
+      !orbitControls ||
+      !rigidBody
+    )
+      return
 
     // console.log(rigidBody.translation())
 
@@ -124,12 +141,11 @@ export function useCharacterController(
 
       const translation = rigidBody.translation()
       if (translation.y < -1) {
-        rigidBody.setTranslation({
+        rigidBody.setNextKinematicTranslation({
           x: 0,
           y: 10,
           z: 0,
         })
-        rigidBody.setLinvel({ x: 0, y: 0, z: 0 })
       } else {
         const cameraPositionOffset = camera.position.sub(position)
         // model.position.x = translation.x
@@ -156,13 +172,40 @@ export function useCharacterController(
         walkDirection.x = walkDirection.x * velocity * delta
         walkDirection.z = walkDirection.z * velocity * delta
 
-        console.log(walkDirection)
+        // console.log(characterController)
 
-        rigidBody.setLinvel({
+        const collider = world.getCollider(rigidBody.handle)
+
+        console.log(rigidBody)
+        const api = rigidBody.raw()
+
+        console.log(api)
+        const collider2 = api.collider(0)
+        console.log(collider)
+        console.log(collider2)
+
+        const desiredTranslation = {
           x: translation.x + walkDirection.x,
           y: translation.y + walkDirection.y,
           z: translation.z + walkDirection.z,
-        })
+        }
+        console.log('desired:', desiredTranslation)
+        characterController.computeColliderMovement(collider2, desiredTranslation)
+
+        console.log('num collisions:', characterController.numComputedCollisions())
+
+        for (let i = 0; i < characterController.numComputedCollisions(); i++) {
+          console.log(i)
+          let collision = characterController.computedCollision(i)
+          console.log('collision: ', collision)
+        }
+
+        let correctedMovement = characterController.computedMovement()
+
+        console.log('corrected:', correctedMovement)
+
+        const { x, y, z } = correctedMovement
+        rigidBody.setNextKinematicTranslation({ x, y: 0, z })
       }
     }
 
@@ -190,7 +233,11 @@ export function ImprovedPlayerController() {
 
   return (
     <>
-      <RigidBody ref={rigidBodyRef} type='dynamic' enabledRotations={[false, true, false]}>
+      <RigidBody
+        colliders='trimesh'
+        ref={rigidBodyRef}
+        type='kinematicPosition'
+        enabledRotations={[false, false, false]}>
         <Trex withAnimations={true} />
       </RigidBody>
       <Debug />

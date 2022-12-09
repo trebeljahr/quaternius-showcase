@@ -1,9 +1,17 @@
 import { Box, Sky } from '@react-three/drei'
-import { InstancedRigidBodies, InstancedRigidBodyApi, Physics, RigidBody } from '@react-three/rapier'
+import {
+  Debug,
+  InstancedRigidBodies,
+  InstancedRigidBodyApi,
+  Physics,
+  RigidBody,
+  Vector3Array,
+} from '@react-three/rapier'
 import { useEffect, useRef } from 'react'
 import { DoubleSide, Euler, Vector3 } from 'three'
 import { BirchTree_1 } from '../quaternius/nature_pack'
 import { useTree1 } from '../quaternius/nature_pack/CommonTree_1'
+import { FirstPersonCharacterController } from './FirstPersonController'
 import { ImprovedPlayerController } from './PlayerController'
 
 function random(min: number, max: number) {
@@ -47,8 +55,8 @@ export const InstancedTreesWithPhysics = () => {
   useEffect(() => {
     if (api.current) {
       api.current.forEach((body) => {
-        console.log(body)
-        console.log(body.translation())
+        // console.log(body)
+        // console.log(body.translation())
       })
     }
   }, [])
@@ -56,18 +64,18 @@ export const InstancedTreesWithPhysics = () => {
   const { nodes, materials } = useTree1()
   const COUNT = 10
 
-  console.log(nodes, materials)
+  // console.log(nodes, materials)
+
+  const positions: Vector3Array[] = Array.from({ length: COUNT }, () => [random(-1000, 1000), random(-1000, 1000), 0])
+  const rotations: Vector3Array[] = Array.from({ length: COUNT }, () => [0, 0, 0])
+  const scales: Vector3Array[] = Array.from({ length: COUNT }, () => [100, 100, 100])
 
   return (
     <group scale={10} rotation={new Euler(Math.PI / 2, 0, 0)}>
-      <InstancedRigidBodies
-        ref={api}
-        type='fixed'
-        positions={Array.from({ length: COUNT }, () => [random(-1000, 1000), random(-1000, 1000), 0])}
-        rotations={Array.from({ length: COUNT }, () => [0, 0, 0])}
-        scales={Array.from({ length: COUNT }, () => [100, 100, 100])}
-        colliders='hull'>
+      <InstancedRigidBodies ref={api} type='fixed' {...{ positions, rotations, scales }} colliders='trimesh'>
         <instancedMesh args={[nodes.CommonTree_1_1.geometry, materials.Wood, COUNT]} />
+      </InstancedRigidBodies>
+      <InstancedRigidBodies ref={api} type='fixed' {...{ positions, rotations, scales }} colliders='trimesh'>
         <instancedMesh args={[nodes.CommonTree_1_2.geometry, materials.Green, COUNT]} />
       </InstancedRigidBodies>
     </group>
@@ -80,7 +88,9 @@ export default function ThirdPersonDemo() {
       <Sky azimuth={1} inclination={0.6} distance={1000} />
 
       <Physics colliders='hull'>
-        <ImprovedPlayerController />
+        {/* <ImprovedPlayerController /> */}
+        <Debug />
+        <FirstPersonCharacterController />
         <Floor />
         <InstancedTreesWithPhysics />
         {/* <Trees /> */}
