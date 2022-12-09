@@ -961,7 +961,7 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@dimforge/rapier3d-compat@0.10.0":
+"@dimforge/rapier3d-compat@^0.10.0", "@dimforge/rapier3d-compat@0.10.0":
   "integrity" "sha512-3SPxyAnPQz9P3cIhgF8VncwJwrqyAW2xsNEYgXbxDhvB2IaIG63eTX7rNIJUnec5FDYqgvVo/nqY1XarzT5T2Q=="
   "resolved" "https://registry.npmjs.org/@dimforge/rapier3d-compat/-/rapier3d-compat-0.10.0.tgz"
   "version" "0.10.0"

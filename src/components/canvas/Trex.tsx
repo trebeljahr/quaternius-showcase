@@ -115,6 +115,10 @@ function AnimationController({ actions }: { actions: PossibleActions }) {
   return null
 }
 
+export const useTrex = () => {
+  return useGLTF('/Trex.glb') as unknown as GLTFResult
+}
+
 export const Trex = React.forwardRef(function TrexModel(
   props: JSX.IntrinsicElements['group'] & { withAnimations?: boolean },
   ref: MutableRefObject<Group>,
