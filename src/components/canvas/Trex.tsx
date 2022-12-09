@@ -83,15 +83,18 @@ function AnimationController({ actions }: { actions: PossibleActions }) {
 
   useEffect(() => {
     subscribe((state) => {
+      if (!actions) return
       // console.log({ state })
       const { attack, jump, forward, backward, left, right } = state
       if (attack) {
+        if (!actions['Armature|TRex_Attack']) return
         actions['Armature|TRex_Attack'].setLoop(LoopOnce, 1)
         actions['Armature|TRex_Attack'].clampWhenFinished = true
         actions['Armature|TRex_Attack'].reset().play()
       }
       if (jump) {
-        if (!actions['Armature|TRex_Jump'].isRunning()) {
+        if (!actions['Armature|TRex_Jump']?.isRunning()) {
+          if (!actions['Armature|TRex_Jump']) return
           actions['Armature|TRex_Jump'].setLoop(LoopOnce, 1)
           actions['Armature|TRex_Jump'].clampWhenFinished = true
           actions['Armature|TRex_Jump'].reset().play()

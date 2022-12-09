@@ -4,7 +4,7 @@ import { OrbitControls, useKeyboardControls } from '@react-three/drei'
 import React, { MutableRefObject, useEffect, useRef } from 'react'
 import { Trex, useTrex } from './Trex'
 import { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
-import { RigidBody, RigidBodyApi, useRapier } from '@react-three/rapier'
+import { Debug, RigidBody, RigidBodyApi, useRapier } from '@react-three/rapier'
 import { Ray } from '@dimforge/rapier3d-compat'
 
 const velocity = 20
@@ -12,7 +12,6 @@ const velocity = 20
 export const lerp = (x: number, y: number, a: number) => x * (1 - a) + y * a
 
 export function useCharacterController(
-  modelRef: MutableRefObject<Group>,
   rigidBodyRef: MutableRefObject<RigidBodyApi>,
   orbitControlsRef: MutableRefObject<OrbitControlsImpl>,
 ) {
@@ -33,21 +32,19 @@ export function useCharacterController(
     camera.position.z = 6.833426473391409
   }, [camera])
 
-  useEffect(() => {
-    const model = modelRef.current
-    const cameraTarget = cameraTargetRef.current
-    const orbitControls = orbitControlsRef.current
+  // useEffect(() => {
+  //   const cameraTarget = cameraTargetRef.current
+  //   const orbitControls = orbitControlsRef.current
 
-    if (!model || !orbitControls || !cameraTarget) return
+  //   if (!orbitControls || !cameraTarget) return
 
-    cameraTarget.x = model.position.x
-    cameraTarget.y = model.position.y + 10
-    cameraTarget.z = model.position.z
-    orbitControls.target = cameraTarget
-  }, [orbitControlsRef, modelRef, cameraTargetRef])
+  //   cameraTarget.x = model.position.x
+  //   cameraTarget.y = model.position.y + 10
+  //   cameraTarget.z = model.position.z
+  //   orbitControls.target = cameraTarget
+  // }, [orbitControlsRef, cameraTargetRef])
 
   useFrame((_, delta) => {
-    const model = modelRef.current
     const walkDirection = walkDirectionRef.current
     const rotateAngle = rotateAngleRef.current
     const rotateQuaternion = rotateQuaternionRef.current
@@ -55,8 +52,7 @@ export function useCharacterController(
     const orbitControls = orbitControlsRef.current
     const rigidBody = rigidBodyRef.current
 
-    if (!model || !walkDirection || !rotateAngle || !rotateQuaternion || !cameraTarget || !orbitControls || !rigidBody)
-      return
+    if (!walkDirection || !rotateAngle || !rotateQuaternion || !cameraTarget || !orbitControls || !rigidBody) return
 
     // console.log(rigidBody.translation())
 
@@ -115,13 +111,11 @@ export function useCharacterController(
       const { directionOffset, isMoving } = getDirectionOffset()
       if (!isMoving) return
 
-      const angleYCameraDirection = Math.atan2(
-        camera.position.x - model.position.x,
-        camera.position.z - model.position.z,
-      )
+      const position = rigidBody.translation()
+      const angleYCameraDirection = Math.atan2(camera.position.x - position.x, camera.position.z - position.z)
 
-      rotateQuaternion.setFromAxisAngle(rotateAngle, angleYCameraDirection + directionOffset)
-      model.quaternion.rotateTowards(rotateQuaternion, 0.2)
+      // rotateQuaternion.setFromAxisAngle(rotateAngle, angleYCameraDirection + directionOffset)
+      // model.quaternion.rotateTowards(rotateQuaternion, 0.2)
 
       camera.getWorldDirection(walkDirection)
       walkDirection.y = 0
@@ -130,17 +124,16 @@ export function useCharacterController(
 
       const translation = rigidBody.translation()
       if (translation.y < -1) {
-        console.log('Translating up Y')
         rigidBody.setNextKinematicTranslation({
           x: 0,
           y: 10,
           z: 0,
         })
       } else {
-        const cameraPositionOffset = camera.position.sub(model.position)
-        model.position.x = translation.x
-        model.position.y = translation.y
-        model.position.z = translation.z
+        const cameraPositionOffset = camera.position.sub(position)
+        // model.position.x = translation.x
+        // model.position.y = translation.y
+        // model.position.z = translation.z
         updateCameraTarget(cameraPositionOffset)
 
         const world = rapier.world.raw()
@@ -164,13 +157,12 @@ export function useCharacterController(
 
         console.log(walkDirection)
 
-        rigidBody.setNextKinematicTranslation({
+        rigidBody.applyImpulse(walkDirection)
+        rigidBody.setTranslation({
           x: translation.x + walkDirection.x,
           y: translation.y + walkDirection.y,
           z: translation.z + walkDirection.z,
         })
-
-        console.log(rigidBody.translation())
       }
     }
 
@@ -182,7 +174,7 @@ export function ImprovedPlayerController() {
   const rigidBodyRef = useRef<RigidBodyApi>()
   const orbitControlsRef = useRef<OrbitControlsImpl>()
 
-  useCharacterController(modelRef, rigidBodyRef, orbitControlsRef)
+  useCharacterController(rigidBodyRef, orbitControlsRef)
 
   const orbitControlsProps = {
     enableDamping: true,
@@ -198,10 +190,10 @@ export function ImprovedPlayerController() {
 
   return (
     <>
-      <RigidBody ref={rigidBodyRef} type='dynamic' enabledRotations={[false, false, false]}>
-        <Trex ref={modelRef} withAnimations={true} />
+      <RigidBody ref={rigidBodyRef} type='dynamic'>
+        <Trex withAnimations={true} />
       </RigidBody>
-
+      <Debug />
       <OrbitControls ref={orbitControlsRef} {...orbitControlsProps} />
     </>
   )
