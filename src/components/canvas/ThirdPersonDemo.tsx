@@ -1,35 +1,8 @@
 import { Box, Sky } from '@react-three/drei'
-import {
-  Debug,
-  InstancedRigidBodies,
-  InstancedRigidBodyApi,
-  Physics,
-  RigidBody,
-  Vector3Array,
-} from '@react-three/rapier'
-import { useEffect, useRef } from 'react'
-import { DoubleSide, Euler, Vector3 } from 'three'
-import { BirchTree_1 } from '../quaternius/nature_pack'
-import { useTree1 } from '../quaternius/nature_pack/CommonTree_1'
-import { FirstPersonCharacterController } from './FirstPersonController'
+import { Debug, Physics, RigidBody } from '@react-three/rapier'
+import { DoubleSide } from 'three'
 import { ImprovedPlayerController } from './PlayerController'
-
-function random(min: number, max: number) {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
-
-export function Trees() {
-  const positions = new Array(100).fill(0).map(() => new Vector3(random(-200, 200), 0, random(-200, 200)))
-  return (
-    <>
-      {positions.map((pos, index) => {
-        return <BirchTree_1 key={index} position={pos} scale={new Vector3(5, 5, 5)} />
-      })}
-    </>
-  )
-}
+import { InstancedTreesWithPhysics } from './TreeStuff'
 
 export const Floor = () => {
   return (
@@ -50,47 +23,14 @@ export function Plane() {
   )
 }
 
-export const InstancedTreesWithPhysics = () => {
-  const api = useRef<InstancedRigidBodyApi>(null)
-  useEffect(() => {
-    if (api.current) {
-      api.current.forEach((body) => {
-        // console.log(body)
-        // console.log(body.translation())
-      })
-    }
-  }, [])
-
-  const { nodes, materials } = useTree1()
-  const COUNT = 10
-
-  // console.log(nodes, materials)
-
-  const positions: Vector3Array[] = Array.from({ length: COUNT }, () => [random(-1000, 1000), random(-1000, 1000), 0])
-  const rotations: Vector3Array[] = Array.from({ length: COUNT }, () => [0, 0, 0])
-  const scales: Vector3Array[] = Array.from({ length: COUNT }, () => [100, 100, 100])
-
-  return (
-    <group scale={10} rotation={new Euler(Math.PI / 2, 0, 0)}>
-      <InstancedRigidBodies ref={api} type='fixed' {...{ positions, rotations, scales }} colliders='trimesh'>
-        <instancedMesh args={[nodes.CommonTree_1_1.geometry, materials.Wood, COUNT]} />
-      </InstancedRigidBodies>
-      <InstancedRigidBodies ref={api} type='fixed' {...{ positions, rotations, scales }} colliders='trimesh'>
-        <instancedMesh args={[nodes.CommonTree_1_2.geometry, materials.Green, COUNT]} />
-      </InstancedRigidBodies>
-    </group>
-  )
-}
-
 export default function ThirdPersonDemo() {
   return (
     <>
       <Sky azimuth={1} inclination={0.6} distance={1000} />
 
       <Physics colliders='hull'>
-        {/* <ImprovedPlayerController /> */}
+        <ImprovedPlayerController />
         <Debug />
-        <FirstPersonCharacterController />
         <Floor />
         <InstancedTreesWithPhysics />
         {/* <Trees /> */}

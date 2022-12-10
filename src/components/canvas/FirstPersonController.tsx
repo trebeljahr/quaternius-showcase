@@ -25,13 +25,12 @@ const minJumpVelocity = Math.sqrt(2 * Math.abs(jumpGravity) * minJumpHeight)
 const velocityXZSmoothing = 0.2
 const velocityXZMin = 0.0001
 
-export const FirstPersonCharacterController = (props: JSX.IntrinsicElements['group']) => {
+export const FirstPersonController = (props: JSX.IntrinsicElements['group']) => {
   const [, get] = useKeyboardControls()
 
   const camera = useThree((state) => state.camera)
   const rapier = useRapier()
 
-  const handGroupRef = useRef<THREE.Group>(null!)
   const characterRigidBody = useRef<RigidBodyApi>(null!)
 
   const characterController = useRef<Rapier.KinematicCharacterController>(null!)
@@ -59,10 +58,7 @@ export const FirstPersonCharacterController = (props: JSX.IntrinsicElements['gro
   useFrame((state, delta) => {
     if (!characterRigidBody.current || !characterController.current) return
 
-    // get controls
     const { forward, backward, left, right, jump, sprint } = get()
-
-    // update character controller
     const speed = 15 * delta * (sprint ? 1.5 : 1)
 
     const grounded = characterController.current.computedGrounded()
@@ -72,7 +68,6 @@ export const FirstPersonCharacterController = (props: JSX.IntrinsicElements['gro
 
     const factor = 1 - Math.pow(smoothing, delta)
 
-    // x and z movement
     frontVector.set(0, 0, Number(backward) - Number(forward))
     sideVector.set(Number(left) - Number(right), 0, 0)
     direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(speed).applyEuler(camera.rotation)
@@ -101,7 +96,6 @@ export const FirstPersonCharacterController = (props: JSX.IntrinsicElements['gro
       movementDirection.z = 0
     }
 
-    // jumping
     if ((jump && grounded) || holdingJump.current) {
       holdingJump.current = true
       jumpTime.current = state.clock.elapsedTime
@@ -122,19 +116,23 @@ export const FirstPersonCharacterController = (props: JSX.IntrinsicElements['gro
       jumpVelocity.current += jumpGravity * factor
     }
 
-    // compute collider movement and update rigid body
-
     const characterCollider = characterRigidBody.current.raw().collider(0)
 
     characterController.current.computeColliderMovement(characterCollider, movementDirection)
 
     const movement = characterController.current.computedMovement()
     const newPos = characterRigidBody.current.translation()
-    characterRigidBody.current.setNextKinematicTranslation(newPos.add(new Vector3(movement.x, movement.y, movement.z)))
+    newPos.x += movement.x
+    newPos.y += movement.y
+    newPos.z += movement.z
 
-    // update camera
+    characterRigidBody.current.setNextKinematicTranslation(newPos)
+
     const rigidBodyTranslation = characterRigidBody.current.translation()
-    idealCameraPosition.set(rigidBodyTranslation.x, rigidBodyTranslation.y + 1, rigidBodyTranslation.z)
+    if (characterRigidBody.current.translation().y <= -10) {
+      characterRigidBody.current.setNextKinematicTranslation(new Vector3(0, 0, 0))
+    }
+    idealCameraPosition.set(rigidBodyTranslation.x, rigidBodyTranslation.y, rigidBodyTranslation.z)
     camera.position.lerp(idealCameraPosition, 100 * delta)
   })
 
