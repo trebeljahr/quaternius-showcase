@@ -129,7 +129,7 @@ export const FirstPersonController = (props: JSX.IntrinsicElements['group']) => 
     characterRigidBody.current.setNextKinematicTranslation(newPos)
 
     const rigidBodyTranslation = characterRigidBody.current.translation()
-    if (characterRigidBody.current.translation().y <= -10) {
+    if (characterRigidBody.current.translation().y <= -30) {
       characterRigidBody.current.setNextKinematicTranslation(new Vector3(0, 0, 0))
     }
     idealCameraPosition.set(rigidBodyTranslation.x, rigidBodyTranslation.y, rigidBodyTranslation.z)

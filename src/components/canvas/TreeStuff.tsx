@@ -51,9 +51,43 @@ export const InstancedTreesWithPhysics = () => {
   )
 }
 
+export const TreeWithHullPhysics = () => {
+  return (
+    <RigidBody position={new Vector3(0, -7.5, 12)} type='fixed' colliders='hull'>
+      <Tree1 />
+    </RigidBody>
+  )
+}
+
+export const TreeWithBallPhysics = () => {
+  return (
+    <RigidBody position={new Vector3(4, -7.5, 12)} type='fixed' colliders='ball'>
+      <Tree1 />
+    </RigidBody>
+  )
+}
+
+export const TreeWithCuboidPhysics = () => {
+  return (
+    <RigidBody position={new Vector3(4, -7.5, 8)} type='fixed' colliders='cuboid'>
+      <Tree1 />
+    </RigidBody>
+  )
+}
+// export const TreeWithSimplifiedPhysics = () => {
+//   return (
+//     <RigidBody position={new Vector3(0, -7.5, 8)} type='fixed' colliders={false}>
+//       <Tree1 />
+//       <CylinderCollider args={[0.5, 0.2]} position={[0, 0.35, 0]} />
+//       <CylinderCollider args={[0.5, 0.1]} position={[0, 1.1, 0.4]} rotation={[0.45, 0, 0]} />
+//       <CylinderCollider args={[0.4, 0.1]} position={[0, 1.9, 0.6]} rotation={[0.35, 0, 0]} />
+//     </RigidBody>
+//   )
+// }
+
 export const TreeWithPhysics = () => {
   return (
-    <RigidBody position={new Vector3(0, -7.5, 5)} type='fixed' colliders='trimesh'>
+    <RigidBody type='fixed' colliders='trimesh' position={new Vector3(0, -7.5, 8)}>
       <Tree1 />
     </RigidBody>
   )
