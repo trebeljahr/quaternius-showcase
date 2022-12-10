@@ -10,7 +10,7 @@ import { useEffect, useRef } from 'react'
 import { Vector3 } from 'three'
 import { BirchTree_1 } from '../quaternius/nature_pack'
 import { useTree1 } from '../quaternius/nature_pack/CommonTree_1'
-import { Tree1 } from '../quaternius/simple_nature_pack'
+import { default as Tree1 } from '../quaternius/simple_nature_pack/Tree1'
 
 export const InstancedTreesWithPhysics = () => {
   const api = useRef<InstancedRigidBodyApi>(null)
@@ -74,6 +74,15 @@ export const TreeWithCuboidPhysics = () => {
     </RigidBody>
   )
 }
+
+export const TreeWithPhysics = () => {
+  return (
+    <RigidBody type='fixed' colliders='trimesh' position={new Vector3(0, -7.5, 8)}>
+      <Tree1 />
+    </RigidBody>
+  )
+}
+
 // export const TreeWithSimplifiedPhysics = () => {
 //   return (
 //     <RigidBody position={new Vector3(0, -7.5, 8)} type='fixed' colliders={false}>
@@ -84,14 +93,6 @@ export const TreeWithCuboidPhysics = () => {
 //     </RigidBody>
 //   )
 // }
-
-export const TreeWithPhysics = () => {
-  return (
-    <RigidBody type='fixed' colliders='trimesh' position={new Vector3(0, -7.5, 8)}>
-      <Tree1 />
-    </RigidBody>
-  )
-}
 
 export function random(min: number, max: number) {
   min = Math.ceil(min)
