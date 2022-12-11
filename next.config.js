@@ -8,10 +8,6 @@ const withPWA = require('next-pwa')({
 })
 
 const nextConfig = {
-  // uncomment the following snippet if using styled components
-  // compiler: {
-  //   styledComponents: true,
-  // },
   async redirects() {
     return [
       {
@@ -23,9 +19,8 @@ const nextConfig = {
   },
   experimental: {},
   images: {},
-  reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
+  reactStrictMode: true,
   webpack(config, { isServer }) {
-    // audio support
     config.module.rules.push({
       test: /\.(ogg|mp3|wav|mpe?g)$/i,
       exclude: config.exclude,
@@ -44,7 +39,6 @@ const nextConfig = {
       ],
     })
 
-    // shader support
     config.module.rules.push({
       test: /\.(glsl|vs|fs|vert|frag)$/,
       exclude: /node_modules/,
@@ -53,14 +47,6 @@ const nextConfig = {
 
     return config
   },
-}
-
-// manage i18n
-if (process.env.EXPORT !== 'true') {
-  nextConfig.i18n = {
-    locales: ['en', 'jp'],
-    defaultLocale: 'en',
-  }
 }
 
 const KEYS_TO_OMIT = ['webpackDevMiddleware', 'configOrigin', 'target', 'analyticsId', 'webpack5', 'amp', 'assetPrefix']

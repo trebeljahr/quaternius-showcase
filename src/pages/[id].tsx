@@ -35,20 +35,26 @@ export default function Page({ id }: { id: string }) {
       <button className={open ? normalButton : activeButton} onClick={toggleOpen}>
         {open ? '<' : '>'}
       </button>
-      <div
-        style={{ height: '100vw', overflow: 'hidden', overflowY: 'auto' }}
-        className={open ? activeSide : hiddenSide}>
-        {open &&
-          Object.keys(AllModels).map((name) => {
-            const pack_name = capital(name)
-            return (
-              <div key={pack_name} className={id === name ? 'underline decoration-solid' : ''}>
-                <Link href={`/${name}`} as={`/${name}`}>
-                  {pack_name}
-                </Link>
-              </div>
-            )
-          })}
+      <div style={{ overflow: 'hidden', overflowY: 'auto' }} className={open ? activeSide : hiddenSide}>
+        {open && (
+          <div className='relative h-full'>
+            <div>
+              {Object.keys(AllModels).map((name) => {
+                const pack_name = capital(name)
+                return (
+                  <div key={pack_name} className={id === name ? 'underline decoration-solid' : ''}>
+                    <Link href={`/${name}`} as={`/${name}`}>
+                      {pack_name}
+                    </Link>
+                  </div>
+                )
+              })}
+            </div>
+            <footer className='absolute bottom-0 left-0 z-30 text-leva-light-grey'>
+              <a href={'https://quaternius.com/'}>Models by @Quaternius</a>
+            </footer>
+          </div>
+        )}
       </div>
     </>
   )

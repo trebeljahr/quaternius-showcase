@@ -17,6 +17,7 @@ module.exports = {
       'leva-white': '#fefefe',
       'leva-dark': '#181c20',
       'leva-medium': '#535760',
+      'leva-light-grey': '#8c92a4',
     },
     fontFamily: {
       leva: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Roboto Mono', 'monospace'],
