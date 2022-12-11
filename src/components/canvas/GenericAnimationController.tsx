@@ -1,13 +1,27 @@
+import useWindowSize from '@/hooks/useWindowSize'
 import { In } from '@/pages/[id]'
 import { folder, Leva, useControls } from 'leva'
 import { useEffect } from 'react'
 import { AnimationAction } from 'three'
 
 export function LevaStyled() {
+  const { height, width } = useWindowSize()
+
   const theme = {
-    sizes: { controlWidth: '250px', rootWidth: '400px' },
+    sizes: { controlWidth: '220px', rootWidth: '320px' },
   }
-  return <Leva theme={theme} />
+  return (
+    <Leva
+      theme={theme}
+      titleBar={
+        width < 640
+          ? {
+              position: { y: height - 40 - 95, x: 10 },
+            }
+          : true
+      }
+    />
+  )
 }
 
 const fadeDuration = 0.5

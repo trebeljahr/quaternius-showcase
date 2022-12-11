@@ -38,6 +38,10 @@ export default function Page({ id }: { id: string }) {
       <div style={{ overflow: 'hidden', overflowY: 'auto' }} className={open ? activeSide : hiddenSide}>
         {open && (
           <div className='relative h-full'>
+            <a className='text-leva-light-grey' href={'https://quaternius.com/'}>
+              Models by @Quaternius
+            </a>
+
             <div>
               {Object.keys(AllModels).map((name) => {
                 const pack_name = capital(name)
@@ -51,7 +55,11 @@ export default function Page({ id }: { id: string }) {
               })}
             </div>
             <footer className='absolute bottom-0 left-0 z-30 text-leva-light-grey'>
-              <a href={'https://quaternius.com/'}>Models by @Quaternius</a>
+              <div>
+                <a href={'https://trebeljahr.com'}>
+                  Made with <span style={{ color: ' #F35269' }}>♥</span> by Rico
+                </a>
+              </div>
             </footer>
           </div>
         )}
