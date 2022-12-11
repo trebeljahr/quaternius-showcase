@@ -41,6 +41,13 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/glb/cute_fish_pack/Blobfish.glb') as unknown as GLTFResult
   const { actions } = useAnimationsWithCleanup(animations, group)
+
+  useLayoutEffect(() => {
+    Object.keys(materials).forEach((key) => {
+      Object.assign(materials[key], { side: DoubleSide })
+    })
+  })
+
   return (
     <group ref={group} {...props} dispose={null}>
       <GenericAnimationController actions={actions} />

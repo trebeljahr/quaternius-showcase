@@ -43,8 +43,11 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { actions } = useAnimationsWithCleanup(animations, group)
 
   useLayoutEffect(() => {
-    Object.assign(materials.Betta_Fins, { side: DoubleSide })
+    Object.keys(materials).forEach((key) => {
+      Object.assign(materials[key], { side: DoubleSide })
+    })
   })
+
   return (
     <group ref={group} {...props} dispose={null}>
       <GenericAnimationController actions={actions} />

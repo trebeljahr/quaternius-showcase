@@ -14,7 +14,11 @@ const fadeDuration = 0.5
 
 export function GenericAnimationController({ actions }: { actions: Record<string, AnimationAction> }) {
   const actionNames = Object.keys(actions)
-  const defaultAction = actionNames.find((name) => name.toLowerCase().includes('idle')) || actionNames[0]
+  const defaultAction =
+    actionNames.find((name) => name.toLowerCase().includes('walk')) ||
+    actionNames.find((name) => name.toLowerCase().includes('idle')) ||
+    actionNames.find((name) => name.toLowerCase().includes('normal')) ||
+    actionNames[0]
 
   const [{ animation }, set] = useControls(
     () => ({
