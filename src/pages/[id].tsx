@@ -1,5 +1,5 @@
 import * as AllModels from '../components/quaternius'
-import { OrbitControls, Stage } from '@react-three/drei'
+import { OrbitControls, Sky, Stage } from '@react-three/drei'
 import { readdir } from 'fs/promises'
 import { GetStaticPropsContext } from 'next'
 import { join } from 'path'
@@ -93,6 +93,8 @@ type Ids = keyof typeof AllModels
 function CanvasComponent({ id }: { id: Ids }) {
   const [state, setState] = useState(0)
   const [components, setComponents] = useState<ComponentType<GroupProps>[]>([])
+  const modelRef = useRef<Group>()
+  const [stopped, setStopped] = useState(false)
 
   useEffect(() => {
     const selectedPack = AllModels[id]
@@ -122,10 +124,13 @@ function CanvasComponent({ id }: { id: Ids }) {
   useEffect(() => {
     setState(0)
     function handleKeyDown(event: KeyboardEvent) {
+      console.log(event.key)
       if (event.key === 'ArrowRight') {
         gotoNext()
       } else if (event.key === 'ArrowLeft') {
         gotoPrev()
+      } else if (event.key === ' ') {
+        setStopped((old) => !old)
       }
     }
 
@@ -143,19 +148,11 @@ function CanvasComponent({ id }: { id: Ids }) {
 
   const Model = components[state]
 
-  const modelRef = useRef<Group>()
-
   useFrame((_, delta) => {
-    if (modelRef.current?.rotation) {
-      modelRef.current.rotation.y -= delta * 0.3
+    if (modelRef.current?.rotation && !stopped) {
+      modelRef.current.rotation.y -= delta * 0.2
     }
   })
-
-  // useEffect(() => {
-  //   if (modelRef.current?.rotation) {
-  //     modelRef.current.rotation.y = Math.PI / 4
-  //   }
-  // }, [components, state])
 
   return (
     <>
