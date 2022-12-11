@@ -94,7 +94,7 @@ function CanvasComponent({ id }: { id: Ids }) {
   const [state, setState] = useState(0)
   const [components, setComponents] = useState<ComponentType<GroupProps>[]>([])
   const modelRef = useRef<Group>()
-  const [stopped, setStopped] = useState(false)
+  const stopped = useRef(false)
 
   useEffect(() => {
     const selectedPack = AllModels[id]
@@ -124,20 +124,19 @@ function CanvasComponent({ id }: { id: Ids }) {
   useEffect(() => {
     setState(0)
     function handleKeyDown(event: KeyboardEvent) {
-      console.log(event.key)
       if (event.key === 'ArrowRight') {
         gotoNext()
       } else if (event.key === 'ArrowLeft') {
         gotoPrev()
       } else if (event.key === ' ') {
-        setStopped((old) => !old)
+        stopped.current = !stopped.current
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
 
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [components.length, gotoNext, gotoPrev])
+  }, [components.length, gotoNext, gotoPrev, stopped])
 
   useEffect(() => {
     components.forEach((component) => {
@@ -149,7 +148,7 @@ function CanvasComponent({ id }: { id: Ids }) {
   const Model = components[state]
 
   useFrame((_, delta) => {
-    if (modelRef.current?.rotation && !stopped) {
+    if (modelRef.current?.rotation && !stopped.current) {
       modelRef.current.rotation.y -= delta * 0.2
     }
   })
