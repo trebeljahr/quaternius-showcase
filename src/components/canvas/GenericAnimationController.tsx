@@ -11,6 +11,8 @@ export function LevaStyled() {
   return <Leva theme={theme} />
 }
 
+const fadeDuration = 0.5
+
 export function GenericAnimationController({ actions }: { actions: Record<string, AnimationAction> }) {
   const actionNames = Object.keys(actions)
   const defaultAction = actionNames.find((name) => name.toLowerCase().includes('idle')) || actionNames[0]
@@ -21,6 +23,9 @@ export function GenericAnimationController({ actions }: { actions: Record<string
         animation: {
           options: actionNames,
           value: defaultAction,
+          //   onChange: (animation) => {
+          //     actions[animation]?.reset().fadeIn(fadeDuration).play()
+          //   },
         },
       }),
     }),
@@ -28,17 +33,28 @@ export function GenericAnimationController({ actions }: { actions: Record<string
   )
 
   useEffect(() => {
-    console.log(defaultAction)
+    // console.log(defaultAction)
     set({ animation: defaultAction })
   }, [defaultAction, set])
   //   const previousAnimation = usePrevious(animation)
 
   useEffect(() => {
+    console.log('Running cleanup to stop all')
+    Object.values(actions)[0]?.stop().getMixer().stopAllAction()
+
+    return () => {
+      Object.values(actions)[0]?.stop().getMixer().stopAllAction()
+    }
+  }, [])
+
+  useEffect(() => {
     console.log(animation)
-    const fadeDuration = 0.5
+    console.log(actions[animation])
+
+    console.log(Object.values(actions).forEach((action) => console.log(action.time)))
     actions[animation]?.reset().fadeIn(fadeDuration).play()
     return () => {
-      actions[animation]?.fadeOut(fadeDuration).stop()
+      actions[animation]?.stop().fadeOut(fadeDuration)
     }
   }, [animation, actions])
 
