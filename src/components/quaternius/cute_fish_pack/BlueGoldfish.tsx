@@ -23,16 +23,20 @@ type GLTFResult = GLTF & {
     BlueGoldfish_Main: THREE.MeshStandardMaterial
     Goldfish_Light: THREE.MeshStandardMaterial
     Eyes: THREE.MeshStandardMaterial
-  }
+  },
+  animations: GLTFAction[],
 }
 
 type ActionName = 'Fish_Armature|Attack' | 'Fish_Armature|Death' | 'Fish_Armature|Out_Of_Water' | 'Fish_Armature|Swimming_Fast' | 'Fish_Armature|Swimming_Impulse' | 'Fish_Armature|Swimming_Normal'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+interface GLTFAction extends THREE.AnimationClip {
+  name: ActionName
+}
+
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/BlueGoldfish.glb') as GLTFResult
-  const { actions } = useAnimations<GLTFActions>(animations, group)
+  const { nodes, materials, animations } = useGLTF('/glb/cute_fish_pack/BlueGoldfish.glb') as unknown as GLTFResult
+  const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Root_Scene">
@@ -57,4 +61,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/BlueGoldfish.glb')
+useGLTF.preload('/glb/cute_fish_pack/BlueGoldfish.glb')

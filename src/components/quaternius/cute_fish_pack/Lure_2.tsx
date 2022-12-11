@@ -22,8 +22,8 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Lure_2.glb') as GLTFResult
+export default function Model(props: JSX.IntrinsicElements['group']) {
+  const { nodes, materials } = useGLTF('/glb/cute_fish_pack/Lure_2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group position={[0, 0, 0.78]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -36,4 +36,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Lure_2.glb')
+useGLTF.preload('/glb/cute_fish_pack/Lure_2.glb')
