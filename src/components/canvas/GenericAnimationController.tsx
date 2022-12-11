@@ -16,7 +16,7 @@ export function LevaStyled() {
       titleBar={
         width < 640
           ? {
-              position: { y: height - 40 - 95, x: 10 },
+              position: { y: height - 40 - 95 - 20, x: -width / 2 + 10 + 320 / 2 }, //(width + 320) / 2 - 320 },
             }
           : true
       }

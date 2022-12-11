@@ -9,22 +9,23 @@ import { GroupProps } from '@react-three/fiber'
 import { capital } from 'case'
 
 const activeSide =
-  'z-20 font-leva text-sm	w-60 bg-leva-dark h-screen  transform transition-all fixed duration-700 text-leva-white p-2'
+  'z-[1500] font-leva text-sm	w-60 bg-leva-dark h-screen  transform transition-all fixed duration-700 text-leva-white p-2'
 const hiddenSide =
-  'z-20 font-leva text-sm w-60 bg-leva-dark h-screen  transform transition-all fixed duration-700 text-leva-white p-2 -translate-x-60'
+  'z-[1500] font-leva text-sm w-60 bg-leva-dark h-screen  transform transition-all fixed duration-700 text-leva-white p-2 -translate-x-60'
 const activeButton =
-  'z-20 font-leva text-sm	absolute w-10 h-10 bg-yellow-400 hover:w-11 hover:h-11 top-0 cursor-pointer transition-all transform duration-700 flex items-center justify-center'
+  'z-[1500] font-leva text-sm	absolute w-10 h-10 bg-yellow-400 hover:w-11 hover:h-11 top-0 cursor-pointer transition-all transform duration-700 flex items-center justify-center'
 const normalButton =
-  'z-20 font-leva text-sm	absolute w-10 h-10 bg-yellow-400 hover:w-11 hover:h-11 top-0 cursor-pointer transition-all transform duration-700 flex items-center justify-center translate-x-60'
+  'z-[1500] font-leva text-sm	absolute w-10 h-10 bg-yellow-400 hover:w-11 hover:h-11 top-0 cursor-pointer transition-all transform duration-700 flex items-center justify-center translate-x-60'
 
-const navButton = 'z-20 font-leva text-sm w-10 h-10 bg-leva-dark text-leva-white cursor-pointer hover:bg-leva-medium'
+const navButton =
+  'z-[1500] font-leva text-sm w-10 h-10 bg-leva-dark text-leva-white cursor-pointer hover:bg-leva-medium'
 
 import tunnel from 'tunnel-rat'
 const t = tunnel()
 export const { Out, In } = t
 
 export default function Page({ id }: { id: string }) {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const toggleOpen = () => {
     setOpen(!open)
   }
