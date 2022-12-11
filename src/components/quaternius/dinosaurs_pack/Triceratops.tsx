@@ -41,9 +41,9 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { actions } = useAnimationsWithCleanup(animations, group)
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} position={[0, -5.5, 0]}>
       <GenericAnimationController actions={actions} />
-      <group name='Root_Scene' position={[0, 0, 0]}>
+      <group name='Root_Scene'>
         <group name='RootNode'>
           <group name='Armature' rotation={[-Math.PI / 2, 0, 0]} scale={200}>
             <primitive object={nodes.root} />
