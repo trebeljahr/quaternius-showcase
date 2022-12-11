@@ -1,9 +1,9 @@
-import { Ocean } from './Ocean'
 import { Physics } from '@react-three/rapier'
 import { FlyingPlayer } from './FlyingPlayer'
 import { FollowingTrex } from './Trex'
 import { PointerLockControls, Sky } from '@react-three/drei'
-import { Plane, Trees } from './ThirdPersonDemo'
+import { Plane } from './ThirdPersonDemo'
+import { Trees } from './TreeStuff'
 
 export default function FreeMovement() {
   return (
