@@ -23,9 +23,7 @@ export function GenericAnimationController({ actions }: { actions: Record<string
         animation: {
           options: actionNames,
           value: defaultAction,
-          //   onChange: (animation) => {
-          //     actions[animation]?.reset().fadeIn(fadeDuration).play()
-          //   },
+          
         },
       }),
     }),
@@ -33,28 +31,41 @@ export function GenericAnimationController({ actions }: { actions: Record<string
   )
 
   useEffect(() => {
-    // console.log(defaultAction)
     set({ animation: defaultAction })
   }, [defaultAction, set])
-  //   const previousAnimation = usePrevious(animation)
 
   useEffect(() => {
     console.log('Running cleanup to stop all')
-    Object.values(actions)[0]?.stop().getMixer().stopAllAction()
-
+    Object.values(actions)[0]?.getMixer().stopAllAction()
+    Object.values(actions).forEach((anim) =>
+      // @ts-ignore: next-line
+      console.log(anim._clip.name, 'time:', anim.time, 'paused:', anim.paused, anim.weight),
+    )
     return () => {
-      Object.values(actions)[0]?.stop().getMixer().stopAllAction()
+      Object.values(actions)[0]?.getMixer().stopAllAction()
     }
-  }, [])
+  }, [actions])
 
   useEffect(() => {
     console.log(animation)
     console.log(actions[animation])
 
-    console.log(Object.values(actions).forEach((action) => console.log(action.time)))
+    if (!actions[animation]) return () => {}
+
+    Object.values(actions).forEach((anim) =>
+      // @ts-ignore: next-line
+      console.log(anim._clip.name, 'time:', anim.time, 'paused:', anim.paused, anim.weight),
+    )
+    Object.values(actions)[0].getMixer().stopAllAction()
+
+    // console.log(Object.values(actions).forEach((action) => console.log(action.time)))
     actions[animation]?.reset().fadeIn(fadeDuration).play()
     return () => {
-      actions[animation]?.stop().fadeOut(fadeDuration)
+      console.log('==== cleanup ====')
+      console.log(actions)
+      console.log(animation)
+
+      actions[animation]?.stop()
     }
   }, [animation, actions])
 
