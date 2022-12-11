@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import { KeyboardControls, Preload, Sky } from '@react-three/drei'
+import { KeyboardControls, Preload } from '@react-three/drei'
 
 export default function Scene({ children, ...props }) {
   return (

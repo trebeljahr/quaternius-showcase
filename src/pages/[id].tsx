@@ -30,13 +30,25 @@ export default function Page({ id }: { id: string }) {
     setOpen(!open)
   }
 
+  useEffect(() => {
+    const closePopup = (event: PointerEvent) => {
+      if (event.x > 240 && (event.target as HTMLElement).id !== 'close-btn') {
+        setOpen(false)
+      }
+    }
+    window.addEventListener('pointerdown', closePopup)
+    return () => {
+      window.removeEventListener('pointerdown', closePopup)
+    }
+  }, [])
+
   return (
     <>
       <Out />
-      <button className={open ? normalButton : activeButton} onClick={toggleOpen}>
+      <button id='close-btn' className={open ? normalButton : activeButton} onClick={toggleOpen}>
         {open ? '<' : '>'}
       </button>
-      <div style={{ overflow: 'hidden', overflowY: 'auto' }} className={open ? activeSide : hiddenSide}>
+      <div id='' style={{ overflow: 'hidden', overflowY: 'auto' }} className={open ? activeSide : hiddenSide}>
         {open && (
           <div className='relative h-full'>
             <a className='text-leva-light-grey' href={'https://quaternius.com/'}>
