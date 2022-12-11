@@ -3,9 +3,9 @@ import { OrbitControls, Stage } from '@react-three/drei'
 import { readdir } from 'fs/promises'
 import { GetStaticPropsContext } from 'next'
 import { join } from 'path'
-import { ComponentType, useCallback, useEffect, useState } from 'react'
+import { ComponentType, useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { GroupProps } from '@react-three/fiber'
+import { GroupProps, useFrame } from '@react-three/fiber'
 import { capital } from 'case'
 
 const activeSide =
@@ -22,6 +22,7 @@ const navButton =
 
 import tunnel from 'tunnel-rat'
 import { useWindowSize } from '@/hooks/useWindowSize'
+import { Group } from 'three'
 
 const t = tunnel()
 export const { Out, In } = t
@@ -141,6 +142,21 @@ function CanvasComponent({ id }: { id: Ids }) {
   }, [components])
 
   const Model = components[state]
+
+  const modelRef = useRef<Group>()
+
+  useFrame((_, delta) => {
+    if (modelRef.current?.rotation) {
+      modelRef.current.rotation.y -= delta * 0.3
+    }
+  })
+
+  // useEffect(() => {
+  //   if (modelRef.current?.rotation) {
+  //     modelRef.current.rotation.y = Math.PI / 4
+  //   }
+  // }, [components, state])
+
   return (
     <>
       <In>
@@ -154,7 +170,11 @@ function CanvasComponent({ id }: { id: Ids }) {
         </div>
       </In>
       <Stage intensity={0.5} preset='rembrandt' shadows={true} environment='city'>
-        {Model && <Model />}
+        {Model && (
+          <group ref={modelRef}>
+            <Model />
+          </group>
+        )}
       </Stage>
       <OrbitControls makeDefault />
       <color attach='background' args={['#f5efe6']} />
