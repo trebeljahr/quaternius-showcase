@@ -40,23 +40,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials, animations } = useGLTF('/glb/dinosaurs_pack/Triceratops.glb') as unknown as GLTFResult
   const { actions } = useAnimationsWithCleanup(animations, group)
 
-  useEffect(() => {
-    console.log('==== model mount ====')
-
-    Object.values(actions).forEach(console.log)
-
-    return () => {
-      console.log('==== cleanup model ====')
-
-      console.log(actions)
-      Object.values(actions).forEach(console.log)
-    }
-  }, [actions])
-
   return (
     <group ref={group} {...props} dispose={null}>
       <GenericAnimationController actions={actions} />
-      <group name='Root_Scene'>
+      <group name='Root_Scene' position={[0, 0, 0]}>
         <group name='RootNode'>
           <group name='Armature' rotation={[-Math.PI / 2, 0, 0]} scale={200}>
             <primitive object={nodes.root} />

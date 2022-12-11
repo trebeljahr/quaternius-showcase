@@ -1,7 +1,6 @@
-import { usePrevious } from '@/hooks/usePrevious'
 import { In } from '@/pages/quaternius/[id]'
 import { folder, Leva, useControls } from 'leva'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { AnimationAction } from 'three'
 
 export function LevaStyled() {
@@ -23,7 +22,6 @@ export function GenericAnimationController({ actions }: { actions: Record<string
         animation: {
           options: actionNames,
           value: defaultAction,
-          
         },
       }),
     }),
@@ -35,37 +33,9 @@ export function GenericAnimationController({ actions }: { actions: Record<string
   }, [defaultAction, set])
 
   useEffect(() => {
-    console.log('Running cleanup to stop all')
-    Object.values(actions)[0]?.getMixer().stopAllAction()
-    Object.values(actions).forEach((anim) =>
-      // @ts-ignore: next-line
-      console.log(anim._clip.name, 'time:', anim.time, 'paused:', anim.paused, anim.weight),
-    )
-    return () => {
-      Object.values(actions)[0]?.getMixer().stopAllAction()
-    }
-  }, [actions])
-
-  useEffect(() => {
-    console.log(animation)
-    console.log(actions[animation])
-
-    if (!actions[animation]) return () => {}
-
-    Object.values(actions).forEach((anim) =>
-      // @ts-ignore: next-line
-      console.log(anim._clip.name, 'time:', anim.time, 'paused:', anim.paused, anim.weight),
-    )
-    Object.values(actions)[0].getMixer().stopAllAction()
-
-    // console.log(Object.values(actions).forEach((action) => console.log(action.time)))
     actions[animation]?.reset().fadeIn(fadeDuration).play()
     return () => {
-      console.log('==== cleanup ====')
-      console.log(actions)
-      console.log(animation)
-
-      actions[animation]?.stop()
+      actions[animation]?.fadeOut(fadeDuration)
     }
   }, [animation, actions])
 
