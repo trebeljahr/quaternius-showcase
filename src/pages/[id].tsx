@@ -35,7 +35,7 @@ export default function Page({ id }: { id: string }) {
 
   useEffect(() => {
     const closePopup = (event: PointerEvent) => {
-      if (width < 600 && event.x > 240 && (event.target as HTMLElement).id !== 'close-btn') {
+      if (width < 640 && event.x > 240 && (event.target as HTMLElement).id !== 'close-btn') {
         setOpen(false)
       }
     }
