@@ -6,6 +6,7 @@ import * as THREE from 'three'
 import React, { useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
+import { GenericAnimationController } from '@/components/canvas/GenericAnimationController'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -39,6 +40,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
+      <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
           <group name='Armature' rotation={[-Math.PI / 2, 0, 0]} scale={200}>

@@ -24,7 +24,8 @@
     "react-merge-refs": "^2.0.1",
     "simplex-noise": "^3.0.1",
     "three": "^0.146.0",
-    "three-stdlib": "^2.17.3"
+    "three-stdlib": "^2.17.3",
+    "tunnel-rat": "^0.1.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.3.1",

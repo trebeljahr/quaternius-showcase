@@ -83,17 +83,6 @@ export const TreeWithPhysics = () => {
   )
 }
 
-// export const TreeWithSimplifiedPhysics = () => {
-//   return (
-//     <RigidBody position={new Vector3(0, -7.5, 8)} type='fixed' colliders={false}>
-//       <Tree1 />
-//       <CylinderCollider args={[0.5, 0.2]} position={[0, 0.35, 0]} />
-//       <CylinderCollider args={[0.5, 0.1]} position={[0, 1.1, 0.4]} rotation={[0.45, 0, 0]} />
-//       <CylinderCollider args={[0.4, 0.1]} position={[0, 1.9, 0.6]} rotation={[0.35, 0, 0]} />
-//     </RigidBody>
-//   )
-// }
-
 export function random(min: number, max: number) {
   min = Math.ceil(min)
   max = Math.floor(max)

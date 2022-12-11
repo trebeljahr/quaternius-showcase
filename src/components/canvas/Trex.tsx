@@ -4,6 +4,7 @@ import { useGLTF, useAnimations, useKeyboardControls } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { Camera, useFrame, useThree } from '@react-three/fiber'
 import { AnimationAction, AnimationClip, AnimationMixer, Group, LoopOnce, Object3D, Vector3 } from 'three'
+import { usePrevious } from '@/hooks/usePrevious'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -65,14 +66,6 @@ export function FollowingTrex() {
       <Trex />
     </group>
   )
-}
-
-function usePrevious<T>(value: T) {
-  const ref = useRef<T>()
-  useEffect(() => {
-    ref.current = value
-  }, [value])
-  return ref.current
 }
 
 function AnimationController({ actions }: { actions: PossibleActions }) {
