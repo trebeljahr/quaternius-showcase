@@ -21,18 +21,21 @@ const navButton =
   'z-[1500] font-leva text-sm w-10 h-10 bg-leva-dark text-leva-white cursor-pointer hover:bg-leva-medium'
 
 import tunnel from 'tunnel-rat'
+import { useWindowSize } from '@/hooks/useWindowSize'
+
 const t = tunnel()
 export const { Out, In } = t
 
 export default function Page({ id }: { id: string }) {
   const [open, setOpen] = useState(false)
+  const { width } = useWindowSize()
   const toggleOpen = () => {
     setOpen(!open)
   }
 
   useEffect(() => {
     const closePopup = (event: PointerEvent) => {
-      if (event.x > 240 && (event.target as HTMLElement).id !== 'close-btn') {
+      if (width < 600 && event.x > 240 && (event.target as HTMLElement).id !== 'close-btn') {
         setOpen(false)
       }
     }
@@ -40,7 +43,7 @@ export default function Page({ id }: { id: string }) {
     return () => {
       window.removeEventListener('pointerdown', closePopup)
     }
-  }, [])
+  }, [width])
 
   return (
     <>
@@ -51,9 +54,11 @@ export default function Page({ id }: { id: string }) {
       <div id='' style={{ overflow: 'hidden', overflowY: 'auto' }} className={open ? activeSide : hiddenSide}>
         {open && (
           <div className='relative h-full'>
-            <a className='text-leva-light-grey' href={'https://quaternius.com/'}>
-              Models by @Quaternius
-            </a>
+            <h1>
+              <a className='text-leva-light-grey' href={'https://quaternius.com/'}>
+                Models by @Quaternius
+              </a>
+            </h1>
 
             <div>
               {Object.keys(AllModels).map((name) => {

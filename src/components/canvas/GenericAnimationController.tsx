@@ -1,4 +1,4 @@
-import useWindowSize from '@/hooks/useWindowSize'
+import { useWindowSize } from '@/hooks/useWindowSize'
 import { In } from '@/pages/[id]'
 import { folder, Leva, useControls } from 'leva'
 import { useEffect } from 'react'
