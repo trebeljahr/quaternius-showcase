@@ -1,4 +1,4 @@
-import { In } from '@/pages/quaternius/[id]'
+import { In } from '@/pages/[id]'
 import { folder, Leva, useControls } from 'leva'
 import { useEffect } from 'react'
 import { AnimationAction } from 'three'

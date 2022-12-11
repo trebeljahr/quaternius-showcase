@@ -1,9 +1,9 @@
-import * as AllModels from '../../components/quaternius'
+import * as AllModels from '../components/quaternius'
 import { OrbitControls, Stage } from '@react-three/drei'
 import { readdir } from 'fs/promises'
 import { GetStaticPropsContext } from 'next'
 import { join } from 'path'
-import { ComponentType, Suspense, useEffect, useState } from 'react'
+import { ComponentType, Suspense, useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { GroupProps } from '@react-three/fiber'
 import { capital } from 'case'
@@ -17,9 +17,12 @@ const activeButton =
 const normalButton =
   'z-20 font-leva text-sm	absolute w-10 h-10 bg-yellow-400 top-0 cursor-pointer transition-all transform duration-700 flex items-center justify-center translate-x-60'
 
+const navButton = 'z-20 font-leva text-sm w-10 h-10 bg-leva-dark text-leva-white cursor-pointer'
+
 import tunnel from 'tunnel-rat'
 const t = tunnel()
 export const { Out, In } = t
+
 export default function Page() {
   const [open, setOpen] = useState(true)
   const toggleOpen = () => {
@@ -39,7 +42,7 @@ export default function Page() {
             const pack_name = capital(name)
             return (
               <div key={pack_name}>
-                <Link href={`/quaternius/${name}`} as={`/quaternius/${name}`}>
+                <Link href={`/${name}`} as={`/${name}`}>
                   {pack_name}
                 </Link>
               </div>
@@ -66,30 +69,38 @@ function CanvasComponent({ id }: { id: Ids }) {
     )
   }, [id])
 
+  const gotoPrev = useCallback(() => {
+    setState((old) => {
+      const next = old - 1
+      if (next < 0) return components.length - 1
+      return next
+    })
+  }, [components.length])
+
+  const gotoNext = useCallback(() => {
+    setState((old) => {
+      const next = old + 1
+      if (next >= components.length) return 0
+      return next
+    })
+  }, [components.length])
+
   useEffect(() => {
     console.log('Running useEffect')
 
     setState(0)
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'ArrowRight') {
-        setState((old) => {
-          const next = old + 1
-          if (next >= components.length) return 0
-          return next
-        })
+        gotoNext()
       } else if (event.key === 'ArrowLeft') {
-        setState((old) => {
-          const next = old - 1
-          if (next < 0) return components.length - 1
-          return next
-        })
+        gotoPrev()
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
 
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [components.length])
+  }, [components.length, gotoNext, gotoPrev])
 
   useEffect(() => {
     components.forEach((component) => {
@@ -101,6 +112,16 @@ function CanvasComponent({ id }: { id: Ids }) {
   const Model = components[state]
   return (
     <>
+      <In>
+        <div className='absolute bottom-0 right-0 z-20'>
+          <button className={navButton} onClick={gotoPrev}>
+            {'<'}
+          </button>
+          <button className={navButton} onClick={gotoNext}>
+            {'>'}
+          </button>
+        </div>
+      </In>
       <Stage intensity={0.5} preset='rembrandt' shadows={true} environment='city'>
         {Model && <Model />}
       </Stage>

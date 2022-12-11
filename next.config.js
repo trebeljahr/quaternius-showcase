@@ -12,6 +12,15 @@ const nextConfig = {
   // compiler: {
   //   styledComponents: true,
   // },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/animals_pack',
+        permanent: true,
+      },
+    ]
+  },
   experimental: {},
   images: {},
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
