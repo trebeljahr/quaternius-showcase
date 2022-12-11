@@ -3,7 +3,7 @@ import { OrbitControls, Stage } from '@react-three/drei'
 import { readdir } from 'fs/promises'
 import { GetStaticPropsContext } from 'next'
 import { join } from 'path'
-import { ComponentType, Suspense, useCallback, useEffect, useState } from 'react'
+import { ComponentType, useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { GroupProps } from '@react-three/fiber'
 import { capital } from 'case'
@@ -86,8 +86,6 @@ function CanvasComponent({ id }: { id: Ids }) {
   }, [components.length])
 
   useEffect(() => {
-    console.log('Running useEffect')
-
     setState(0)
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'ArrowRight') {
@@ -151,7 +149,5 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async ({ params: { id } }: GetStaticPropsContext<{ id: Ids }>) => {
-  console.log(id)
-
   return { props: { id } }
 }

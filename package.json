@@ -10,19 +10,15 @@
     "node": ">=14"
   },
   "dependencies": {
-    "@dimforge/rapier3d-compat": "^0.10.0",
     "@react-three/drei": "^9.40.0",
     "@react-three/fiber": "^8.9.0",
-    "@react-three/rapier": "^0.11.1",
     "case": "^1.6.3",
-    "glsl-random": "^0.0.5",
     "leva": "^0.9.34",
     "next": "^13.0.1",
     "next-pwa": "^5.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-merge-refs": "^2.0.1",
-    "simplex-noise": "^3.0.1",
     "three": "^0.146.0",
     "three-stdlib": "^2.17.3",
     "tunnel-rat": "^0.1.0"
