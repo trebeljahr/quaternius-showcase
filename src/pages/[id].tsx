@@ -54,9 +54,9 @@ export default function Page({ id }: { id: string }) {
       <div id='' style={{ overflow: 'hidden', overflowY: 'auto' }} className={open ? activeSide : hiddenSide}>
         {open && (
           <div className='relative h-full'>
-            <h1>
+            <h1 className='pt-2 mb-2 text-lg'>
               <a className='text-leva-light-grey' href={'https://quaternius.com/'}>
-                Models by @Quaternius
+                Free 3D Models by <span>@Quaternius</span>
               </a>
             </h1>
 
