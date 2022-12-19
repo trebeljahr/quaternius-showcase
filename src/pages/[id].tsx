@@ -7,6 +7,10 @@ import { ComponentType, useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { GroupProps, useFrame } from '@react-three/fiber'
 import { capital } from 'case'
+import tunnel from 'tunnel-rat'
+import { useWindowSize } from '@/hooks/useWindowSize'
+import { Group } from 'three'
+import { DownloadIcon } from '@/components/dom/DownloadIcon'
 
 const activeSide =
   'z-[1500] font-leva text-sm	w-60 bg-leva-dark h-screen  transform transition-all fixed duration-700 text-leva-white p-2'
@@ -19,10 +23,6 @@ const normalButton =
 
 const navButton =
   'z-[1500] font-leva text-sm w-10 h-10 bg-leva-dark text-leva-white cursor-pointer hover:bg-leva-medium'
-
-import tunnel from 'tunnel-rat'
-import { useWindowSize } from '@/hooks/useWindowSize'
-import { Group } from 'three'
 
 const t = tunnel()
 export const { Out, In } = t
@@ -88,19 +88,20 @@ export default function Page({ id }: { id: string }) {
 }
 
 type Ids = keyof typeof AllModels
-// type SelectedPack = typeof AllModels[keyof typeof AllModels]
 
 function CanvasComponent({ id }: { id: Ids }) {
   const [state, setState] = useState(0)
-  const [components, setComponents] = useState<ComponentType<GroupProps>[]>([])
+  const [components, setComponents] = useState<{ Component: ComponentType<GroupProps>; key: string }[]>([])
   const modelRef = useRef<Group>()
   const stopped = useRef(false)
 
   useEffect(() => {
     const selectedPack = AllModels[id]
+    console.log(selectedPack)
     setComponents(
-      Object.values(selectedPack).map((Component) => {
-        return Component
+      Object.entries(selectedPack).map(([key, Component]) => {
+        console.log(Component)
+        return { key, Component }
       }),
     )
   }, [id])
@@ -139,9 +140,9 @@ function CanvasComponent({ id }: { id: Ids }) {
   }, [components.length, gotoNext, gotoPrev, stopped])
 
   useEffect(() => {
-    components.forEach((component) => {
+    components.forEach(({ Component }) => {
       // @ts-ignore: next-line
-      component.render.preload()
+      Component.render.preload()
     })
   }, [components])
 
@@ -156,6 +157,16 @@ function CanvasComponent({ id }: { id: Ids }) {
   return (
     <>
       <In>
+        <div className='absolute left-0 z-20 flex justify-center w-full bottom-1'>
+          {Model && (
+            <a href={`/glb/${id}/${Model.key}.glb`} download>
+              <span>
+                <DownloadIcon />
+                {'.glb'}
+              </span>
+            </a>
+          )}
+        </div>
         <div className='absolute bottom-0 right-0 z-20'>
           <button className={navButton} onClick={gotoPrev}>
             {'<'}
@@ -168,7 +179,7 @@ function CanvasComponent({ id }: { id: Ids }) {
       <Stage intensity={0.5} preset='rembrandt' shadows={true} environment='city'>
         {Model && (
           <group ref={modelRef}>
-            <Model />
+            <Model.Component />
           </group>
         )}
       </Stage>
