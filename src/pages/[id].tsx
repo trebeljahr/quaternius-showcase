@@ -119,10 +119,8 @@ function CanvasComponent({ id }: { id: Ids }) {
       <In>
         {Model && (
           <a className={`${downloadStyles} ${open && 'translate-x-60'}`} href={`/glb/${id}/${Model.key}.glb`} download>
-            <span>
-              <DownloadIcon />
-              {'.glb'}
-            </span>
+            <DownloadIcon />
+            <span className={`leading-7`}>{'.glb'}</span>
           </a>
         )}
         <div className='absolute bottom-0 right-0 z-20'>
