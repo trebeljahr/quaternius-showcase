@@ -1,5 +1,5 @@
 import * as AllModels from '../components/quaternius'
-import { OrbitControls, Sky, Stage } from '@react-three/drei'
+import { Environment, OrbitControls, Sky, Stage } from '@react-three/drei'
 import { readdir } from 'fs/promises'
 import { GetStaticPropsContext } from 'next'
 import { join } from 'path'
@@ -173,12 +173,16 @@ function CanvasComponent({ id }: { id: Ids }) {
           )}
         </div>
       </In>
-      <Stage intensity={0.5} preset='rembrandt' shadows={true} environment='city'>
+      <Stage intensity={0.5} preset='rembrandt' shadows={true} environment={null}>
         {Model && (
           <group ref={modelRef}>
             <Model.Component />
           </group>
         )}
+        <Environment
+          path='https://raw.githubusercontent.com/pmndrs/drei-assets/456060a26bbeb8fdf79326f224b6d99b8bcce736/hdri/'
+          files='potsdamer_platz_1k.hdr'
+        />
       </Stage>
       <OrbitControls makeDefault />
       <color attach='background' args={['#f5efe6']} />

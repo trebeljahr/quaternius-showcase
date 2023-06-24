@@ -10,7 +10,7 @@
     "node": ">=14"
   },
   "dependencies": {
-    "@react-three/drei": "^9.40.0",
+    "@react-three/drei": "9.40.0",
     "@react-three/fiber": "^8.9.0",
     "case": "^1.6.3",
     "leva": "^0.9.34",
@@ -32,7 +32,6 @@
     "eslint": "^8.24.0",
     "eslint-config-next": "^13.0.1",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-tailwind": "^0.2.1",
     "file-loader": "^6.2.0",
     "glslify": "^7.1.1",
     "glslify-loader": "^2.0.0",
