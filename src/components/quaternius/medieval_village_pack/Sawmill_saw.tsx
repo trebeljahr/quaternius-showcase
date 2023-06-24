@@ -28,7 +28,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/medieval_village_pack/Sawmill_saw.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Sawmill_saw_1.geometry} material={materials.DarkWood} />
         <mesh geometry={nodes.Sawmill_saw_2.geometry} material={materials.WoodSide} />
         <mesh geometry={nodes.Sawmill_saw_3.geometry} material={materials.Wood} />

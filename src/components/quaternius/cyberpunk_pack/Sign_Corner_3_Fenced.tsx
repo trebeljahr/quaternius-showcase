@@ -22,7 +22,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/cyberpunk_pack/Sign_Corner_3_Fenced.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Sign_Corner_3_Fenced_1.geometry} material={materials.DarkGrey} />
         <mesh geometry={nodes.Sign_Corner_3_Fenced_2.geometry} material={materials.Texture_Signs} />
       </group>

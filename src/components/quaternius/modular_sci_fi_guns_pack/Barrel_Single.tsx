@@ -22,7 +22,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_sci_fi_guns_pack/Barrel_Single.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Barrel_Single_1.geometry} material={materials.Black} />
         <mesh geometry={nodes.Barrel_Single_2.geometry} material={materials.Grey} />
       </group>

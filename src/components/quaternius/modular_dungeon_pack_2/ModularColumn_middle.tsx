@@ -22,7 +22,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_dungeon_pack/ModularColumn_middle.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.ColumnMid_1.geometry} material={materials.RockLight} />
         <mesh geometry={nodes.ColumnMid_2.geometry} material={materials.Rock} />
       </group>

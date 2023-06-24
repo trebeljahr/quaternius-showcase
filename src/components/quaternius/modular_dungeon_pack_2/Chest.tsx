@@ -26,12 +26,12 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_dungeon_pack/Chest.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group position={[0.05, 0.62, 1.44]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[0.05, 0.62, 1.44]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.ChestBottom_1.geometry} material={materials.Steel} />
         <mesh geometry={nodes.ChestBottom_2.geometry} material={materials.Wood} />
         <mesh geometry={nodes.ChestBottom_3.geometry} material={materials.DarkSteel} />
       </group>
-      <group position={[-0.25, 0.6, 1.44]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[-0.25, 0.6, 1.44]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.ChestTop_1.geometry} material={materials.Steel} />
         <mesh geometry={nodes.ChestTop_2.geometry} material={materials.Wood} />
       </group>

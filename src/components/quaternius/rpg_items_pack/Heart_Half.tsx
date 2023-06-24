@@ -20,7 +20,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/rpg_items_pack/Heart_Half.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Heart_Half.geometry} material={materials.Red} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <mesh geometry={nodes.Heart_Half.geometry} material={materials.Red} rotation={[-Math.PI / 2, 0, 0]} />
     </group>
   )
 }

@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/house_interior_pack/Light_CeilingSingle.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Light_CeilingSingle_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Light_CeilingSingle_2.geometry} material={materials.LightMetal} />
         <mesh geometry={nodes.Light_CeilingSingle_3.geometry} material={materials.Light} />

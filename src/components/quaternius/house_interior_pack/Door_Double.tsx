@@ -24,11 +24,11 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/house_interior_pack/Door_Double.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group position={[-1.74, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[-1.74, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Door_DoubleLeft_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Door_DoubleLeft_2.geometry} material={materials.Gold} />
       </group>
-      <group position={[1.74, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[1.74, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Door_DoubleRight_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Door_DoubleRight_2.geometry} material={materials.Gold} />
       </group>

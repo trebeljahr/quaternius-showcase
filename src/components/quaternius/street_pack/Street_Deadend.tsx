@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/street_pack/Street_Deadend.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Deadend_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Deadend_2.geometry} material={materials.White} />
         <mesh geometry={nodes.Street_Deadend_3.geometry} material={materials.Black} />

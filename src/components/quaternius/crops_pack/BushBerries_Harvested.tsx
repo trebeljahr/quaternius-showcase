@@ -24,7 +24,6 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         geometry={nodes.BushBerries_Harvested.geometry}
         material={materials.Green_Bush}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
       />
     </group>
   )

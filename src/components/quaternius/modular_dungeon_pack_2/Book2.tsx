@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_dungeon_pack/Book2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Book2_1.geometry} material={materials['Cover.001']} />
         <mesh geometry={nodes.Book2_2.geometry} material={materials['Paper.001']} />
         <mesh geometry={nodes.Book2_3.geometry} material={materials['Ink.001']} />

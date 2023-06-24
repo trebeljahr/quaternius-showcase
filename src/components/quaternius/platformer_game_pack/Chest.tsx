@@ -45,10 +45,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='Chest_Armature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Chest_Armature' rotation={[-Math.PI / 2, 0, 0]}>
             <primitive object={nodes.Root} />
           </group>
-          <group name='Chest_Bottom_1' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Chest_Bottom_1' rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Chest_Bottom_2'
               geometry={nodes.Chest_Bottom_2.geometry}
@@ -80,7 +80,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
               skeleton={nodes.Chest_Bottom_6.skeleton}
             />
           </group>
-          <group name='Chest_Top_1' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Chest_Top_1' rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Chest_Top_2'
               geometry={nodes.Chest_Top_2.geometry}

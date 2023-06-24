@@ -29,13 +29,13 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Cannon.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Cannon_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Cannon_2.geometry} material={materials.DarkMetal} />
         <mesh geometry={nodes.Cannon_3.geometry} material={materials.Metal} />
         <mesh geometry={nodes.Cannon_4.geometry} material={materials.White} />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Cannon_Wheels_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Cannon_Wheels_2.geometry} material={materials.Wood_Light} />
       </group>

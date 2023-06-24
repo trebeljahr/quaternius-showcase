@@ -32,9 +32,8 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         material={materials.Black}
         position={[0.2, 0.03, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
       />
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Sniper_3_1.geometry} material={materials.Black} />
         <mesh geometry={nodes.Sniper_3_2.geometry} material={materials.White} />
         <mesh geometry={nodes.Sniper_3_3.geometry} material={materials.Grey} />

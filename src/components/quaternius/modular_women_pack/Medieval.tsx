@@ -41,10 +41,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_women/Medieval.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <primitive object={nodes.Root} />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <skinnedMesh
           geometry={nodes.Medieval_Body_1.geometry}
           material={materials.Black}
@@ -76,7 +76,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
           skeleton={nodes.Medieval_Body_6.skeleton}
         />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <skinnedMesh
           geometry={nodes.Medieval_Feet_1.geometry}
           material={materials.LightBrown}
@@ -88,7 +88,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
           skeleton={nodes.Medieval_Feet_2.skeleton}
         />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <skinnedMesh
           geometry={nodes.Medieval_Head_1.geometry}
           material={materials.Black}
@@ -120,7 +120,6 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         material={materials.Black}
         skeleton={nodes.Medieval_Legs.skeleton}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
       />
     </group>
   )

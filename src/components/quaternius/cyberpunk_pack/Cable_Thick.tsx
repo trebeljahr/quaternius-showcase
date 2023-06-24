@@ -20,12 +20,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/cyberpunk_pack/Cable_Thick.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.Cable_Thick.geometry}
-        material={materials.Black}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
+      <mesh geometry={nodes.Cable_Thick.geometry} material={materials.Black} rotation={[-Math.PI / 2, 0, 0]} />
     </group>
   )
 }

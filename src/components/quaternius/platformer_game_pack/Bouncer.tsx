@@ -36,10 +36,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='BouncerArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='BouncerArmature' rotation={[-Math.PI / 2, 0, 0]}>
             <primitive object={nodes.Root} />
           </group>
-          <group name='Bouncer' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Bouncer' rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Bouncer_1'
               geometry={nodes.Bouncer_1.geometry}

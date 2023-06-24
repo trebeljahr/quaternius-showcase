@@ -32,9 +32,8 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         material={materials.Black}
         position={[0.48, 0.15, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
       />
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.SMG_1_1.geometry} material={materials.Black} />
         <mesh geometry={nodes.SMG_1_2.geometry} material={materials.Grey} />
         <mesh geometry={nodes.SMG_1_3.geometry} material={materials.Main} />

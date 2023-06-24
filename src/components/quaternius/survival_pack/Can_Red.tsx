@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/survival_pack/Can_Red.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Can_Red_1.geometry} material={materials.LightGrey} />
         <mesh geometry={nodes.Can_Red_2.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Can_Red_3.geometry} material={materials.Red} />

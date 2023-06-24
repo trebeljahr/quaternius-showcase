@@ -24,7 +24,6 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         geometry={nodes.Cube_Grass_Center_Tall.geometry}
         material={materials.Green_Light}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
       />
     </group>
   )

@@ -20,7 +20,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/nature_pack/Bush_1.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Bush_1.geometry} material={materials.Green} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <mesh geometry={nodes.Bush_1.geometry} material={materials.Green} rotation={[-Math.PI / 2, 0, 0]} />
     </group>
   )
 }

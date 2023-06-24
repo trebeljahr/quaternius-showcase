@@ -71,10 +71,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='CharacterArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='CharacterArmature' rotation={[-Math.PI / 2, 0, 0]}>
             <primitive object={nodes.Root} />
           </group>
-          <group name='Sword' position={[-0.71, 0.98, 0.02]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Sword' position={[-0.71, 0.98, 0.02]} rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Sword_1'
               geometry={nodes.Sword_1.geometry}
@@ -100,7 +100,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
               skeleton={nodes.Sword_4.skeleton}
             />
           </group>
-          <group name='Cube007' position={[0, 1.03, 0.13]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Cube007' position={[0, 1.03, 0.13]} rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Cube007_1'
               geometry={nodes.Cube007_1.geometry}
@@ -126,9 +126,8 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
             material={materials.Material}
             skeleton={nodes.Cube000.skeleton}
             rotation={[-Math.PI / 2, 0, 0]}
-            scale={100}
           />
-          <group name='Cube009' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Cube009' rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Cube009_1'
               geometry={nodes.Cube009_1.geometry}

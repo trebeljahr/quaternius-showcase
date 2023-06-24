@@ -35,19 +35,19 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/ships_pack/Sail_ship.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 2.45, -1.05]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[0, 2.45, -1.05]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.BackSail_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.BackSail_2.geometry} material={materials.Fabric} />
       </group>
-      <group position={[0, 2.05, 1.13]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[0, 2.05, 1.13]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Front_Sail_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Front_Sail_2.geometry} material={materials.Fabric} />
       </group>
-      <group position={[0, 2.49, 0.05]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[0, 2.49, 0.05]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.MidleSail_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.MidleSail_2.geometry} material={materials.Fabric} />
       </group>
-      <group position={[0, -0.07, -0.05]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[0, -0.07, -0.05]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.BigShip_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.BigShip_2.geometry} material={materials.Fabric} />
         <mesh geometry={nodes.BigShip_3.geometry} material={materials.LightWood} />

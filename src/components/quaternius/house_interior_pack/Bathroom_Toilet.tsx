@@ -20,12 +20,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/house_interior_pack/Bathroom_Toilet.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.Bathroom_Toilet.geometry}
-        material={materials.White}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
+      <mesh geometry={nodes.Bathroom_Toilet.geometry} material={materials.White} rotation={[-Math.PI / 2, 0, 0]} />
     </group>
   )
 }

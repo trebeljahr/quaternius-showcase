@@ -26,7 +26,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_dungeon_1/Arch_Door.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group position={[-1.2, 1.46, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[-1.2, 1.46, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Arch_Door_1.geometry} material={materials.DarkWood} />
         <mesh geometry={nodes.Arch_Door_2.geometry} material={materials.Metal} />
         <mesh geometry={nodes.Arch_Door_3.geometry} material={materials.DarkMetal} />

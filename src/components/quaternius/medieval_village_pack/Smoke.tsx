@@ -20,7 +20,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/medieval_village_pack/Smoke.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Smoke.geometry} material={materials.Smoke} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+      <mesh geometry={nodes.Smoke.geometry} material={materials.Smoke} rotation={[-Math.PI / 2, 0, 0]} />
     </group>
   )
 }

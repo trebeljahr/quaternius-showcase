@@ -20,12 +20,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_dungeon_1/Floor_Modular.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.Floor_Modular.geometry}
-        material={materials.Grey_Floor}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
+      <mesh geometry={nodes.Floor_Modular.geometry} material={materials.Grey_Floor} rotation={[-Math.PI / 2, 0, 0]} />
     </group>
   )
 }

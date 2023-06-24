@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/cyberpunk_pack/Antenna_2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Antenna_2_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Antenna_2_2.geometry} material={materials.LightGrey} />
         <mesh geometry={nodes.Antenna_2_3.geometry} material={materials.DarkGrey} />

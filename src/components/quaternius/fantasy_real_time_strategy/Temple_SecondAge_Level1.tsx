@@ -26,7 +26,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   ) as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Temple_SecondAge_Level1_1.geometry} material={materials.Stone} />
         <mesh geometry={nodes.Temple_SecondAge_Level1_2.geometry} material={materials.Walls} />
         <mesh geometry={nodes.Temple_SecondAge_Level1_3.geometry} material={materials.Main} />

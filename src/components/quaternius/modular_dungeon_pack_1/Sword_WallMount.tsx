@@ -35,20 +35,15 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_dungeon_1/Sword_WallMount.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.Sword_WallMount.geometry}
-        material={materials.DarkWood}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
-      <group position={[0.01, 0.28, 0.11]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <mesh geometry={nodes.Sword_WallMount.geometry} material={materials.DarkWood} rotation={[-Math.PI / 2, 0, 0]} />
+      <group position={[0.01, 0.28, 0.11]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Sword_1.geometry} material={materials.DarkSteel} />
         <mesh geometry={nodes.Sword_2.geometry} material={materials['DarkWood.001']} />
         <mesh geometry={nodes.Sword_3.geometry} material={materials.LightWood} />
         <mesh geometry={nodes.Sword_4.geometry} material={materials.LightSteel} />
         <mesh geometry={nodes.Sword_5.geometry} material={materials.Steel} />
       </group>
-      <group position={[0.08, 0.08, 0.14]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[0.08, 0.08, 0.14]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Sword_big_1.geometry} material={materials.DarkWood} />
         <mesh geometry={nodes.Sword_big_2.geometry} material={materials.DarkSteel} />
         <mesh geometry={nodes.Sword_big_3.geometry} material={materials.LightWood} />

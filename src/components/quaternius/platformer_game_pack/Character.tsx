@@ -67,10 +67,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='CharacterArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='CharacterArmature' rotation={[-Math.PI / 2, 0, 0]}>
             <primitive object={nodes.Root} />
           </group>
-          <group name='Body_1' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Body_1' rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Body_2'
               geometry={nodes.Body_2.geometry}
@@ -96,9 +96,8 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
             material={materials.Main}
             skeleton={nodes.Ears.skeleton}
             rotation={[-Math.PI / 2, 0, 0]}
-            scale={100}
           />
-          <group name='Head_1' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Head_1' rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Head_2'
               geometry={nodes.Head_2.geometry}
@@ -130,7 +129,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
               skeleton={nodes.Head_6.skeleton}
             />
           </group>
-          <group name='Arms' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Arms' rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Arms_1'
               geometry={nodes.Arms_1.geometry}

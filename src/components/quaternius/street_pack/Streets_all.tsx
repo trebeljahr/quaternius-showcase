@@ -89,90 +89,90 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/street_pack/Streets_all.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group position={[-3, 0, -5.89]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[-3, 0, -5.89]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Water_1.geometry} material={materials.Water} />
         <mesh geometry={nodes.Street_Water_2.geometry} material={materials.Grey} />
       </group>
-      <group position={[2.84, 0, -3]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[2.84, 0, -3]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Ramp_Bridge001_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Ramp_Bridge001_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Ramp_Bridge001_3.geometry} material={materials.White} />
         <mesh geometry={nodes.Street_Ramp_Bridge001_4.geometry} material={materials['Material.003']} />
       </group>
-      <group position={[0, 0, -2]} rotation={[-Math.PI / 2, 0, -Math.PI]} scale={100}>
+      <group position={[0, 0, -2]} rotation={[-Math.PI / 2, 0, -Math.PI]}>
         <mesh geometry={nodes.Street_Ramp_Water000_1.geometry} material={materials.Water} />
         <mesh geometry={nodes.Street_Ramp_Water000_2.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Ramp_Water000_3.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Ramp_Water000_4.geometry} material={materials.White} />
         <mesh geometry={nodes.Street_Ramp_Water000_5.geometry} material={materials['Material.003']} />
       </group>
-      <group position={[-5.78, 0, -5.89]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[-5.78, 0, -5.89]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Ramp_Water001_1.geometry} material={materials.Water} />
         <mesh geometry={nodes.Street_Ramp_Water001_2.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Ramp_Water001_3.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Ramp_Water001_4.geometry} material={materials.White} />
         <mesh geometry={nodes.Street_Ramp_Water001_5.geometry} material={materials['Material.003']} />
       </group>
-      <group position={[0, 0, 2]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[0, 0, 2]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_RampElevated001_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_RampElevated001_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_RampElevated001_3.geometry} material={materials.White} />
       </group>
-      <group position={[0, 0, 2.86]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[0, 0, 2.86]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_RampElevated_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_RampElevated_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_RampElevated_3.geometry} material={materials.White} />
       </group>
-      <group position={[-2, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[-2, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Straight002_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Straight002_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Straight002_3.geometry} material={materials.White} />
       </group>
-      <group position={[2, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[2, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Straight001_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Straight001_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Straight001_3.geometry} material={materials.White} />
       </group>
-      <group position={[-3, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[-3, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Bridge_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Bridge_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Bridge_3.geometry} material={materials.White} />
         <mesh geometry={nodes.Street_Bridge_4.geometry} material={materials['Material.003']} />
       </group>
-      <group position={[0, 0, -3]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[0, 0, -3]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Bridge_Underpass_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Bridge_Underpass_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Bridge_Underpass_3.geometry} material={materials.White} />
         <mesh geometry={nodes.Street_Bridge_Underpass_4.geometry} material={materials['Material.003']} />
       </group>
-      <group position={[-3, 0, -3]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[-3, 0, -3]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Bridge_Water_1.geometry} material={materials.Water} />
         <mesh geometry={nodes.Street_Bridge_Water_2.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Bridge_Water_3.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Bridge_Water_4.geometry} material={materials.White} />
         <mesh geometry={nodes.Street_Bridge_Water_5.geometry} material={materials['Material.003']} />
       </group>
-      <group position={[0, 0, -6]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[0, 0, -6]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_3Way_2_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_3Way_2_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_3Way_2_3.geometry} material={materials.White} />
       </group>
-      <group position={[3, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[3, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_4Way_2_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_4Way_2_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_4Way_2_3.geometry} material={materials.White} />
       </group>
-      <group position={[-6, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[-6, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Deadend_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Deadend_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Deadend_3.geometry} material={materials.White} />
       </group>
-      <group position={[3, 0, 3]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[3, 0, 3]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Elevated_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Elevated_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Elevated_3.geometry} material={materials.White} />
       </group>
-      <group position={[-3, 0, 3]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[-3, 0, 3]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Curve_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Curve_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Curve_3.geometry} material={materials.White} />
@@ -182,19 +182,18 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         material={materials.Grey}
         position={[-6, 0, -3]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
       />
-      <group position={[3, 0, -6]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[3, 0, -6]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_3Way_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_3Way_3.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_3Way_4.geometry} material={materials.White} />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_4Way_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_4Way_3.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_4Way_4.geometry} material={materials.White} />
       </group>
-      <group position={[-6, 0, 3]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group position={[-6, 0, 3]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Street_Straight_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Street_Straight_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Street_Straight_3.geometry} material={materials.White} />

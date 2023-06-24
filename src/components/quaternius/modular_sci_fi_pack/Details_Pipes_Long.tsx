@@ -26,7 +26,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_sci_fi/Details_Pipes_Long.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Details_Pipes_Long_1.geometry} material={materials.DarkGrey} />
         <mesh geometry={nodes.Details_Pipes_Long_2.geometry} material={materials.Accent} />
         <mesh geometry={nodes.Details_Pipes_Long_3.geometry} material={materials.DarkAccent} />

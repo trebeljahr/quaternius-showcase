@@ -32,10 +32,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_men/Swat.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <primitive object={nodes.Root} />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <skinnedMesh
           geometry={nodes.Swat_Body_1.geometry}
           material={materials.Swat_Black}
@@ -57,9 +57,8 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         material={materials.Swat_Black}
         skeleton={nodes.Swat_Feet.skeleton}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
       />
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <skinnedMesh
           geometry={nodes.Swat_Head_1.geometry}
           material={materials.Swat_Black}
@@ -76,7 +75,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
           skeleton={nodes.Swat_Head_3.skeleton}
         />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <skinnedMesh
           geometry={nodes.Swat_Legs_1.geometry}
           material={materials.Swat_Black}

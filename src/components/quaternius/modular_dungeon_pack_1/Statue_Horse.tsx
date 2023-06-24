@@ -27,14 +27,12 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         material={materials.Marble}
         position={[-0.01, 0, 5.45]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
       />
       <mesh
         geometry={nodes.Horse.geometry}
         material={materials.Statue}
         position={[-0.07, 2.3, 5.39]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
       />
     </group>
   )

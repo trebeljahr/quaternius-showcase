@@ -20,12 +20,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_pack/BearTrap_Open.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.BearTrap_Open.geometry}
-        material={materials.Grey}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
+      <mesh geometry={nodes.BearTrap_Open.geometry} material={materials.Grey} rotation={[-Math.PI / 2, 0, 0]} />
     </group>
   )
 }

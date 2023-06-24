@@ -58,11 +58,11 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='CharacterArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='CharacterArmature' rotation={[-Math.PI / 2, 0, 0]}>
             <primitive object={nodes.Root} />
           </group>
 
-          <group name='Sphere001' position={[0, 0.47, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Sphere001' position={[0, 0.47, 0]} rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Sphere001_1'
               geometry={nodes.Sphere001_1.geometry}
@@ -106,7 +106,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
               skeleton={nodes.Sphere001_7.skeleton}
             />
           </group>
-          <group name='Cube000' position={[0, 0.19, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Cube000' position={[0, 0.19, 0]} rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Cube000_1'
               geometry={nodes.Cube000_1.geometry}

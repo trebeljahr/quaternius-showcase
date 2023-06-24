@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Hazard_Cylinder.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Hazard_Cylinder_1.geometry} material={materials.Black} />
         <mesh geometry={nodes.Hazard_Cylinder_2.geometry} material={materials.Metal} />
         <mesh geometry={nodes.Hazard_Cylinder_3.geometry} material={materials.DarkMetal} />

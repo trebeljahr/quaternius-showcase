@@ -26,7 +26,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/medieval_village_pack/Door_Round.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Door_Round_1.geometry} material={materials.Stone_Dark} />
         <mesh geometry={nodes.Door_Round_2.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Door_Round_3.geometry} material={materials.Wood_Light} />

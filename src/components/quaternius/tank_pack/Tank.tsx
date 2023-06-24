@@ -52,7 +52,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='TankArmature' position={[0, 1.3, 3.93]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='TankArmature' position={[0, 1.3, 3.93]} rotation={[-Math.PI / 2, 0, 0]}>
             <primitive object={nodes.Root} />
           </group>
           <mesh
@@ -61,14 +61,13 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
             material={materials.Main_Details}
             position={[-0.54, 3.9, -0.07]}
             rotation={[-Math.PI / 2, 0, 0]}
-            scale={100}
           />
-          <group name='Tank_Turret' position={[1.55, 3.72, -0.04]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Tank_Turret' position={[1.55, 3.72, -0.04]} rotation={[-Math.PI / 2, 0, 0]}>
             <mesh name='Tank_Turret_1' geometry={nodes.Tank_Turret_1.geometry} material={materials.Main} />
             <mesh name='Tank_Turret_2' geometry={nodes.Tank_Turret_2.geometry} material={materials.Main_Light} />
             <mesh name='Tank_Turret_3' geometry={nodes.Tank_Turret_3.geometry} material={materials.Main_Dark} />
           </group>
-          <group name='Tank_body' position={[0, 1.3, -0.07]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Tank_body' position={[0, 1.3, -0.07]} rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='Tank_body_1'
               geometry={nodes.Tank_body_1.geometry}
@@ -107,7 +106,6 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
             skeleton={nodes.TrackMeshR.skeleton}
             position={[0, 1.3, -4.04]}
             rotation={[-Math.PI / 2, 0, 0]}
-            scale={100}
           />
           <skinnedMesh
             name='TrackMeshL'
@@ -116,7 +114,6 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
             skeleton={nodes.TrackMeshL.skeleton}
             position={[0, 1.3, 3.93]}
             rotation={[-Math.PI / 2, 0, 0]}
-            scale={100}
           />
         </group>
       </group>

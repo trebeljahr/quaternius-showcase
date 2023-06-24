@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Cube_Dirt_Corner_Tall.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Cube_Dirt_Corner_Tall_1.geometry} material={materials.Dirt_3} />
         <mesh geometry={nodes.Cube_Dirt_Corner_Tall_2.geometry} material={materials.Dirt_2} />
         <mesh geometry={nodes.Cube_Dirt_Corner_Tall_3.geometry} material={materials.Dirt_1} />

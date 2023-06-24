@@ -36,10 +36,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='Armature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='Armature' rotation={[-Math.PI / 2, 0, 0]}>
             <primitive object={nodes.Root} />
           </group>
-          <group name='MantaRay' position={[0, 0, 0.8]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group name='MantaRay' position={[0, 0, 0.8]} rotation={[-Math.PI / 2, 0, 0]}>
             <skinnedMesh
               name='MantaRay_1'
               geometry={nodes.MantaRay_1.geometry}
