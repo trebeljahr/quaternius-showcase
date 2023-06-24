@@ -25,11 +25,11 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/cyberpunk_pack/Lootbox.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Lootbox_Base_1.geometry} material={materials.DarkGrey} />
         <mesh geometry={nodes.Lootbox_Base_2.geometry} material={materials.Grey} />
       </group>
-      <group position={[0, 0.4, -0.29]} rotation={[-Math.PI / 2, 0, 0]}>
+      <group position={[0, 0.4, -0.29]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Lootbox_Top_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.Lootbox_Top_2.geometry} material={materials.Orange} />
       </group>

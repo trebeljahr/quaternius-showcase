@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/street_pack/Streetlight_Double.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Streetlight_Double_1.geometry} material={materials['Green.002']} />
         <mesh geometry={nodes.Streetlight_Double_2.geometry} material={materials['Glass.002']} />
         <mesh geometry={nodes.Streetlight_Double_3.geometry} material={materials['Light.002']} />

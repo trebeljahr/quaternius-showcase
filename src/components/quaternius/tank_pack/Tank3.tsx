@@ -50,7 +50,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='TankArmature' position={[0, 1.3, 3.93]} rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='TankArmature' position={[0, 1.3, 3.93]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Root} />
           </group>
           <mesh
@@ -65,7 +65,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
             <mesh name='Tank_Turret_1' geometry={nodes.Tank_Turret_1.geometry} material={materials.Main_Dark} />
             <mesh name='Tank_Turret_2' geometry={nodes.Tank_Turret_2.geometry} material={materials.Main} />
           </group>
-          <group name='Tank_body' position={[0, 1.3, -0.07]} rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='Tank_body' position={[0, 1.3, -0.07]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <skinnedMesh
               name='Tank_body_1'
               geometry={nodes.Tank_body_1.geometry}
@@ -98,6 +98,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
             skeleton={nodes.TrackMeshR.skeleton}
             position={[0, 1.3, -4.04]}
             rotation={[-Math.PI / 2, 0, 0]}
+            scale={100}
           />
           <skinnedMesh
             name='TrackMeshL'
@@ -106,6 +107,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
             skeleton={nodes.TrackMeshL.skeleton}
             position={[0, 1.3, 3.93]}
             rotation={[-Math.PI / 2, 0, 0]}
+            scale={100}
           />
         </group>
       </group>

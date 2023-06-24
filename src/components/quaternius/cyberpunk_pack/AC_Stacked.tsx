@@ -26,7 +26,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/cyberpunk_pack/AC_Stacked.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.AC_Stacked_1.geometry} material={materials.Black} />
         <mesh geometry={nodes.AC_Stacked_2.geometry} material={materials.LightGrey} />
         <mesh geometry={nodes.AC_Stacked_3.geometry} material={materials.Texture_Signs} />

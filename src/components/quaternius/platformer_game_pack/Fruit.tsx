@@ -22,7 +22,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Fruit.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Fruit_1.geometry} material={materials.Red} />
         <mesh geometry={nodes.Fruit_2.geometry} material={materials.Green_Light} />
       </group>

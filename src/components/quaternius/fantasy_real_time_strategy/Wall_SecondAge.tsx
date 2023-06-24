@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/real_time_strategy_pack/Wall_SecondAge.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Wall_SecondAge_1.geometry} material={materials.Stone} />
         <mesh geometry={nodes.Wall_SecondAge_2.geometry} material={materials.Stone_Light} />
         <mesh geometry={nodes.Wall_SecondAge_3.geometry} material={materials.Wood} />

@@ -22,7 +22,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Pipe_Straight.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Pipe_Straight_1.geometry} material={materials.Pipe} />
         <mesh geometry={nodes.Pipe_Straight_2.geometry} material={materials.Pipe_Light} />
       </group>

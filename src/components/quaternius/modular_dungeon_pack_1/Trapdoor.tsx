@@ -26,7 +26,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_dungeon_1/Trapdoor.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Trapdoor_1.geometry} material={materials.Metal} />
         <mesh geometry={nodes.Trapdoor_2.geometry} material={materials.DarkMetal} />
         <mesh geometry={nodes.Trapdoor_3.geometry} material={materials.DarkWood} />

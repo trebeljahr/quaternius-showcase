@@ -22,7 +22,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/house_interior_pack/Couch_Medium2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Couch_Medium2_1.geometry} material={materials.Couch_Mustard} />
         <mesh geometry={nodes.Couch_Medium2_2.geometry} material={materials.Wood} />
       </group>

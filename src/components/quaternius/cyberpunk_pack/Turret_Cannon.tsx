@@ -29,13 +29,13 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/cyberpunk_pack/Turret_Cannon.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Turret_Cannon_Base_1.geometry} material={materials.Black} />
         <mesh geometry={nodes.Turret_Cannon_Base_2.geometry} material={materials.Orange} />
         <mesh geometry={nodes.Turret_Cannon_Base_3.geometry} material={materials.LightGrey} />
         <mesh geometry={nodes.Turret_Cannon_Base_4.geometry} material={materials.Grey} />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Turret_Cannon_Top_1.geometry} material={materials.Black} />
         <mesh geometry={nodes.Turret_Cannon_Top_2.geometry} material={materials.LightGrey} />
         <mesh geometry={nodes.Turret_Cannon_Top_3.geometry} material={materials.Grey} />

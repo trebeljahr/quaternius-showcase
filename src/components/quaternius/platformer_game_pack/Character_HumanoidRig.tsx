@@ -36,10 +36,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Character_HumanoidRig.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <primitive object={nodes.Root} />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <skinnedMesh geometry={nodes.Body_1.geometry} material={materials.Main} skeleton={nodes.Body_1.skeleton} />
         <skinnedMesh
           geometry={nodes.Body_2.geometry}
@@ -53,8 +53,9 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         material={materials.Main}
         skeleton={nodes.Ears.skeleton}
         rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
       />
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <skinnedMesh geometry={nodes.Head_1.geometry} material={materials.Main} skeleton={nodes.Head_1.skeleton} />
         <skinnedMesh
           geometry={nodes.Head_2.geometry}
@@ -65,7 +66,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         <skinnedMesh geometry={nodes.Head_4.geometry} material={materials.White} skeleton={nodes.Head_4.skeleton} />
         <skinnedMesh geometry={nodes.Head_5.geometry} material={materials.Black} skeleton={nodes.Head_5.skeleton} />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <skinnedMesh geometry={nodes.Arms_1.geometry} material={materials.Main} skeleton={nodes.Arms_1.skeleton} />
         <skinnedMesh
           geometry={nodes.Arms_2.geometry}

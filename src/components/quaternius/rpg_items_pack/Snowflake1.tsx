@@ -20,7 +20,12 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/rpg_items_pack/Snowflake1.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Snowflake1.geometry} material={materials.Snowflake} rotation={[-Math.PI / 2, 0, 0]} />
+      <mesh
+        geometry={nodes.Snowflake1.geometry}
+        material={materials.Snowflake}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
     </group>
   )
 }

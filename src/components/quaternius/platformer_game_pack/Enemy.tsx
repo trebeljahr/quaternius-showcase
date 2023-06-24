@@ -56,7 +56,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='MonsterArmature' rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='MonsterArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Body} />
             <primitive object={nodes.Head} />
           </group>
@@ -66,8 +66,9 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
             material={materials.Eyes}
             skeleton={nodes.Enemy_Eyes.skeleton}
             rotation={[-Math.PI / 2, 0, 0]}
+            scale={100}
           />
-          <group name='Enemy_Body' rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='Enemy_Body' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <skinnedMesh
               name='Enemy_Body_1'
               geometry={nodes.Enemy_Body_1.geometry}
@@ -81,7 +82,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
               skeleton={nodes.Enemy_Body_2.skeleton}
             />
           </group>
-          <group name='Enemy_Face' rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='Enemy_Face' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <skinnedMesh
               name='Enemy_Face_1'
               geometry={nodes.Enemy_Face_1.geometry}

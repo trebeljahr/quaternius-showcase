@@ -56,11 +56,11 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='Pufferfish001' rotation={[-Math.PI / 2, 0, 0]} />
-          <group name='Fish_Armature' rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='Pufferfish001' rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+          <group name='Fish_Armature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Main1} />
           </group>
-          <group name='Pufferfish002' rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='Pufferfish002' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <skinnedMesh
               name='Pufferfish002_1'
               geometry={nodes.Pufferfish002_1.geometry}
@@ -74,7 +74,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
               skeleton={nodes.Pufferfish002_2.skeleton}
             />
           </group>
-          <group name='Pufferfish' rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='Pufferfish' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <skinnedMesh
               name='Pufferfish_1'
               geometry={nodes.Pufferfish_1.geometry}

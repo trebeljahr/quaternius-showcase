@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Cube_Spikes.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Cube_Spikes_1.geometry} material={materials.Metal} />
         <mesh geometry={nodes.Cube_Spikes_2.geometry} material={materials.Red} />
         <mesh geometry={nodes.Cube_Spikes_3.geometry} material={materials.Red_Dark} />

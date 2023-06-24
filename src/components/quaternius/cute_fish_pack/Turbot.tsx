@@ -54,10 +54,10 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='Fish_Armature' rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='Fish_Armature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Main1} />
           </group>
-          <group name='Turbot001' rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='Turbot001' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <skinnedMesh
               name='Turbot001_1'
               geometry={nodes.Turbot001_1.geometry}

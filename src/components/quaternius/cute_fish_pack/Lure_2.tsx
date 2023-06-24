@@ -27,7 +27,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/cute_fish_pack/Lure_2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 0, 0.78]} rotation={[-Math.PI / 2, 0, 0]}>
+      <group position={[0, 0, 0.78]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Lure_2_1.geometry} material={materials.Lure_Red} />
         <mesh geometry={nodes.Lure_2_2.geometry} material={materials.Lure_Grey} />
         <mesh geometry={nodes.Lure_2_3.geometry} material={materials.Metal} />

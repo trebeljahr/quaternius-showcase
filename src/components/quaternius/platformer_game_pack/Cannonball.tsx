@@ -20,7 +20,12 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Cannonball.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Cannonball.geometry} material={materials.Black} rotation={[-Math.PI / 2, 0, 0]} />
+      <mesh
+        geometry={nodes.Cannonball.geometry}
+        material={materials.Black}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
     </group>
   )
 }

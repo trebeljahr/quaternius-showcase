@@ -25,6 +25,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         material={materials.Green}
         position={[0.04, 0, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
       />
     </group>
   )

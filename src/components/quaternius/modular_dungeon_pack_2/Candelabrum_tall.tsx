@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_dungeon_pack/Candelabrum_tall.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Candelabrum_tall_1.geometry} material={materials.Gold} />
         <mesh geometry={nodes.Candelabrum_tall_2.geometry} material={materials.Candle} />
         <mesh geometry={nodes.Candelabrum_tall_3.geometry} material={materials.Black} />

@@ -22,7 +22,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/cyberpunk_pack/Pickup_Health.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Pickup_Health_1.geometry} material={materials.LightGrey} />
         <mesh geometry={nodes.Pickup_Health_2.geometry} material={materials.LightGreen} />
       </group>

@@ -56,14 +56,14 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       <GenericAnimationController actions={actions} />
       <group name='Root_Scene'>
         <group name='RootNode'>
-          <group name='AnimalArmature' rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='AnimalArmature' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <primitive object={nodes.Body} />
             <primitive object={nodes.IKBackLegL} />
             <primitive object={nodes.IKFrontLegL} />
             <primitive object={nodes.IKBackLegR} />
             <primitive object={nodes.IKFrontLegR} />
           </group>
-          <group name='Wolf' rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='Wolf' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <skinnedMesh
               name='Wolf_1'
               geometry={nodes.Wolf_1.geometry}

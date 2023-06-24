@@ -26,7 +26,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/survival_pack/Shotgun_ShortStock.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Shotgun_ShortStock_1.geometry} material={materials.Metal} />
         <mesh geometry={nodes.Shotgun_ShortStock_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Shotgun_ShortStock_3.geometry} material={materials.Wood} />

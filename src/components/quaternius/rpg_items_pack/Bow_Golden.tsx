@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/rpg_items_pack/Bow_Golden.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Bow_Golden_1.geometry} material={materials.Golden} />
         <mesh geometry={nodes.Bow_Golden_2.geometry} material={materials.LightWood} />
         <mesh geometry={nodes.Bow_Golden_3.geometry} material={materials.White} />

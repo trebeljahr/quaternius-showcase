@@ -32,7 +32,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/buildings_pack_2/Building4.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Building4_1.geometry} material={materials.LightBlue} />
         <mesh geometry={nodes.Building4_2.geometry} material={materials.WhiteBlue} />
         <mesh geometry={nodes.Building4_3.geometry} material={materials.GreyBlue} />

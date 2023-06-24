@@ -33,14 +33,14 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_sci_fi/Props_Chest.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Props_ChestBottom_1.geometry} material={materials.Main} />
         <mesh geometry={nodes.Props_ChestBottom_2.geometry} material={materials.Accent} />
         <mesh geometry={nodes.Props_ChestBottom_3.geometry} material={materials.DarkGrey} />
         <mesh geometry={nodes.Props_ChestBottom_4.geometry} material={materials.Black} />
         <mesh geometry={nodes.Props_ChestBottom_5.geometry} material={materials.DarkAccent} />
       </group>
-      <group position={[0, 0.6, -0.37]} rotation={[-Math.PI / 2, 0, 0]}>
+      <group position={[0, 0.6, -0.37]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Props_ChestTop_1.geometry} material={materials.Main} />
         <mesh geometry={nodes.Props_ChestTop_2.geometry} material={materials.Accent} />
         <mesh geometry={nodes.Props_ChestTop_3.geometry} material={materials.DarkGrey} />

@@ -24,6 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         geometry={nodes.Trashcan_Cylindric.geometry}
         material={materials.LightMetal}
         rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
       />
     </group>
   )

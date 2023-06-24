@@ -20,7 +20,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/rpg_items_pack/Chalice.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Chalice.geometry} material={materials.Gold} rotation={[-Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.Chalice.geometry} material={materials.Gold} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
     </group>
   )
 }

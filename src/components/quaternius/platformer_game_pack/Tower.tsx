@@ -35,7 +35,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Tower.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Tower_1.geometry} material={materials.Tower_Dark} />
         <mesh geometry={nodes.Tower_2.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Tower_3.geometry} material={materials.Wood_Light} />
@@ -44,7 +44,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         <mesh geometry={nodes.Tower_6.geometry} material={materials.Metal} />
         <mesh geometry={nodes.Tower_7.geometry} material={materials.Flag} />
       </group>
-      <group position={[1.25, 2.89, 3.16]} rotation={[-Math.PI / 2, 0, 0]}>
+      <group position={[1.25, 2.89, 3.16]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Tower_Door_1.geometry} material={materials.Tower_Dark} />
         <mesh geometry={nodes.Tower_Door_2.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Tower_Door_3.geometry} material={materials.Wood_Light} />

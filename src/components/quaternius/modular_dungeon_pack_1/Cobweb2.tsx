@@ -20,7 +20,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_dungeon_1/Cobweb2.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Cobweb2.geometry} material={materials.Cobweb} rotation={[-Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.Cobweb2.geometry} material={materials.Cobweb} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
     </group>
   )
 }

@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/nature_pack/Willow_Snow_4.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Willow_Snow_4_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Willow_Snow_4_2.geometry} material={materials.DarkGreen} />
         <mesh geometry={nodes.Willow_Snow_4_3.geometry} material={materials.Snow} />

@@ -33,14 +33,14 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_sci_fi/Door_Double.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Door_DoubleR_1.geometry} material={materials.DarkGrey} />
         <mesh geometry={nodes.Door_DoubleR_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Door_DoubleR_3.geometry} material={materials.Main} />
         <mesh geometry={nodes.Door_DoubleR_4.geometry} material={materials.Accent} />
         <mesh geometry={nodes.Door_DoubleR_5.geometry} material={materials.DarkAccent} />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Door_DoubleL_1.geometry} material={materials.DarkGrey} />
         <mesh geometry={nodes.Door_DoubleL_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.Door_DoubleL_3.geometry} material={materials.Main} />

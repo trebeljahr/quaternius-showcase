@@ -22,7 +22,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/real_time_strategy_pack/Resource_Tree1.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Resource_Tree1_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Resource_Tree1_2.geometry} material={materials.Green} />
       </group>

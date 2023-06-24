@@ -24,7 +24,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Cube_Exclamation.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Cube_Exclamation_1.geometry} material={materials.BrightGreen} />
         <mesh geometry={nodes.Cube_Exclamation_2.geometry} material={materials.BrightGreen2} />
         <mesh geometry={nodes.Cube_Exclamation_3.geometry} material={materials.White} />

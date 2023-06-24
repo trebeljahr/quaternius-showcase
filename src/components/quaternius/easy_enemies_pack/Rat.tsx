@@ -45,7 +45,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
           <group name='RatArmature' rotation={[-Math.PI / 2, 0, 0]} scale={39.55}>
             <primitive object={nodes.root} />
           </group>
-          <group name='Rat' position={[0, 0.05, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <group name='Rat' position={[0, 0.05, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <skinnedMesh
               name='Rat_1'
               geometry={nodes.Rat_1.geometry}

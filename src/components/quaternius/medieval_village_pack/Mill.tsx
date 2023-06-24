@@ -42,7 +42,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/medieval_village_pack/Mill.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group position={[0.01, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+      <group position={[0.01, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Mill_1.geometry} material={materials.RoofTiles} />
         <mesh geometry={nodes.Mill_2.geometry} material={materials.Stone_Light} />
         <mesh geometry={nodes.Mill_3.geometry} material={materials.Stone_Dark} />
@@ -54,7 +54,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         <mesh geometry={nodes.Mill_9.geometry} material={materials.Plaster} />
         <mesh geometry={nodes.Mill_10.geometry} material={materials.Stone} />
       </group>
-      <group position={[0.01, 3.12, 0.87]} rotation={[-Math.PI / 2, 0, 0]}>
+      <group position={[0.01, 3.12, 0.87]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Mill_Blades_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Mill_Blades_2.geometry} material={materials.Wood_Light} />
         <mesh geometry={nodes.Mill_Blades_3.geometry} material={materials.Wood_Side} />

@@ -34,7 +34,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/medieval_village_pack/Stable.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Stable_1.geometry} material={materials.Wood} />
         <mesh geometry={nodes.Stable_2.geometry} material={materials.Wood_Side} />
         <mesh geometry={nodes.Stable_3.geometry} material={materials.RoofTiles} />

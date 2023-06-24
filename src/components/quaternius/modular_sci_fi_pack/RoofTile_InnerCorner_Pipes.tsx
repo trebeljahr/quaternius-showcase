@@ -26,7 +26,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_sci_fi/RoofTile_InnerCorner_Pipes.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.RoofTile_InnerCorner_Pipes_1.geometry} material={materials.Main} />
         <mesh geometry={nodes.RoofTile_InnerCorner_Pipes_2.geometry} material={materials.DarkGrey} />
         <mesh geometry={nodes.RoofTile_InnerCorner_Pipes_3.geometry} material={materials.Black} />

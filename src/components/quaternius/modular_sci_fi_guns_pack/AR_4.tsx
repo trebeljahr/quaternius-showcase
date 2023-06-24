@@ -27,7 +27,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/modular_sci_fi_guns_pack/AR_4.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.AR_4_1.geometry} material={materials.Grey} />
         <mesh geometry={nodes.AR_4_2.geometry} material={materials.Black} />
         <mesh geometry={nodes.AR_4_3.geometry} material={materials.Main} />
@@ -38,6 +38,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         material={materials.Black}
         position={[0.3, 0.05, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
       />
     </group>
   )

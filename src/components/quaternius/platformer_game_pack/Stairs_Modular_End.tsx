@@ -20,7 +20,12 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/glb/platformer_game_pack/Stairs_Modular_End.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Stairs_Modular_End.geometry} material={materials.Wood} rotation={[-Math.PI / 2, 0, 0]} />
+      <mesh
+        geometry={nodes.Stairs_Modular_End.geometry}
+        material={materials.Wood}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
+      />
     </group>
   )
 }

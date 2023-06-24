@@ -26,6 +26,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
         geometry={nodes.Farm_FirstAge_Level1_Wheat.geometry}
         material={materials.Wheat}
         rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}
       />
     </group>
   )
