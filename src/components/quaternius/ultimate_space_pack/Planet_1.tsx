@@ -10,11 +10,10 @@ type GLTFResult = GLTF & {
   materials: {
     Atlas: THREE.MeshStandardMaterial
   }
-  animations: GLTFAction[]
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Planet_1-transformed.glb') as GLTFResult
+export default function Model(props: JSX.IntrinsicElements['group']) {
+  const { nodes, materials } = useGLTF('/glb/ultimate_space_pack/Planet_1-transformed.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Planet_1.geometry} material={materials.Atlas} />
@@ -22,4 +21,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Planet_1-transformed.glb')
+useGLTF.preload('/glb/ultimate_space_pack/Planet_1-transformed.glb')

@@ -3,6 +3,7 @@ import React from 'react'
 import { useGraph } from '@react-three/fiber'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF, SkeletonUtils } from 'three-stdlib'
+import { GenericAnimationController } from '@/components/canvas/GenericAnimationController'
 
 type ActionName = 'Death' | 'Fast_Flying' | 'Flying_Idle' | 'Headbutt' | 'HitReact' | 'No' | 'Punch' | 'Yes'
 
@@ -18,23 +19,29 @@ type GLTFResult = GLTF & {
   materials: {
     Glub_Main: THREE.MeshStandardMaterial
   }
-  animations: GLTFAction[]
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const group = React.useRef<THREE.Group>()
-  const { scene, animations } = useGLTF('/Enemy_Flying-transformed.glb')
+  const { scene, animations } = useGLTF('/glb/ultimate_space_pack/Enemy_Flying-transformed.glb')
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
-  const { nodes, materials } = useGraph(clone) as GLTFResult
+  const { nodes, materials } = useGraph(clone) as unknown as GLTFResult
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
+      <GenericAnimationController actions={actions} />
+
+      <group name='Scene'>
         <primitive object={nodes.Root} />
-        <skinnedMesh name="Enemy_Flying" geometry={nodes.Enemy_Flying.geometry} material={materials.Glub_Main} skeleton={nodes.Enemy_Flying.skeleton} />
+        <skinnedMesh
+          name='Enemy_Flying'
+          geometry={nodes.Enemy_Flying.geometry}
+          material={materials.Glub_Main}
+          skeleton={nodes.Enemy_Flying.skeleton}
+        />
       </group>
     </group>
   )
 }
 
-useGLTF.preload('/Enemy_Flying-transformed.glb')
+useGLTF.preload('/glb/ultimate_space_pack/Enemy_Flying-transformed.glb')

@@ -10,11 +10,10 @@ type GLTFResult = GLTF & {
   materials: {
     Atlas: THREE.MeshStandardMaterial
   }
-  animations: GLTFAction[]
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Rover_1-transformed.glb') as GLTFResult
+export default function Model(props: JSX.IntrinsicElements['group']) {
+  const { nodes, materials } = useGLTF('/glb/ultimate_space_pack/Rover_1-transformed.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Wheel_1.geometry} material={materials.Atlas} position={[1.8, 0.53, -1.9]} />
@@ -22,4 +21,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Rover_1-transformed.glb')
+useGLTF.preload('/glb/ultimate_space_pack/Rover_1-transformed.glb')

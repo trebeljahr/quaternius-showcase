@@ -52,6 +52,6 @@
     "export": "EXPORT=true next build && EXPORT=true next export",
     "analyze": "ANALYZE=true next build",
     "start": "next start",
-    "generateExports": "ts-node-esm ./scripts/codeGenExports.mts"
+    "generateExports": "tsx ./scripts/codeGenExports.ts"
   }
 }

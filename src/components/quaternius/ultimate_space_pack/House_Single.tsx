@@ -10,11 +10,10 @@ type GLTFResult = GLTF & {
   materials: {
     Atlas: THREE.MeshStandardMaterial
   }
-  animations: GLTFAction[]
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/House_Single-transformed.glb') as GLTFResult
+export default function Model(props: JSX.IntrinsicElements['group']) {
+  const { nodes, materials } = useGLTF('/glb/ultimate_space_pack/House_Single-transformed.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.House_Single.geometry} material={materials.Atlas} />
@@ -22,4 +21,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/House_Single-transformed.glb')
+useGLTF.preload('/glb/ultimate_space_pack/House_Single-transformed.glb')

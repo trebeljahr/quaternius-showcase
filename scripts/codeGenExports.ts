@@ -4,7 +4,9 @@ import { join } from 'path'
 async function codeGenForImports() {
   const quaterniusDirectoryPath = join(process.cwd(), 'src', 'components', 'quaternius')
 
-  const namesOfPacks = (await readdir(quaterniusDirectoryPath)).filter((name) => name !== 'index.ts')
+  // const namesOfPacks = (await readdir(quaterniusDirectoryPath)).filter((name) => name !== 'index.ts')
+
+  const namesOfPacks = ['ultimate_space_pack']
 
   for (const packName of namesOfPacks) {
     const modelPackPath = join(quaterniusDirectoryPath, packName)

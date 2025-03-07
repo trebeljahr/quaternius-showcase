@@ -10,11 +10,10 @@ type GLTFResult = GLTF & {
   materials: {
     Atlas: THREE.MeshStandardMaterial
   }
-  animations: GLTFAction[]
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Pickup_Crate-transformed.glb') as GLTFResult
+export default function Model(props: JSX.IntrinsicElements['group']) {
+  const { nodes, materials } = useGLTF('/glb/ultimate_space_pack/Pickup_Crate-transformed.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Pickup_Crate.geometry} material={materials.Atlas} />
@@ -22,4 +21,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Pickup_Crate-transformed.glb')
+useGLTF.preload('/glb/ultimate_space_pack/Pickup_Crate-transformed.glb')

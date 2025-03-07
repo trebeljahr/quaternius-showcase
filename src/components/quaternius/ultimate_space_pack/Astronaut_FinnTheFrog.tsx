@@ -3,6 +3,7 @@ import React from 'react'
 import { useGraph } from '@react-three/fiber'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF, SkeletonUtils } from 'three-stdlib'
+import { GenericAnimationController } from '@/components/canvas/GenericAnimationController'
 
 type ActionName =
   | 'Death'
@@ -37,17 +38,18 @@ type GLTFResult = GLTF & {
   materials: {
     Atlas: THREE.MeshStandardMaterial
   }
-  animations: GLTFAction[]
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export default function Model(props: JSX.IntrinsicElements['group']) {
   const group = React.useRef<THREE.Group>()
-  const { scene, animations } = useGLTF('/Astronaut_FinnTheFrog-transformed.glb')
+  const { scene, animations } = useGLTF('/glb/ultimate_space_pack/Astronaut_FinnTheFrog-transformed.glb')
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
-  const { nodes, materials } = useGraph(clone) as GLTFResult
+  const { nodes, materials } = useGraph(clone) as unknown as GLTFResult
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
+      <GenericAnimationController actions={actions} />
+
       <group name='Scene'>
         <primitive object={nodes.Root} />
         <skinnedMesh
@@ -61,4 +63,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Astronaut_FinnTheFrog-transformed.glb')
+useGLTF.preload('/glb/ultimate_space_pack/Astronaut_FinnTheFrog-transformed.glb')
