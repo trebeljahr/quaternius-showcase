@@ -5,7 +5,7 @@ export default function ImprintPage() {
   return (
     <>
       <Head>
-        <title>Legal Notice – Quaternius Showcase</title>
+        <title>Imprint – Quaternius Showcase</title>
       </Head>
       <div className='fixed inset-0 z-[2000] overflow-y-auto bg-leva-dark text-leva-white font-leva p-8'>
         <div className='max-w-2xl mx-auto'>
@@ -15,7 +15,7 @@ export default function ImprintPage() {
             </Link>
           </p>
 
-          <h1 className='text-3xl font-bold mb-6'>Legal Notice</h1>
+          <h1 className='text-3xl font-bold mb-6'>Imprint</h1>
 
           <p className='text-sm opacity-70 mb-6'>
             Information pursuant to § 5 DDG (German Digital Services Act)

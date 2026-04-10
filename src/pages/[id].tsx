@@ -170,7 +170,7 @@ function CanvasComponent({ id }: { id: Ids }) {
                 </div>
                 <div className='mt-1'>
                   <Link href='/imprint'>
-                    <a className='hover:underline'>Legal Notice</a>
+                    <a className='hover:underline'>Imprint</a>
                   </Link>
                 </div>
               </footer>
