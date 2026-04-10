@@ -168,6 +168,11 @@ function CanvasComponent({ id }: { id: Ids }) {
                     Built with <span style={{ color: ' #F35269' }}>♥</span> by Rico
                   </a>
                 </div>
+                <div className='mt-1'>
+                  <Link href='/imprint'>
+                    <a className='hover:underline'>Legal Notice</a>
+                  </Link>
+                </div>
               </footer>
             </div>
           )}
