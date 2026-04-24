@@ -1,0 +1,85 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "lint",
+      "type": "shell",
+      "command": "pnpm lint",
+      "problemMatcher": []
+    },
+    {
+      "label": "eslint",
+      "type": "shell",
+      "command": "pnpm eslint",
+      "problemMatcher": []
+    },
+    {
+      "label": "prettier",
+      "type": "shell",
+      "command": "pnpm prettier",
+      "problemMatcher": []
+    },
+    {
+      "label": "dev",
+      "type": "shell",
+      "command": "pnpm dev",
+      "problemMatcher": [],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "pnpm build",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "export",
+      "type": "shell",
+      "command": "pnpm export",
+      "problemMatcher": []
+    },
+    {
+      "label": "analyze",
+      "type": "shell",
+      "command": "pnpm analyze",
+      "problemMatcher": []
+    },
+    {
+      "label": "start",
+      "type": "shell",
+      "command": "pnpm start",
+      "problemMatcher": [],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "generateExports",
+      "type": "shell",
+      "command": "pnpm generateExports",
+      "problemMatcher": []
+    },
+    {
+      "label": "format",
+      "type": "shell",
+      "command": "pnpm format",
+      "problemMatcher": []
+    },
+    {
+      "label": "check",
+      "type": "shell",
+      "command": "pnpm check",
+      "problemMatcher": []
+    }
+  ]
+}
