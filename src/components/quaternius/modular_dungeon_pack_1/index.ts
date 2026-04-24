@@ -1,50 +1,56 @@
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
-export const Arch = dynamic(() => import('./Arch'), { ssr: false })
-export const Arch_Door = dynamic(() => import('./Arch_Door'), { ssr: false })
-export const Arch_Door_bottompivot = dynamic(() => import('./Arch_Door_bottompivot'), { ssr: false })
-export const Arch_bars = dynamic(() => import('./Arch_bars'), { ssr: false })
-export const Bag_Coins = dynamic(() => import('./Bag_Coins'), { ssr: false })
-export const Bag_Standing = dynamic(() => import('./Bag_Standing'), { ssr: false })
-export const Banner = dynamic(() => import('./Banner'), { ssr: false })
-export const Banner_wall = dynamic(() => import('./Banner_wall'), { ssr: false })
-export const Barrel = dynamic(() => import('./Barrel'), { ssr: false })
-export const Barrel2 = dynamic(() => import('./Barrel2'), { ssr: false })
-export const Brick = dynamic(() => import('./Brick'), { ssr: false })
-export const Bucket = dynamic(() => import('./Bucket'), { ssr: false })
-export const Chair = dynamic(() => import('./Chair'), { ssr: false })
-export const Chest = dynamic(() => import('./Chest'), { ssr: false })
-export const Chest_Gold = dynamic(() => import('./Chest_Gold'), { ssr: false })
-export const Cobweb = dynamic(() => import('./Cobweb'), { ssr: false })
-export const Cobweb2 = dynamic(() => import('./Cobweb2'), { ssr: false })
-export const Coin_Pile = dynamic(() => import('./Coin_Pile'), { ssr: false })
-export const Column = dynamic(() => import('./Column'), { ssr: false })
-export const Column2 = dynamic(() => import('./Column2'), { ssr: false })
-export const Crate = dynamic(() => import('./Crate'), { ssr: false })
-export const Decorative_Wall = dynamic(() => import('./Decorative_Wall'), { ssr: false })
-export const Fence_90_Modular = dynamic(() => import('./Fence_90_Modular'), { ssr: false })
-export const Fence_End_Modular = dynamic(() => import('./Fence_End_Modular'), { ssr: false })
-export const Fence_Straight_Modular = dynamic(() => import('./Fence_Straight_Modular'), { ssr: false })
-export const Floor_BricksSeparate = dynamic(() => import('./Floor_BricksSeparate'), { ssr: false })
-export const Floor_BricksSeparate2 = dynamic(() => import('./Floor_BricksSeparate2'), { ssr: false })
-export const Floor_Modular = dynamic(() => import('./Floor_Modular'), { ssr: false })
-export const Pedestal = dynamic(() => import('./Pedestal'), { ssr: false })
-export const Pedestal2 = dynamic(() => import('./Pedestal2'), { ssr: false })
-export const Skull = dynamic(() => import('./Skull'), { ssr: false })
-export const Spikes = dynamic(() => import('./Spikes'), { ssr: false })
-export const Stairs_Modular = dynamic(() => import('./Stairs_Modular'), { ssr: false })
-export const Stairs_SideCover = dynamic(() => import('./Stairs_SideCover'), { ssr: false })
-export const Stairs_SideCoverWall = dynamic(() => import('./Stairs_SideCoverWall'), { ssr: false })
-export const Statue_Horse = dynamic(() => import('./Statue_Horse'), { ssr: false })
-export const Sword_WallMount = dynamic(() => import('./Sword_WallMount'), { ssr: false })
-export const Table_Big = dynamic(() => import('./Table_Big'), { ssr: false })
-export const Table_Small = dynamic(() => import('./Table_Small'), { ssr: false })
-export const Torch = dynamic(() => import('./Torch'), { ssr: false })
-export const Trap_empty = dynamic(() => import('./Trap_empty'), { ssr: false })
-export const Trap_spikes = dynamic(() => import('./Trap_spikes'), { ssr: false })
-export const Trapdoor = dynamic(() => import('./Trapdoor'), { ssr: false })
-export const Trapdoor_open = dynamic(() => import('./Trapdoor_open'), { ssr: false })
-export const Vase = dynamic(() => import('./Vase'), { ssr: false })
-export const WallCover_Modular = dynamic(() => import('./WallCover_Modular'), { ssr: false })
-export const Wall_Modular = dynamic(() => import('./Wall_Modular'), { ssr: false })
-export const Woodfire = dynamic(() => import('./Woodfire'), { ssr: false })
+export const Arch = dynamic(() => import("./Arch"), { ssr: false });
+export const Arch_Door = dynamic(() => import("./Arch_Door"), { ssr: false });
+export const Arch_Door_bottompivot = dynamic(() => import("./Arch_Door_bottompivot"), {
+  ssr: false,
+});
+export const Arch_bars = dynamic(() => import("./Arch_bars"), { ssr: false });
+export const Bag_Coins = dynamic(() => import("./Bag_Coins"), { ssr: false });
+export const Bag_Standing = dynamic(() => import("./Bag_Standing"), { ssr: false });
+export const Banner = dynamic(() => import("./Banner"), { ssr: false });
+export const Banner_wall = dynamic(() => import("./Banner_wall"), { ssr: false });
+export const Barrel = dynamic(() => import("./Barrel"), { ssr: false });
+export const Barrel2 = dynamic(() => import("./Barrel2"), { ssr: false });
+export const Brick = dynamic(() => import("./Brick"), { ssr: false });
+export const Bucket = dynamic(() => import("./Bucket"), { ssr: false });
+export const Chair = dynamic(() => import("./Chair"), { ssr: false });
+export const Chest = dynamic(() => import("./Chest"), { ssr: false });
+export const Chest_Gold = dynamic(() => import("./Chest_Gold"), { ssr: false });
+export const Cobweb = dynamic(() => import("./Cobweb"), { ssr: false });
+export const Cobweb2 = dynamic(() => import("./Cobweb2"), { ssr: false });
+export const Coin_Pile = dynamic(() => import("./Coin_Pile"), { ssr: false });
+export const Column = dynamic(() => import("./Column"), { ssr: false });
+export const Column2 = dynamic(() => import("./Column2"), { ssr: false });
+export const Crate = dynamic(() => import("./Crate"), { ssr: false });
+export const Decorative_Wall = dynamic(() => import("./Decorative_Wall"), { ssr: false });
+export const Fence_90_Modular = dynamic(() => import("./Fence_90_Modular"), { ssr: false });
+export const Fence_End_Modular = dynamic(() => import("./Fence_End_Modular"), { ssr: false });
+export const Fence_Straight_Modular = dynamic(() => import("./Fence_Straight_Modular"), {
+  ssr: false,
+});
+export const Floor_BricksSeparate = dynamic(() => import("./Floor_BricksSeparate"), { ssr: false });
+export const Floor_BricksSeparate2 = dynamic(() => import("./Floor_BricksSeparate2"), {
+  ssr: false,
+});
+export const Floor_Modular = dynamic(() => import("./Floor_Modular"), { ssr: false });
+export const Pedestal = dynamic(() => import("./Pedestal"), { ssr: false });
+export const Pedestal2 = dynamic(() => import("./Pedestal2"), { ssr: false });
+export const Skull = dynamic(() => import("./Skull"), { ssr: false });
+export const Spikes = dynamic(() => import("./Spikes"), { ssr: false });
+export const Stairs_Modular = dynamic(() => import("./Stairs_Modular"), { ssr: false });
+export const Stairs_SideCover = dynamic(() => import("./Stairs_SideCover"), { ssr: false });
+export const Stairs_SideCoverWall = dynamic(() => import("./Stairs_SideCoverWall"), { ssr: false });
+export const Statue_Horse = dynamic(() => import("./Statue_Horse"), { ssr: false });
+export const Sword_WallMount = dynamic(() => import("./Sword_WallMount"), { ssr: false });
+export const Table_Big = dynamic(() => import("./Table_Big"), { ssr: false });
+export const Table_Small = dynamic(() => import("./Table_Small"), { ssr: false });
+export const Torch = dynamic(() => import("./Torch"), { ssr: false });
+export const Trap_empty = dynamic(() => import("./Trap_empty"), { ssr: false });
+export const Trap_spikes = dynamic(() => import("./Trap_spikes"), { ssr: false });
+export const Trapdoor = dynamic(() => import("./Trapdoor"), { ssr: false });
+export const Trapdoor_open = dynamic(() => import("./Trapdoor_open"), { ssr: false });
+export const Vase = dynamic(() => import("./Vase"), { ssr: false });
+export const WallCover_Modular = dynamic(() => import("./WallCover_Modular"), { ssr: false });
+export const Wall_Modular = dynamic(() => import("./Wall_Modular"), { ssr: false });
+export const Woodfire = dynamic(() => import("./Woodfire"), { ssr: false });

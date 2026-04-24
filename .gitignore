@@ -40,3 +40,6 @@ report.*.json
 
 # .vscode Debugging
 .vscode/*-debug-profile
+# claude code
+.claude/settings.local.json
+.claude/worktrees/

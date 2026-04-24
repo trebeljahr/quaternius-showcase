@@ -1,15 +1,15 @@
-import { useWindowSize } from '@/hooks/useWindowSize'
-import { In } from '@/pages/[id]'
-import { folder, Leva, useControls } from 'leva'
-import { useEffect } from 'react'
-import { AnimationAction } from 'three'
+import { useWindowSize } from "@/hooks/useWindowSize";
+import { In } from "@/pages/[id]";
+import { Leva, folder, useControls } from "leva";
+import { useEffect } from "react";
+import type { AnimationAction } from "three";
 
 export function LevaStyled() {
-  const { height, width } = useWindowSize()
+  const { height, width } = useWindowSize();
 
   const theme = {
-    sizes: { controlWidth: '220px', rootWidth: '320px' },
-  }
+    sizes: { controlWidth: "220px", rootWidth: "320px" },
+  };
   return (
     <Leva
       theme={theme}
@@ -21,20 +21,22 @@ export function LevaStyled() {
           : true
       }
     />
-  )
+  );
 }
 
-const fadeDuration = 0.5
+const fadeDuration = 0.5;
 
-export function GenericAnimationController({ actions }: { actions: Record<string, AnimationAction> }) {
-  const actionNames = Object.keys(actions)
+export function GenericAnimationController({
+  actions,
+}: { actions: Record<string, AnimationAction> }) {
+  const actionNames = Object.keys(actions);
   const defaultAction =
-    actionNames.find((name) => name.toLowerCase().includes('idle')) ||
-    actionNames.find((name) => name.toLowerCase().includes('walk')) ||
-    actionNames.find((name) => name.toLowerCase().includes('flying')) ||
-    actionNames.find((name) => name.toLowerCase().includes('forward')) ||
-    actionNames.find((name) => name.toLowerCase().includes('normal')) ||
-    actionNames[0]
+    actionNames.find((name) => name.toLowerCase().includes("idle")) ||
+    actionNames.find((name) => name.toLowerCase().includes("walk")) ||
+    actionNames.find((name) => name.toLowerCase().includes("flying")) ||
+    actionNames.find((name) => name.toLowerCase().includes("forward")) ||
+    actionNames.find((name) => name.toLowerCase().includes("normal")) ||
+    actionNames[0];
 
   const [{ animation }, set] = useControls(
     () => ({
@@ -46,22 +48,22 @@ export function GenericAnimationController({ actions }: { actions: Record<string
       }),
     }),
     [defaultAction, actionNames],
-  )
+  );
 
   useEffect(() => {
-    set({ animation: defaultAction })
-  }, [defaultAction, set])
+    set({ animation: defaultAction });
+  }, [defaultAction, set]);
 
   useEffect(() => {
-    actions[animation]?.reset().fadeIn(fadeDuration).play()
+    actions[animation]?.reset().fadeIn(fadeDuration).play();
     return () => {
-      actions[animation]?.fadeOut(fadeDuration)
-    }
-  }, [animation, actions])
+      actions[animation]?.fadeOut(fadeDuration);
+    };
+  }, [animation, actions]);
 
   return (
     <In>
       <LevaStyled />
     </In>
-  )
+  );
 }

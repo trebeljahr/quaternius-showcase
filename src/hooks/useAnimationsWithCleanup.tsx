@@ -1,25 +1,27 @@
-import * as React from 'react'
-import { Object3D, AnimationClip, AnimationAction, AnimationMixer } from 'three'
-import { useFrame } from '@react-three/fiber'
+import { useFrame } from "@react-three/fiber";
+import * as React from "react";
+import { type AnimationAction, type AnimationClip, AnimationMixer, Object3D } from "three";
 
 type Api<T extends AnimationClip> = {
-  ref: React.MutableRefObject<Object3D | undefined | null>
-  clips: AnimationClip[]
-  mixer: AnimationMixer
-  names: T['name'][]
-  actions: { [key in T['name']]: AnimationAction | null }
-}
+  ref: React.MutableRefObject<Object3D | undefined | null>;
+  clips: AnimationClip[];
+  mixer: AnimationMixer;
+  names: T["name"][];
+  actions: { [key in T["name"]]: AnimationAction | null };
+};
 
 export function useAnimationsWithCleanup<T extends AnimationClip>(
   clips: T[],
   root?: React.MutableRefObject<Object3D | undefined | null> | Object3D,
 ): Api<T> {
-  const ref = React.useRef<Object3D>()
-  const [actualRef] = React.useState(() => (root ? (root instanceof Object3D ? { current: root } : root) : ref))
-  const [mixer] = React.useState(() => new AnimationMixer(undefined as unknown as Object3D))
-  const lazyActions = React.useRef({})
+  const ref = React.useRef<Object3D>();
+  const [actualRef] = React.useState(() =>
+    root ? (root instanceof Object3D ? { current: root } : root) : ref,
+  );
+  const [mixer] = React.useState(() => new AnimationMixer(undefined as unknown as Object3D));
+  const lazyActions = React.useRef({});
   const [api] = React.useState<Api<T>>(() => {
-    const actions = {} as { [key in T['name']]: AnimationAction | null }
+    const actions = {} as { [key in T["name"]]: AnimationAction | null };
     clips.forEach((clip) =>
       Object.defineProperty(actions, clip.name, {
         enumerable: true,
@@ -28,34 +30,34 @@ export function useAnimationsWithCleanup<T extends AnimationClip>(
             return (
               lazyActions.current[clip.name] ||
               (lazyActions.current[clip.name] = mixer.clipAction(clip, actualRef.current))
-            )
+            );
           }
         },
       }),
-    )
-    return { ref: actualRef, clips, actions, names: clips.map((c) => c.name), mixer }
-  })
+    );
+    return { ref: actualRef, clips, actions, names: clips.map((c) => c.name), mixer };
+  });
 
-  useFrame((_, delta) => mixer.update(delta))
+  useFrame((_, delta) => mixer.update(delta));
 
   React.useEffect(() => {
-    const currentRoot = actualRef.current
+    const currentRoot = actualRef.current;
     return () => {
       // Clean up only when clips change, wipe out lazy actions and uncache clips
       Object.values(api.actions).forEach((action: AnimationAction) => {
         if (currentRoot) {
-          mixer.uncacheAction(action as unknown as AnimationClip, currentRoot)
+          mixer.uncacheAction(action as unknown as AnimationClip, currentRoot);
         }
-      })
-      lazyActions.current = {}
-    }
-  }, [clips])
+      });
+      lazyActions.current = {};
+    };
+  }, [clips]);
 
   React.useEffect(() => {
     return () => {
-      mixer.stopAllAction()
-    }
-  }, [mixer])
+      mixer.stopAllAction();
+    };
+  }, [mixer]);
 
-  return api
+  return api;
 }

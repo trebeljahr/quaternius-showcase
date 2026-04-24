@@ -1,66 +1,68 @@
-import * as THREE from 'three'
-import React from 'react'
-import { useGraph } from '@react-three/fiber'
-import { useGLTF, useAnimations } from '@react-three/drei'
-import { GLTF, SkeletonUtils } from 'three-stdlib'
-import { GenericAnimationController } from '@/components/canvas/GenericAnimationController'
+import { GenericAnimationController } from "@/components/canvas/GenericAnimationController";
+import { useAnimations, useGLTF } from "@react-three/drei";
+import { useGraph } from "@react-three/fiber";
+import React from "react";
+import type * as THREE from "three";
+import { type GLTF, SkeletonUtils } from "three-stdlib";
 
 type ActionName =
-  | 'Death'
-  | 'Duck'
-  | 'HitReact'
-  | 'Idle'
-  | 'Idle_Gun'
-  | 'Jump'
-  | 'Jump_Idle'
-  | 'Jump_Land'
-  | 'No'
-  | 'Punch'
-  | 'Run'
-  | 'Run_Gun'
-  | 'Run_Gun_Shoot'
-  | 'Walk'
-  | 'Walk_Gun'
-  | 'Wave'
-  | 'Weapon'
-  | 'Yes'
+  | "Death"
+  | "Duck"
+  | "HitReact"
+  | "Idle"
+  | "Idle_Gun"
+  | "Jump"
+  | "Jump_Idle"
+  | "Jump_Land"
+  | "No"
+  | "Punch"
+  | "Run"
+  | "Run_Gun"
+  | "Run_Gun_Shoot"
+  | "Walk"
+  | "Walk_Gun"
+  | "Wave"
+  | "Weapon"
+  | "Yes";
 
 interface GLTFAction extends THREE.AnimationClip {
-  name: ActionName
+  name: ActionName;
 }
 
 type GLTFResult = GLTF & {
   nodes: {
-    Pistol: THREE.Mesh
-    RaeTheRedPanda: THREE.SkinnedMesh
-    Root: THREE.Bone
-  }
+    Pistol: THREE.Mesh;
+    RaeTheRedPanda: THREE.SkinnedMesh;
+    Root: THREE.Bone;
+  };
   materials: {
-    Atlas: THREE.MeshStandardMaterial
-  }
-}
+    Atlas: THREE.MeshStandardMaterial;
+  };
+};
 
-export default function Model(props: JSX.IntrinsicElements['group']) {
-  const group = React.useRef<THREE.Group>()
-  const { scene, animations } = useGLTF('/glb/ultimate_space_pack/Astronaut_RaeTheRedPanda-transformed.glb')
-  const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
-  const { nodes, materials } = useGraph(clone) as unknown as GLTFResult
-  const { actions } = useAnimations(animations, group)
+export default function Model(props: JSX.IntrinsicElements["group"]) {
+  const group = React.useRef<THREE.Group>();
+  const { scene, animations } = useGLTF(
+    "/glb/ultimate_space_pack/Astronaut_RaeTheRedPanda-transformed.glb",
+  );
+  const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
+  const { nodes, materials } = useGraph(clone) as unknown as GLTFResult;
+  const { actions } = useAnimations(animations, group);
   return (
     <group ref={group} {...props} dispose={null}>
       <GenericAnimationController actions={actions} />
 
-      <group name='Scene'>
+      <group name="Scene">
         <primitive object={nodes.Root} />
         <skinnedMesh
-          name='RaeTheRedPanda'
+          name="RaeTheRedPanda"
           geometry={nodes.RaeTheRedPanda.geometry}
           material={materials.Atlas}
           skeleton={nodes.RaeTheRedPanda.skeleton}
         />
       </group>
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/glb/ultimate_space_pack/Astronaut_RaeTheRedPanda-transformed.glb')
+useGLTF.preload("/glb/ultimate_space_pack/Astronaut_RaeTheRedPanda-transformed.glb");

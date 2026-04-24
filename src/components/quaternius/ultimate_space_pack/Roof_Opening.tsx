@@ -1,24 +1,25 @@
-import * as THREE from 'three'
-import React from 'react'
-import { useGLTF } from '@react-three/drei'
-import { GLTF } from 'three-stdlib'
+import { useGLTF } from "@react-three/drei";
+import type * as THREE from "three";
+import type { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
   nodes: {
-    Roof_Opening: THREE.Mesh
-  }
+    Roof_Opening: THREE.Mesh;
+  };
   materials: {
-    Atlas: THREE.MeshStandardMaterial
-  }
-}
+    Atlas: THREE.MeshStandardMaterial;
+  };
+};
 
-export default function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/ultimate_space_pack/Roof_Opening-transformed.glb') as unknown as GLTFResult
+export default function Model(props: JSX.IntrinsicElements["group"]) {
+  const { nodes, materials } = useGLTF(
+    "/glb/ultimate_space_pack/Roof_Opening-transformed.glb",
+  ) as unknown as GLTFResult;
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Roof_Opening.geometry} material={materials.Atlas} />
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/glb/ultimate_space_pack/Roof_Opening-transformed.glb')
+useGLTF.preload("/glb/ultimate_space_pack/Roof_Opening-transformed.glb");

@@ -1,24 +1,25 @@
-import * as THREE from 'three'
-import React from 'react'
-import { useGLTF } from '@react-three/drei'
-import { GLTF } from 'three-stdlib'
+import { useGLTF } from "@react-three/drei";
+import type * as THREE from "three";
+import type { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
   nodes: {
-    Tree_Light_1: THREE.Mesh
-  }
+    Tree_Light_1: THREE.Mesh;
+  };
   materials: {
-    Atlas: THREE.MeshStandardMaterial
-  }
-}
+    Atlas: THREE.MeshStandardMaterial;
+  };
+};
 
-export default function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/glb/ultimate_space_pack/Tree_Light_1-transformed.glb') as unknown as GLTFResult
+export default function Model(props: JSX.IntrinsicElements["group"]) {
+  const { nodes, materials } = useGLTF(
+    "/glb/ultimate_space_pack/Tree_Light_1-transformed.glb",
+  ) as unknown as GLTFResult;
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Tree_Light_1.geometry} material={materials.Atlas} />
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/glb/ultimate_space_pack/Tree_Light_1-transformed.glb')
+useGLTF.preload("/glb/ultimate_space_pack/Tree_Light_1-transformed.glb");
