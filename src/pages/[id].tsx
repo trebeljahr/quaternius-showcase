@@ -131,15 +131,16 @@ function CanvasComponent({ id }: { id: Ids }) {
           </a>
         )}
         <div className="absolute bottom-0 right-0 z-20">
-          <button className={navButton} onClick={gotoPrev}>
+          <button type="button" className={navButton} onClick={gotoPrev}>
             {"<"}
           </button>
-          <button className={navButton} onClick={gotoNext}>
+          <button type="button" className={navButton} onClick={gotoNext}>
             {">"}
           </button>
         </div>
 
         <button
+          type="button"
           id="close-btn"
           className={`${buttonStyle} ${open && "translate-x-60"}`}
           onClick={toggleOpen}
