@@ -23,7 +23,7 @@ type GLTFResult = GLTF & {
   materials: {
     DarkWood: THREE.MeshStandardMaterial;
     DarkSteel: THREE.MeshStandardMaterial;
-    ["DarkWood.001"]: THREE.MeshStandardMaterial;
+    "DarkWood.001": THREE.MeshStandardMaterial;
     LightWood: THREE.MeshStandardMaterial;
     LightSteel: THREE.MeshStandardMaterial;
     Steel: THREE.MeshStandardMaterial;

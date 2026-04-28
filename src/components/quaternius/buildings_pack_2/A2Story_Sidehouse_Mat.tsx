@@ -8,15 +8,15 @@ import type { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
   nodes: {
-    ["2Story_Sidehouse_Mat_1"]: THREE.Mesh;
-    ["2Story_Sidehouse_Mat_2"]: THREE.Mesh;
-    ["2Story_Sidehouse_Mat_3"]: THREE.Mesh;
-    ["2Story_Sidehouse_Mat_4"]: THREE.Mesh;
-    ["2Story_Sidehouse_Mat_5"]: THREE.Mesh;
-    ["2Story_Sidehouse_Mat_6"]: THREE.Mesh;
-    ["2Story_Sidehouse_Mat_7"]: THREE.Mesh;
-    ["2Story_Sidehouse_Mat_8"]: THREE.Mesh;
-    ["2Story_Sidehouse_Mat_9"]: THREE.Mesh;
+    "2Story_Sidehouse_Mat_1": THREE.Mesh;
+    "2Story_Sidehouse_Mat_2": THREE.Mesh;
+    "2Story_Sidehouse_Mat_3": THREE.Mesh;
+    "2Story_Sidehouse_Mat_4": THREE.Mesh;
+    "2Story_Sidehouse_Mat_5": THREE.Mesh;
+    "2Story_Sidehouse_Mat_6": THREE.Mesh;
+    "2Story_Sidehouse_Mat_7": THREE.Mesh;
+    "2Story_Sidehouse_Mat_8": THREE.Mesh;
+    "2Story_Sidehouse_Mat_9": THREE.Mesh;
   };
   materials: {
     Wood: THREE.MeshStandardMaterial;

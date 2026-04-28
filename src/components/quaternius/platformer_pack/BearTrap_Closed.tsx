@@ -11,7 +11,7 @@ type GLTFResult = GLTF & {
     BearTrap_Closed: THREE.Mesh;
   };
   materials: {
-    ["Grey.001"]: THREE.MeshStandardMaterial;
+    "Grey.001": THREE.MeshStandardMaterial;
   };
 };
 

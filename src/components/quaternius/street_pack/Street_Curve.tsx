@@ -13,7 +13,7 @@ type GLTFResult = GLTF & {
     Street_Curve_3: THREE.Mesh;
   };
   materials: {
-    ["Grey."]: THREE.MeshStandardMaterial;
+    "Grey.": THREE.MeshStandardMaterial;
     Black: THREE.MeshStandardMaterial;
     White: THREE.MeshStandardMaterial;
   };

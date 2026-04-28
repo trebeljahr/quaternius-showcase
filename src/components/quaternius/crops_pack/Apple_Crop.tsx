@@ -13,9 +13,9 @@ type GLTFResult = GLTF & {
     Apple_Crop_3: THREE.Mesh;
   };
   materials: {
-    ["DarkRed.003"]: THREE.MeshStandardMaterial;
+    "DarkRed.003": THREE.MeshStandardMaterial;
     DarkBrown: THREE.MeshStandardMaterial;
-    ["DarkGreen.002"]: THREE.MeshStandardMaterial;
+    "DarkGreen.002": THREE.MeshStandardMaterial;
   };
 };
 

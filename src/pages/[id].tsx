@@ -1,15 +1,15 @@
-import { join } from "path";
-import { DownloadIcon } from "@/components/dom/DownloadIcon";
-import { useWindowSize } from "@/hooks/useWindowSize";
+import { readdir } from "node:fs/promises";
+import { join } from "node:path";
 import { Environment, OrbitControls, Stage } from "@react-three/drei";
 import { type GroupProps, useFrame } from "@react-three/fiber";
 import { capital } from "case";
-import { readdir } from "fs/promises";
 import type { GetStaticPropsContext } from "next";
 import Link from "next/link";
 import { type ComponentType, useCallback, useEffect, useRef, useState } from "react";
 import type { Group } from "three";
 import tunnel from "tunnel-rat";
+import { DownloadIcon } from "@/components/dom/DownloadIcon";
+import { useWindowSize } from "@/hooks/useWindowSize";
 import * as AllModels from "../components/quaternius";
 
 const sideStyle =
@@ -101,7 +101,7 @@ function CanvasComponent({ id }: { id: Ids }) {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [components.length, gotoNext, gotoPrev, stopped]);
+  }, [gotoNext, gotoPrev]);
 
   useEffect(() => {
     components.forEach(({ Component }) =>

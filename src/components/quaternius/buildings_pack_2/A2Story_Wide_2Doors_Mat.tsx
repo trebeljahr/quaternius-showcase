@@ -8,13 +8,13 @@ import type { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
   nodes: {
-    ["2Story_Wide_2Doors_Mat_1"]: THREE.Mesh;
-    ["2Story_Wide_2Doors_Mat_2"]: THREE.Mesh;
-    ["2Story_Wide_2Doors_Mat_3"]: THREE.Mesh;
-    ["2Story_Wide_2Doors_Mat_4"]: THREE.Mesh;
-    ["2Story_Wide_2Doors_Mat_5"]: THREE.Mesh;
-    ["2Story_Wide_2Doors_Mat_6"]: THREE.Mesh;
-    ["2Story_Wide_2Doors_Mat_7"]: THREE.Mesh;
+    "2Story_Wide_2Doors_Mat_1": THREE.Mesh;
+    "2Story_Wide_2Doors_Mat_2": THREE.Mesh;
+    "2Story_Wide_2Doors_Mat_3": THREE.Mesh;
+    "2Story_Wide_2Doors_Mat_4": THREE.Mesh;
+    "2Story_Wide_2Doors_Mat_5": THREE.Mesh;
+    "2Story_Wide_2Doors_Mat_6": THREE.Mesh;
+    "2Story_Wide_2Doors_Mat_7": THREE.Mesh;
   };
   materials: {
     White: THREE.MeshStandardMaterial;

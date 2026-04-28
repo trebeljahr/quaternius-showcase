@@ -13,9 +13,9 @@ type GLTFResult = GLTF & {
     Streetlight_Double_3: THREE.Mesh;
   };
   materials: {
-    ["Green.002"]: THREE.MeshStandardMaterial;
-    ["Glass.002"]: THREE.MeshStandardMaterial;
-    ["Light.002"]: THREE.MeshStandardMaterial;
+    "Green.002": THREE.MeshStandardMaterial;
+    "Glass.002": THREE.MeshStandardMaterial;
+    "Light.002": THREE.MeshStandardMaterial;
   };
 };
 

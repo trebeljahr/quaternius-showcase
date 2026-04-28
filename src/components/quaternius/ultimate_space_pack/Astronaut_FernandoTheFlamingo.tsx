@@ -1,9 +1,9 @@
-import { GenericAnimationController } from "@/components/canvas/GenericAnimationController";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useGraph } from "@react-three/fiber";
 import React from "react";
 import type * as THREE from "three";
 import { type GLTF, SkeletonUtils } from "three-stdlib";
+import { GenericAnimationController } from "@/components/canvas/GenericAnimationController";
 
 type ActionName =
   | "Death"

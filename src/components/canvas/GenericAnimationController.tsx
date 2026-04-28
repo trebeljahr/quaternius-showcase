@@ -1,8 +1,8 @@
-import { useWindowSize } from "@/hooks/useWindowSize";
-import { In } from "@/pages/[id]";
-import { Leva, folder, useControls } from "leva";
+import { folder, Leva, useControls } from "leva";
 import { useEffect } from "react";
 import type { AnimationAction } from "three";
+import { useWindowSize } from "@/hooks/useWindowSize";
+import { In } from "@/pages/[id]";
 
 export function LevaStyled() {
   const { height, width } = useWindowSize();
@@ -28,7 +28,9 @@ const fadeDuration = 0.5;
 
 export function GenericAnimationController({
   actions,
-}: { actions: Record<string, AnimationAction> }) {
+}: {
+  actions: Record<string, AnimationAction>;
+}) {
   const actionNames = Object.keys(actions);
   const defaultAction =
     actionNames.find((name) => name.toLowerCase().includes("idle")) ||

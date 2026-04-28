@@ -13,9 +13,9 @@ type GLTFResult = GLTF & {
     Book2_3: THREE.Mesh;
   };
   materials: {
-    ["Cover.001"]: THREE.MeshStandardMaterial;
-    ["Paper.001"]: THREE.MeshStandardMaterial;
-    ["Ink.001"]: THREE.MeshStandardMaterial;
+    "Cover.001": THREE.MeshStandardMaterial;
+    "Paper.001": THREE.MeshStandardMaterial;
+    "Ink.001": THREE.MeshStandardMaterial;
   };
 };
 

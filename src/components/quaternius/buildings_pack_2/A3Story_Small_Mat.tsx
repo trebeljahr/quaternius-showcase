@@ -8,14 +8,14 @@ import type { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
   nodes: {
-    ["3Story_Small_Mat_1"]: THREE.Mesh;
-    ["3Story_Small_Mat_2"]: THREE.Mesh;
-    ["3Story_Small_Mat_3"]: THREE.Mesh;
-    ["3Story_Small_Mat_4"]: THREE.Mesh;
-    ["3Story_Small_Mat_5"]: THREE.Mesh;
-    ["3Story_Small_Mat_6"]: THREE.Mesh;
-    ["3Story_Small_Mat_7"]: THREE.Mesh;
-    ["3Story_Small_Mat_8"]: THREE.Mesh;
+    "3Story_Small_Mat_1": THREE.Mesh;
+    "3Story_Small_Mat_2": THREE.Mesh;
+    "3Story_Small_Mat_3": THREE.Mesh;
+    "3Story_Small_Mat_4": THREE.Mesh;
+    "3Story_Small_Mat_5": THREE.Mesh;
+    "3Story_Small_Mat_6": THREE.Mesh;
+    "3Story_Small_Mat_7": THREE.Mesh;
+    "3Story_Small_Mat_8": THREE.Mesh;
   };
   materials: {
     Dark: THREE.MeshStandardMaterial;

@@ -14,10 +14,10 @@ type GLTFResult = GLTF & {
     BirchTree_2_4: THREE.Mesh;
   };
   materials: {
-    ["White.001"]: THREE.MeshStandardMaterial;
-    ["Black.001"]: THREE.MeshStandardMaterial;
-    ["DarkGreen.001"]: THREE.MeshStandardMaterial;
-    ["Green.001"]: THREE.MeshStandardMaterial;
+    "White.001": THREE.MeshStandardMaterial;
+    "Black.001": THREE.MeshStandardMaterial;
+    "DarkGreen.001": THREE.MeshStandardMaterial;
+    "Green.001": THREE.MeshStandardMaterial;
   };
 };
 

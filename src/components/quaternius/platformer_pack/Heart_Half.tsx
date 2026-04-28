@@ -11,7 +11,7 @@ type GLTFResult = GLTF & {
     Heart_Half: THREE.Mesh;
   };
   materials: {
-    ["Red.001"]: THREE.MeshStandardMaterial;
+    "Red.001": THREE.MeshStandardMaterial;
   };
 };
 

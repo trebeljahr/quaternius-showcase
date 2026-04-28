@@ -11,7 +11,7 @@ type GLTFResult = GLTF & {
     Plate_2: THREE.Mesh;
   };
   materials: {
-    ["White.002"]: THREE.MeshStandardMaterial;
+    "White.002": THREE.MeshStandardMaterial;
   };
 };
 

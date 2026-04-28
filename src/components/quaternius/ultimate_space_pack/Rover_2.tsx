@@ -7,7 +7,7 @@ type GLTFResult = GLTF & {
     Wheel_1: THREE.Mesh;
   };
   materials: {
-    ["Atlas.001"]: THREE.MeshStandardMaterial;
+    "Atlas.001": THREE.MeshStandardMaterial;
   };
 };
 

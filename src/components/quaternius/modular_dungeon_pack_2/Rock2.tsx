@@ -11,7 +11,7 @@ type GLTFResult = GLTF & {
     Rock2: THREE.Mesh;
   };
   materials: {
-    ["Rock.001"]: THREE.MeshStandardMaterial;
+    "Rock.001": THREE.MeshStandardMaterial;
   };
 };
 

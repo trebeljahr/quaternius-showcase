@@ -15,10 +15,10 @@ type GLTFResult = GLTF & {
     TrafficLight_5: THREE.Mesh;
   };
   materials: {
-    ["Green.003"]: THREE.MeshStandardMaterial;
+    "Green.003": THREE.MeshStandardMaterial;
     DarkGrey: THREE.MeshStandardMaterial;
-    ["Yellow.001"]: THREE.MeshStandardMaterial;
-    ["Red.002"]: THREE.MeshStandardMaterial;
+    "Yellow.001": THREE.MeshStandardMaterial;
+    "Red.002": THREE.MeshStandardMaterial;
     Grey: THREE.MeshStandardMaterial;
   };
 };

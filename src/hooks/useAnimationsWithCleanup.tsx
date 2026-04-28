@@ -51,7 +51,7 @@ export function useAnimationsWithCleanup<T extends AnimationClip>(
       });
       lazyActions.current = {};
     };
-  }, [clips]);
+  }, [mixer.uncacheAction, api.actions, actualRef.current]);
 
   React.useEffect(() => {
     return () => {

@@ -13,8 +13,8 @@ type GLTFResult = GLTF & {
     Candle_3: THREE.Mesh;
   };
   materials: {
-    ["Gold.001"]: THREE.MeshStandardMaterial;
-    ["Candle.001"]: THREE.MeshStandardMaterial;
+    "Gold.001": THREE.MeshStandardMaterial;
+    "Candle.001": THREE.MeshStandardMaterial;
     Black: THREE.MeshStandardMaterial;
   };
 };

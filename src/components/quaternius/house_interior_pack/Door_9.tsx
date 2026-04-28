@@ -12,8 +12,8 @@ type GLTFResult = GLTF & {
     Door_9_2: THREE.Mesh;
   };
   materials: {
-    ["White.001"]: THREE.MeshStandardMaterial;
-    ["Metal.001"]: THREE.MeshStandardMaterial;
+    "White.001": THREE.MeshStandardMaterial;
+    "Metal.001": THREE.MeshStandardMaterial;
   };
 };
 

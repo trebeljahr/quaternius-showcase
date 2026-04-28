@@ -14,8 +14,8 @@ type GLTFResult = GLTF & {
   };
   materials: {
     Yellow: THREE.MeshStandardMaterial;
-    ["White.001"]: THREE.MeshStandardMaterial;
-    ["Pole.001"]: THREE.MeshStandardMaterial;
+    "White.001": THREE.MeshStandardMaterial;
+    "Pole.001": THREE.MeshStandardMaterial;
   };
 };
 

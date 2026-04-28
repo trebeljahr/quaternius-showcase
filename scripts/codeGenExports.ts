@@ -1,5 +1,5 @@
-import { join } from "path";
-import { readFile, readdir, writeFile } from "fs/promises";
+import { readdir, readFile, writeFile } from "node:fs/promises";
+import { join } from "node:path";
 
 async function codeGenForImports() {
   const quaterniusDirectoryPath = join(process.cwd(), "src", "components", "quaternius");
