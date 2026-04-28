@@ -8,7 +8,7 @@
   "private": true,
   "packageManager": "pnpm@10.33.2",
   "engines": {
-    "node": ">=14"
+    "node": ">=24"
   },
   "dependencies": {
     "@react-three/drei": "9.40.0",
@@ -30,8 +30,6 @@
     "@types/react": "^18.0.26",
     "@types/three": "^0.146.0",
     "autoprefixer": "^10.4.12",
-    "eslint": "^8.24.0",
-    "eslint-config-next": "^13.0.1",
     "file-loader": "^6.2.0",
     "glslify": "^7.1.1",
     "glslify-loader": "^2.0.0",
@@ -41,13 +39,12 @@
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3",
     "url-loader": "^4.1.1",
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.4.13",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0"
   },
   "scripts": {
-    "lint": "next lint --fix --dir src && biome lint .",
-    "eslint": "next lint --fix --dir src",
+    "lint": "biome lint .",
     "dev": "next dev",
     "build": "next build",
     "export": "EXPORT=true next build && EXPORT=true next export",
