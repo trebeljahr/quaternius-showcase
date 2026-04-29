@@ -24,7 +24,7 @@ type ActionName =
   | "Walk"
   | "Yes";
 
-interface GLTFAction extends THREE.AnimationClip {
+interface _GLTFAction extends THREE.AnimationClip {
   name: ActionName;
 }
 
