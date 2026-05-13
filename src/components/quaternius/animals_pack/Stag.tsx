@@ -28,7 +28,6 @@ type GLTFResult = GLTF & {
     "Material.003": THREE.MeshStandardMaterial;
     Material: THREE.MeshStandardMaterial;
     "Material.010": THREE.MeshStandardMaterial;
-    "Material.001": THREE.MeshStandardMaterial;
     "Material.011": THREE.MeshStandardMaterial;
   };
   animations: GLTFAction[];
