@@ -13,7 +13,7 @@ const nextConfig = {
       {
         source: "/",
         destination: "/animals_pack",
-        permanent: true,
+        permanent: false,
       },
     ];
   },
