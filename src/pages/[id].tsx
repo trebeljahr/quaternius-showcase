@@ -1,4 +1,4 @@
-import { readdir } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { Environment, OrbitControls, Stage } from "@react-three/drei";
 import { type GroupProps, useFrame } from "@react-three/fiber";
@@ -32,6 +32,16 @@ export default function Page() {
 }
 
 type Ids = keyof typeof AllModels;
+
+function getPackMetadata(id: Ids, modelCount: number) {
+  const packName = capital(id);
+
+  return {
+    title: `${packName} - Free 3D Models by @Quaternius`,
+    description: `Preview and download ${modelCount} free low-poly ${packName} 3D models by Quaternius as GLB files.`,
+    path: `/${id}`,
+  };
+}
 
 function CanvasComponent({ id }: { id: Ids }) {
   const [index, setIndex] = useState(0);
@@ -229,5 +239,11 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async ({ params: { id } }: GetStaticPropsContext<{ id: Ids }>) => {
-  return { props: { id } };
+  const indexSource = await readFile(
+    join(process.cwd(), "src", "components", "quaternius", id, "index.ts"),
+    "utf8",
+  );
+  const modelCount = (indexSource.match(/^export const /gm) ?? []).length;
+
+  return { props: { id, ...getPackMetadata(id, modelCount) } };
 };

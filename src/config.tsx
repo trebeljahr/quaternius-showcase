@@ -1,11 +1,30 @@
 import Head from "next/head";
 
 const titleDefault = "3D Models by @Quaternius";
-const url = "https://quaternius.trebeljahr.com";
-const description = "A showcase of free 3D models by @Quaternius. With Animations!";
+const siteUrl = "https://quaternius.trebeljahr.com";
+const descriptionDefault = "A showcase of free 3D models by @Quaternius. With Animations!";
 const author = "Rico Trebeljahr";
 
-export default function Header({ title = titleDefault }) {
+interface HeaderProps {
+  title?: string;
+  description?: string;
+  path?: string;
+  image?: string;
+}
+
+function absoluteUrl(path: string) {
+  return new URL(path, siteUrl).toString();
+}
+
+export default function Header({
+  title = titleDefault,
+  description = descriptionDefault,
+  path = "/",
+  image = "/icons/share.png",
+}: HeaderProps) {
+  const canonicalUrl = absoluteUrl(path);
+  const imageUrl = absoluteUrl(image);
+
   return (
     <Head>
       <meta charSet="utf-8" />
@@ -23,13 +42,14 @@ export default function Header({ title = titleDefault }) {
       />
       <meta name="robots" content="index,follow" />
       <meta name="distribution" content="web" />
+      <link rel="canonical" href={canonicalUrl} />
 
-      <meta name="og:title" content={title} />
-      <meta name="og:type" content="site" />
-      <meta name="og:url" content={url} />
-      <meta name="og:image" content={"/icons/share.png"} />
-      <meta name="og:site_name" content={title} />
-      <meta name="og:description" content={description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={imageUrl} />
+      <meta property="og:site_name" content={titleDefault} />
+      <meta property="og:description" content={description} />
 
       <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
       <link rel="apple-touch-icon" sizes="16x16" href="/icons/favicon-16x16.png" />
@@ -45,6 +65,9 @@ export default function Header({ title = titleDefault }) {
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@trebeljahr" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={imageUrl} />
     </Head>
   );
 }

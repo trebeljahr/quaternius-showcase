@@ -1,5 +1,6 @@
+import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
-import { useRef } from "react";
+import { type ReactNode, useRef } from "react";
 import Layout from "@/components/dom/Layout";
 import Header from "@/config";
 import "@/styles/index.css";
@@ -10,7 +11,22 @@ const plausibleDomain = "quaternius.trebeljahr.com";
 const plausibleScriptUrl =
   "https://plausible.trebeljahr.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js";
 
-export default function App({ Component, pageProps = { title: "index" } }) {
+interface PageProps {
+  title?: string;
+  description?: string;
+  path?: string;
+  [key: string]: unknown;
+}
+
+type CanvasPage = AppProps<PageProps>["Component"] & {
+  canvas?: (props: PageProps) => ReactNode;
+};
+
+interface ShowcaseAppProps extends AppProps<PageProps> {
+  Component: CanvasPage;
+}
+
+export default function App({ Component, pageProps }: ShowcaseAppProps) {
   const ref = useRef();
   return (
     <>
@@ -39,7 +55,7 @@ export default function App({ Component, pageProps = { title: "index" } }) {
           gtag('config', 'G-FZYX7YZ8V7');
        `}
       </Script>
-      <Header title={pageProps.title} />
+      <Header title={pageProps.title} description={pageProps.description} path={pageProps.path} />
       <Component {...pageProps} />
 
       <Layout ref={ref}>

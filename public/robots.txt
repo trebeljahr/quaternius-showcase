@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quaternius.trebeljahr.com/sitemap.xml
