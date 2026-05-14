@@ -183,8 +183,8 @@ function CanvasComponent({ id }: { id: Ids }) {
                   </a>
                 </div>
                 <div className="mt-1">
-                  <Link href="/imprint">
-                    <a className="hover:underline">Imprint</a>
+                  <Link href="/imprint" className="hover:underline">
+                    Imprint
                   </Link>
                 </div>
               </footer>

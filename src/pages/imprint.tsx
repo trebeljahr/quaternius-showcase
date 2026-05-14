@@ -10,8 +10,8 @@ export default function ImprintPage() {
       <div className="fixed inset-0 z-[2000] overflow-y-auto bg-leva-dark text-leva-white font-leva p-8">
         <div className="max-w-2xl mx-auto">
           <p className="mb-6">
-            <Link href="/">
-              <a className="text-yellow-400 hover:underline text-sm">&larr; Back to Showcase</a>
+            <Link href="/" className="text-yellow-400 hover:underline text-sm">
+              &larr; Back to Showcase
             </Link>
           </p>
 
