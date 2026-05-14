@@ -45,7 +45,7 @@
   },
   "scripts": {
     "lint": "biome lint .",
-    "dev": "next dev -H 127.0.0.1 -p 3567",
+    "dev": "node scripts/dev.js",
     "build": "next build",
     "export": "EXPORT=true next build && EXPORT=true next export",
     "analyze": "ANALYZE=true next build",
