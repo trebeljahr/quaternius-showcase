@@ -2,7 +2,6 @@ import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { Environment, OrbitControls, Stage } from "@react-three/drei";
 import { type GroupProps, useFrame } from "@react-three/fiber";
-import { capital } from "case";
 import type { GetStaticPropsContext } from "next";
 import Link from "next/link";
 import { type ComponentType, useCallback, useEffect, useRef, useState } from "react";
@@ -10,6 +9,7 @@ import type { Group } from "three";
 import tunnel from "tunnel-rat";
 import { DownloadIcon } from "@/components/dom/DownloadIcon";
 import { useWindowSize } from "@/hooks/useWindowSize";
+import { formatPackName, getPackSeo } from "@/lib/seo";
 import * as AllModels from "../components/quaternius";
 
 const sideStyle =
@@ -34,13 +34,7 @@ export default function Page() {
 type Ids = keyof typeof AllModels;
 
 function getPackMetadata(id: Ids, modelCount: number) {
-  const packName = capital(id);
-
-  return {
-    title: `${packName} - Free 3D Models by @Quaternius`,
-    description: `Preview and download ${modelCount} free low-poly ${packName} 3D models by Quaternius as GLB files.`,
-    path: `/${id}`,
-  };
+  return getPackSeo(id, modelCount);
 }
 
 function CanvasComponent({ id }: { id: Ids }) {
@@ -171,7 +165,7 @@ function CanvasComponent({ id }: { id: Ids }) {
 
               <div>
                 {Object.keys(AllModels).map((name) => {
-                  const pack_name = capital(name);
+                  const pack_name = formatPackName(name);
                   return (
                     <div
                       key={pack_name}

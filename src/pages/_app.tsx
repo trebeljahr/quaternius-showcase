@@ -15,6 +15,8 @@ interface PageProps {
   title?: string;
   description?: string;
   path?: string;
+  image?: string;
+  imageAlt?: string;
   [key: string]: unknown;
 }
 
@@ -55,7 +57,13 @@ export default function App({ Component, pageProps }: ShowcaseAppProps) {
           gtag('config', 'G-FZYX7YZ8V7');
        `}
       </Script>
-      <Header title={pageProps.title} description={pageProps.description} path={pageProps.path} />
+      <Header
+        title={pageProps.title}
+        description={pageProps.description}
+        path={pageProps.path}
+        image={pageProps.image}
+        imageAlt={pageProps.imageAlt}
+      />
       <Component {...pageProps} />
 
       <Layout ref={ref}>

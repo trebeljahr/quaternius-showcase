@@ -46,7 +46,9 @@
   "scripts": {
     "lint": "biome lint .",
     "dev": "node scripts/dev.js",
+    "prebuild": "node scripts/generate-sitemap.mjs",
     "build": "next build",
+    "preexport": "node scripts/generate-sitemap.mjs",
     "export": "EXPORT=true next build && EXPORT=true next export",
     "analyze": "ANALYZE=true next build",
     "start": "next start",

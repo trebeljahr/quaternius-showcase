@@ -1,6 +1,6 @@
 {
-  "name": "R3F Next Starter",
-  "short_name": "R3F Next Starter",
+  "name": "3D Models by Quaternius",
+  "short_name": "Quaternius Models",
   "icons": [
     {
       "src": "/icons/favicon.ico",
@@ -24,6 +24,7 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "description": "Browse, preview, and download free low-poly Quaternius 3D model packs as GLB files.",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }

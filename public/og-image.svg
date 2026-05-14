@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">3D Models by Quaternius</title>
+  <desc id="desc">Social preview card for the Quaternius low-poly 3D model showcase.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10131f"/>
+      <stop offset="0.54" stop-color="#26283d"/>
+      <stop offset="1" stop-color="#f2c94c"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <path d="M0 470 C170 420 274 510 428 458 C594 402 666 285 856 316 C1016 342 1104 252 1200 196 L1200 630 L0 630 Z" fill="#111827" opacity="0.56"/>
+  <g filter="url(#shadow)" stroke="#111827" stroke-width="8" stroke-linejoin="round">
+    <path d="M820 152 L1018 266 L1018 494 L820 608 L622 494 L622 266 Z" fill="#f2c94c"/>
+    <path d="M820 152 L1018 266 L820 380 L622 266 Z" fill="#f8df83"/>
+    <path d="M622 266 L820 380 L820 608 L622 494 Z" fill="#d89b2b"/>
+    <path d="M1018 266 L820 380 L820 608 L1018 494 Z" fill="#a86f20"/>
+  </g>
+  <g fill="#f8fafc" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="76" y="142" font-size="32" font-weight="700" letter-spacing="4">LOW-POLY MODEL SHOWCASE</text>
+    <text x="72" y="252" font-size="88" font-weight="900">3D Models</text>
+    <text x="76" y="344" font-size="70" font-weight="800">by @Quaternius</text>
+    <text x="80" y="424" font-size="34" fill="#e5e7eb">Preview and download free GLB packs for games.</text>
+    <text x="82" y="520" font-size="28" font-weight="700" fill="#111827">quaternius.trebeljahr.com</text>
+  </g>
+</svg>

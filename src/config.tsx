@@ -1,8 +1,6 @@
 import Head from "next/head";
+import { absoluteUrl, DEFAULT_DESCRIPTION, DEFAULT_SOCIAL_IMAGE, SITE_NAME } from "@/lib/seo";
 
-const titleDefault = "3D Models by @Quaternius";
-const siteUrl = "https://quaternius.trebeljahr.com";
-const descriptionDefault = "A showcase of free 3D models by @Quaternius. With Animations!";
 const author = "Rico Trebeljahr";
 
 interface HeaderProps {
@@ -10,17 +8,15 @@ interface HeaderProps {
   description?: string;
   path?: string;
   image?: string;
-}
-
-function absoluteUrl(path: string) {
-  return new URL(path, siteUrl).toString();
+  imageAlt?: string;
 }
 
 export default function Header({
-  title = titleDefault,
-  description = descriptionDefault,
+  title = SITE_NAME,
+  description = DEFAULT_DESCRIPTION,
   path = "/",
-  image = "/icons/share.png",
+  image = DEFAULT_SOCIAL_IMAGE,
+  imageAlt = `${title} preview`,
 }: HeaderProps) {
   const canonicalUrl = absoluteUrl(path);
   const imageUrl = absoluteUrl(image);
@@ -48,7 +44,11 @@ export default function Header({
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={imageUrl} />
-      <meta property="og:site_name" content={titleDefault} />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={imageAlt} />
+      <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:description" content={description} />
 
       <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
@@ -63,11 +63,12 @@ export default function Header({
       <meta name="theme-color" content="#000" />
       <link rel="shortcut icon" href="/icons/favicon.ico" />
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@trebeljahr" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
+      <meta name="twitter:image:alt" content={imageAlt} />
     </Head>
   );
 }
