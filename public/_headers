@@ -1,0 +1,22 @@
+# Build output carries a content hash in the filename, so a URL never changes.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/workbox-*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Model filenames are stable (/glb/animals_pack/Alpaca.glb), not content-hashed,
+# so a replaced model keeps its URL. Cache hard but stay able to pick that up.
+/glb/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/icons/*
+  Cache-Control: public, max-age=2592000
+
+/og-image.png
+  Cache-Control: public, max-age=2592000
+
+# The service worker decides how long everything else is cached, so it must not
+# be cached itself.
+/sw.js
+  Cache-Control: no-cache
