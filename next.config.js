@@ -5,6 +5,11 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const withPWA = require("next-pwa")({
   dest: "public",
   disable: process.env.NODE_ENV === "development",
+  // next-pwa precaches every file under public/ by default. That is 1545 .glb
+  // models, ~185 MB, downloaded by every first-time visitor. The viewer already
+  // fetches a model on demand, so keep them out of the precache manifest.
+  // og-image.png is only ever read by crawlers, never by the page.
+  publicExcludes: ["!glb/**/*", "!og-image.*"],
 });
 
 const nextConfig = {
