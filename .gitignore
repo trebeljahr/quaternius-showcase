@@ -73,3 +73,6 @@ venv/
 .env.test
 .envrc.local
 .vercel/
+
+# tsc --incremental artifact
+tsconfig.tsbuildinfo

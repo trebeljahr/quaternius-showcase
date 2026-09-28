@@ -1,8 +1,8 @@
 import { folder, Leva, useControls } from "leva";
 import { useEffect } from "react";
 import type { AnimationAction } from "three";
+import { In } from "@/components/canvas/PackViewer";
 import { useWindowSize } from "@/hooks/useWindowSize";
-import { In } from "@/pages/[id]";
 
 export function LevaStyled() {
   const { height, width } = useWindowSize();

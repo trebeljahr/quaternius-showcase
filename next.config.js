@@ -8,15 +8,6 @@ const withPWA = require("next-pwa")({
 });
 
 const nextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/animals_pack",
-        permanent: false,
-      },
-    ];
-  },
   experimental: {},
   images: {},
   reactStrictMode: true,
