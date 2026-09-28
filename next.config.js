@@ -8,8 +8,11 @@ const withPWA = require("next-pwa")({
 });
 
 const nextConfig = {
+  // Static export for Cloudflare Workers assets hosting.
+  output: "export",
   experimental: {},
-  images: {},
+  // No image optimization server behind a static export.
+  images: { unoptimized: true },
   reactStrictMode: true,
   webpack(config, { isServer }) {
     config.module.rules.push({
