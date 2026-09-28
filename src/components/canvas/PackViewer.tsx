@@ -26,7 +26,15 @@ export const { Out, In } = t;
 
 export type Ids = keyof typeof AllModels;
 
-export function PackViewer({ id }: { id: Ids }) {
+export function PackViewer({
+  id,
+  modelUrls,
+}: {
+  id: Ids;
+  // Export name -> the .glb the component loads. Built server side, because
+  // neither the pack name nor the export name reconstructs the URL reliably.
+  modelUrls: Record<string, string>;
+}) {
   const [index, setIndex] = useState(0);
   const [open, setOpen] = useState(false);
 
@@ -113,10 +121,10 @@ export function PackViewer({ id }: { id: Ids }) {
   return (
     <>
       <In>
-        {Model && (
+        {Model && modelUrls[Model.key] && (
           <a
             className={`${downloadStyles} ${open && "translate-x-60"}`}
-            href={`/glb/${id}/${Model.key}.glb`}
+            href={modelUrls[Model.key]}
             download
           >
             <DownloadIcon />

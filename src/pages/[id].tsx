@@ -6,7 +6,7 @@ export default function Page() {
   return <Out />;
 }
 
-Page.canvas = (props: { id: Ids }) => {
+Page.canvas = (props: { id: Ids; modelUrls: Record<string, string> }) => {
   return <PackViewer {...props} />;
 };
 

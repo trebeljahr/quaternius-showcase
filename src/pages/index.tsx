@@ -10,7 +10,7 @@ export default function Home() {
   return <Out />;
 }
 
-Home.canvas = (props: { id: Ids }) => {
+Home.canvas = (props: { id: Ids; modelUrls: Record<string, string> }) => {
   return <PackViewer {...props} />;
 };
 
