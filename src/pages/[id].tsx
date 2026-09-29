@@ -1,13 +1,16 @@
 import type { GetStaticPropsContext } from "next";
-import { type Ids, Out, PackViewer } from "@/components/canvas/PackViewer";
+import { PackViewer } from "@/components/canvas/PackViewer";
+import type { Ids } from "@/components/PackViewerProvider";
 import { getPackProps, listPackIds } from "@/lib/packs.server";
 
+// The DOM chrome is rendered by _app, which keeps it mounted across pack
+// switches; the page only contributes the scene contents.
 export default function Page() {
-  return <Out />;
+  return null;
 }
 
-Page.canvas = (props: { id: Ids; modelUrls: Record<string, string> }) => {
-  return <PackViewer {...props} />;
+Page.canvas = () => {
+  return <PackViewer />;
 };
 
 export async function getStaticPaths() {

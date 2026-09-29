@@ -1,4 +1,4 @@
-import { type Ids, Out, PackViewer } from "@/components/canvas/PackViewer";
+import { PackViewer } from "@/components/canvas/PackViewer";
 import { getPackProps } from "@/lib/packs.server";
 
 // The site has no separate landing page: "/" serves the animals pack directly.
@@ -6,12 +6,14 @@ import { getPackProps } from "@/lib/packs.server";
 // config redirects, and rendering the pack here avoids the extra round trip.
 const HOME_PACK = "animals_pack";
 
+// The DOM chrome is rendered by _app, which keeps it mounted across pack
+// switches; the page only contributes the scene contents.
 export default function Home() {
-  return <Out />;
+  return null;
 }
 
-Home.canvas = (props: { id: Ids; modelUrls: Record<string, string> }) => {
-  return <PackViewer {...props} />;
+Home.canvas = () => {
+  return <PackViewer />;
 };
 
 export const getStaticProps = async () => {

@@ -1,7 +1,10 @@
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import { type ReactNode, useRef } from "react";
+import { Out } from "@/components/canvas/tunnel";
 import Layout from "@/components/dom/Layout";
+import { PackNav } from "@/components/dom/PackNav";
+import { type Ids, PackViewerProvider } from "@/components/PackViewerProvider";
 import Header from "@/config";
 import "@/styles/index.css";
 import Script from "next/script";
@@ -64,15 +67,24 @@ export default function App({ Component, pageProps }: ShowcaseAppProps) {
         image={pageProps.image}
         imageAlt={pageProps.imageAlt}
       />
-      <Component {...pageProps} />
+      {/* The provider sits above the Canvas so the chrome below survives both
+          route changes and the Suspense the Canvas throws while a model loads. */}
+      <PackViewerProvider
+        id={pageProps.id as Ids | undefined}
+        modelUrls={pageProps.modelUrls as Record<string, string> | undefined}
+      >
+        <Component {...pageProps} />
+        {Component?.canvas && <PackNav />}
+        <Out />
 
-      <Layout ref={ref}>
-        {Component?.canvas && (
-          <Scene className="pointer-events-none" eventSource={ref} eventPrefix="client">
-            {Component.canvas(pageProps)}
-          </Scene>
-        )}
-      </Layout>
+        <Layout ref={ref}>
+          {Component?.canvas && (
+            <Scene className="pointer-events-none" eventSource={ref} eventPrefix="client">
+              {Component.canvas(pageProps)}
+            </Scene>
+          )}
+        </Layout>
+      </PackViewerProvider>
     </>
   );
 }
