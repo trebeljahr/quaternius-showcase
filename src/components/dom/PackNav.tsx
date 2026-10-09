@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { DownloadIcon } from "@/components/dom/DownloadIcon";
+import { RecentPacks } from "@/components/dom/RecentPacks";
 import { usePackViewer } from "@/components/PackViewerProvider";
 import * as AllModels from "@/components/quaternius";
 import { formatPackName } from "@/lib/seo";
@@ -71,6 +72,8 @@ export function PackNav() {
                 Free 3D Models by <span>@Quaternius</span>
               </a>
             </h1>
+
+            <RecentPacks currentId={id} />
 
             <div>
               {Object.entries(AllModels).map(([name, pack]) => {
