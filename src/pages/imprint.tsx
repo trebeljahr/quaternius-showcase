@@ -1,7 +1,23 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { referringUrl } from "@/lib/referrer";
+
+const contactEmail = "imprint+quaternius@trebeljahr.com";
 
 export default function ImprintPage() {
+  // Plain mailto during SSR; the prefilled draft needs browser-only values.
+  const [feedbackHref, setFeedbackHref] = useState(`mailto:${contactEmail}`);
+  useEffect(() => {
+    const subject = "Quaternius Showcase feedback";
+    const body = ["", "", "---", `Page: ${referringUrl()}`, `Browser: ${navigator.userAgent}`].join(
+      "\r\n",
+    );
+    setFeedbackHref(
+      `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+    );
+  }, []);
+
   return (
     <>
       <Head>
@@ -46,6 +62,11 @@ export default function ImprintPage() {
                 className="text-yellow-400 hover:underline"
               >
                 imprint+quaternius@trebeljahr.com
+              </a>
+            </p>
+            <p className="text-sm opacity-80 mt-1">
+              <a href={feedbackHref} className="text-yellow-400 hover:underline">
+                Send feedback
               </a>
             </p>
           </section>

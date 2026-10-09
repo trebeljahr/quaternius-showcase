@@ -1,11 +1,13 @@
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
-import { type ReactNode, useRef } from "react";
+import { useRouter } from "next/router";
+import { type ReactNode, useEffect, useRef } from "react";
 import { Out } from "@/components/canvas/tunnel";
 import Layout from "@/components/dom/Layout";
 import { PackNav } from "@/components/dom/PackNav";
 import { type Ids, PackViewerProvider } from "@/components/PackViewerProvider";
 import Header from "@/config";
+import { rememberLeftUrl } from "@/lib/referrer";
 import "@/styles/index.css";
 import Script from "next/script";
 
@@ -33,6 +35,11 @@ interface ShowcaseAppProps extends AppProps<PageProps> {
 
 export default function App({ Component, pageProps }: ShowcaseAppProps) {
   const ref = useRef();
+  const router = useRouter();
+  useEffect(() => {
+    router.events.on("routeChangeStart", rememberLeftUrl);
+    return () => router.events.off("routeChangeStart", rememberLeftUrl);
+  }, [router.events]);
   return (
     <>
       <Script id="plausible-loader" strategy="afterInteractive">
