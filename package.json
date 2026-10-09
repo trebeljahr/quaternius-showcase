@@ -51,6 +51,7 @@
     "analyze": "ANALYZE=true next build",
     "preview": "npx --yes serve out",
     "generateExports": "tsx ./scripts/codeGenExports.ts",
+    "verify:downloads": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/verify-download-links.mjs",
     "format": "biome format --write .",
     "check": "biome check --write .",
     "prepare": "husky"
