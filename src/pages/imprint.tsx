@@ -79,7 +79,25 @@ export default function ImprintPage() {
               >
                 Quaternius
               </a>
-              , licensed under CC0 1.0 Universal (Public Domain).
+              . Every pack shown here is released by Quaternius under{" "}
+              <a
+                href="https://creativecommons.org/publicdomain/zero/1.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-400 hover:underline"
+              >
+                CC0 1.0 Universal
+              </a>{" "}
+              (public domain dedication).{" "}
+              <a
+                href="https://github.com/trebeljahr/quaternius-showcase/blob/main/LICENSES.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-400 hover:underline"
+              >
+                LICENSES.md
+              </a>{" "}
+              lists the source page of each pack.
             </p>
           </section>
 
