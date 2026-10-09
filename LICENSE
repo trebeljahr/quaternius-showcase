@@ -1,4 +1,11 @@
-Copyright (c) 2012-2021 Scott Chacon and others
+The MIT terms below cover the showcase source code only. They do NOT
+cover the 3D model files under `public/glb/**`, which are
+© [Quaternius](https://quaternius.com) and governed by their respective
+upstream licenses (see `LICENSES.md`).
+
+MIT License
+
+Copyright (c) 2022-2026 Rico Trebeljahr
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
