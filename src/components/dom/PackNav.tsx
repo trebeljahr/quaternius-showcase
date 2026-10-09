@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { DownloadIcon } from "@/components/dom/DownloadIcon";
+import { GltfDownload } from "@/components/dom/GltfDownload";
 import { RecentPacks } from "@/components/dom/RecentPacks";
 import { usePackViewer } from "@/components/PackViewerProvider";
 import * as AllModels from "@/components/quaternius";
@@ -21,7 +22,7 @@ const navButton =
   "z-[1500] font-leva text-sm w-10 h-10 bg-leva-dark text-leva-white cursor-pointer hover:bg-leva-medium";
 
 /**
- * The persistent chrome: pack list, prev/next buttons and the .glb download.
+ * The persistent chrome: pack list, prev/next buttons and the .glb and .gltf downloads.
  *
  * Rendered from _app, outside the Canvas, so switching packs swaps only the
  * models. It used to be tunnelled out of the Canvas, where the Suspense
@@ -33,21 +34,20 @@ export function PackNav() {
   return (
     <>
       {model && modelUrls[model.key] && (
-        <a
-          className={`${downloadStyles} ${open && "translate-x-60"}`}
-          href={modelUrls[model.key]}
-          download
-        >
-          <DownloadIcon />
-          <span className={`leading-7`}>{".glb"}</span>
-        </a>
+        <div className={`${downloadStyles} ${open && "translate-x-60"}`}>
+          <a className="flex" href={modelUrls[model.key]} download>
+            <DownloadIcon />
+            <span className={`leading-7`}>{".glb"}</span>
+          </a>
+          <GltfDownload glbUrl={modelUrls[model.key]} />
+        </div>
       )}
-      {/* Sits in the bottom row between the .glb link (left) and the prev/next
-          buttons (right), so the credit is visible on phones too. The open
-          sidebar carries its own credits, and the shifted .glb link would
-          collide with this line, so it hides then. */}
+      {/* Sits in the bottom row between the download links (left) and the
+          prev/next buttons (right), so the credit is visible on phones too.
+          The open sidebar carries its own credits, and the shifted download
+          links would collide with this line, so it hides then. */}
       {!open && (
-        <p className="pointer-events-none absolute inset-x-0 bottom-0 z-20 m-0 flex h-10 items-center justify-center px-20 text-center font-leva text-[10px] leading-tight text-leva-medium">
+        <p className="pointer-events-none absolute inset-x-0 bottom-0 z-20 m-0 flex h-10 items-center justify-center pr-20 pl-32 text-center font-leva text-[10px] leading-tight text-leva-medium">
           <a
             className="pointer-events-auto hover:text-leva-dark hover:underline"
             href="https://quaternius.com"
