@@ -68,7 +68,7 @@ export function PackNav() {
             </h1>
 
             <div>
-              {Object.keys(AllModels).map((name) => {
+              {Object.entries(AllModels).map(([name, pack]) => {
                 const pack_name = formatPackName(name);
                 return (
                   <div
@@ -78,7 +78,8 @@ export function PackNav() {
                     }`}
                   >
                     <Link href={`/${name}`} as={`/${name}`}>
-                      {pack_name}
+                      {pack_name}{" "}
+                      <span className="text-leva-light-grey">({Object.keys(pack).length})</span>
                     </Link>
                   </div>
                 );
