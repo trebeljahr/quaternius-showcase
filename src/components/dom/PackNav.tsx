@@ -42,6 +42,20 @@ export function PackNav() {
           <span className={`leading-7`}>{".glb"}</span>
         </a>
       )}
+      {/* Sits in the bottom row between the .glb link (left) and the prev/next
+          buttons (right), so the credit is visible on phones too. The open
+          sidebar carries its own credits, and the shifted .glb link would
+          collide with this line, so it hides then. */}
+      {!open && (
+        <p className="pointer-events-none absolute inset-x-0 bottom-0 z-20 m-0 flex h-10 items-center justify-center px-20 text-center font-leva text-[10px] leading-tight text-leva-medium">
+          <a
+            className="pointer-events-auto hover:text-leva-dark hover:underline"
+            href="https://quaternius.com"
+          >
+            Made by Rico, models © Quaternius
+          </a>
+        </p>
+      )}
       <div className="absolute bottom-0 right-0 z-20">
         <button type="button" className={navButton} onClick={gotoPrev}>
           {"<"}
