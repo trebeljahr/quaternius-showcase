@@ -120,6 +120,18 @@ export default function ImprintPage() {
               </a>{" "}
               lists the source page of each pack.
             </p>
+            <p className="text-sm leading-relaxed opacity-80 mt-2">
+              If you use these models, consider supporting Quaternius on{" "}
+              <a
+                href="https://www.patreon.com/quaternius"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-400 hover:underline"
+              >
+                Patreon
+              </a>
+              .
+            </p>
           </section>
 
           <section className="mb-6">
