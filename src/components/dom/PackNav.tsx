@@ -13,6 +13,9 @@ const downloadStyles =
 const buttonStyle =
   "z-[1500] font-leva text-sm	absolute w-10 h-10 bg-yellow-400 hover:w-11 hover:h-11 top-0 cursor-pointer transition-all transform duration-700 flex items-center justify-center";
 
+const cardStyle =
+  "block mb-3 p-2 border rounded border-leva-medium text-leva-light-grey hover:text-leva-white hover:border-leva-light-grey";
+
 const navButton =
   "z-[1500] font-leva text-sm w-10 h-10 bg-leva-dark text-leva-white cursor-pointer hover:bg-leva-medium";
 
@@ -57,7 +60,9 @@ export function PackNav() {
       </button>
       <div className={`${sideStyle} ${!open && "-translate-x-60"}`}>
         {open && (
-          <div className="relative h-full min-h-[750px]">
+          // Flex column so the bottom block (cards + footer) sits below the
+          // pack list and pushes the sidebar to scroll instead of overlapping.
+          <div className="flex flex-col min-h-full">
             <h1 className="pt-2 mb-2 text-lg">
               <a
                 className="text-leva-light-grey hover:underline hover:decoration-solid"
@@ -85,18 +90,24 @@ export function PackNav() {
                 );
               })}
             </div>
-            <footer className="absolute bottom-0 left-0 z-30 text-leva-light-grey">
-              <div>
-                <a href={"https://trebeljahr.com"}>
-                  Built with <span style={{ color: " #F35269" }}>♥</span> by Rico
-                </a>
-              </div>
-              <div className="mt-1">
-                <Link href="/imprint" className="hover:underline">
-                  Imprint
-                </Link>
-              </div>
-            </footer>
+            <div className="mt-auto pt-4">
+              <a className={cardStyle} href={"https://www.patreon.com/quaternius"}>
+                Made by Quaternius. If you use his work, consider supporting his{" "}
+                <span className="underline">Patreon</span>.
+              </a>
+              <footer className="text-leva-light-grey">
+                <div>
+                  <a href={"https://trebeljahr.com"}>
+                    Built with <span style={{ color: " #F35269" }}>♥</span> by Rico
+                  </a>
+                </div>
+                <div className="mt-1">
+                  <Link href="/imprint" className="hover:underline">
+                    Imprint
+                  </Link>
+                </div>
+              </footer>
+            </div>
           </div>
         )}
       </div>
