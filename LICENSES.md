@@ -51,6 +51,10 @@ links to that deed.
 
 No pack was removed. Every pack on the site is CC0-1.0 upstream.
 
+The license badge in the sidebar of each pack page reads
+[`src/lib/licenses.ts`](src/lib/licenses.ts). When you change this table,
+change that file too.
+
 ## Model directories
 
 The site has 32 packs, but `public/glb/` has 33 directories.

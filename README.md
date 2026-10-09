@@ -57,8 +57,6 @@ you stage.
 
 Good first PRs:
 
-- **Per-pack license badge.** Show the upstream license name, for example
-  CC0, next to the pack title, and link it to the license page.
 - **Per-pack Open Graph images.** Every pack page shares `public/og-image.png`
   today. A script that renders one image per pack gives each pack its own link
   preview.

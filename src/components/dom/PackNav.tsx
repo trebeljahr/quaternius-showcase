@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { DownloadIcon } from "@/components/dom/DownloadIcon";
 import { GltfDownload } from "@/components/dom/GltfDownload";
+import { PackLicense } from "@/components/dom/PackLicense";
 import { RecentPacks } from "@/components/dom/RecentPacks";
 import { usePackViewer } from "@/components/PackViewerProvider";
 import * as AllModels from "@/components/quaternius";
@@ -86,6 +87,7 @@ export function PackNav() {
                 Free 3D Models by <span>@Quaternius</span>
               </a>
             </h1>
+            {id && <PackLicense id={id} />}
 
             <RecentPacks currentId={id} />
 
