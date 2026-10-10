@@ -16,7 +16,8 @@ The site has 32 packs and 1,513 models. Each pack has its own page, for
 example [`/dinosaurs_pack`](https://quaternius.trebeljahr.com/dinosaurs_pack).
 The model on screen turns in a live 3D scene, and you can drag to orbit it.
 Press ← and → to step through the pack, and space to stop or start the
-rotation. The download button saves the `.glb` file of the model on screen.
+rotation. The download buttons save the model on screen as a `.glb` or a
+`.gltf` file.
 
 ## Licenses
 
@@ -58,8 +59,6 @@ Good first PRs:
 
 - **Per-pack license badge.** Show the upstream license name, for example
   CC0, next to the pack title, and link it to the license page.
-- **`.gltf` download** next to the `.glb` button, for packs where Quaternius
-  ships a `.gltf` file.
 - **Per-pack Open Graph images.** Every pack page shares `public/og-image.png`
   today. A script that renders one image per pack gives each pack its own link
   preview.
