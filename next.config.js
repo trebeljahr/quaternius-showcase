@@ -15,6 +15,9 @@ const withPWA = require("next-pwa")({
 const nextConfig = {
   // Static export for Cloudflare Workers assets hosting.
   output: "export",
+  // Pin the workspace root to this repo. In a git worktree nested inside the
+  // main checkout, Next otherwise sees two pnpm-lock.yaml files and warns.
+  outputFileTracingRoot: __dirname,
   experimental: {},
   // No image optimization server behind a static export.
   images: { unoptimized: true },
@@ -56,6 +59,10 @@ const KEYS_TO_OMIT = [
   "webpack5",
   "amp",
   "assetPrefix",
+  // Next 15 warns on these deprecated keys whenever they are present, and
+  // spreading defaultConfig below brings them in as empty objects.
+  "publicRuntimeConfig",
+  "serverRuntimeConfig",
 ];
 
 module.exports = (_phase, { defaultConfig }) => {
