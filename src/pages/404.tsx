@@ -1,4 +1,11 @@
-// biome-ignore lint/suspicious/noShadowRestrictedNames: Next.js convention (Error component name)
-export default function Error() {
-  return <h1>404 - Something went wrong</h1>;
+import { ErrorPage } from "@/components/dom/ErrorPage";
+
+export default function NotFoundPage() {
+  return (
+    <ErrorPage
+      code={404}
+      heading="Page not found"
+      message="This page does not exist. The link may be old, or the address may have a typo."
+    />
+  );
 }

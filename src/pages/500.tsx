@@ -1,4 +1,11 @@
-// biome-ignore lint/suspicious/noShadowRestrictedNames: Next.js convention (Error component name)
-export default function Error() {
-  return <h1>500 - Something went wrong</h1>;
+import { ErrorPage } from "@/components/dom/ErrorPage";
+
+export default function ServerErrorPage() {
+  return (
+    <ErrorPage
+      code={500}
+      heading="Server error"
+      message="Something went wrong on our side. Please try again in a moment."
+    />
+  );
 }
