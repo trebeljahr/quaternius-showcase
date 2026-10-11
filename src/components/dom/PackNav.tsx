@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { DownloadIcon } from "@/components/dom/DownloadIcon";
 import { GltfDownload } from "@/components/dom/GltfDownload";
 import { PackLicense } from "@/components/dom/PackLicense";
 import { RecentPacks } from "@/components/dom/RecentPacks";
-import { usePackViewer } from "@/components/PackViewerProvider";
+import { type Ids, usePackViewer } from "@/components/PackViewerProvider";
 import * as AllModels from "@/components/quaternius";
 import { formatPackName } from "@/lib/seo";
 
@@ -22,6 +23,11 @@ const cardStyle =
 const navButton =
   "z-[1500] font-leva text-sm w-10 h-10 bg-leva-dark text-leva-white cursor-pointer hover:bg-leva-medium";
 
+const randomButton =
+  "w-full mb-2 px-2 py-1 text-left bg-leva-medium text-leva-white cursor-pointer hover:underline";
+
+const PACK_IDS = Object.keys(AllModels) as Ids[];
+
 /**
  * The persistent chrome: pack list, prev/next buttons and the .glb and .gltf downloads.
  *
@@ -31,6 +37,12 @@ const navButton =
  */
 export function PackNav() {
   const { id, modelUrls, model, open, toggleOpen, gotoPrev, gotoNext } = usePackViewer();
+  const router = useRouter();
+
+  const gotoRandomPack = () => {
+    const others = PACK_IDS.filter((name) => name !== id);
+    router.push(`/${others[Math.floor(Math.random() * others.length)]}`);
+  };
 
   return (
     <>
@@ -90,6 +102,10 @@ export function PackNav() {
             {id && <PackLicense id={id} />}
 
             <RecentPacks currentId={id} />
+
+            <button type="button" className={randomButton} onClick={gotoRandomPack}>
+              Random pack
+            </button>
 
             <div>
               {Object.entries(AllModels).map(([name, pack]) => {
