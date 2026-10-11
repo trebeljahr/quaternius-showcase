@@ -72,6 +72,17 @@ export default function ImprintPage() {
           </section>
 
           <section className="mb-6">
+            <h2 className="text-lg font-semibold mb-1">Press</h2>
+            <p className="text-sm opacity-80">
+              Facts, credit and descriptions for writers are on the{" "}
+              <Link href="/press" className="text-yellow-400 hover:underline">
+                press page
+              </Link>
+              .
+            </p>
+          </section>
+
+          <section className="mb-6">
             <h2 className="text-lg font-semibold mb-1">
               Person Responsible for Content (§ 18 (2) MStV)
             </h2>

@@ -65,6 +65,12 @@ const entries = [
     changeFrequency: "yearly",
     priority: 0.3,
   },
+  {
+    path: "/press",
+    lastModified: (await stat(join(process.cwd(), "src", "pages", "press.tsx"))).mtime,
+    changeFrequency: "monthly",
+    priority: 0.3,
+  },
 ];
 
 await writeFile(SITEMAP_PATH, renderSitemap(entries), "utf8");

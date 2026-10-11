@@ -198,4 +198,10 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://quaternius.trebeljahr.com/press</loc>
+    <lastmod>2026-10-09T22:09:59.219Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
