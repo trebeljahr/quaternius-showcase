@@ -108,20 +108,38 @@ export function PackViewerProvider({
 
   useEffect(() => {
     setIndex(0);
+    // Space is the viewer's only while a pack is on screen. Text pages scroll
+    // with it, and the Leva animation select opens with it.
+    function isViewerSpace(event: KeyboardEvent) {
+      if (event.key !== " " || !id) return false;
+      const target = event.target instanceof Element ? event.target : null;
+      return !target?.closest("input, select, textarea, [contenteditable]");
+    }
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "ArrowRight") {
         gotoNext();
       } else if (event.key === "ArrowLeft") {
         gotoPrev();
-      } else if (event.key === " ") {
-        stopped.current = !stopped.current;
+      } else if (isViewerSpace(event)) {
+        // A clicked button keeps focus, so space would also press it again
+        // (re-toggling the sidebar or skipping a model) and scroll the list.
+        event.preventDefault();
+        if (!event.repeat) stopped.current = !stopped.current;
       }
+    }
+    // Firefox presses a focused button on keyup, not keydown.
+    function handleKeyUp(event: KeyboardEvent) {
+      if (isViewerSpace(event)) event.preventDefault();
     }
 
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
 
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [gotoNext, gotoPrev]);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [id, gotoNext, gotoPrev]);
 
   useEffect(() => {
     components.forEach(({ Component }) =>
