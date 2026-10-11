@@ -40,6 +40,16 @@ export default function App({ Component, pageProps }: ShowcaseAppProps) {
     router.events.on("routeChangeStart", rememberLeftUrl);
     return () => router.events.off("routeChangeStart", rememberLeftUrl);
   }, [router.events]);
+
+  // The manifest makes the site installable, so Chrome on Android would show
+  // an "Install app" mini-infobar over the viewer's bottom buttons. Cancelling
+  // the event hides that bar; installing from the browser menu still works.
+  useEffect(() => {
+    const hideInstallBar = (event: Event) => event.preventDefault();
+    window.addEventListener("beforeinstallprompt", hideInstallBar);
+    return () => window.removeEventListener("beforeinstallprompt", hideInstallBar);
+  }, []);
+
   return (
     <>
       <Script id="plausible-loader" strategy="afterInteractive">
