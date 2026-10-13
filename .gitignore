@@ -33,6 +33,9 @@ yarn-error.log*
 /public/workbox-*.js
 /public/sw.js
 
+# written by scripts/generate-sitemap.mjs on every build
+/public/sitemap.xml
+
 # prefer yarn than npm
 package-lock.json
 

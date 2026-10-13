@@ -1,5 +1,9 @@
+import { execFile } from "node:child_process";
 import { readdir, readFile, stat, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { promisify } from "node:util";
+
+const execFileAsync = promisify(execFile);
 
 const SITE_URL = "https://quaternius.trebeljahr.com";
 const PACKS_DIR = join(process.cwd(), "src", "components", "quaternius");
@@ -14,6 +18,20 @@ function escapeXml(value) {
     .replaceAll("'", "&apos;");
 }
 
+// lastmod is the last commit that touched the page's source. File mtime is the
+// checkout time, so it differed in every clone and every deploy stamped all
+// pages as modified at that moment. Needs full history: a shallow clone
+// answers with the date of HEAD for every path.
+async function lastModified(path) {
+  try {
+    const { stdout } = await execFileAsync("git", ["log", "-1", "--format=%cI", "--", path]);
+    if (stdout.trim()) return new Date(stdout.trim());
+  } catch {
+    // No git, for example a source tarball: fall through to mtime.
+  }
+  return (await stat(path)).mtime;
+}
+
 async function packEntries() {
   const dirs = await readdir(PACKS_DIR, { withFileTypes: true });
   const packs = dirs
@@ -23,13 +41,16 @@ async function packEntries() {
 
   return Promise.all(
     packs.map(async (pack) => {
-      const indexPath = join(PACKS_DIR, pack, "index.ts");
-      const [source, stats] = await Promise.all([readFile(indexPath, "utf8"), stat(indexPath)]);
+      const packDir = join(PACKS_DIR, pack);
+      const [source, modified] = await Promise.all([
+        readFile(join(packDir, "index.ts"), "utf8"),
+        lastModified(packDir),
+      ]);
       const modelCount = (source.match(/^export const /gm) ?? []).length;
 
       return {
         path: `/${pack}`,
-        lastModified: stats.mtime,
+        lastModified: modified,
         changeFrequency: "monthly",
         priority: pack === "animals_pack" ? 1 : 0.8,
         modelCount,
@@ -61,13 +82,13 @@ const entries = [
   ...(await packEntries()),
   {
     path: "/imprint",
-    lastModified: (await stat(join(process.cwd(), "src", "pages", "imprint.tsx"))).mtime,
+    lastModified: await lastModified(join(process.cwd(), "src", "pages", "imprint.tsx")),
     changeFrequency: "yearly",
     priority: 0.3,
   },
   {
     path: "/press",
-    lastModified: (await stat(join(process.cwd(), "src", "pages", "press.tsx"))).mtime,
+    lastModified: await lastModified(join(process.cwd(), "src", "pages", "press.tsx")),
     changeFrequency: "monthly",
     priority: 0.3,
   },

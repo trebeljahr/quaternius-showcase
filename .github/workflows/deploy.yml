@@ -14,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          # The sitemap takes each page's lastmod from git log; a shallow
+          # clone would date every page to the deployed commit.
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v4
 
