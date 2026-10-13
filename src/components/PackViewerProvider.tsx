@@ -32,6 +32,16 @@ interface PackViewerValue {
 }
 
 const NO_MODEL_URLS: Record<string, string> = {};
+const NO_MODELS: PackModel[] = [];
+
+function listModels(id: Ids | undefined): PackModel[] {
+  if (!id) return NO_MODELS;
+  return Object.entries(AllModels[id]).map(([key, Component]) => ({ key, Component }));
+}
+
+function preload({ Component }: PackModel) {
+  (Component as typeof Component & { render: { preload(): void } }).render.preload();
+}
 
 const PackViewerContext = createContext<PackViewerValue | null>(null);
 
@@ -54,9 +64,17 @@ export function PackViewerProvider({
   modelUrls,
   children,
 }: PropsWithChildren<{ id?: Ids; modelUrls?: Record<string, string> }>) {
-  const [index, setIndex] = useState(0);
+  // Derived during render, not in an effect, so the statically exported HTML
+  // already carries the first model's download links. Set from an effect, they
+  // only appeared after hydration, late enough to count as the page's LCP.
+  const components = useMemo(() => listModels(id), [id]);
+  // The index belongs to one pack. Keeping the pack id next to it resets the
+  // position on a pack switch without a render that pairs the new pack with
+  // the old index (and would fetch a model nobody asked for).
+  const [position, setPosition] = useState({ id, index: 0 });
+  const index = position.id === id ? position.index : 0;
+  const [browsing, setBrowsing] = useState(false);
   const [open, setOpen] = useState(false);
-  const [components, setComponents] = useState<PackModel[]>([]);
   const { width } = useWindowSize();
 
   const stopped = useRef(false);
@@ -77,37 +95,22 @@ export function PackViewerProvider({
     };
   }, [width]);
 
-  useEffect(() => {
-    if (!id) {
-      setComponents([]);
-      return;
-    }
-    const selectedPack = AllModels[id];
-    setComponents(
-      Object.entries(selectedPack).map(([key, Component]) => {
-        return { key, Component };
-      }),
-    );
-  }, [id]);
+  const step = useCallback(
+    (offset: number) => {
+      setBrowsing(true);
+      setPosition((old) => {
+        const from = old.id === id ? old.index : 0;
+        const count = Math.max(components.length, 1);
+        return { id, index: (from + offset + count) % count };
+      });
+    },
+    [id, components.length],
+  );
 
-  const gotoPrev = useCallback(() => {
-    setIndex((old) => {
-      const next = old - 1;
-      if (next < 0) return components.length - 1;
-      return next;
-    });
-  }, [components.length]);
-
-  const gotoNext = useCallback(() => {
-    setIndex((old) => {
-      const next = old + 1;
-      if (next >= components.length) return 0;
-      return next;
-    });
-  }, [components.length]);
+  const gotoPrev = useCallback(() => step(-1), [step]);
+  const gotoNext = useCallback(() => step(1), [step]);
 
   useEffect(() => {
-    setIndex(0);
     // Space is the viewer's only while a pack is on screen. Text pages scroll
     // with it, and the Leva animation select opens with it.
     function isViewerSpace(event: KeyboardEvent) {
@@ -141,11 +144,16 @@ export function PackViewerProvider({
     };
   }, [id, gotoNext, gotoPrev]);
 
+  // Fetch the models on either side of the current one, so stepping through a
+  // pack stays instant, but only once the visitor has started stepping. This
+  // used to preload the whole pack on arrival: 34 MB for the 11 spaceships,
+  // most of it never looked at, and seconds of main-thread parsing on a phone.
   useEffect(() => {
-    components.forEach(({ Component }) =>
-      (Component as typeof Component & { render: { preload(): void } }).render.preload(),
-    );
-  }, [components]);
+    if (!browsing || components.length < 2) return;
+    for (const offset of [-1, 1]) {
+      preload(components[(index + offset + components.length) % components.length]);
+    }
+  }, [browsing, components, index]);
 
   const model = components[index];
 
