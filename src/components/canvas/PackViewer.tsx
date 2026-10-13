@@ -1,8 +1,19 @@
 import { Environment, OrbitControls, Stage } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { useRef } from "react";
 import type { Group } from "three";
+import { WorkerRGBELoader } from "@/components/canvas/WorkerRGBELoader";
 import { usePackViewer } from "@/components/PackViewerProvider";
+
+const ENVIRONMENT_URL =
+  "https://raw.githubusercontent.com/pmndrs/drei-assets/456060a26bbeb8fdf79326f224b6d99b8bcce736/hdri/potsdamer_platz_1k.hdr";
+
+// Its own component, so it suspends next to the model instead of in front of
+// it: the .hdr and the first .glb download at the same time.
+function StudioEnvironment() {
+  const map = useLoader(WorkerRGBELoader, ENVIRONMENT_URL);
+  return <Environment map={map} />;
+}
 
 /**
  * The scene contents. Everything DOM lives in components/dom/PackNav, outside
@@ -27,10 +38,7 @@ export function PackViewer() {
             <Model.Component />
           </group>
         )}
-        <Environment
-          path="https://raw.githubusercontent.com/pmndrs/drei-assets/456060a26bbeb8fdf79326f224b6d99b8bcce736/hdri/"
-          files="potsdamer_platz_1k.hdr"
-        />
+        <StudioEnvironment />
       </Stage>
       <OrbitControls makeDefault />
       <color attach="background" args={["#f5efe6"]} />

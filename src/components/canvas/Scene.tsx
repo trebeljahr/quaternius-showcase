@@ -1,4 +1,4 @@
-import { KeyboardControls, Preload } from "@react-three/drei";
+import { KeyboardControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 export default function Scene({ children, ...props }) {
@@ -18,7 +18,6 @@ export default function Scene({ children, ...props }) {
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         {children}
-        <Preload all />
       </Canvas>
     </KeyboardControls>
   );
