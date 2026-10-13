@@ -5,8 +5,10 @@ import type { Group } from "three";
 import { WorkerRGBELoader } from "@/components/canvas/WorkerRGBELoader";
 import { usePackViewer } from "@/components/PackViewerProvider";
 
-const ENVIRONMENT_URL =
-  "https://raw.githubusercontent.com/pmndrs/drei-assets/456060a26bbeb8fdf79326f224b6d99b8bcce736/hdri/potsdamer_platz_1k.hdr";
+// Served from public/hdri instead of the drei-assets repo on GitHub. No model
+// shows until this file arrives, and raw.githubusercontent.com links have
+// broken before. Source and license: LICENSES.md.
+const ENVIRONMENT_URL = "/hdri/potsdamer_platz_1k.hdr";
 
 // Its own component, so it suspends next to the model instead of in front of
 // it: the .hdr and the first .glb download at the same time.

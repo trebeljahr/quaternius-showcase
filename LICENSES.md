@@ -95,3 +95,19 @@ updated 2026-08-28. No pack on this site is under the QAL: each of their
 source pages still names CC0. Before you add a pack, check the license on its
 source page. Do not add a QAL pack, because this site serves the model files
 for download.
+
+## Lighting image
+
+The viewer lights every model with one HDR image. It is not a Quaternius
+asset.
+
+| File | Name | Author | License | Source URL |
+| --- | --- | --- | --- | --- |
+| `public/hdri/potsdamer_platz_1k.hdr` | Potsdamer Platz | Greg Zaal, Poly Haven | CC0-1.0 | https://polyhaven.com/a/potsdamer_platz |
+
+The file is an unchanged copy of `hdri/potsdamer_platz_1k.hdr` from
+[pmndrs/drei-assets](https://github.com/pmndrs/drei-assets) at commit
+`456060a`. That repo credits its HDRIs to HDRI Haven, which is now Poly Haven.
+Poly Haven licenses all its assets as CC0: https://polyhaven.com/license.
+The site loaded this file from GitHub until 2026-10-13. It now ships with the
+site.

@@ -10,6 +10,10 @@
 /glb/*
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
+# Same reasoning for the lighting image every pack page loads.
+/hdri/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
 /icons/*
   Cache-Control: public, max-age=2592000
 

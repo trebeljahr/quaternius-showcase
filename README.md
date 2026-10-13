@@ -21,12 +21,14 @@ rotation. The download buttons save the model on screen as a `.glb` or a
 
 ## Licenses
 
-Two licenses apply to this repo:
+The files in this repo have different licenses:
 
 - The showcase source code is MIT. See [`LICENSE`](LICENSE).
 - The model files under `public/glb/` are © Quaternius. Each pack keeps its
   upstream license. [`LICENSES.md`](LICENSES.md) lists the license and the
   source page for each pack.
+- The lighting image under `public/hdri/` is by Greg Zaal for Poly Haven. Its
+  license is CC0. [`LICENSES.md`](LICENSES.md) names the source.
 
 The MIT license does not cover the models. If you use a model in a project,
 follow the license of its pack. To support the artist, see
