@@ -68,15 +68,6 @@ export default function App({ Component, pageProps }: ShowcaseAppProps) {
             })();
           `}
       </Script>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-FZYX7YZ8V7" />
-      <Script id="gtaginit">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-FZYX7YZ8V7');
-       `}
-      </Script>
       <Header
         title={pageProps.title}
         description={pageProps.description}
