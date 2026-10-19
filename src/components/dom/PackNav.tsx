@@ -141,6 +141,16 @@ export function PackNav() {
                   </a>
                 </div>
                 <div className="mt-1">
+                  <a href={"https://ricos.site/projects"} className="hover:underline">
+                    More things → ricos.site/projects
+                  </a>
+                  {" · "}
+                  {/* The models are Quaternius's work, so support goes to him. */}
+                  <a href={"https://www.patreon.com/quaternius"} className="hover:underline">
+                    Support
+                  </a>
+                </div>
+                <div className="mt-1">
                   <Link href="/imprint" className="hover:underline">
                     Imprint
                   </Link>
