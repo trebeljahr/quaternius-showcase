@@ -57,6 +57,10 @@ Pull requests are welcome. Keep each one to a single change. Run `pnpm lint`
 and `pnpm build` before you open it. A pre-commit hook runs Biome on the files
 you stage.
 
+A change that adds a request to another host, or a new key in the browser's
+storage, must update [`src/pages/privacy.tsx`](src/pages/privacy.tsx) in the
+same pull request.
+
 Good first PRs:
 
 - **Per-pack Open Graph images.** Every pack page shares `public/og-image.png`

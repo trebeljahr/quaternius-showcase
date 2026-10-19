@@ -206,6 +206,10 @@ export default function PressPage() {
             <Link href="/imprint" className={linkStyle}>
               Imprint
             </Link>
+            {" · "}
+            <Link href="/privacy" className={linkStyle}>
+              Privacy
+            </Link>
           </p>
         </section>
       </div>

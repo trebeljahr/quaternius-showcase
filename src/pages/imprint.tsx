@@ -35,7 +35,11 @@ export default function ImprintPage() {
 
           <p className="text-sm opacity-70 mb-6">
             Information pursuant to § 5 DDG (German Digital Services Act) and § 18 (2) MStV
-            (Interstate Media Treaty).
+            (Interstate Media Treaty). See also the{" "}
+            <Link href="/privacy" className="text-yellow-400 hover:underline">
+              Privacy
+            </Link>{" "}
+            page.
           </p>
 
           <section className="mb-6">

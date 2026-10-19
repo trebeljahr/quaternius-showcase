@@ -144,6 +144,10 @@ export function PackNav() {
                   <Link href="/imprint" className="hover:underline">
                     Imprint
                   </Link>
+                  {" · "}
+                  <Link href="/privacy" className="hover:underline">
+                    Privacy
+                  </Link>
                 </div>
               </footer>
             </div>

@@ -87,6 +87,12 @@ const entries = [
     priority: 0.3,
   },
   {
+    path: "/privacy",
+    lastModified: await lastModified(join(process.cwd(), "src", "pages", "privacy.tsx")),
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  {
     path: "/press",
     lastModified: await lastModified(join(process.cwd(), "src", "pages", "press.tsx")),
     changeFrequency: "monthly",
