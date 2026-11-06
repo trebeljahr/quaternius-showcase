@@ -1,6 +1,16 @@
 {
   "name": "react-three-next",
   "version": "2.0.0",
+  "description": "Fan-made 3D viewer for the free low-poly model packs by Quaternius. Not affiliated with Quaternius.",
+  "homepage": "https://quaternius.trebeljahr.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trebeljahr/quaternius-showcase.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trebeljahr/quaternius-showcase/issues"
+  },
+  "author": "Rico Trebeljahr",
   "authors": [
     "Rico Trebeljahr"
   ],
@@ -52,6 +62,8 @@
     "preview": "npx --yes serve out",
     "generateExports": "tsx ./scripts/codeGenExports.ts",
     "verify:downloads": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/verify-download-links.mjs",
+    "marketing:screenshots": "node scripts/marketing/capture-screenshots.mjs",
+    "marketing:social-preview": "node scripts/marketing/render-social-preview.mjs",
     "format": "biome format --write .",
     "check": "biome check --write .",
     "prepare": "husky"

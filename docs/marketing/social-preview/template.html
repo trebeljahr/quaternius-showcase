@@ -1,0 +1,301 @@
+<!doctype html>
+<!--
+  GitHub social preview cards, 1280x640. Open with ?v=a, ?v=b or ?v=c.
+  Rendered to PNG by scripts/marketing/render-social-preview.mjs.
+  Model crops come from the real captures in docs/marketing/screenshots/.
+  Colours are the site's: viewer beige #e9dccb, panel #181c20, button #facc15,
+  and the gradient and cube of public/og-image.svg. Key content stays inside
+  a 64 px safe margin. Every option says the site is fan-made.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quaternius Showcase social preview</title>
+    <style>
+      :root {
+        --beige: #e9dccb;
+        --panel: #181c20;
+        --yellow: #facc15;
+        --gold: #f2c94c;
+        --white: #f8fafc;
+        --grey: #8c92a4;
+        --safe: 64px;
+        --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+        --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 1280px;
+        height: 640px;
+        overflow: hidden;
+        background: var(--panel);
+        color: var(--white);
+        font-family: var(--sans);
+      }
+      .card {
+        position: relative;
+        width: 1280px;
+        height: 640px;
+        overflow: hidden;
+        display: none;
+      }
+      .card.active {
+        display: block;
+      }
+      /* A crop of a 3200x2000 capture, centred on the model. */
+      .crop {
+        background-color: var(--beige);
+        background-repeat: no-repeat;
+      }
+      .kicker {
+        font-family: var(--mono);
+        font-size: 22px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--grey);
+      }
+      .note {
+        font-family: var(--mono);
+        font-size: 24px;
+        color: var(--white);
+      }
+      .url {
+        font-family: var(--mono);
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      /* A: one model large on the left, text panel on the right. */
+      #a .crop {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 720px;
+        height: 640px;
+        background-image: url("../screenshots/dinosaurs-trex-sidebar.jpg");
+        background-size: 2000px 1250px;
+        background-position: 48.5% 52%;
+      }
+      #a .text {
+        position: absolute;
+        left: 784px;
+        right: var(--safe);
+        top: var(--safe);
+        bottom: var(--safe);
+        display: flex;
+        flex-direction: column;
+      }
+      #a h1 {
+        font-size: 54px;
+        font-weight: 800;
+        line-height: 1.08;
+        margin-top: 22px;
+      }
+      #a .line {
+        font-size: 28px;
+        line-height: 1.35;
+        color: #e5e7eb;
+        margin-top: 24px;
+      }
+      #a .note {
+        margin-top: auto;
+      }
+      #a .url {
+        color: var(--yellow);
+        margin-top: 12px;
+      }
+
+      /* B: the og-image brand: gradient, cube, bold sans. */
+      #b {
+        background: linear-gradient(135deg, #10131f 0%, #26283d 54%, #f2c94c 100%);
+      }
+      #b .hill {
+        position: absolute;
+        inset: 0;
+      }
+      #b .cube {
+        position: absolute;
+        right: 120px;
+        top: 112px;
+        width: 380px;
+      }
+      #b .text {
+        position: absolute;
+        left: var(--safe);
+        top: var(--safe);
+        bottom: var(--safe);
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+      }
+      #b .kicker {
+        color: var(--white);
+        font-family: var(--sans);
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: 0.14em;
+      }
+      #b h1 {
+        font-size: 92px;
+        font-weight: 900;
+        line-height: 1;
+        margin-top: 36px;
+      }
+      #b h2 {
+        font-size: 66px;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-top: 6px;
+      }
+      #b .line {
+        font-size: 30px;
+        color: #e5e7eb;
+        margin-top: 26px;
+      }
+      #b .note {
+        margin-top: auto;
+      }
+      #b .url {
+        color: var(--gold);
+        margin-top: 10px;
+      }
+
+      /* C: four models in a row, text band below. */
+      #c .row {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 360px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+        background: var(--panel);
+      }
+      #c .row .crop {
+        background-size: 1280px 800px;
+      }
+      #c .text {
+        position: absolute;
+        left: var(--safe);
+        right: var(--safe);
+        bottom: var(--safe);
+        top: 404px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        column-gap: 40px;
+      }
+      #c h1 {
+        font-size: 46px;
+        font-weight: 800;
+        line-height: 1.1;
+      }
+      #c .note {
+        margin-top: 14px;
+      }
+      #c .url {
+        color: var(--yellow);
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="card" id="a">
+      <div class="crop" role="img" aria-label="A low-poly T-rex in the viewer"></div>
+      <div class="text">
+        <p class="kicker">Quaternius Showcase</p>
+        <h1>32 free Quaternius packs in 3D</h1>
+        <p class="line">Turn each low-poly model before you download its .glb file.</p>
+        <p class="note">Fan-made. Not affiliated with Quaternius.</p>
+        <p class="url">quaternius.trebeljahr.com</p>
+      </div>
+    </section>
+
+    <section class="card" id="b">
+      <svg class="hill" viewBox="0 0 1280 640" aria-hidden="true">
+        <path
+          d="M0 478 C181 427 292 518 457 465 C634 408 710 289 913 321 C1084 348 1178 256 1280 199 L1280 640 L0 640 Z"
+          fill="#111827"
+          opacity="0.56"
+        />
+      </svg>
+      <svg class="cube" viewBox="622 152 396 456" aria-hidden="true">
+        <g stroke="#111827" stroke-width="8" stroke-linejoin="round">
+          <path d="M820 152 L1018 266 L1018 494 L820 608 L622 494 L622 266 Z" fill="#f2c94c" />
+          <path d="M820 152 L1018 266 L820 380 L622 266 Z" fill="#f8df83" />
+          <path d="M622 266 L820 380 L820 608 L622 494 Z" fill="#d89b2b" />
+          <path d="M1018 266 L820 380 L820 608 L1018 494 Z" fill="#a86f20" />
+        </g>
+      </svg>
+      <div class="text">
+        <p class="kicker">Low-poly model showcase</p>
+        <h1>3D Models</h1>
+        <h2>by @Quaternius</h2>
+        <p class="line">Preview and download free GLB packs for games.</p>
+        <p class="note">Fan-made viewer. Not affiliated with Quaternius.</p>
+        <p class="url">quaternius.trebeljahr.com</p>
+      </div>
+    </section>
+
+    <section class="card" id="c">
+      <div class="row">
+        <div
+          class="crop"
+          role="img"
+          aria-label="T-rex"
+          style="
+            background-image: url(&quot;../screenshots/dinosaurs-trex-sidebar.jpg&quot;);
+            background-size: 960px 600px;
+            background-position: 49% 52%;
+          "
+        ></div>
+        <div
+          class="crop"
+          role="img"
+          aria-label="Cow"
+          style="
+            background-image: url(&quot;../screenshots/animals-pack.jpg&quot;);
+            background-size: 1120px 700px;
+            background-position: 48% 50%;
+          "
+        ></div>
+        <div
+          class="crop"
+          role="img"
+          aria-label="Spaceship"
+          style="
+            background-image: url(&quot;../screenshots/spaceships-pack.jpg&quot;);
+            background-position: 51% 57%;
+          "
+        ></div>
+        <div
+          class="crop"
+          role="img"
+          aria-label="Mech"
+          style="
+            background-image: url(&quot;../screenshots/mech-pack.jpg&quot;);
+            background-size: 1120px 700px;
+            background-position: 49% 45%;
+          "
+        ></div>
+      </div>
+      <div class="text">
+        <div>
+          <h1>See each free Quaternius model in 3D before you download it</h1>
+          <p class="note">Fan-made. Not affiliated with Quaternius.</p>
+        </div>
+        <p class="url">quaternius.trebeljahr.com</p>
+      </div>
+    </section>
+
+    <script>
+      const variant = new URLSearchParams(location.search).get("v") || "a";
+      document.getElementById(variant)?.classList.add("active");
+    </script>
+  </body>
+</html>

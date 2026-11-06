@@ -1,0 +1,93 @@
+{
+  "screenshots": {
+    "dinosaurs-trex-sidebar": {
+      "file": "docs/marketing/screenshots/dinosaurs-trex-sidebar.jpg",
+      "purpose": "README hero: a pack page with the pack list open",
+      "width": 3200,
+      "height": 2000,
+      "bytes": 228469,
+      "sha256": "78d4479e3178cc2230084d50d986adc5c70b4f84f901af27f7389614c016499c",
+      "source": "https://quaternius.trebeljahr.com/dinosaurs_pack (next model x3)",
+      "sidebar": "open",
+      "captured": "2026-11-06",
+      "commit": "c664c6f2"
+    },
+    "animals-pack": {
+      "file": "docs/marketing/screenshots/animals-pack.jpg",
+      "purpose": "A pack page with the pack list closed",
+      "width": 3200,
+      "height": 2000,
+      "bytes": 80281,
+      "sha256": "1cec22e999bc0e4837cd2b045db7febb3113225604bec9877bf4b66671b8002c",
+      "source": "https://quaternius.trebeljahr.com/animals_pack (next model x2)",
+      "sidebar": "closed",
+      "captured": "2026-11-06",
+      "commit": "c664c6f2"
+    },
+    "spaceships-pack": {
+      "file": "docs/marketing/screenshots/spaceships-pack.jpg",
+      "purpose": "A pack page: spaceships",
+      "width": 3200,
+      "height": 2000,
+      "bytes": 63607,
+      "sha256": "6df973d02f5133170044d4ac8d3262e55e8799d84f0ff858deb0eb9827875f4e",
+      "source": "https://quaternius.trebeljahr.com/spaceships_pack",
+      "sidebar": "closed",
+      "captured": "2026-11-06",
+      "commit": "c664c6f2"
+    },
+    "mobile-dinosaurs": {
+      "file": "docs/marketing/screenshots/mobile-dinosaurs.jpg",
+      "purpose": "Phone width: a pack page",
+      "width": 1170,
+      "height": 2532,
+      "bytes": 73918,
+      "sha256": "4140418355085646b4d3fa66b080e748eaf5a4a17e48bff933bcb3ac51837fac",
+      "source": "https://quaternius.trebeljahr.com/dinosaurs_pack (next model x3)",
+      "sidebar": "closed",
+      "captured": "2026-11-06",
+      "commit": "c664c6f2"
+    },
+    "mech-pack": {
+      "file": "docs/marketing/screenshots/mech-pack.jpg",
+      "purpose": "A pack page: mechs",
+      "width": 3200,
+      "height": 2000,
+      "bytes": 95048,
+      "sha256": "d52b1263b0faca7de5ef93b3c3ed4d10675e003b58529a657f3d6ef86ee41a8e",
+      "source": "https://quaternius.trebeljahr.com/mech_pack",
+      "sidebar": "closed",
+      "captured": "2026-11-06",
+      "commit": "c664c6f2"
+    }
+  },
+  "socialPreview": {
+    "a": {
+      "file": "docs/marketing/social-preview/social-preview-a.png",
+      "purpose": "Screenshot-led: the T-rex large on the left, title, line and fan-made note on the right",
+      "width": 1280,
+      "height": 640,
+      "bytes": 119570,
+      "sha256": "41591c5da8fb164c70dd1f86ee4f75de21caea7160c6bcfecbd2f3b3b69b7b6f",
+      "rendered": "2026-11-06"
+    },
+    "b": {
+      "file": "docs/marketing/social-preview/social-preview-b.png",
+      "purpose": "Brand-led: the og-image gradient and cube, with the fan-made note",
+      "width": 1280,
+      "height": 640,
+      "bytes": 236749,
+      "sha256": "41ac974f35c57a2ea549ecef4dfa755dc1ef919f67963e9de65afff11358bfa9",
+      "rendered": "2026-11-06"
+    },
+    "c": {
+      "file": "docs/marketing/social-preview/social-preview-c.png",
+      "purpose": "Four models in a row, one line and the fan-made note below",
+      "width": 1280,
+      "height": 640,
+      "bytes": 163800,
+      "sha256": "8c9cb2e3d0228ad4edea219596d7e2aeba588dd32a36d54ff721ddc387dc9b33",
+      "rendered": "2026-11-06"
+    }
+  }
+}
