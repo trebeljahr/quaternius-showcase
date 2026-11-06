@@ -183,15 +183,6 @@ export default function PressPage() {
           </ul>
         </section>
 
-        <section className={sectionStyle}>
-          <h2 className={headingStyle}>Related project</h2>
-          <p className={textStyle}>
-            Rico also runs the{" "}
-            <External href="https://gamedev.trebeljahr.com">GameDev Asset Library</External>. It is
-            a hand-picked list of free game assets from many creators, Quaternius included.
-          </p>
-        </section>
-
         <section>
           <h2 className={headingStyle}>Contact</h2>
           <p className={textStyle}>

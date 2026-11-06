@@ -130,10 +130,6 @@ export function PackNav() {
                 Made by Quaternius. If you use his work, consider supporting his{" "}
                 <span className="underline">Patreon</span>.
               </a>
-              <a className={cardStyle} href={"https://gamedev.trebeljahr.com"}>
-                Want to search across many free-asset creators at once? See{" "}
-                <span className="underline">gamedev.trebeljahr.com</span>.
-              </a>
               <footer className="text-leva-light-grey">
                 <div>
                   <a href={"https://trebeljahr.com"}>

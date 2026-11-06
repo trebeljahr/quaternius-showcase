@@ -98,8 +98,7 @@ export default function PrivacyPage() {
           </ul>
           <P>
             No other server receives a request from your browser. A link to another site, such as
-            Quaternius, Patreon, GitHub or the GameDev Asset Library, contacts that site only when
-            you click it.
+            Quaternius, Patreon or GitHub, contacts that site only when you click it.
           </P>
         </Section>
 
