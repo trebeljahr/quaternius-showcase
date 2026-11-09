@@ -1,5 +1,13 @@
 import Head from "next/head";
-import { absoluteUrl, DEFAULT_DESCRIPTION, DEFAULT_SOCIAL_IMAGE, SITE_NAME } from "@/lib/seo";
+import type { Ids } from "@/components/PackViewerProvider";
+import { getPackLicense } from "@/lib/licenses";
+import {
+  absoluteUrl,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_SOCIAL_IMAGE,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/seo";
 
 const author = "Rico Trebeljahr";
 
@@ -9,6 +17,42 @@ interface HeaderProps {
   path?: string;
   image?: string;
   imageAlt?: string;
+  packId?: Ids;
+}
+
+// Pack pages describe the viewer page and the upstream pack it shows, so the
+// models stay credited to Quaternius under their own licence.
+function packSchema(packId: Ids, title: string, description: string, url: string) {
+  const pack = getPackLicense(packId);
+  const website = `${SITE_URL}/#website`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": website,
+        name: SITE_NAME,
+        url: `${SITE_URL}/`,
+        description: DEFAULT_DESCRIPTION,
+        author: { "@type": "Person", name: author, url: "https://ricos.site" },
+        inLanguage: "en",
+      },
+      {
+        "@type": "CollectionPage",
+        name: title,
+        url,
+        description,
+        isPartOf: { "@id": website },
+        about: {
+          "@type": "CreativeWork",
+          name: pack.packName,
+          url: pack.source,
+          creator: { "@type": "Person", name: "Quaternius", url: "https://quaternius.com/" },
+          license: pack.url,
+        },
+      },
+    ],
+  };
 }
 
 export default function Header({
@@ -17,9 +61,11 @@ export default function Header({
   path = "/",
   image = DEFAULT_SOCIAL_IMAGE,
   imageAlt = `${title} preview`,
+  packId,
 }: HeaderProps) {
   const canonicalUrl = absoluteUrl(path);
   const imageUrl = absoluteUrl(image);
+  const schema = packId ? packSchema(packId, title, description, canonicalUrl) : null;
 
   return (
     <Head>
@@ -39,6 +85,13 @@ export default function Header({
       <meta name="robots" content="index,follow" />
       <meta name="distribution" content="web" />
       <link rel="canonical" href={canonicalUrl} />
+      {schema && (
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD must be inline; "<" is escaped.
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+        />
+      )}
 
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />

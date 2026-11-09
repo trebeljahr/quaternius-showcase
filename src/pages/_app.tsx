@@ -74,6 +74,7 @@ export default function App({ Component, pageProps }: ShowcaseAppProps) {
         path={pageProps.path}
         image={pageProps.image}
         imageAlt={pageProps.imageAlt}
+        packId={pageProps.id as Ids | undefined}
       />
       {/* The provider sits above the Canvas so the chrome below survives both
           route changes and the Suspense the Canvas throws while a model loads. */}

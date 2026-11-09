@@ -46,6 +46,7 @@ export function PackNav() {
 
   return (
     <>
+      {id && <h1 className="sr-only">{formatPackName(id)}: free 3D models by Quaternius</h1>}
       {model && modelUrls[model.key] && (
         <div className={`${downloadStyles} ${open && "translate-x-60"}`}>
           <a className="flex" href={modelUrls[model.key]} download>
@@ -91,14 +92,14 @@ export function PackNav() {
           // Flex column so the bottom block (cards + footer) sits below the
           // pack list and pushes the sidebar to scroll instead of overlapping.
           <div className="flex flex-col min-h-full">
-            <h1 className="pt-2 mb-2 text-lg">
+            <h2 className="pt-2 mb-2 text-lg">
               <a
                 className="text-leva-light-grey hover:underline hover:decoration-solid"
                 href={"https://quaternius.com/"}
               >
                 Free 3D Models by <span>@Quaternius</span>
               </a>
-            </h1>
+            </h2>
             {id && <PackLicense id={id} />}
 
             <RecentPacks currentId={id} />
