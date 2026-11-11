@@ -82,17 +82,23 @@ const OG_CARDS = {
 function downscale(png, out) {
   try {
     // No date chunks, so an unchanged card keeps its SHA-256.
-    execFileSync("magick", ["png:-", "-resize", "1200x630!", "-define", "png:exclude-chunks=date,time", out], {
-      input: png,
-    });
+    execFileSync(
+      "magick",
+      ["png:-", "-resize", "1200x630!", "-define", "png:exclude-chunks=date,time", out],
+      {
+        input: png,
+      },
+    );
   } catch (error) {
-    if (error.code === "ENOENT") throw new Error("The og:image cards need ImageMagick: brew install imagemagick");
+    if (error.code === "ENOENT")
+      throw new Error("The og:image cards need ImageMagick: brew install imagemagick");
     throw error;
   }
 }
 
 async function loadPlaywright() {
-  if (process.env.PLAYWRIGHT_MODULE) return createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE);
+  if (process.env.PLAYWRIGHT_MODULE)
+    return createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE);
   try {
     return await import("playwright");
   } catch {
@@ -141,7 +147,9 @@ try {
     await og.evaluate(() => document.fonts.ready);
     await og.addStyleTag({ content: OG_TALL + card.css });
     if (card.js) await og.evaluate(card.js, OG_TILES);
-    await og.evaluate(() => Promise.all([...document.images].map((img) => img.decode().catch(() => {}))));
+    await og.evaluate(() =>
+      Promise.all([...document.images].map((img) => img.decode().catch(() => {}))),
+    );
     await og.waitForTimeout(400);
     const file = join(DIR, `${name}.png`);
     downscale(await og.screenshot({ type: "png" }), file);
