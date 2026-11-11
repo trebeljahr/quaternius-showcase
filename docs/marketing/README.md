@@ -14,7 +14,7 @@ pnpm marketing:screenshots      # serves out/ on a free port, writes screenshots
 pnpm marketing:social-preview   # renders social-preview/*.png from template.html
 ```
 
-Both scripts need Playwright, which is not a project dependency: install it with `npm i -g playwright`. Set `CHROMIUM_PATH` to use a Chromium build other than Playwright's default. `--only=name1,name2` recaptures single shots. `--base-url=https://quaternius.trebeljahr.com` captures the live site instead of `out/`.
+Both scripts need Playwright, which is not a project dependency: install it with `npm i -g playwright`, or point `PLAYWRIGHT_MODULE` at any `playwright` or `playwright-core` folder (social preview only). The og:image cards also need ImageMagick (`magick`). Set `CHROMIUM_PATH` to use a Chromium build other than Playwright's default. `--only=name1,name2` recaptures single shots. `--base-url=https://quaternius.trebeljahr.com` captures the live site instead of `out/`.
 
 Scripts: [`scripts/marketing/capture-screenshots.mjs`](../../scripts/marketing/capture-screenshots.mjs) and [`scripts/marketing/render-social-preview.mjs`](../../scripts/marketing/render-social-preview.mjs).
 
@@ -41,3 +41,12 @@ Desktop shots are 1600×1000 CSS pixels at device scale 2, so the files are 3200
 | `social-preview/social-preview-c.png` | C, four models in a row, one line and the fan-made note below |
 
 Cards A and C crop the captures in CSS to show the models larger. None of them is uploaded to GitHub yet. The repository settings take one card under **Social preview**.
+
+## og:image cards
+
+1200×630 PNG, the og:image size, built from option C by the same script. The template is laid out at 1280×672 (the same 1.91:1 shape), rendered at device scale 2 and downscaled to exactly 1200×630, so nothing is cropped or squashed.
+
+| File | Composition |
+| --- | --- |
+| `social-preview/og-wordmark.png` | Card C with its text: the four models on top, title, fan-made note and URL below |
+| `social-preview/og-clean.png` | No text: the same four model crops as a 2×2 grid on the beige tiles, each model centred |

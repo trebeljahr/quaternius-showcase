@@ -88,6 +88,24 @@
       "bytes": 163800,
       "sha256": "8c9cb2e3d0228ad4edea219596d7e2aeba588dd32a36d54ff721ddc387dc9b33",
       "rendered": "2026-11-06"
+    },
+    "og-wordmark": {
+      "file": "docs/marketing/social-preview/og-wordmark.png",
+      "purpose": "og:image: card C at 1200x630, models on top, title, fan-made note and URL below",
+      "width": 1200,
+      "height": 630,
+      "bytes": 191137,
+      "sha256": "699edcab80e894fabea461f74a16ccefd755cfcec0cae03d9b6106d1528a5fc5",
+      "rendered": "2026-11-11"
+    },
+    "og-clean": {
+      "file": "docs/marketing/social-preview/og-clean.png",
+      "purpose": "og:image without text: the four model crops of card C as a 2x2 grid",
+      "width": 1200,
+      "height": 630,
+      "bytes": 172696,
+      "sha256": "5b7ba24bedb5349d7e459276b4fbc280fc480b4d273e9f656ea058b2521004bf",
+      "rendered": "2026-11-11"
     }
   }
 }
