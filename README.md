@@ -92,7 +92,7 @@ License cannot be added.
 
 Good first PRs:
 
-- **Per-pack Open Graph images.** Every pack page shares `public/og-image.png`
+- **Per-pack Open Graph images.** Every pack page shares `public/og-card.jpg`
   today. A script that renders one image per pack gives each pack its own link
   preview.
 

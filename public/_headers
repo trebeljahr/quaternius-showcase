@@ -16,7 +16,7 @@
 /icons/*
   Cache-Control: public, max-age=2592000
 
-/og-image.png
+/og-card.jpg
   Cache-Control: public, max-age=2592000
 
 # The service worker decides how long everything else is cached, so it must not

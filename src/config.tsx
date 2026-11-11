@@ -5,6 +5,8 @@ import {
   absoluteUrl,
   DEFAULT_DESCRIPTION,
   DEFAULT_SOCIAL_IMAGE,
+  DEFAULT_SOCIAL_IMAGE_ALT,
+  DEFAULT_SOCIAL_IMAGE_TYPE,
   SITE_NAME,
   SITE_URL,
 } from "@/lib/seo";
@@ -60,7 +62,7 @@ export default function Header({
   description = DEFAULT_DESCRIPTION,
   path = "/",
   image = DEFAULT_SOCIAL_IMAGE,
-  imageAlt = `${title} preview`,
+  imageAlt = DEFAULT_SOCIAL_IMAGE_ALT,
   packId,
 }: HeaderProps) {
   const canonicalUrl = absoluteUrl(path);
@@ -97,7 +99,7 @@ export default function Header({
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={imageUrl} />
-      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:type" content={DEFAULT_SOCIAL_IMAGE_TYPE} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={imageAlt} />

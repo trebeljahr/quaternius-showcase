@@ -2,7 +2,12 @@ export const SITE_URL = "https://quaternius.trebeljahr.com";
 export const SITE_NAME = "3D Models by @Quaternius";
 export const DEFAULT_DESCRIPTION =
   "Browse free low-poly 3D model packs by Quaternius, preview them in the browser, and download GLB files for games and prototypes.";
-export const DEFAULT_SOCIAL_IMAGE = "/og-image.png";
+// One link preview for every page: the og-wordmark card from
+// docs/marketing/social-preview, as JPEG (scripts/marketing/render-social-preview.mjs).
+export const DEFAULT_SOCIAL_IMAGE = "/og-card.jpg";
+export const DEFAULT_SOCIAL_IMAGE_TYPE = "image/jpeg";
+export const DEFAULT_SOCIAL_IMAGE_ALT =
+  "Quaternius Showcase, fan-made and not affiliated with Quaternius, over low-poly models of a T-rex, a cow, a spaceship and a mech";
 
 export function absoluteUrl(path: string) {
   return new URL(path, SITE_URL).toString();
@@ -30,6 +35,6 @@ export function getPackSeo(id: string, modelCount: number) {
     description: `Preview and download ${modelCount} free low-poly ${packName} 3D ${modelLabel} by Quaternius as GLB files.`,
     path: `/${id}`,
     image: DEFAULT_SOCIAL_IMAGE,
-    imageAlt: `${packName} 3D model pack preview`,
+    imageAlt: DEFAULT_SOCIAL_IMAGE_ALT,
   };
 }

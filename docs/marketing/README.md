@@ -50,3 +50,9 @@ Cards A and C crop the captures in CSS to show the models larger. None of them i
 | --- | --- |
 | `social-preview/og-wordmark.png` | The four models as a 2x2 grid with "Quaternius Showcase" and the fan-made note in a centred dark panel |
 | `social-preview/og-clean.png` | No text: the same four model crops as a 2×2 grid on the beige tiles, each model centred |
+
+The site's link preview, `public/og-card.jpg`, is `og-wordmark.png` as JPEG (quality 88, 4:4:4, progressive, no metadata). After a new render:
+
+```bash
+magick docs/marketing/social-preview/og-wordmark.png -strip -interlace Plane -sampling-factor 4:4:4 -quality 88 public/og-card.jpg
+```

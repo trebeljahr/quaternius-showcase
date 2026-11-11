@@ -8,11 +8,11 @@ const withPWA = require("next-pwa")({
   // next-pwa precaches every file under public/ by default. That is 1545 .glb
   // models, ~185 MB, downloaded by every first-time visitor. The viewer already
   // fetches a model on demand, so keep them out of the precache manifest.
-  // og-image.png is only ever read by crawlers, never by the page.
+  // og-card.jpg is only ever read by crawlers, never by the page.
   // The viewer fetches hdri/*.hdr itself on every pack page. Workbox refetches
   // precache entries past the HTTP cache, so precaching the 1.5 MB file would
   // download it twice on a first visit.
-  publicExcludes: ["!glb/**/*", "!og-image.*", "!hdri/**/*"],
+  publicExcludes: ["!glb/**/*", "!og-card.*", "!hdri/**/*"],
 });
 
 const nextConfig = {
