@@ -91,11 +91,11 @@
     },
     "og-wordmark": {
       "file": "docs/marketing/social-preview/og-wordmark.png",
-      "purpose": "og:image: card C at 1200x630, models on top, title and fan-made note below",
+      "purpose": "og:image: the four models as a 2x2 grid, the name and fan-made note in a centred panel",
       "width": 1200,
       "height": 630,
-      "bytes": 180701,
-      "sha256": "cc4d9a1edec6b9fafac2d97b4c8fb66c2e7caa4def0e03eb6e88a5c7f82b2f41",
+      "bytes": 189967,
+      "sha256": "a16903bef270aa72af2cc5450a9ce490070c07ceb1a97b785dcc88471bb84022",
       "rendered": "2026-11-11"
     },
     "og-clean": {

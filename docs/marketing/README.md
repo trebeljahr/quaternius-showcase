@@ -48,5 +48,5 @@ Cards A and C crop the captures in CSS to show the models larger. None of them i
 
 | File | Composition |
 | --- | --- |
-| `social-preview/og-wordmark.png` | Card C with its text: the four models on top, title and fan-made note below (no URL) |
+| `social-preview/og-wordmark.png` | The four models as a 2x2 grid with "Quaternius Showcase" and the fan-made note in a centred dark panel |
 | `social-preview/og-clean.png` | No text: the same four model crops as a 2×2 grid on the beige tiles, each model centred |

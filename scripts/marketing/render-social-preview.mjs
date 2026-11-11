@@ -43,17 +43,49 @@ const OG_TILES = [
   { scale: 0.37, fx: 0.49, fy: 0.445 }, // Mech
 ];
 const OG_CARDS = {
-  // The live card C without its URL: the model row takes the 32 px of extra
-  // height, the text band keeps its 64 px margins.
+  // The 2x2 grid of the clean card under a dark rounded panel with the name
+  // and the fan-made note, as on Fractal Garden's card. Each model is shown
+  // 10% smaller and pushed out of the panel's way (the tall mech 24% smaller,
+  // further into its corner).
   "og-wordmark": {
-    purpose: "og:image: card C at 1200x630, models on top, title and fan-made note below",
+    purpose:
+      "og:image: the four models as a 2x2 grid, the name and fan-made note in a centred panel",
     css: `
       .card { height: 672px; }
-      #c .row { height: 392px; }
-      #c .text { top: 436px; }
-      #c .url { display: none !important; }
-      #c h1 { text-wrap: balance; }
+      #c .text { display: none !important; }
+      #c .row {
+        top: 0; bottom: 0; height: 672px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+      .qpanel {
+        position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+        padding: 34px 56px 38px; border-radius: 24px;
+        background: rgba(24, 28, 32, .88); border: 2px solid rgba(255, 255, 255, .16);
+        text-align: center; white-space: nowrap; font-family: var(--sans);
+      }
+      #c .qpanel h1 { color: #f8fafc; font-size: 76px; font-weight: 800; letter-spacing: -1.5px; line-height: 1; }
+      #c .qpanel p { margin-top: 18px; color: #c9ced8; font-size: 27px; font-weight: 500; letter-spacing: .5px; }
     `,
+    js: (tiles) => {
+      document.querySelectorAll("#c .row .crop").forEach((el, i) => {
+        const t = tiles[i];
+        const r = el.getBoundingClientRect();
+        const s = t.scale * (i === 3 ? 0.76 : 0.9);
+        const w = 3200 * s;
+        const h = 2000 * s;
+        const cx = r.width * (i % 2 === 0 ? 0.44 : i === 3 ? 0.62 : 0.56);
+        const cy = r.height * (i < 2 ? 0.36 : i === 3 ? 0.65 : 0.66);
+        el.style.backgroundSize = `${w}px ${h}px`;
+        el.style.backgroundPosition = `${cx - w * t.fx}px ${cy - h * t.fy}px`;
+      });
+      document
+        .querySelector("#c")
+        .insertAdjacentHTML(
+          "beforeend",
+          '<div class="qpanel"><h1>Quaternius Showcase</h1><p>Fan-made. Not affiliated with Quaternius.</p></div>',
+        );
+    },
   },
   // No text: the same four crops as a 2x2 grid that fills the card, same beige
   // tiles and 4 px gaps, each model centred in its tile.
@@ -149,6 +181,7 @@ try {
     await og.evaluate(() => document.fonts.ready);
     await og.addStyleTag({ content: OG_TALL + card.css });
     if (card.js) await og.evaluate(card.js, OG_TILES);
+    await og.evaluate(() => document.fonts.ready);
     await og.evaluate(() =>
       Promise.all([...document.images].map((img) => img.decode().catch(() => {}))),
     );
