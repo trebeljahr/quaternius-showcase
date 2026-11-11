@@ -43,14 +43,16 @@ const OG_TILES = [
   { scale: 0.37, fx: 0.49, fy: 0.445 }, // Mech
 ];
 const OG_CARDS = {
-  // The live card C: the model row takes the 32 px of extra height, the text
-  // band keeps its 64 px margins.
+  // The live card C without its URL: the model row takes the 32 px of extra
+  // height, the text band keeps its 64 px margins.
   "og-wordmark": {
-    purpose: "og:image: card C at 1200x630, models on top, title, fan-made note and URL below",
+    purpose: "og:image: card C at 1200x630, models on top, title and fan-made note below",
     css: `
       .card { height: 672px; }
       #c .row { height: 392px; }
       #c .text { top: 436px; }
+      #c .url { display: none !important; }
+      #c h1 { text-wrap: balance; }
     `,
   },
   // No text: the same four crops as a 2x2 grid that fills the card, same beige

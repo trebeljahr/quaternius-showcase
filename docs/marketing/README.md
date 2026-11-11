@@ -48,5 +48,5 @@ Cards A and C crop the captures in CSS to show the models larger. None of them i
 
 | File | Composition |
 | --- | --- |
-| `social-preview/og-wordmark.png` | Card C with its text: the four models on top, title, fan-made note and URL below |
+| `social-preview/og-wordmark.png` | Card C with its text: the four models on top, title and fan-made note below (no URL) |
 | `social-preview/og-clean.png` | No text: the same four model crops as a 2×2 grid on the beige tiles, each model centred |
